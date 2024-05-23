@@ -8,6 +8,7 @@ import com.vk.api.sdk.objects.base.BoolInt;
 import com.vk.api.sdk.objects.base.Likes;
 import com.vk.api.sdk.objects.base.PropertyExists;
 import com.vk.api.sdk.objects.base.RepostsInfo;
+
 import java.net.URI;
 import java.util.List;
 import java.util.Objects;

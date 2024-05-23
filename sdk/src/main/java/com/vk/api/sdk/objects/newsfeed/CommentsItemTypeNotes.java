@@ -5,12 +5,13 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.base.Likes;
+
 import java.util.Objects;
 
 /**
  * CommentsItemTypeNotes object
  */
-public class CommentsItemTypeNotes extends CommentsItemBase implements Validable {
+public class CommentsItemTypeNotes extends CommentsItemBase implements CommentsItem, Validable {
     @SerializedName("comments")
     private CommentsBase comments;
 

@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Type of requested objects listed in 'ids' parameter: *ad - ads,, *campaign - campaigns.
  */
-public enum GetDemographicsIdsType implements EnumParam {
+public enum GetDemographicsIdsType implements EnumParam<String> {
     @SerializedName("ad")
     AD("ad"),
 

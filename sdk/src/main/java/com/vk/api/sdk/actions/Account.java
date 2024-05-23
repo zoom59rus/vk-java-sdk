@@ -5,24 +5,7 @@ import com.vk.api.sdk.client.AbstractAction;
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiMethod;
-import com.vk.api.sdk.queries.account.AccountBanQuery;
-import com.vk.api.sdk.queries.account.AccountChangePasswordQuery;
-import com.vk.api.sdk.queries.account.AccountGetActiveOffersQuery;
-import com.vk.api.sdk.queries.account.AccountGetAppPermissionsQuery;
-import com.vk.api.sdk.queries.account.AccountGetBannedQuery;
-import com.vk.api.sdk.queries.account.AccountGetCountersQuery;
-import com.vk.api.sdk.queries.account.AccountGetInfoQuery;
-import com.vk.api.sdk.queries.account.AccountGetProfileInfoQuery;
-import com.vk.api.sdk.queries.account.AccountGetPushSettingsQuery;
-import com.vk.api.sdk.queries.account.AccountRegisterDeviceQuery;
-import com.vk.api.sdk.queries.account.AccountSaveProfileInfoQuery;
-import com.vk.api.sdk.queries.account.AccountSetInfoQuery;
-import com.vk.api.sdk.queries.account.AccountSetOfflineQuery;
-import com.vk.api.sdk.queries.account.AccountSetOnlineQuery;
-import com.vk.api.sdk.queries.account.AccountSetPushSettingsQuery;
-import com.vk.api.sdk.queries.account.AccountSetSilenceModeQuery;
-import com.vk.api.sdk.queries.account.AccountUnbanQuery;
-import com.vk.api.sdk.queries.account.AccountUnregisterDeviceQuery;
+import com.vk.api.sdk.queries.account.*;
 
 /**
  * List of Account methods

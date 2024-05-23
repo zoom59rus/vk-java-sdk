@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.leadforms;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum QuestionItemType implements EnumParam {
+public enum QuestionItemType implements EnumParam<String> {
     @SerializedName("input")
     INPUT("input"),
 

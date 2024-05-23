@@ -6,6 +6,7 @@ import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.base.responses.OkResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -69,6 +70,18 @@ public class VideoEditAlbumQuery extends AbstractQueryBuilder<VideoEditAlbumQuer
     @ApiParam("title")
     public VideoEditAlbumQuery title(String value) {
         return unsafeParam("title", value);
+    }
+
+    /**
+     * Set owner id
+     *
+     * @param value value of "owner id" parameter. Entity - owner
+     *
+     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
+     */
+    @ApiParam("owner_id")
+    public VideoEditAlbumQuery ownerId(Long value) {
+        return unsafeParam("owner_id", value);
     }
 
     /**

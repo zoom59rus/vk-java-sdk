@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.callback;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum Type implements EnumParam {
+public enum Type implements EnumParam<String> {
     @SerializedName("audio_new")
     AUDIO_NEW("audio_new"),
 
@@ -141,7 +141,13 @@ public enum Type implements EnumParam {
     WALL_REPLY_RESTORE("wall_reply_restore"),
 
     @SerializedName("wall_repost")
-    WALL_REPOST("wall_repost");
+    WALL_REPOST("wall_repost"),
+
+    @SerializedName("wall_schedule_post_new")
+    WALL_SCHEDULE_POST_NEW("wall_schedule_post_new"),
+
+    @SerializedName("wall_schedule_post_delete")
+    WALL_SCHEDULE_POST_DELETE("wall_schedule_post_delete");
 
     private final String value;
 

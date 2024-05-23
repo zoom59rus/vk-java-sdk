@@ -8,6 +8,7 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.users.Fields;
 import com.vk.api.sdk.objects.widgets.responses.GetCommentsResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,17 +16,6 @@ import java.util.List;
  * Query for Widgets.getComments method
  */
 public class WidgetsGetCommentsQuery extends AbstractQueryBuilder<WidgetsGetCommentsQuery, GetCommentsResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public WidgetsGetCommentsQuery(VkApiClient client, UserActor actor) {
-        super(client, "widgets.getComments", GetCommentsResponse.class);
-        accessToken(actor.getAccessToken());
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -36,6 +26,17 @@ public class WidgetsGetCommentsQuery extends AbstractQueryBuilder<WidgetsGetComm
         super(client, "widgets.getComments", GetCommentsResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public WidgetsGetCommentsQuery(VkApiClient client, UserActor actor) {
+        super(client, "widgets.getComments", GetCommentsResponse.class);
+        accessToken(actor.getAccessToken());
     }
 
     /**

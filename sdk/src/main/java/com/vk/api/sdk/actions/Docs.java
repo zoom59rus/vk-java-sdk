@@ -6,18 +6,8 @@ import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.GroupActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiMethod;
-import com.vk.api.sdk.queries.docs.DocsAddQuery;
-import com.vk.api.sdk.queries.docs.DocsDeleteQuery;
-import com.vk.api.sdk.queries.docs.DocsEditQuery;
-import com.vk.api.sdk.queries.docs.DocsGetByIdQuery;
-import com.vk.api.sdk.queries.docs.DocsGetMessagesUploadServerQuery;
-import com.vk.api.sdk.queries.docs.DocsGetQuery;
-import com.vk.api.sdk.queries.docs.DocsGetTypesQuery;
-import com.vk.api.sdk.queries.docs.DocsGetUploadServerQuery;
-import com.vk.api.sdk.queries.docs.DocsGetWallUploadServerQuery;
-import com.vk.api.sdk.queries.docs.DocsRestoreQuery;
-import com.vk.api.sdk.queries.docs.DocsSaveQuery;
-import com.vk.api.sdk.queries.docs.DocsSearchQuery;
+import com.vk.api.sdk.queries.docs.*;
+
 import java.util.List;
 
 /**

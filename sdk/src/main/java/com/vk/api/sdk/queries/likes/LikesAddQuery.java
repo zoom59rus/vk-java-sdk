@@ -7,6 +7,7 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.likes.Type;
 import com.vk.api.sdk.objects.likes.responses.AddResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -83,6 +84,17 @@ public class LikesAddQuery extends AbstractQueryBuilder<LikesAddQuery, AddRespon
     @ApiParam("access_key")
     public LikesAddQuery accessKey(String value) {
         return unsafeParam("access_key", value);
+    }
+
+    /**
+     * Impersonate group
+     *
+     * @param value value of "from group" parameter.
+     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
+     */
+    @ApiParam("from_group")
+    public LikesAddQuery fromGroup(Boolean value) {
+        return unsafeParam("from_group", value);
     }
 
     @Override

@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Campaign status
  */
-public enum CampaignStatus implements EnumParam {
+public enum CampaignStatus implements EnumParam<Integer> {
     @SerializedName("0")
     STOPPED(0),
 
@@ -23,8 +23,8 @@ public enum CampaignStatus implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

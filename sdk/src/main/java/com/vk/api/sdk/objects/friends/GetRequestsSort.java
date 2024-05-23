@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Sort order: '1' - by number of mutual friends, '0' - by date
  */
-public enum GetRequestsSort implements EnumParam {
+public enum GetRequestsSort implements EnumParam<Integer> {
     @SerializedName("0")
     DATE(0),
 
@@ -23,8 +23,8 @@ public enum GetRequestsSort implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

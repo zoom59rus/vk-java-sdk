@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * '1' - female, '2' - male, '0' - any (default)
  */
-public enum SearchSex implements EnumParam {
+public enum SearchSex implements EnumParam<Integer> {
     @SerializedName("0")
     ANY(0),
 
@@ -23,8 +23,8 @@ public enum SearchSex implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

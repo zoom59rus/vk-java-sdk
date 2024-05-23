@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Button style
  */
-public enum LinkButtonStyle implements EnumParam {
+public enum LinkButtonStyle implements EnumParam<String> {
     @SerializedName("primary")
     PRIMARY("primary"),
 

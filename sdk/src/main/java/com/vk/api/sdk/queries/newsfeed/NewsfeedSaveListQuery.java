@@ -5,6 +5,7 @@ import com.vk.api.sdk.client.AbstractQueryBuilder;
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -18,11 +19,30 @@ public class NewsfeedSaveListQuery extends AbstractQueryBuilder<NewsfeedSaveList
      * @param client VK API client
      * @param actor actor with access token
      * @param title value of "title" parameter.
+     * @param sourceIds value of "source ids" parameter.
      */
-    public NewsfeedSaveListQuery(VkApiClient client, UserActor actor, String title) {
+    public NewsfeedSaveListQuery(VkApiClient client, UserActor actor, String title,
+            Long... sourceIds) {
         super(client, "newsfeed.saveList", Integer.class);
         accessToken(actor.getAccessToken());
         title(title);
+        sourceIds(sourceIds);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     * @param title value of "title" parameter.
+     * @param sourceIds value of "source ids" parameter.
+     */
+    public NewsfeedSaveListQuery(VkApiClient client, UserActor actor, String title,
+            List<Long> sourceIds) {
+        super(client, "newsfeed.saveList", Integer.class);
+        accessToken(actor.getAccessToken());
+        title(title);
+        sourceIds(sourceIds);
     }
 
     /**
@@ -99,6 +119,6 @@ public class NewsfeedSaveListQuery extends AbstractQueryBuilder<NewsfeedSaveList
 
     @Override
     protected List<String> essentialKeys() {
-        return Arrays.asList("title", "access_token");
+        return Arrays.asList("title", "source_ids", "access_token");
     }
 }

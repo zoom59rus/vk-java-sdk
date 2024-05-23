@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.account;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum CountersFilter implements EnumParam {
+public enum CountersFilter implements EnumParam<String> {
     @SerializedName("app_requests")
     APP_REQUESTS("app_requests"),
 
@@ -16,6 +16,9 @@ public enum CountersFilter implements EnumParam {
 
     @SerializedName("friends_recommendations")
     FRIENDS_RECOMMENDATIONS("friends_recommendations"),
+
+    @SerializedName("games")
+    GAMES("games"),
 
     @SerializedName("gifts")
     GIFTS("gifts"),

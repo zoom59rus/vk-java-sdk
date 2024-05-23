@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Information about the status of video notifications for the current user.
  */
-public enum GroupFullVideoNotificationsStatus implements EnumParam {
+public enum GroupFullVideoNotificationsStatus implements EnumParam<String> {
     @SerializedName("none")
     NONE("none"),
 

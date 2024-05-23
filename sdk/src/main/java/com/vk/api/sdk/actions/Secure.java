@@ -5,17 +5,8 @@ import com.vk.api.sdk.client.AbstractAction;
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.objects.annotations.ApiMethod;
-import com.vk.api.sdk.queries.secure.SecureAddAppEventQuery;
-import com.vk.api.sdk.queries.secure.SecureCheckTokenQuery;
-import com.vk.api.sdk.queries.secure.SecureGetAppBalanceQuery;
-import com.vk.api.sdk.queries.secure.SecureGetSMSHistoryQuery;
-import com.vk.api.sdk.queries.secure.SecureGetTransactionsHistoryQuery;
-import com.vk.api.sdk.queries.secure.SecureGetUserLevelQuery;
-import com.vk.api.sdk.queries.secure.SecureGiveEventStickerQuery;
-import com.vk.api.sdk.queries.secure.SecureSendNotificationQuery;
-import com.vk.api.sdk.queries.secure.SecureSendSMSNotificationQuery;
-import com.vk.api.sdk.queries.secure.SecureSetCounterQuery;
-import com.vk.api.sdk.queries.secure.SecureSetCounterQueryWithArray;
+import com.vk.api.sdk.queries.secure.*;
+
 import java.util.List;
 
 /**

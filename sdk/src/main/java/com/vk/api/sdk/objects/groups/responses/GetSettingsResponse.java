@@ -6,21 +6,8 @@ import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.base.BoolInt;
-import com.vk.api.sdk.objects.groups.GroupAccess;
-import com.vk.api.sdk.objects.groups.GroupAgeLimits;
-import com.vk.api.sdk.objects.groups.GroupAudio;
-import com.vk.api.sdk.objects.groups.GroupDocs;
-import com.vk.api.sdk.objects.groups.GroupFullSection;
-import com.vk.api.sdk.objects.groups.GroupPhotos;
-import com.vk.api.sdk.objects.groups.GroupPublicCategoryList;
-import com.vk.api.sdk.objects.groups.GroupSuggestedPrivacy;
-import com.vk.api.sdk.objects.groups.GroupTopics;
-import com.vk.api.sdk.objects.groups.GroupVideo;
-import com.vk.api.sdk.objects.groups.GroupWall;
-import com.vk.api.sdk.objects.groups.GroupWiki;
-import com.vk.api.sdk.objects.groups.SectionsListItem;
-import com.vk.api.sdk.objects.groups.SettingsTwitter;
-import com.vk.api.sdk.objects.groups.SubjectItem;
+import com.vk.api.sdk.objects.groups.*;
+
 import java.net.URI;
 import java.util.List;
 import java.util.Objects;
@@ -95,20 +82,6 @@ public class GetSettingsResponse implements Validable {
 
     @SerializedName("contacts")
     private BoolInt contacts;
-
-    /**
-     * Country id of group
-     */
-    @SerializedName("country_id")
-    @Required
-    private Integer countryId;
-
-    /**
-     * Country name of group
-     */
-    @SerializedName("country_name")
-    @Required
-    private String countryName;
 
     /**
      * Community description
@@ -399,24 +372,6 @@ public class GetSettingsResponse implements Validable {
 
     public BoolInt getContacts() {
         return contacts;
-    }
-
-    public Integer getCountryId() {
-        return countryId;
-    }
-
-    public GetSettingsResponse setCountryId(Integer countryId) {
-        this.countryId = countryId;
-        return this;
-    }
-
-    public String getCountryName() {
-        return countryName;
-    }
-
-    public GetSettingsResponse setCountryName(String countryName) {
-        this.countryName = countryName;
-        return this;
     }
 
     public String getDescription() {
@@ -731,7 +686,7 @@ public class GetSettingsResponse implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(addresses, obsceneStopwords, subject, wiki, obsceneFilter, cityId, photos, recognizePhoto, twitter, docs, botsCapabilities, botsStartButton, links, events, eventGroupId, sectionsList, suggestedPrivacy, obsceneWords, phone, countryName, startDate, mainSection, access, description, video, publicDate, title, countryId, publicDateLabel, toxicFilter, rss, cityName, audio, publicCategory, email, subjectList, website, address, topics, publicCategoryList, secondarySection, botsAddToChat, ageLimits, disableRepliesFromGroups, publicSubcategory, finishDate, articles, wall, contacts);
+        return Objects.hash(addresses, mainSection, access, obsceneStopwords, subject, wiki, description, obsceneFilter, video, publicDate, cityId, title, photos, recognizePhoto, publicDateLabel, toxicFilter, twitter, rss, cityName, docs, botsCapabilities, botsStartButton, links, audio, publicCategory, email, events, eventGroupId, sectionsList, subjectList, website, address, topics, publicCategoryList, secondarySection, botsAddToChat, suggestedPrivacy, ageLimits, disableRepliesFromGroups, publicSubcategory, obsceneWords, phone, finishDate, articles, wall, startDate, contacts);
     }
 
     @Override
@@ -739,42 +694,34 @@ public class GetSettingsResponse implements Validable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         GetSettingsResponse getSettingsResponse = (GetSettingsResponse) o;
-        return Objects.equals(addresses, getSettingsResponse.addresses) &&
+        return Objects.equals(botsAddToChat, getSettingsResponse.botsAddToChat) &&
+                Objects.equals(botsCapabilities, getSettingsResponse.botsCapabilities) &&
+                Objects.equals(addresses, getSettingsResponse.addresses) &&
+                Objects.equals(access, getSettingsResponse.access) &&
                 Objects.equals(publicCategory, getSettingsResponse.publicCategory) &&
                 Objects.equals(publicSubcategory, getSettingsResponse.publicSubcategory) &&
                 Objects.equals(subject, getSettingsResponse.subject) &&
                 Objects.equals(wiki, getSettingsResponse.wiki) &&
+                Objects.equals(description, getSettingsResponse.description) &&
                 Objects.equals(botsStartButton, getSettingsResponse.botsStartButton) &&
+                Objects.equals(video, getSettingsResponse.video) &&
+                Objects.equals(title, getSettingsResponse.title) &&
                 Objects.equals(photos, getSettingsResponse.photos) &&
                 Objects.equals(mainSection, getSettingsResponse.mainSection) &&
                 Objects.equals(obsceneStopwords, getSettingsResponse.obsceneStopwords) &&
-                Objects.equals(twitter, getSettingsResponse.twitter) &&
-                Objects.equals(docs, getSettingsResponse.docs) &&
-                Objects.equals(finishDate, getSettingsResponse.finishDate) &&
-                Objects.equals(links, getSettingsResponse.links) &&
-                Objects.equals(obsceneFilter, getSettingsResponse.obsceneFilter) &&
-                Objects.equals(events, getSettingsResponse.events) &&
-                Objects.equals(publicDateLabel, getSettingsResponse.publicDateLabel) &&
-                Objects.equals(publicCategoryList, getSettingsResponse.publicCategoryList) &&
-                Objects.equals(ageLimits, getSettingsResponse.ageLimits) &&
-                Objects.equals(toxicFilter, getSettingsResponse.toxicFilter) &&
-                Objects.equals(phone, getSettingsResponse.phone) &&
-                Objects.equals(countryId, getSettingsResponse.countryId) &&
-                Objects.equals(cityId, getSettingsResponse.cityId) &&
-                Objects.equals(botsAddToChat, getSettingsResponse.botsAddToChat) &&
-                Objects.equals(botsCapabilities, getSettingsResponse.botsCapabilities) &&
-                Objects.equals(access, getSettingsResponse.access) &&
-                Objects.equals(description, getSettingsResponse.description) &&
-                Objects.equals(video, getSettingsResponse.video) &&
-                Objects.equals(title, getSettingsResponse.title) &&
                 Objects.equals(suggestedPrivacy, getSettingsResponse.suggestedPrivacy) &&
                 Objects.equals(cityName, getSettingsResponse.cityName) &&
+                Objects.equals(twitter, getSettingsResponse.twitter) &&
                 Objects.equals(rss, getSettingsResponse.rss) &&
+                Objects.equals(docs, getSettingsResponse.docs) &&
                 Objects.equals(subjectList, getSettingsResponse.subjectList) &&
-                Objects.equals(countryName, getSettingsResponse.countryName) &&
+                Objects.equals(finishDate, getSettingsResponse.finishDate) &&
+                Objects.equals(links, getSettingsResponse.links) &&
                 Objects.equals(audio, getSettingsResponse.audio) &&
+                Objects.equals(obsceneFilter, getSettingsResponse.obsceneFilter) &&
                 Objects.equals(publicDate, getSettingsResponse.publicDate) &&
                 Objects.equals(email, getSettingsResponse.email) &&
+                Objects.equals(events, getSettingsResponse.events) &&
                 Objects.equals(secondarySection, getSettingsResponse.secondarySection) &&
                 Objects.equals(startDate, getSettingsResponse.startDate) &&
                 Objects.equals(website, getSettingsResponse.website) &&
@@ -782,12 +729,18 @@ public class GetSettingsResponse implements Validable {
                 Objects.equals(topics, getSettingsResponse.topics) &&
                 Objects.equals(recognizePhoto, getSettingsResponse.recognizePhoto) &&
                 Objects.equals(obsceneWords, getSettingsResponse.obsceneWords) &&
+                Objects.equals(publicDateLabel, getSettingsResponse.publicDateLabel) &&
+                Objects.equals(publicCategoryList, getSettingsResponse.publicCategoryList) &&
+                Objects.equals(ageLimits, getSettingsResponse.ageLimits) &&
+                Objects.equals(toxicFilter, getSettingsResponse.toxicFilter) &&
+                Objects.equals(phone, getSettingsResponse.phone) &&
                 Objects.equals(disableRepliesFromGroups, getSettingsResponse.disableRepliesFromGroups) &&
                 Objects.equals(sectionsList, getSettingsResponse.sectionsList) &&
                 Objects.equals(eventGroupId, getSettingsResponse.eventGroupId) &&
                 Objects.equals(articles, getSettingsResponse.articles) &&
                 Objects.equals(wall, getSettingsResponse.wall) &&
-                Objects.equals(contacts, getSettingsResponse.contacts);
+                Objects.equals(contacts, getSettingsResponse.contacts) &&
+                Objects.equals(cityId, getSettingsResponse.cityId);
     }
 
     @Override
@@ -798,42 +751,34 @@ public class GetSettingsResponse implements Validable {
 
     public String toPrettyString() {
         final StringBuilder sb = new StringBuilder("GetSettingsResponse{");
-        sb.append("addresses=").append(addresses);
+        sb.append("botsAddToChat=").append(botsAddToChat);
+        sb.append(", botsCapabilities=").append(botsCapabilities);
+        sb.append(", addresses=").append(addresses);
+        sb.append(", access=").append(access);
         sb.append(", publicCategory=").append(publicCategory);
         sb.append(", publicSubcategory=").append(publicSubcategory);
         sb.append(", subject=").append(subject);
         sb.append(", wiki=").append(wiki);
+        sb.append(", description='").append(description).append("'");
         sb.append(", botsStartButton=").append(botsStartButton);
+        sb.append(", video=").append(video);
+        sb.append(", title='").append(title).append("'");
         sb.append(", photos=").append(photos);
         sb.append(", mainSection=").append(mainSection);
         sb.append(", obsceneStopwords=").append(obsceneStopwords);
-        sb.append(", twitter=").append(twitter);
-        sb.append(", docs=").append(docs);
-        sb.append(", finishDate=").append(finishDate);
-        sb.append(", links=").append(links);
-        sb.append(", obsceneFilter=").append(obsceneFilter);
-        sb.append(", events=").append(events);
-        sb.append(", publicDateLabel='").append(publicDateLabel).append("'");
-        sb.append(", publicCategoryList=").append(publicCategoryList);
-        sb.append(", ageLimits=").append(ageLimits);
-        sb.append(", toxicFilter=").append(toxicFilter);
-        sb.append(", phone='").append(phone).append("'");
-        sb.append(", countryId=").append(countryId);
-        sb.append(", cityId=").append(cityId);
-        sb.append(", botsAddToChat=").append(botsAddToChat);
-        sb.append(", botsCapabilities=").append(botsCapabilities);
-        sb.append(", access=").append(access);
-        sb.append(", description='").append(description).append("'");
-        sb.append(", video=").append(video);
-        sb.append(", title='").append(title).append("'");
         sb.append(", suggestedPrivacy=").append(suggestedPrivacy);
         sb.append(", cityName='").append(cityName).append("'");
+        sb.append(", twitter=").append(twitter);
         sb.append(", rss=").append(rss);
+        sb.append(", docs=").append(docs);
         sb.append(", subjectList=").append(subjectList);
-        sb.append(", countryName='").append(countryName).append("'");
+        sb.append(", finishDate=").append(finishDate);
+        sb.append(", links=").append(links);
         sb.append(", audio=").append(audio);
+        sb.append(", obsceneFilter=").append(obsceneFilter);
         sb.append(", publicDate='").append(publicDate).append("'");
         sb.append(", email='").append(email).append("'");
+        sb.append(", events=").append(events);
         sb.append(", secondarySection=").append(secondarySection);
         sb.append(", startDate=").append(startDate);
         sb.append(", website='").append(website).append("'");
@@ -841,12 +786,18 @@ public class GetSettingsResponse implements Validable {
         sb.append(", topics=").append(topics);
         sb.append(", recognizePhoto=").append(recognizePhoto);
         sb.append(", obsceneWords='").append(obsceneWords).append("'");
+        sb.append(", publicDateLabel='").append(publicDateLabel).append("'");
+        sb.append(", publicCategoryList=").append(publicCategoryList);
+        sb.append(", ageLimits=").append(ageLimits);
+        sb.append(", toxicFilter=").append(toxicFilter);
+        sb.append(", phone='").append(phone).append("'");
         sb.append(", disableRepliesFromGroups=").append(disableRepliesFromGroups);
         sb.append(", sectionsList=").append(sectionsList);
         sb.append(", eventGroupId=").append(eventGroupId);
         sb.append(", articles=").append(articles);
         sb.append(", wall=").append(wall);
         sb.append(", contacts=").append(contacts);
+        sb.append(", cityId=").append(cityId);
         sb.append('}');
         return sb.toString();
     }

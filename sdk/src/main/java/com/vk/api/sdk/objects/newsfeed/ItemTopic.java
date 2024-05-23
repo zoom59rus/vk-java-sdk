@@ -7,12 +7,13 @@ import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.base.CommentsInfo;
 import com.vk.api.sdk.objects.base.LikesInfo;
+
 import java.util.Objects;
 
 /**
  * ItemTopic object
  */
-public class ItemTopic extends ItemBase implements Validable {
+public class ItemTopic extends ItemBase implements NewsfeedItem, Validable {
     @SerializedName("comments")
     private CommentsInfo comments;
 

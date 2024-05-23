@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.support;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum UnblockScreenContentBlockFieldsType implements EnumParam {
+public enum UnblockScreenContentBlockFieldsType implements EnumParam<String> {
     @SerializedName("ban_reason_content")
     BAN_REASON_CONTENT("ban_reason_content");
 

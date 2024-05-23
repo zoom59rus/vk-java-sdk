@@ -9,6 +9,7 @@ import com.vk.api.sdk.objects.ads.GetStatisticsIdsType;
 import com.vk.api.sdk.objects.ads.GetStatisticsPeriod;
 import com.vk.api.sdk.objects.ads.responses.GetStatisticsResponse;
 import com.vk.api.sdk.objects.annotations.ApiParam;
+
 import java.util.Arrays;
 import java.util.List;
 

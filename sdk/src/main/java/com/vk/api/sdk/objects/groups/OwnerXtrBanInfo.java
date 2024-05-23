@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.users.User;
+
 import java.util.Objects;
 
 /**
@@ -90,7 +91,7 @@ public class OwnerXtrBanInfo implements Validable {
     public String toPrettyString() {
         final StringBuilder sb = new StringBuilder("OwnerXtrBanInfo{");
         sb.append("profile=").append(profile);
-        sb.append(", type=").append(type);
+        sb.append(", type='").append(type).append("'");
         sb.append(", banInfo=").append(banInfo);
         sb.append(", group=").append(group);
         sb.append('}');

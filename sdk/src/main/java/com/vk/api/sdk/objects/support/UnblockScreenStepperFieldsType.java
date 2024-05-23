@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.support;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum UnblockScreenStepperFieldsType implements EnumParam {
+public enum UnblockScreenStepperFieldsType implements EnumParam<String> {
     @SerializedName("stepper")
     STEPPER("stepper");
 

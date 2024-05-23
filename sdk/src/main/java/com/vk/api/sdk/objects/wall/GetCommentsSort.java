@@ -7,12 +7,15 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Sort order: 'asc' - chronological, 'desc' - reverse chronological
  */
-public enum GetCommentsSort implements EnumParam {
+public enum GetCommentsSort implements EnumParam<String> {
     @SerializedName("asc")
     CHRONOLOGICAL("asc"),
 
     @SerializedName("desc")
-    REVERSE_CHRONOLOGICAL("desc");
+    REVERSE_CHRONOLOGICAL("desc"),
+
+    @SerializedName("smart")
+    MOST_INTERESTING("smart");
 
     private final String value;
 

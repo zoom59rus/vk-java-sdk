@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Item type
  */
-public enum NewsfeedItemType implements EnumParam {
+public enum NewsfeedItemType implements EnumParam<String> {
     @SerializedName("post")
     POST("post"),
 
@@ -45,7 +45,10 @@ public enum NewsfeedItemType implements EnumParam {
     AUDIO_PLAYLIST("audio_playlist"),
 
     @SerializedName("clip")
-    CLIP("clip");
+    CLIP("clip"),
+
+    @SerializedName("clips_retention")
+    CLIPS_RETENTION("clips_retention");
 
     private final String value;
 

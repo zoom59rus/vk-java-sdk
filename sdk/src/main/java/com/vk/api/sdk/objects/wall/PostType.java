@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Post type
  */
-public enum PostType implements EnumParam {
+public enum PostType implements EnumParam<String> {
     @SerializedName("post")
     POST("post"),
 
@@ -30,7 +30,10 @@ public enum PostType implements EnumParam {
     PHOTO("photo"),
 
     @SerializedName("video")
-    VIDEO("video");
+    VIDEO("video"),
+
+    @SerializedName("clip")
+    CLIP("clip");
 
     private final String value;
 

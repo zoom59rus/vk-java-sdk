@@ -4,6 +4,7 @@ package com.vk.api.sdk.objects.users;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
+
 import java.util.Objects;
 
 /**
@@ -27,12 +28,6 @@ public class School implements Validable {
      */
     @SerializedName("class_id")
     private Integer classId;
-
-    /**
-     * Country ID
-     */
-    @SerializedName("country")
-    private Integer country;
 
     /**
      * School ID
@@ -103,15 +98,6 @@ public class School implements Validable {
 
     public School setClassId(Integer classId) {
         this.classId = classId;
-        return this;
-    }
-
-    public Integer getCountry() {
-        return country;
-    }
-
-    public School setCountry(Integer country) {
-        this.country = country;
         return this;
     }
 
@@ -189,7 +175,7 @@ public class School implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(country, speciality, typeStr, classId, city, yearFrom, name, className, id, yearGraduated, type, yearTo);
+        return Objects.hash(speciality, typeStr, classId, city, yearFrom, name, className, id, yearGraduated, type, yearTo);
     }
 
     @Override
@@ -197,8 +183,7 @@ public class School implements Validable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         School school = (School) o;
-        return Objects.equals(country, school.country) &&
-                Objects.equals(speciality, school.speciality) &&
+        return Objects.equals(speciality, school.speciality) &&
                 Objects.equals(yearFrom, school.yearFrom) &&
                 Objects.equals(city, school.city) &&
                 Objects.equals(classId, school.classId) &&
@@ -219,8 +204,7 @@ public class School implements Validable {
 
     public String toPrettyString() {
         final StringBuilder sb = new StringBuilder("School{");
-        sb.append("country=").append(country);
-        sb.append(", speciality='").append(speciality).append("'");
+        sb.append("speciality='").append(speciality).append("'");
         sb.append(", yearFrom=").append(yearFrom);
         sb.append(", city=").append(city);
         sb.append(", classId=").append(classId);

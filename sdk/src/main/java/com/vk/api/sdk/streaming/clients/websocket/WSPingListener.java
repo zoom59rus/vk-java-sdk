@@ -2,8 +2,8 @@ package com.vk.api.sdk.streaming.clients.websocket;
 
 import org.asynchttpclient.ws.WebSocket;
 import org.asynchttpclient.ws.WebSocketListener;
-import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 /**
  * Listener for ping messages

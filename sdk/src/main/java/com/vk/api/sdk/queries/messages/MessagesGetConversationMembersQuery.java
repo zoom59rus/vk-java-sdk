@@ -8,6 +8,7 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.messages.responses.GetConversationMembersResponse;
 import com.vk.api.sdk.objects.users.Fields;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -145,6 +146,29 @@ public class MessagesGetConversationMembersQuery extends AbstractQueryBuilder<Me
     @ApiParam("fields")
     public MessagesGetConversationMembersQuery fields(List<Fields> value) {
         return unsafeParam("fields", value);
+    }
+
+    /**
+     * memberIds
+     * Set member ids
+     *
+     * @param value value of "member ids" parameter.
+     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
+     */
+    @ApiParam("member_ids")
+    public MessagesGetConversationMembersQuery memberIds(Integer... value) {
+        return unsafeParam("member_ids", value);
+    }
+
+    /**
+     * Set member ids
+     *
+     * @param value value of "member ids" parameter.
+     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
+     */
+    @ApiParam("member_ids")
+    public MessagesGetConversationMembersQuery memberIds(List<Integer> value) {
+        return unsafeParam("member_ids", value);
     }
 
     @Override

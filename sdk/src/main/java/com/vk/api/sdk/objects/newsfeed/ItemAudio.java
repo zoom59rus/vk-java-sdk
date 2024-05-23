@@ -4,12 +4,13 @@ package com.vk.api.sdk.objects.newsfeed;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
+
 import java.util.Objects;
 
 /**
  * ItemAudio object
  */
-public class ItemAudio extends ItemBase implements Validable {
+public class ItemAudio extends ItemBase implements NewsfeedItem, Validable {
     @SerializedName("audio")
     private ItemAudioAudio audio;
 

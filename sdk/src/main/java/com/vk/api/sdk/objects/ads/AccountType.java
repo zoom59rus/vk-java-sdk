@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Account type
  */
-public enum AccountType implements EnumParam {
+public enum AccountType implements EnumParam<String> {
     @SerializedName("general")
     GENERAL("general"),
 

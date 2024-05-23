@@ -4,6 +4,7 @@ package com.vk.api.sdk.objects.users;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
+
 import java.util.Objects;
 
 /**
@@ -12,9 +13,6 @@ import java.util.Objects;
 public class Occupation implements Validable {
     @SerializedName("city_id")
     private Integer cityId;
-
-    @SerializedName("country_id")
-    private Integer countryId;
 
     @SerializedName("graduate_year")
     private Integer graduateYear;
@@ -43,15 +41,6 @@ public class Occupation implements Validable {
 
     public Occupation setCityId(Integer cityId) {
         this.cityId = cityId;
-        return this;
-    }
-
-    public Integer getCountryId() {
-        return countryId;
-    }
-
-    public Occupation setCountryId(Integer countryId) {
-        this.countryId = countryId;
         return this;
     }
 
@@ -93,7 +82,7 @@ public class Occupation implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, graduateYear, id, cityId, type, countryId);
+        return Objects.hash(name, graduateYear, id, cityId, type);
     }
 
     @Override
@@ -105,7 +94,6 @@ public class Occupation implements Validable {
                 Objects.equals(name, occupation.name) &&
                 Objects.equals(id, occupation.id) &&
                 Objects.equals(type, occupation.type) &&
-                Objects.equals(countryId, occupation.countryId) &&
                 Objects.equals(cityId, occupation.cityId);
     }
 
@@ -121,7 +109,6 @@ public class Occupation implements Validable {
         sb.append(", name='").append(name).append("'");
         sb.append(", id=").append(id);
         sb.append(", type='").append(type).append("'");
-        sb.append(", countryId=").append(countryId);
         sb.append(", cityId=").append(cityId);
         sb.append('}');
         return sb.toString();

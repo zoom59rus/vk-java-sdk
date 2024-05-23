@@ -7,50 +7,8 @@ import com.vk.api.sdk.client.actors.GroupActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiMethod;
 import com.vk.api.sdk.objects.market.ReportCommentReason;
-import com.vk.api.sdk.queries.market.MarketAddAlbumQuery;
-import com.vk.api.sdk.queries.market.MarketAddPropertyQuery;
-import com.vk.api.sdk.queries.market.MarketAddPropertyVariantQuery;
-import com.vk.api.sdk.queries.market.MarketAddQuery;
-import com.vk.api.sdk.queries.market.MarketAddToAlbumQuery;
-import com.vk.api.sdk.queries.market.MarketCreateCommentQuery;
-import com.vk.api.sdk.queries.market.MarketDeleteAlbumQuery;
-import com.vk.api.sdk.queries.market.MarketDeleteCommentQuery;
-import com.vk.api.sdk.queries.market.MarketDeletePropertyQuery;
-import com.vk.api.sdk.queries.market.MarketDeletePropertyVariantQuery;
-import com.vk.api.sdk.queries.market.MarketDeleteQuery;
-import com.vk.api.sdk.queries.market.MarketEditAlbumQuery;
-import com.vk.api.sdk.queries.market.MarketEditCommentQuery;
-import com.vk.api.sdk.queries.market.MarketEditOrderQuery;
-import com.vk.api.sdk.queries.market.MarketEditPropertyQuery;
-import com.vk.api.sdk.queries.market.MarketEditPropertyVariantQuery;
-import com.vk.api.sdk.queries.market.MarketEditQuery;
-import com.vk.api.sdk.queries.market.MarketFilterCategoriesQueryWithNew;
-import com.vk.api.sdk.queries.market.MarketGetAlbumByIdQuery;
-import com.vk.api.sdk.queries.market.MarketGetAlbumsQuery;
-import com.vk.api.sdk.queries.market.MarketGetByIdQuery;
-import com.vk.api.sdk.queries.market.MarketGetByIdQueryWithExtended;
-import com.vk.api.sdk.queries.market.MarketGetCategoriesQueryWithNew;
-import com.vk.api.sdk.queries.market.MarketGetCommentsQuery;
-import com.vk.api.sdk.queries.market.MarketGetGroupOrdersQuery;
-import com.vk.api.sdk.queries.market.MarketGetOrderByIdQuery;
-import com.vk.api.sdk.queries.market.MarketGetOrderItemsQuery;
-import com.vk.api.sdk.queries.market.MarketGetOrdersQuery;
-import com.vk.api.sdk.queries.market.MarketGetOrdersQueryWithExtended;
-import com.vk.api.sdk.queries.market.MarketGetQuery;
-import com.vk.api.sdk.queries.market.MarketGetQueryWithExtended;
-import com.vk.api.sdk.queries.market.MarketGroupItemsQuery;
-import com.vk.api.sdk.queries.market.MarketRemoveFromAlbumQuery;
-import com.vk.api.sdk.queries.market.MarketReorderAlbumsQuery;
-import com.vk.api.sdk.queries.market.MarketReorderItemsQuery;
-import com.vk.api.sdk.queries.market.MarketReportCommentQuery;
-import com.vk.api.sdk.queries.market.MarketReportQuery;
-import com.vk.api.sdk.queries.market.MarketRestoreCommentQuery;
-import com.vk.api.sdk.queries.market.MarketRestoreQuery;
-import com.vk.api.sdk.queries.market.MarketSearchItemsBasicQueryWithBasic;
-import com.vk.api.sdk.queries.market.MarketSearchItemsQuery;
-import com.vk.api.sdk.queries.market.MarketSearchQuery;
-import com.vk.api.sdk.queries.market.MarketSearchQueryWithExtended;
-import com.vk.api.sdk.queries.market.MarketUngroupItemsQuery;
+import com.vk.api.sdk.queries.market.*;
+
 import java.util.List;
 
 /**
@@ -856,6 +814,53 @@ public class Market extends AbstractAction {
     }
 
     /**
+     * Returns the server address for market photo upload.
+     *
+     * @param actor vk user actor
+     * @param groupId Community ID.
+     * @return query
+     */
+    @ApiMethod("market.getProductPhotoUploadServer")
+    public MarketGetProductPhotoUploadServerQuery getProductPhotoUploadServer(UserActor actor,
+            Long groupId) {
+        return new MarketGetProductPhotoUploadServerQuery(getClient(), actor, groupId);
+    }
+
+    /**
+     * Returns the server address for market photo upload.
+     *
+     * @param actor vk user actor
+     * @return only actor query 
+     */
+    @ApiMethod("market.getProductPhotoUploadServer")
+    public MarketGetProductPhotoUploadServerQuery getProductPhotoUploadServer(UserActor actor) {
+        return new MarketGetProductPhotoUploadServerQuery(getClient(), actor);
+    }
+
+    /**
+     * Get properties
+     *
+     * @param actor vk user actor
+     * @param groupId
+     * @return query
+     */
+    @ApiMethod("market.getProperties")
+    public MarketGetPropertiesQuery getProperties(UserActor actor, Long groupId) {
+        return new MarketGetPropertiesQuery(getClient(), actor, groupId);
+    }
+
+    /**
+     * Get properties
+     *
+     * @param actor vk user actor
+     * @return only actor query 
+     */
+    @ApiMethod("market.getProperties")
+    public MarketGetPropertiesQuery getProperties(UserActor actor) {
+        return new MarketGetPropertiesQuery(getClient(), actor);
+    }
+
+    /**
      * @param actor vk user actor
      * @param groupId Group id.
      * @param itemIds Item ids.
@@ -1072,6 +1077,19 @@ public class Market extends AbstractAction {
     @ApiMethod("market.restoreComment")
     public MarketRestoreCommentQuery restoreComment(UserActor actor) {
         return new MarketRestoreCommentQuery(getClient(), actor);
+    }
+
+    /**
+     * Save market photo after upload.
+     *
+     * @param actor vk user actor
+     * @param uploadResponse Upload response
+     * @return query
+     */
+    @ApiMethod("market.saveProductPhoto")
+    public MarketSaveProductPhotoQueryWithId saveProductPhotoId(UserActor actor,
+            String uploadResponse) {
+        return new MarketSaveProductPhotoQueryWithId(getClient(), actor, uploadResponse);
     }
 
     /**

@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.support;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum UnblockScreenModalButtonFieldsType implements EnumParam {
+public enum UnblockScreenModalButtonFieldsType implements EnumParam<String> {
     @SerializedName("modal_button")
     MODAL_BUTTON("modal_button");
 

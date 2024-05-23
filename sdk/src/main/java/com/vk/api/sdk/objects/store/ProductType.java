@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Product type
  */
-public enum ProductType implements EnumParam {
+public enum ProductType implements EnumParam<String> {
     @SerializedName("stickers")
     STICKERS("stickers");
 

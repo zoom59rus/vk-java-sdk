@@ -5,13 +5,14 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.List;
 import java.util.Objects;
 
 /**
  * UnblockScreenStepperFields object
  */
-public class UnblockScreenStepperFields implements Validable {
+public class UnblockScreenStepperFields implements UnblockScreenItem, Validable {
     @SerializedName("questions")
     private List<UnblockScreenStepperQuestions> questions;
 

@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Which model to use for recognition. `neutral` -- general purpose (interviews, TV shows, etc.), `spontaneous` -- for NSFW audios (slang, profanity, etc.)
  */
-public enum ProcessModel implements EnumParam {
+public enum ProcessModel implements EnumParam<String> {
     @SerializedName("neutral")
     NEUTRAL("neutral"),
 

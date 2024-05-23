@@ -5,12 +5,7 @@ import com.vk.api.sdk.client.AbstractAction;
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiMethod;
-import com.vk.api.sdk.queries.adsweb.AdswebGetAdCategoriesQuery;
-import com.vk.api.sdk.queries.adsweb.AdswebGetAdUnitCodeQuery;
-import com.vk.api.sdk.queries.adsweb.AdswebGetAdUnitsQuery;
-import com.vk.api.sdk.queries.adsweb.AdswebGetFraudHistoryQuery;
-import com.vk.api.sdk.queries.adsweb.AdswebGetSitesQuery;
-import com.vk.api.sdk.queries.adsweb.AdswebGetStatisticsQuery;
+import com.vk.api.sdk.queries.adsweb.*;
 
 /**
  * List of Adsweb methods

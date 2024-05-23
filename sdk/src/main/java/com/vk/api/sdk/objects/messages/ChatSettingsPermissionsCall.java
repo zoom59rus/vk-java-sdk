@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Who can make calls
  */
-public enum ChatSettingsPermissionsCall implements EnumParam {
+public enum ChatSettingsPermissionsCall implements EnumParam<String> {
     @SerializedName("owner")
     OWNER("owner"),
 

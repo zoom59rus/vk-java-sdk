@@ -3,15 +3,16 @@ package com.vk.api.sdk.objects.callback;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+import com.vk.api.sdk.events.CallbackEvent;
 import com.vk.api.sdk.objects.Validable;
-import com.vk.api.sdk.objects.client.InfoForBots;
 import com.vk.api.sdk.objects.messages.Message;
+
 import java.util.Objects;
 
 /**
  * MessageObject object
  */
-public class MessageObject implements Validable {
+public class MessageObject implements Validable, CallbackEvent {
     @SerializedName("client_info")
     private InfoForBots clientInfo;
 

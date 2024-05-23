@@ -13,6 +13,7 @@ import com.vk.api.sdk.exceptions.ApiException;
 import com.vk.api.sdk.exceptions.ApiExtendedException;
 import com.vk.api.sdk.exceptions.ClientException;
 import com.vk.api.sdk.exceptions.UploadException;
+import com.vk.api.sdk.objects.base.Error;
 import org.apache.http.Header;
 import org.apache.http.message.BasicHeader;
 import org.slf4j.Logger;
@@ -33,7 +34,7 @@ public abstract class UploadQueryBuilder<T, R> extends ApiRequest<R> {
     private final Map<String, File> files;
 
     public UploadQueryBuilder(VkApiClient client, String uploadUrl, Map<String, File> files, Type type) {
-        super(uploadUrl, client.getTransportClient(), client.getGson(), 0, type);
+        super(uploadUrl, client.getTransportClient(), 0, type);
         this.files = files;
     }
 
@@ -61,13 +62,11 @@ public abstract class UploadQueryBuilder<T, R> extends ApiRequest<R> {
         JsonObject json = (JsonObject) JsonParser.parseReader(jsonReader);
 
         if (json.has("error")) {
-            UploadException uploadException = new UploadException(
-                    0,
-                    response.getStatusCode(),
-                    response.getHeaders(),
-                    textResponse,
-                    ""
-            );
+            Error error = new Error()
+                    .setErrorCode(0)
+                    .setErrorText(textResponse)
+                    .setErrorMsg("");
+            UploadException uploadException = new UploadException(error, response.getStatusCode(), response.getHeaders());
             LOG.error("API error", uploadException);
             throw uploadException;
         }

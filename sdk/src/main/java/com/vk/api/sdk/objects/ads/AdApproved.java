@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Review status
  */
-public enum AdApproved implements EnumParam {
+public enum AdApproved implements EnumParam<Integer> {
     @SerializedName("0")
     NOT_MODERATED(0),
 
@@ -26,8 +26,8 @@ public enum AdApproved implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

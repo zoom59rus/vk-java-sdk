@@ -3,18 +3,18 @@ package com.vk.api.sdk.objects.callback;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+import com.vk.api.sdk.events.CallbackEvent;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
-import com.vk.api.sdk.objects.base.BoolInt;
+
 import java.util.Objects;
 
 /**
  * GroupChangeSettings object
  */
-public class GroupChangeSettings implements Validable {
-    @SerializedName("self")
-    @Required
-    private BoolInt self;
+public class GroupChangeSettings implements Validable, CallbackEvent {
+    @SerializedName("changes")
+    private GroupSettingsChanges changes;
 
     /**
      * Entity: owner
@@ -23,12 +23,13 @@ public class GroupChangeSettings implements Validable {
     @Required
     private Long userId;
 
-    public boolean isSelf() {
-        return self == BoolInt.YES;
+    public GroupSettingsChanges getChanges() {
+        return changes;
     }
 
-    public BoolInt getSelf() {
-        return self;
+    public GroupChangeSettings setChanges(GroupSettingsChanges changes) {
+        this.changes = changes;
+        return this;
     }
 
     public Long getUserId() {
@@ -42,7 +43,7 @@ public class GroupChangeSettings implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(self, userId);
+        return Objects.hash(changes, userId);
     }
 
     @Override
@@ -51,7 +52,7 @@ public class GroupChangeSettings implements Validable {
         if (o == null || getClass() != o.getClass()) return false;
         GroupChangeSettings groupChangeSettings = (GroupChangeSettings) o;
         return Objects.equals(userId, groupChangeSettings.userId) &&
-                Objects.equals(self, groupChangeSettings.self);
+                Objects.equals(changes, groupChangeSettings.changes);
     }
 
     @Override
@@ -63,7 +64,7 @@ public class GroupChangeSettings implements Validable {
     public String toPrettyString() {
         final StringBuilder sb = new StringBuilder("GroupChangeSettings{");
         sb.append("userId=").append(userId);
-        sb.append(", self=").append(self);
+        sb.append(", changes=").append(changes);
         sb.append('}');
         return sb.toString();
     }

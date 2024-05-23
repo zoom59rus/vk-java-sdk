@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Story type.
  */
-public enum StoryType implements EnumParam {
+public enum StoryType implements EnumParam<String> {
     @SerializedName("photo")
     PHOTO("photo"),
 

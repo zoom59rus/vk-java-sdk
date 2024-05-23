@@ -31,9 +31,9 @@ public abstract class AbstractQueryBuilder<T, R> extends ApiRequest<R> {
      * @param type   type of method response
      */
     public AbstractQueryBuilder(VkApiClient client, String method, Type type) {
-        super(client.getApiEndpoint() + method, client.getTransportClient(), client.getGson(), client.getRetryAttemptsInternalServerErrorCount(), type);
+        super(client.getApiEndpoint() + method, client.getTransportClient(), client.getRetryAttemptsInternalServerErrorCount(), type);
         this.method = method;
-        version(client.getVersion());
+        version(client.getApiVersion());
     }
 
     /**
@@ -45,8 +45,8 @@ public abstract class AbstractQueryBuilder<T, R> extends ApiRequest<R> {
      * @param type     type of method response
      */
     public AbstractQueryBuilder(VkApiClient client, String endpoint, String method, Type type) {
-        super(endpoint + method, client.getTransportClient(), client.getGson(), client.getRetryAttemptsInternalServerErrorCount(), type);
-        version(client.getVersion());
+        super(endpoint + method, client.getTransportClient(), client.getRetryAttemptsInternalServerErrorCount(), type);
+        version(client.getApiVersion());
     }
 
     /**
@@ -276,7 +276,7 @@ public abstract class AbstractQueryBuilder<T, R> extends ApiRequest<R> {
      * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
      */
     public T unsafeParam(String key, EnumParam... fields) {
-        return unsafeParam(key, Arrays.stream(fields).map(EnumParam::getValue).collect(Collectors.joining(",")));
+        return unsafeParam(key, Arrays.stream(fields).map(EnumParam::toString).collect(Collectors.joining(",")));
     }
 
     /**
@@ -287,7 +287,7 @@ public abstract class AbstractQueryBuilder<T, R> extends ApiRequest<R> {
      * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
      */
     public T unsafeParam(String key, List<? extends EnumParam> fields) {
-        return unsafeParam(key, fields.stream().map(EnumParam::getValue).collect(Collectors.joining(",")));
+        return unsafeParam(key, fields.stream().map(EnumParam::toString).collect(Collectors.joining(",")));
     }
 
     /**

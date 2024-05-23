@@ -7,14 +7,8 @@ import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiMethod;
 import com.vk.api.sdk.objects.orders.ChangeStateAction;
-import com.vk.api.sdk.queries.orders.OrdersCancelSubscriptionQuery;
-import com.vk.api.sdk.queries.orders.OrdersChangeStateQuery;
-import com.vk.api.sdk.queries.orders.OrdersGetAmountQuery;
-import com.vk.api.sdk.queries.orders.OrdersGetByIdQuery;
-import com.vk.api.sdk.queries.orders.OrdersGetQuery;
-import com.vk.api.sdk.queries.orders.OrdersGetUserSubscriptionByIdQuery;
-import com.vk.api.sdk.queries.orders.OrdersGetUserSubscriptionsQuery;
-import com.vk.api.sdk.queries.orders.OrdersUpdateSubscriptionQuery;
+import com.vk.api.sdk.queries.orders.*;
+
 import java.util.List;
 
 /**
@@ -167,27 +161,5 @@ public class Orders extends AbstractAction {
     @ApiMethod("orders.getUserSubscriptions")
     public OrdersGetUserSubscriptionsQuery getUserSubscriptions(ServiceActor actor) {
         return new OrdersGetUserSubscriptionsQuery(getClient(), actor);
-    }
-
-    /**
-     * @param actor vk service actor
-     * @param userId
-     * @param subscriptionId
-     * @param price
-     * @return query
-     */
-    @ApiMethod("orders.updateSubscription")
-    public OrdersUpdateSubscriptionQuery updateSubscription(ServiceActor actor, Long userId,
-            Integer subscriptionId, Integer price) {
-        return new OrdersUpdateSubscriptionQuery(getClient(), actor, userId, subscriptionId, price);
-    }
-
-    /**
-     * @param actor vk service actor
-     * @return only actor query 
-     */
-    @ApiMethod("orders.updateSubscription")
-    public OrdersUpdateSubscriptionQuery updateSubscription(ServiceActor actor) {
-        return new OrdersUpdateSubscriptionQuery(getClient(), actor);
     }
 }

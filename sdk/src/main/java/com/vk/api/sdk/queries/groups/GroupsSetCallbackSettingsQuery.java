@@ -7,6 +7,7 @@ import com.vk.api.sdk.client.actors.GroupActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.base.responses.OkResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -274,6 +275,28 @@ public class GroupsSetCallbackSettingsQuery extends AbstractQueryBuilder<GroupsS
     @ApiParam("wall_repost")
     public GroupsSetCallbackSettingsQuery wallRepost(Boolean value) {
         return unsafeParam("wall_repost", value);
+    }
+
+    /**
+     * Scheduled post added to time slot ('0' - disabled, '1' - enabled).
+     *
+     * @param value value of "wall schedule post new" parameter.
+     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
+     */
+    @ApiParam("wall_schedule_post_new")
+    public GroupsSetCallbackSettingsQuery wallSchedulePostNew(Boolean value) {
+        return unsafeParam("wall_schedule_post_new", value);
+    }
+
+    /**
+     * Scheduled post removed from time slot ('0' - disabled, '1' - enabled).
+     *
+     * @param value value of "wall schedule post delete" parameter.
+     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
+     */
+    @ApiParam("wall_schedule_post_delete")
+    public GroupsSetCallbackSettingsQuery wallSchedulePostDelete(Boolean value) {
+        return unsafeParam("wall_schedule_post_delete", value);
     }
 
     /**

@@ -9,6 +9,7 @@ import com.vk.api.sdk.objects.base.Link;
 import com.vk.api.sdk.objects.market.MarketItem;
 import com.vk.api.sdk.objects.video.VideoFull;
 import com.vk.api.sdk.objects.wall.WallpostFull;
+
 import java.util.List;
 import java.util.Objects;
 

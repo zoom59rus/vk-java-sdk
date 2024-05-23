@@ -9,6 +9,7 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.ads.UserSpecification;
 import com.vk.api.sdk.objects.ads.responses.UpdateOfficeUsersResponse;
 import com.vk.api.sdk.objects.annotations.ApiParam;
+
 import java.util.Arrays;
 import java.util.List;
 

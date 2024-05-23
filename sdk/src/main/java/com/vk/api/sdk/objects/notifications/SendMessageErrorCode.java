@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Error code
  */
-public enum SendMessageErrorCode implements EnumParam {
+public enum SendMessageErrorCode implements EnumParam<Integer> {
     @SerializedName("1")
     NOTIFICATIONS_DISABLED(1),
 
@@ -26,8 +26,8 @@ public enum SendMessageErrorCode implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

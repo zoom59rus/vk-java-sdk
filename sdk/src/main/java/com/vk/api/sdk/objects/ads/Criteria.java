@@ -4,6 +4,7 @@ package com.vk.api.sdk.objects.ads;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
+
 import java.util.Objects;
 
 /**
@@ -69,12 +70,6 @@ public class Criteria implements Validable {
      */
     @SerializedName("count")
     private String count;
-
-    /**
-     * Country ID
-     */
-    @SerializedName("country")
-    private String country;
 
     /**
      * Districts IDs
@@ -436,15 +431,6 @@ public class Criteria implements Validable {
 
     public Criteria setCount(String count) {
         this.count = count;
-        return this;
-    }
-
-    public String getCountry() {
-        return country;
-    }
-
-    public Criteria setCountry(String country) {
-        this.country = country;
         return this;
     }
 
@@ -864,7 +850,7 @@ public class Criteria implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(country, streets, keyPhrases, retargetingGroupsNot, interestCategoriesFormula, groupsActive, groupsFormula, paying, musicArtistsFormula, userBrowsers, religions, interestCategories, cities, travellers, suggestedCriteria, userOs, geoNear, geoPointType, count, positions, stations, browsers, tags, uniTo, mobileOsMaxVersion, mobileAppsEventsFormula, schools, priceListRetargetingFormula, statuses, appsNot, mobileManufacturers, birthday, retargetingGroups, abTest, keyPhrasesDays, districts, operators, citiesNot, ageTo, apps, groupTypes, groupsActiveRecommended, sex, userDevices, groups, priceListId, groupsActiveFormula, groupsRecommended, priceListAudienceType, uniFrom, mobileOsMinVersion, wifiOnly, groupsNot, schoolTo, ageFrom, interests, schoolFrom);
+        return Objects.hash(streets, keyPhrases, retargetingGroupsNot, interestCategoriesFormula, groupsActive, groupsFormula, paying, musicArtistsFormula, userBrowsers, religions, interestCategories, cities, travellers, suggestedCriteria, userOs, geoNear, geoPointType, count, positions, stations, browsers, tags, uniTo, mobileOsMaxVersion, mobileAppsEventsFormula, schools, priceListRetargetingFormula, statuses, appsNot, mobileManufacturers, birthday, retargetingGroups, abTest, keyPhrasesDays, districts, operators, citiesNot, ageTo, apps, groupTypes, groupsActiveRecommended, sex, userDevices, groups, priceListId, groupsActiveFormula, groupsRecommended, priceListAudienceType, uniFrom, mobileOsMinVersion, wifiOnly, groupsNot, schoolTo, ageFrom, interests, schoolFrom);
     }
 
     @Override
@@ -872,8 +858,7 @@ public class Criteria implements Validable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Criteria criteria = (Criteria) o;
-        return Objects.equals(country, criteria.country) &&
-                Objects.equals(userDevices, criteria.userDevices) &&
+        return Objects.equals(userDevices, criteria.userDevices) &&
                 Objects.equals(streets, criteria.streets) &&
                 Objects.equals(groupTypes, criteria.groupTypes) &&
                 Objects.equals(schoolFrom, criteria.schoolFrom) &&
@@ -939,8 +924,7 @@ public class Criteria implements Validable {
 
     public String toPrettyString() {
         final StringBuilder sb = new StringBuilder("Criteria{");
-        sb.append("country='").append(country).append("'");
-        sb.append(", userDevices='").append(userDevices).append("'");
+        sb.append("userDevices='").append(userDevices).append("'");
         sb.append(", streets='").append(streets).append("'");
         sb.append(", groupTypes='").append(groupTypes).append("'");
         sb.append(", schoolFrom='").append(schoolFrom).append("'");

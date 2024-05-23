@@ -9,6 +9,7 @@ import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.storage.responses.GetResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -28,17 +29,6 @@ public class StorageGetQuery extends AbstractQueryBuilder<StorageGetQuery, List<
     }
 
     /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public StorageGetQuery(VkApiClient client, UserActor actor) {
-        super(client, "storage.get", Utils.buildParametrizedType(List.class, GetResponse.class));
-        accessToken(actor.getAccessToken());
-    }
-
-    /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
      * @param client VK API client
@@ -48,6 +38,17 @@ public class StorageGetQuery extends AbstractQueryBuilder<StorageGetQuery, List<
         super(client, "storage.get", Utils.buildParametrizedType(List.class, GetResponse.class));
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public StorageGetQuery(VkApiClient client, UserActor actor) {
+        super(client, "storage.get", Utils.buildParametrizedType(List.class, GetResponse.class));
+        accessToken(actor.getAccessToken());
     }
 
     /**

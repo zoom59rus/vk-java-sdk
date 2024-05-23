@@ -7,6 +7,7 @@ import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.apps.responses.IsNotificationsAllowedResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,17 +15,6 @@ import java.util.List;
  * Query for Apps.isNotificationsAllowed method
  */
 public class AppsIsNotificationsAllowedQuery extends AbstractQueryBuilder<AppsIsNotificationsAllowedQuery, IsNotificationsAllowedResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public AppsIsNotificationsAllowedQuery(VkApiClient client, UserActor actor) {
-        super(client, "apps.isNotificationsAllowed", IsNotificationsAllowedResponse.class);
-        accessToken(actor.getAccessToken());
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -35,6 +25,17 @@ public class AppsIsNotificationsAllowedQuery extends AbstractQueryBuilder<AppsIs
         super(client, "apps.isNotificationsAllowed", IsNotificationsAllowedResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public AppsIsNotificationsAllowedQuery(VkApiClient client, UserActor actor) {
+        super(client, "apps.isNotificationsAllowed", IsNotificationsAllowedResponse.class);
+        accessToken(actor.getAccessToken());
     }
 
     /**

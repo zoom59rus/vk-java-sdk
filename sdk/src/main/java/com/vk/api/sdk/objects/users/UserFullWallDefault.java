@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.users;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum UserFullWallDefault implements EnumParam {
+public enum UserFullWallDefault implements EnumParam<String> {
     @SerializedName("owner")
     OWNER("owner"),
 

@@ -7,7 +7,13 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Type of object from which to unsubscribe: 'note' - note, 'photo' - photo, 'post' - post on user wall or community wall, 'topic' - topic, 'video' - video
  */
-public enum UnsubscribeType implements EnumParam {
+public enum UnsubscribeType implements EnumParam<String> {
+    @SerializedName("clip")
+    CLIP("clip"),
+
+    @SerializedName("market")
+    MARKET("market"),
+
     @SerializedName("note")
     NOTE("note"),
 

@@ -3,14 +3,16 @@ package com.vk.api.sdk.objects.callback;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+import com.vk.api.sdk.events.CallbackEvent;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
  * PollVoteNew object
  */
-public class PollVoteNew implements Validable {
+public class PollVoteNew implements Validable, CallbackEvent {
     @SerializedName("option_id")
     @Required
     private Integer optionId;

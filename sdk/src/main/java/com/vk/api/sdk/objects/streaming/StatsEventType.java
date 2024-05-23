@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Events type
  */
-public enum StatsEventType implements EnumParam {
+public enum StatsEventType implements EnumParam<String> {
     @SerializedName("post")
     POST("post"),
 

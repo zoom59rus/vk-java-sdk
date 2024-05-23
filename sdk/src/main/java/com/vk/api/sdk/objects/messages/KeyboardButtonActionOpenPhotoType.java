@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.messages;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum KeyboardButtonActionOpenPhotoType implements EnumParam {
+public enum KeyboardButtonActionOpenPhotoType implements EnumParam<String> {
     @SerializedName("open_photo")
     OPEN_PHOTO("open_photo");
 

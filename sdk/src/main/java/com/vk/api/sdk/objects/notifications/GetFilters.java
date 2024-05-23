@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.notifications;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum GetFilters implements EnumParam {
+public enum GetFilters implements EnumParam<String> {
     @SerializedName("wall")
     WALL("wall"),
 

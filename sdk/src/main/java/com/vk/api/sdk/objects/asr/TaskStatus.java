@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Status of the task.
  */
-public enum TaskStatus implements EnumParam {
+public enum TaskStatus implements EnumParam<String> {
     @SerializedName("processing")
     PROCESSING("processing"),
 

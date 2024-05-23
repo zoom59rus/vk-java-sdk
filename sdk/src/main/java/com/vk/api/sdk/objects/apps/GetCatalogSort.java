@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Sort order: 'popular_today' - popular for one day (default), 'visitors' - by visitors number , 'create_date' - by creation date, 'growth_rate' - by growth rate, 'popular_week' - popular for one week
  */
-public enum GetCatalogSort implements EnumParam {
+public enum GetCatalogSort implements EnumParam<String> {
     @SerializedName("create_date")
     CREATE_DATE("create_date"),
 

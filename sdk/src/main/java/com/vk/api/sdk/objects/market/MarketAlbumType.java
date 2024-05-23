@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Type of album
  */
-public enum MarketAlbumType implements EnumParam {
+public enum MarketAlbumType implements EnumParam<Integer> {
     @SerializedName("0")
     MARKET(0),
 
@@ -20,8 +20,8 @@ public enum MarketAlbumType implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.groups;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum GroupMarketCurrency implements EnumParam {
+public enum GroupMarketCurrency implements EnumParam<Integer> {
     @SerializedName("643")
     RUSSIAN_RUBLES(643),
 
@@ -26,8 +26,8 @@ public enum GroupMarketCurrency implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

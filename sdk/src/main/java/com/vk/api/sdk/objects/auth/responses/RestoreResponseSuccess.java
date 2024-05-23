@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * 1 if success
  */
-public enum RestoreResponseSuccess implements EnumParam {
+public enum RestoreResponseSuccess implements EnumParam<Integer> {
     @SerializedName("1")
     OK(1);
 
@@ -17,8 +17,8 @@ public enum RestoreResponseSuccess implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

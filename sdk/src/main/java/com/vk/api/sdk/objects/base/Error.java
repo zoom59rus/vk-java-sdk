@@ -5,13 +5,15 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+import com.vk.api.sdk.objects.prettycards.PrettyCardOrError;
+
 import java.util.List;
 import java.util.Objects;
 
 /**
  * Error object
  */
-public class Error implements Validable {
+public class Error implements PrettyCardOrError, Validable {
     /**
      * Error code
      */
@@ -36,6 +38,10 @@ public class Error implements Validable {
      */
     @SerializedName("error_text")
     private String errorText;
+
+    @SerializedName("inner_type")
+    @Required
+    private ErrorInnerType innerType;
 
     @SerializedName("request_params")
     private List<RequestParam> requestParams;
@@ -76,6 +82,15 @@ public class Error implements Validable {
         return this;
     }
 
+    public ErrorInnerType getInnerType() {
+        return innerType;
+    }
+
+    public Error setInnerType(ErrorInnerType innerType) {
+        this.innerType = innerType;
+        return this;
+    }
+
     public List<RequestParam> getRequestParams() {
         return requestParams;
     }
@@ -87,7 +102,7 @@ public class Error implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(errorText, errorSubcode, requestParams, errorCode, errorMsg);
+        return Objects.hash(errorText, errorSubcode, innerType, requestParams, errorCode, errorMsg);
     }
 
     @Override
@@ -97,6 +112,7 @@ public class Error implements Validable {
         Error error = (Error) o;
         return Objects.equals(errorText, error.errorText) &&
                 Objects.equals(errorMsg, error.errorMsg) &&
+                Objects.equals(innerType, error.innerType) &&
                 Objects.equals(requestParams, error.requestParams) &&
                 Objects.equals(errorCode, error.errorCode) &&
                 Objects.equals(errorSubcode, error.errorSubcode);
@@ -112,6 +128,7 @@ public class Error implements Validable {
         final StringBuilder sb = new StringBuilder("Error{");
         sb.append("errorText='").append(errorText).append("'");
         sb.append(", errorMsg='").append(errorMsg).append("'");
+        sb.append(", innerType='").append(innerType).append("'");
         sb.append(", requestParams=").append(requestParams);
         sb.append(", errorCode=").append(errorCode);
         sb.append(", errorSubcode=").append(errorSubcode);

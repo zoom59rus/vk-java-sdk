@@ -4,7 +4,9 @@ package com.vk.api.sdk.objects.ads;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
+import com.vk.api.sdk.objects.wall.PostCopyright;
 import com.vk.api.sdk.objects.wall.WallpostAttachment;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -44,6 +46,9 @@ public class Post implements Validable {
 
     @SerializedName("comments")
     private PostComments comments;
+
+    @SerializedName("copyright")
+    private PostCopyright copyright;
 
     /**
      * Created by
@@ -211,6 +216,15 @@ public class Post implements Validable {
 
     public Post setComments(PostComments comments) {
         this.comments = comments;
+        return this;
+    }
+
+    public PostCopyright getCopyright() {
+        return copyright;
+    }
+
+    public Post setCopyright(PostCopyright copyright) {
+        this.copyright = copyright;
         return this;
     }
 
@@ -396,7 +410,7 @@ public class Post implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(date, carouselOffset, attachments, canEdit, ownerId, type, donut, canDelete, id, text, markedAsAds, canPin, views, likes, owner, comments, isPinned, postType, edited, shortTextRate, fromId, createdBy, adsEasyPromote, isPromotedPostStealth, hash, reposts, isFavorite);
+        return Objects.hash(date, carouselOffset, copyright, attachments, canEdit, ownerId, type, donut, canDelete, id, text, markedAsAds, canPin, views, likes, owner, comments, isPinned, postType, edited, shortTextRate, fromId, createdBy, adsEasyPromote, isPromotedPostStealth, hash, reposts, isFavorite);
     }
 
     @Override
@@ -405,6 +419,7 @@ public class Post implements Validable {
         if (o == null || getClass() != o.getClass()) return false;
         Post post = (Post) o;
         return Objects.equals(date, post.date) &&
+                Objects.equals(copyright, post.copyright) &&
                 Objects.equals(adsEasyPromote, post.adsEasyPromote) &&
                 Objects.equals(attachments, post.attachments) &&
                 Objects.equals(fromId, post.fromId) &&
@@ -442,6 +457,7 @@ public class Post implements Validable {
     public String toPrettyString() {
         final StringBuilder sb = new StringBuilder("Post{");
         sb.append("date=").append(date);
+        sb.append(", copyright=").append(copyright);
         sb.append(", adsEasyPromote=").append(adsEasyPromote);
         sb.append(", attachments=").append(attachments);
         sb.append(", fromId=").append(fromId);

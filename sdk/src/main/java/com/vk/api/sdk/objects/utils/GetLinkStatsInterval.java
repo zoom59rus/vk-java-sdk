@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Interval.
  */
-public enum GetLinkStatsInterval implements EnumParam {
+public enum GetLinkStatsInterval implements EnumParam<String> {
     @SerializedName("day")
     DAY("day"),
 

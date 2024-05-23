@@ -7,6 +7,7 @@ import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.groups.GroupsArray;
 import com.vk.api.sdk.objects.users.UsersArray;
+
 import java.util.Objects;
 
 /**

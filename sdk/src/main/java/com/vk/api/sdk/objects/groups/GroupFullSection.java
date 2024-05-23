@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Main section of community
  */
-public enum GroupFullSection implements EnumParam {
+public enum GroupFullSection implements EnumParam<Integer> {
     @SerializedName("0")
     NONE(0),
 
@@ -161,8 +161,8 @@ public enum GroupFullSection implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

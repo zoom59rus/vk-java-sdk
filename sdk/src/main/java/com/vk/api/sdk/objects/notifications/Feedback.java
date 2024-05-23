@@ -7,6 +7,7 @@ import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.base.Geo;
 import com.vk.api.sdk.objects.base.LikesInfo;
 import com.vk.api.sdk.objects.wall.WallpostAttachment;
+
 import java.util.List;
 import java.util.Objects;
 

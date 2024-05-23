@@ -8,6 +8,7 @@ import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.base.responses.OkResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -40,30 +41,6 @@ public class StorageSetQuery extends AbstractQueryBuilder<StorageSetQuery, OkRes
     }
 
     /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     * @param key value of "key" parameter.
-     */
-    public StorageSetQuery(VkApiClient client, UserActor actor, String key) {
-        super(client, "storage.set", OkResponse.class);
-        accessToken(actor.getAccessToken());
-        key(key);
-    }
-
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public StorageSetQuery(VkApiClient client, UserActor actor) {
-        super(client, "storage.set", OkResponse.class);
-        accessToken(actor.getAccessToken());
-    }
-
-    /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
      * @param client VK API client
@@ -87,6 +64,30 @@ public class StorageSetQuery extends AbstractQueryBuilder<StorageSetQuery, OkRes
         super(client, "storage.set", OkResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     * @param key value of "key" parameter.
+     */
+    public StorageSetQuery(VkApiClient client, UserActor actor, String key) {
+        super(client, "storage.set", OkResponse.class);
+        accessToken(actor.getAccessToken());
+        key(key);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public StorageSetQuery(VkApiClient client, UserActor actor) {
+        super(client, "storage.set", OkResponse.class);
+        accessToken(actor.getAccessToken());
     }
 
     /**

@@ -7,12 +7,9 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Attachments type
  */
-public enum HistoryMessageAttachmentType implements EnumParam {
-    @SerializedName("photo")
-    PHOTO("photo"),
-
-    @SerializedName("video")
-    VIDEO("video"),
+public enum HistoryMessageAttachmentType implements EnumParam<String> {
+    @SerializedName("app_action")
+    APP_ACTION("app_action"),
 
     @SerializedName("audio")
     AUDIO("audio"),
@@ -26,14 +23,14 @@ public enum HistoryMessageAttachmentType implements EnumParam {
     @SerializedName("market")
     MARKET("market"),
 
+    @SerializedName("photo")
+    PHOTO("photo"),
+
+    @SerializedName("video")
+    VIDEO("video"),
+
     @SerializedName("wall")
     WALL("wall"),
-
-    @SerializedName("share")
-    SHARE("share"),
-
-    @SerializedName("app_action")
-    APP_ACTION("app_action"),
 
     @SerializedName("graffiti")
     GRAFFITI("graffiti"),

@@ -7,6 +7,7 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.likes.Type;
 import com.vk.api.sdk.objects.likes.responses.DeleteResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -83,6 +84,17 @@ public class LikesDeleteQuery extends AbstractQueryBuilder<LikesDeleteQuery, Del
     @ApiParam("access_key")
     public LikesDeleteQuery accessKey(String value) {
         return unsafeParam("access_key", value);
+    }
+
+    /**
+     * Impersonate group
+     *
+     * @param value value of "from group" parameter.
+     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
+     */
+    @ApiParam("from_group")
+    public LikesDeleteQuery fromGroup(Boolean value) {
+        return unsafeParam("from_group", value);
     }
 
     @Override

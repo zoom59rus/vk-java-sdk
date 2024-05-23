@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Who can see invite link
  */
-public enum ChatSettingsPermissionsSeeInviteLink implements EnumParam {
+public enum ChatSettingsPermissionsSeeInviteLink implements EnumParam<String> {
     @SerializedName("owner")
     OWNER("owner"),
 

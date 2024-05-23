@@ -9,6 +9,7 @@ import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.groups.GroupFull;
 import com.vk.api.sdk.objects.newsfeed.CommentsItem;
 import com.vk.api.sdk.objects.users.UserFull;
+
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -45,7 +46,7 @@ public class GetCommentsResponse implements Validable {
     }
 
     public List<CommentsItem> getItems() {
-        return items.stream().map(CommentsItem::new).collect(Collectors.toList());
+        return items.stream().map(item -> new com.vk.api.sdk.client.GsonHolder().getGson().fromJson(item, CommentsItem.class)).collect(Collectors.toList());
     }
 
     public String getNextFrom() {

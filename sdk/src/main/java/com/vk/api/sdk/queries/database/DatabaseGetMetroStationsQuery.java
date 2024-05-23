@@ -7,6 +7,7 @@ import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.database.responses.GetMetroStationsResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,30 +15,6 @@ import java.util.List;
  * Query for Database.getMetroStations method
  */
 public class DatabaseGetMetroStationsQuery extends AbstractQueryBuilder<DatabaseGetMetroStationsQuery, GetMetroStationsResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     * @param cityId value of "city id" parameter. Minimum is 0.
-     */
-    public DatabaseGetMetroStationsQuery(VkApiClient client, UserActor actor, Integer cityId) {
-        super(client, "database.getMetroStations", GetMetroStationsResponse.class);
-        accessToken(actor.getAccessToken());
-        cityId(cityId);
-    }
-
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public DatabaseGetMetroStationsQuery(VkApiClient client, UserActor actor) {
-        super(client, "database.getMetroStations", GetMetroStationsResponse.class);
-        accessToken(actor.getAccessToken());
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -62,6 +39,30 @@ public class DatabaseGetMetroStationsQuery extends AbstractQueryBuilder<Database
         super(client, "database.getMetroStations", GetMetroStationsResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     * @param cityId value of "city id" parameter. Minimum is 0.
+     */
+    public DatabaseGetMetroStationsQuery(VkApiClient client, UserActor actor, Integer cityId) {
+        super(client, "database.getMetroStations", GetMetroStationsResponse.class);
+        accessToken(actor.getAccessToken());
+        cityId(cityId);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public DatabaseGetMetroStationsQuery(VkApiClient client, UserActor actor) {
+        super(client, "database.getMetroStations", GetMetroStationsResponse.class);
+        accessToken(actor.getAccessToken());
     }
 
     /**

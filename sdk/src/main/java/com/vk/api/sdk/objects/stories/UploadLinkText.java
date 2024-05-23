@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.stories;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum UploadLinkText implements EnumParam {
+public enum UploadLinkText implements EnumParam<String> {
     @SerializedName("to_store")
     TO_STORE("to_store"),
 

@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Community type
  */
-public enum GroupType implements EnumParam {
+public enum GroupType implements EnumParam<String> {
     @SerializedName("group")
     GROUP("group"),
 

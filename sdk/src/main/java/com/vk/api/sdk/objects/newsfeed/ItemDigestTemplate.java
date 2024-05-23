@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * type of digest
  */
-public enum ItemDigestTemplate implements EnumParam {
+public enum ItemDigestTemplate implements EnumParam<String> {
     @SerializedName("list")
     LIST("list"),
 

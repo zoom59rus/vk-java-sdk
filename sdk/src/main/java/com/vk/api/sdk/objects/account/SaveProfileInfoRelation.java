@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * User relationship status. Possible values: , * '1' - single,, * '2' - in a relationship,, * '3' - engaged,, * '4' - married,, * '5' - it's complicated,, * '6' - actively searching,, * '7' - in love,, * '0' - not specified.
  */
-public enum SaveProfileInfoRelation implements EnumParam {
+public enum SaveProfileInfoRelation implements EnumParam<Integer> {
     @SerializedName("0")
     NOT_SPECIFIED(0),
 
@@ -41,8 +41,8 @@ public enum SaveProfileInfoRelation implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

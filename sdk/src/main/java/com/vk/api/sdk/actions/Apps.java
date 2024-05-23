@@ -7,26 +7,8 @@ import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiMethod;
 import com.vk.api.sdk.objects.apps.GetLeaderboardType;
-import com.vk.api.sdk.queries.apps.AppsAddUsersToTestingGroupQuery;
-import com.vk.api.sdk.queries.apps.AppsDeleteAppRequestsQuery;
-import com.vk.api.sdk.queries.apps.AppsGetCatalogQuery;
-import com.vk.api.sdk.queries.apps.AppsGetFriendsListQuery;
-import com.vk.api.sdk.queries.apps.AppsGetFriendsListQueryWithExtended;
-import com.vk.api.sdk.queries.apps.AppsGetLastUploadedVersionQueryWithLastUploadedVersion;
-import com.vk.api.sdk.queries.apps.AppsGetLeaderboardQuery;
-import com.vk.api.sdk.queries.apps.AppsGetLeaderboardQueryWithExtended;
-import com.vk.api.sdk.queries.apps.AppsGetMiniAppPoliciesQuery;
-import com.vk.api.sdk.queries.apps.AppsGetQuery;
-import com.vk.api.sdk.queries.apps.AppsGetScopesQuery;
-import com.vk.api.sdk.queries.apps.AppsGetScoreQuery;
-import com.vk.api.sdk.queries.apps.AppsGetTestingGroupsQuery;
-import com.vk.api.sdk.queries.apps.AppsIsNotificationsAllowedQuery;
-import com.vk.api.sdk.queries.apps.AppsPromoHasActiveGiftQuery;
-import com.vk.api.sdk.queries.apps.AppsPromoUseGiftQuery;
-import com.vk.api.sdk.queries.apps.AppsRemoveTestingGroupQuery;
-import com.vk.api.sdk.queries.apps.AppsRemoveUsersFromTestingGroupsQuery;
-import com.vk.api.sdk.queries.apps.AppsSendRequestQuery;
-import com.vk.api.sdk.queries.apps.AppsUpdateMetaForTestingGroupQueryWithGroup;
+import com.vk.api.sdk.queries.apps.*;
+
 import java.util.List;
 
 /**
@@ -40,6 +22,15 @@ public class Apps extends AbstractAction {
      */
     public Apps(VkApiClient client) {
         super(client);
+    }
+
+    /**
+     * @param actor vk service actor
+     * @return query
+     */
+    @ApiMethod("apps.addSnippet")
+    public AppsAddSnippetQuery addSnippet(ServiceActor actor) {
+        return new AppsAddSnippetQuery(getClient(), actor);
     }
 
     /**
@@ -84,6 +75,15 @@ public class Apps extends AbstractAction {
     @ApiMethod("apps.deleteAppRequests")
     public AppsDeleteAppRequestsQuery deleteAppRequests(UserActor actor) {
         return new AppsDeleteAppRequestsQuery(getClient(), actor);
+    }
+
+    /**
+     * @param actor vk service actor
+     * @return query
+     */
+    @ApiMethod("apps.deleteSnippet")
+    public AppsDeleteSnippetQuery deleteSnippet(ServiceActor actor) {
+        return new AppsDeleteSnippetQuery(getClient(), actor);
     }
 
     /**
@@ -150,16 +150,6 @@ public class Apps extends AbstractAction {
     @ApiMethod("apps.getFriendsList")
     public AppsGetFriendsListQuery getFriendsList(UserActor actor) {
         return new AppsGetFriendsListQuery(getClient(), actor);
-    }
-
-    /**
-     * @param actor vk service actor
-     * @return query
-     */
-    @ApiMethod("apps.getLastUploadedVersion")
-    public AppsGetLastUploadedVersionQueryWithLastUploadedVersion getLastUploadedVersionLastUploadedVersion(
-            ServiceActor actor) {
-        return new AppsGetLastUploadedVersionQueryWithLastUploadedVersion(getClient(), actor);
     }
 
     /**
@@ -241,6 +231,15 @@ public class Apps extends AbstractAction {
     @ApiMethod("apps.getScore")
     public AppsGetScoreQuery getScore(UserActor actor) {
         return new AppsGetScoreQuery(getClient(), actor);
+    }
+
+    /**
+     * @param actor vk service actor
+     * @return query
+     */
+    @ApiMethod("apps.getSnippets")
+    public AppsGetSnippetsQuery getSnippets(ServiceActor actor) {
+        return new AppsGetSnippetsQuery(getClient(), actor);
     }
 
     /**

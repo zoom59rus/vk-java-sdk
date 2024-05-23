@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * List type. Possible values: * 'invite' - available for invites (don't play the game),, * 'request' - available for request (play the game). By default: 'invite'.
  */
-public enum GetFriendsListType implements EnumParam {
+public enum GetFriendsListType implements EnumParam<String> {
     @SerializedName("invite")
     INVITE("invite"),
 

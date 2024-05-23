@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Lookalike request source type
  */
-public enum LookalikeRequestSourceType implements EnumParam {
+public enum LookalikeRequestSourceType implements EnumParam<String> {
     @SerializedName("retargeting_group")
     RETARGETING_GROUP("retargeting_group");
 

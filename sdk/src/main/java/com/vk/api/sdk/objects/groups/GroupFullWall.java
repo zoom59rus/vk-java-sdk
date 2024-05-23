@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Information about wall status in community
  */
-public enum GroupFullWall implements EnumParam {
+public enum GroupFullWall implements EnumParam<Integer> {
     @SerializedName("0")
     DISABLED(0),
 
@@ -26,8 +26,8 @@ public enum GroupFullWall implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

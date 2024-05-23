@@ -6,16 +6,8 @@ import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiMethod;
 import com.vk.api.sdk.objects.users.Fields;
-import com.vk.api.sdk.queries.polls.PollsAddVoteQuery;
-import com.vk.api.sdk.queries.polls.PollsCreateQuery;
-import com.vk.api.sdk.queries.polls.PollsDeleteVoteQuery;
-import com.vk.api.sdk.queries.polls.PollsEditQuery;
-import com.vk.api.sdk.queries.polls.PollsGetBackgroundsQuery;
-import com.vk.api.sdk.queries.polls.PollsGetByIdQuery;
-import com.vk.api.sdk.queries.polls.PollsGetPhotoUploadServerQuery;
-import com.vk.api.sdk.queries.polls.PollsGetVotersQuery;
-import com.vk.api.sdk.queries.polls.PollsGetVotersQueryWithFields;
-import com.vk.api.sdk.queries.polls.PollsSavePhotoQuery;
+import com.vk.api.sdk.queries.polls.*;
+
 import java.util.List;
 
 /**
@@ -235,18 +227,7 @@ public class Polls extends AbstractAction {
 
     /**
      * @param actor vk user actor
-     * @param photo
-     * @param hash
      * @return query
-     */
-    @ApiMethod("polls.savePhoto")
-    public PollsSavePhotoQuery savePhoto(UserActor actor, String photo, String hash) {
-        return new PollsSavePhotoQuery(getClient(), actor, photo, hash);
-    }
-
-    /**
-     * @param actor vk user actor
-     * @return only actor query 
      */
     @ApiMethod("polls.savePhoto")
     public PollsSavePhotoQuery savePhoto(UserActor actor) {

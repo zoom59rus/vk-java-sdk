@@ -4,7 +4,10 @@ package com.vk.api.sdk.queries.stats;
 import com.vk.api.sdk.client.AbstractQueryBuilder;
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
+import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.base.responses.OkResponse;
+import com.vk.api.sdk.objects.stats.TrackVisitorType;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -21,6 +24,17 @@ public class StatsTrackVisitorQuery extends AbstractQueryBuilder<StatsTrackVisit
     public StatsTrackVisitorQuery(VkApiClient client, UserActor actor) {
         super(client, "stats.trackVisitor", OkResponse.class);
         accessToken(actor.getAccessToken());
+    }
+
+    /**
+     * Set type
+     *
+     * @param value value of "type" parameter. By default open.
+     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
+     */
+    @ApiParam("type")
+    public StatsTrackVisitorQuery type(TrackVisitorType value) {
+        return unsafeParam("type", value);
     }
 
     @Override

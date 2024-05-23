@@ -8,6 +8,7 @@ import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.notifications.SendMessageSendingMode;
 import com.vk.api.sdk.objects.notifications.responses.SendMessageResponse;
+
 import java.util.Arrays;
 import java.util.List;
 

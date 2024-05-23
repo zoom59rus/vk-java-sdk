@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.base.responses;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum BoolResponse implements EnumParam {
+public enum BoolResponse implements EnumParam<Integer> {
     @SerializedName("0")
     NO(0),
 
@@ -17,8 +17,8 @@ public enum BoolResponse implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

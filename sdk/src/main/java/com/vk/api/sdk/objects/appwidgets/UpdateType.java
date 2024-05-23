@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.appwidgets;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum UpdateType implements EnumParam {
+public enum UpdateType implements EnumParam<String> {
     @SerializedName("compact_list")
     COMPACT_LIST("compact_list"),
 

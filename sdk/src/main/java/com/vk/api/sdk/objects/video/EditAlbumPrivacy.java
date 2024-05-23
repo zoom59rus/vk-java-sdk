@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.video;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum EditAlbumPrivacy implements EnumParam {
+public enum EditAlbumPrivacy implements EnumParam<String> {
     @SerializedName("0")
     ALL("0"),
 

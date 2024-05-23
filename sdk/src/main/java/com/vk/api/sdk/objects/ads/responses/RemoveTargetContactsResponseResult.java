@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Operation result
  */
-public enum RemoveTargetContactsResponseResult implements EnumParam {
+public enum RemoveTargetContactsResponseResult implements EnumParam<Integer> {
     @SerializedName("1")
     OK(1);
 
@@ -17,8 +17,8 @@ public enum RemoveTargetContactsResponseResult implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

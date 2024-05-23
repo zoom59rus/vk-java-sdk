@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Sort order: '0' - newest video first, '1' - oldest video first
  */
-public enum GetSortAlbum implements EnumParam {
+public enum GetSortAlbum implements EnumParam<Integer> {
     @SerializedName("0")
     _0(0),
 
@@ -20,8 +20,8 @@ public enum GetSortAlbum implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

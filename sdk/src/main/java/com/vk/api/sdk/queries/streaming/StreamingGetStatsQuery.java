@@ -9,6 +9,7 @@ import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.streaming.GetStatsInterval;
 import com.vk.api.sdk.objects.streaming.GetStatsType;
 import com.vk.api.sdk.objects.streaming.responses.GetStatsResponse;
+
 import java.util.Arrays;
 import java.util.List;
 

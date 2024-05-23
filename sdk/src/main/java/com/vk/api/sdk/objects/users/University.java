@@ -4,6 +4,7 @@ package com.vk.api.sdk.objects.users;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
+
 import java.util.Objects;
 
 /**
@@ -27,12 +28,6 @@ public class University implements Validable {
      */
     @SerializedName("city")
     private Integer city;
-
-    /**
-     * Country ID
-     */
-    @SerializedName("country")
-    private Integer country;
 
     /**
      * Education form
@@ -115,15 +110,6 @@ public class University implements Validable {
 
     public University setCity(Integer city) {
         this.city = city;
-        return this;
-    }
-
-    public Integer getCountry() {
-        return country;
-    }
-
-    public University setCountry(Integer country) {
-        this.country = country;
         return this;
     }
 
@@ -219,7 +205,7 @@ public class University implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(country, educationStatusId, city, chair, educationForm, faculty, educationStatus, universityGroupId, chairName, graduation, name, educationFormId, facultyName, id);
+        return Objects.hash(educationStatusId, city, chair, educationForm, faculty, educationStatus, universityGroupId, chairName, graduation, name, educationFormId, facultyName, id);
     }
 
     @Override
@@ -227,8 +213,7 @@ public class University implements Validable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         University university = (University) o;
-        return Objects.equals(country, university.country) &&
-                Objects.equals(universityGroupId, university.universityGroupId) &&
+        return Objects.equals(universityGroupId, university.universityGroupId) &&
                 Objects.equals(city, university.city) &&
                 Objects.equals(chair, university.chair) &&
                 Objects.equals(educationStatus, university.educationStatus) &&
@@ -251,8 +236,7 @@ public class University implements Validable {
 
     public String toPrettyString() {
         final StringBuilder sb = new StringBuilder("University{");
-        sb.append("country=").append(country);
-        sb.append(", universityGroupId=").append(universityGroupId);
+        sb.append("universityGroupId=").append(universityGroupId);
         sb.append(", city=").append(city);
         sb.append(", chair=").append(chair);
         sb.append(", educationStatus='").append(educationStatus).append("'");

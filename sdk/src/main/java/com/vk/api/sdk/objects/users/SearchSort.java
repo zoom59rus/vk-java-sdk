@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Sort order: '1' - by date registered, '0' - by rating
  */
-public enum SearchSort implements EnumParam {
+public enum SearchSort implements EnumParam<Integer> {
     @SerializedName("0")
     BY_RATING(0),
 
@@ -20,8 +20,8 @@ public enum SearchSort implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

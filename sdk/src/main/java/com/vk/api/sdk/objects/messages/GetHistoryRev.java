@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Sort order: '1' - return messages in chronological order. '0' - return messages in reverse chronological order.
  */
-public enum GetHistoryRev implements EnumParam {
+public enum GetHistoryRev implements EnumParam<Integer> {
     @SerializedName("1")
     CHRONOLOGICAL(1),
 
@@ -20,8 +20,8 @@ public enum GetHistoryRev implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

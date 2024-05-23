@@ -9,13 +9,14 @@ import com.vk.api.sdk.objects.base.Likes;
 import com.vk.api.sdk.objects.market.MarketCategory;
 import com.vk.api.sdk.objects.market.MarketItemAvailability;
 import com.vk.api.sdk.objects.market.Price;
+
 import java.net.URI;
 import java.util.Objects;
 
 /**
  * CommentsItemTypeMarket object
  */
-public class CommentsItemTypeMarket extends CommentsItemBase implements Validable {
+public class CommentsItemTypeMarket extends CommentsItemBase implements CommentsItem, Validable {
     /**
      * Access key for the market item
      */

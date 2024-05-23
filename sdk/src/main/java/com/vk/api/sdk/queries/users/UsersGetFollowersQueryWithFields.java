@@ -9,6 +9,7 @@ import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.base.NameCase;
 import com.vk.api.sdk.objects.users.Fields;
 import com.vk.api.sdk.objects.users.responses.GetFollowersFieldsResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,31 +17,6 @@ import java.util.List;
  * Query for Users.getFollowers method
  */
 public class UsersGetFollowersQueryWithFields extends AbstractQueryBuilder<UsersGetFollowersQueryWithFields, GetFollowersFieldsResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public UsersGetFollowersQueryWithFields(VkApiClient client, UserActor actor, Fields... fields) {
-        super(client, "users.getFollowers", GetFollowersFieldsResponse.class);
-        accessToken(actor.getAccessToken());
-        fields(fields);
-    }
-
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public UsersGetFollowersQueryWithFields(VkApiClient client, UserActor actor,
-            List<Fields> fields) {
-        super(client, "users.getFollowers", GetFollowersFieldsResponse.class);
-        accessToken(actor.getAccessToken());
-        fields(fields);
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -66,6 +42,31 @@ public class UsersGetFollowersQueryWithFields extends AbstractQueryBuilder<Users
         super(client, "users.getFollowers", GetFollowersFieldsResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+        fields(fields);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public UsersGetFollowersQueryWithFields(VkApiClient client, UserActor actor, Fields... fields) {
+        super(client, "users.getFollowers", GetFollowersFieldsResponse.class);
+        accessToken(actor.getAccessToken());
+        fields(fields);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public UsersGetFollowersQueryWithFields(VkApiClient client, UserActor actor,
+            List<Fields> fields) {
+        super(client, "users.getFollowers", GetFollowersFieldsResponse.class);
+        accessToken(actor.getAccessToken());
         fields(fields);
     }
 

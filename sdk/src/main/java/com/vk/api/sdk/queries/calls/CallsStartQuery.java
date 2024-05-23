@@ -6,6 +6,7 @@ import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.calls.responses.StartResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -27,7 +28,7 @@ public class CallsStartQuery extends AbstractQueryBuilder<CallsStartQuery, Start
     /**
      * Set group id
      *
-     * @param value value of "group id" parameter. By default 0. Entity - owner
+     * @param value value of "group id" parameter. Entity - owner
      *
      * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
      */

@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Who can edit the wiki page: '1' - only community members, '2' - all users can edit the page, '0' - only community managers
  */
-public enum SaveAccessEdit implements EnumParam {
+public enum SaveAccessEdit implements EnumParam<Integer> {
     @SerializedName("0")
     MANAGERS(0),
 
@@ -23,8 +23,8 @@ public enum SaveAccessEdit implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.donut;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum DonatorSubscriptionInfoStatus implements EnumParam {
+public enum DonatorSubscriptionInfoStatus implements EnumParam<String> {
     @SerializedName("active")
     ACTIVE("active"),
 

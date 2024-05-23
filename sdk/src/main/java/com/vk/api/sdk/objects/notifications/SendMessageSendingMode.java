@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Type of sending (delivering) notifications: 'immediately' - push and bell notifications will be delivered as soon as possible, 'delayed' - push and bell notifications will be delivered in the most comfortable time for the user, 'delayed_push' - only push notifications will be delivered in the most comfortable time, while the bell notifications will be delivered as soon as possible
  */
-public enum SendMessageSendingMode implements EnumParam {
+public enum SendMessageSendingMode implements EnumParam<String> {
     @SerializedName("delayed")
     DELAYED("delayed"),
 

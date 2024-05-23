@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Information whether the item is available
  */
-public enum MarketItemAvailability implements EnumParam {
+public enum MarketItemAvailability implements EnumParam<Integer> {
     @SerializedName("0")
     AVAILABLE(0),
 
@@ -23,8 +23,8 @@ public enum MarketItemAvailability implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

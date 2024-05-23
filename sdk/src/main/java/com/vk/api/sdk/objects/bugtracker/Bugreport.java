@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
@@ -65,6 +66,15 @@ public class Bugreport implements Validable {
     @SerializedName("is_vulnerability")
     private Boolean isVulnerability;
 
+    @SerializedName("moderated")
+    private Integer moderated;
+
+    /**
+     * Entity: owner
+     */
+    @SerializedName("moderator_user_id")
+    private Long moderatorUserId;
+
     @SerializedName("original_id")
     private Integer originalId;
 
@@ -90,6 +100,9 @@ public class Bugreport implements Validable {
     @SerializedName("title")
     @Required
     private String title;
+
+    @SerializedName("tournament_score")
+    private Integer tournamentScore;
 
     @SerializedName("updated")
     @Required
@@ -248,6 +261,24 @@ public class Bugreport implements Validable {
         return this;
     }
 
+    public Integer getModerated() {
+        return moderated;
+    }
+
+    public Bugreport setModerated(Integer moderated) {
+        this.moderated = moderated;
+        return this;
+    }
+
+    public Long getModeratorUserId() {
+        return moderatorUserId;
+    }
+
+    public Bugreport setModeratorUserId(Long moderatorUserId) {
+        this.moderatorUserId = moderatorUserId;
+        return this;
+    }
+
     public Integer getOriginalId() {
         return originalId;
     }
@@ -311,6 +342,15 @@ public class Bugreport implements Validable {
         return this;
     }
 
+    public Integer getTournamentScore() {
+        return tournamentScore;
+    }
+
+    public Bugreport setTournamentScore(Integer tournamentScore) {
+        this.tournamentScore = tournamentScore;
+        return this;
+    }
+
     public Integer getUpdated() {
         return updated;
     }
@@ -322,7 +362,7 @@ public class Bugreport implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(canChangeStatus, isBookmarked, canChangeProduct, canEdit, description, ownerId, title, hiddenDocs, canRemove, isDeleted, stateSupposed, id, stateActual, isSeverityByModerator, isVulnerability, created, canRestore, canBookmark, clonesCount, privateComment, companyId, phone, commentsCount, originalId, updated);
+        return Objects.hash(canChangeStatus, isBookmarked, moderated, canChangeProduct, canEdit, description, ownerId, title, hiddenDocs, canRemove, isDeleted, stateSupposed, id, stateActual, isSeverityByModerator, isVulnerability, created, canRestore, canBookmark, clonesCount, moderatorUserId, tournamentScore, privateComment, companyId, phone, commentsCount, originalId, updated);
     }
 
     @Override
@@ -331,6 +371,7 @@ public class Bugreport implements Validable {
         if (o == null || getClass() != o.getClass()) return false;
         Bugreport bugreport = (Bugreport) o;
         return Objects.equals(canRemove, bugreport.canRemove) &&
+                Objects.equals(moderated, bugreport.moderated) &&
                 Objects.equals(ownerId, bugreport.ownerId) &&
                 Objects.equals(stateActual, bugreport.stateActual) &&
                 Objects.equals(canChangeStatus, bugreport.canChangeStatus) &&
@@ -340,6 +381,7 @@ public class Bugreport implements Validable {
                 Objects.equals(isDeleted, bugreport.isDeleted) &&
                 Objects.equals(isBookmarked, bugreport.isBookmarked) &&
                 Objects.equals(id, bugreport.id) &&
+                Objects.equals(tournamentScore, bugreport.tournamentScore) &&
                 Objects.equals(hiddenDocs, bugreport.hiddenDocs) &&
                 Objects.equals(isSeverityByModerator, bugreport.isSeverityByModerator) &&
                 Objects.equals(companyId, bugreport.companyId) &&
@@ -352,6 +394,7 @@ public class Bugreport implements Validable {
                 Objects.equals(phone, bugreport.phone) &&
                 Objects.equals(commentsCount, bugreport.commentsCount) &&
                 Objects.equals(canRestore, bugreport.canRestore) &&
+                Objects.equals(moderatorUserId, bugreport.moderatorUserId) &&
                 Objects.equals(originalId, bugreport.originalId) &&
                 Objects.equals(updated, bugreport.updated) &&
                 Objects.equals(stateSupposed, bugreport.stateSupposed);
@@ -366,6 +409,7 @@ public class Bugreport implements Validable {
     public String toPrettyString() {
         final StringBuilder sb = new StringBuilder("Bugreport{");
         sb.append("canRemove=").append(canRemove);
+        sb.append(", moderated=").append(moderated);
         sb.append(", ownerId=").append(ownerId);
         sb.append(", stateActual='").append(stateActual).append("'");
         sb.append(", canChangeStatus=").append(canChangeStatus);
@@ -375,6 +419,7 @@ public class Bugreport implements Validable {
         sb.append(", isDeleted=").append(isDeleted);
         sb.append(", isBookmarked=").append(isBookmarked);
         sb.append(", id=").append(id);
+        sb.append(", tournamentScore=").append(tournamentScore);
         sb.append(", hiddenDocs=").append(hiddenDocs);
         sb.append(", isSeverityByModerator=").append(isSeverityByModerator);
         sb.append(", companyId=").append(companyId);
@@ -387,6 +432,7 @@ public class Bugreport implements Validable {
         sb.append(", phone='").append(phone).append("'");
         sb.append(", commentsCount=").append(commentsCount);
         sb.append(", canRestore=").append(canRestore);
+        sb.append(", moderatorUserId=").append(moderatorUserId);
         sb.append(", originalId=").append(originalId);
         sb.append(", updated=").append(updated);
         sb.append(", stateSupposed='").append(stateSupposed).append("'");

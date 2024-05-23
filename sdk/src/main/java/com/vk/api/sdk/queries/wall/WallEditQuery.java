@@ -7,6 +7,7 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.wall.EditTopicId;
 import com.vk.api.sdk.objects.wall.responses.EditResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -259,29 +260,6 @@ public class WallEditQuery extends AbstractQueryBuilder<WallEditQuery, EditRespo
     @ApiParam("attachments")
     public WallEditQuery attachments(List<String> value) {
         return unsafeParam("attachments", value);
-    }
-
-    /**
-     * primaryAttachments
-     * Set primary attachments
-     *
-     * @param value value of "primary attachments" parameter.
-     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
-     */
-    @ApiParam("primary_attachments")
-    public WallEditQuery primaryAttachments(String... value) {
-        return unsafeParam("primary_attachments", value);
-    }
-
-    /**
-     * Set primary attachments
-     *
-     * @param value value of "primary attachments" parameter.
-     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
-     */
-    @ApiParam("primary_attachments")
-    public WallEditQuery primaryAttachments(List<String> value) {
-        return unsafeParam("primary_attachments", value);
     }
 
     @Override

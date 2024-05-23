@@ -11,6 +11,7 @@ import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.base.NameCase;
 import com.vk.api.sdk.objects.users.Fields;
 import com.vk.api.sdk.objects.users.responses.GetResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,17 +31,6 @@ public class UsersGetQuery extends AbstractQueryBuilder<UsersGetQuery, List<GetR
     }
 
     /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public UsersGetQuery(VkApiClient client, UserActor actor) {
-        super(client, "users.get", Utils.buildParametrizedType(List.class, GetResponse.class));
-        accessToken(actor.getAccessToken());
-    }
-
-    /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
      * @param client VK API client
@@ -53,6 +43,17 @@ public class UsersGetQuery extends AbstractQueryBuilder<UsersGetQuery, List<GetR
     }
 
     /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public UsersGetQuery(VkApiClient client, UserActor actor) {
+        super(client, "users.get", Utils.buildParametrizedType(List.class, GetResponse.class));
+        accessToken(actor.getAccessToken());
+    }
+
+    /**
      * Case for declension of user name and surname: 'nom' - nominative (default), 'gen' - genitive , 'dat' - dative, 'acc' - accusative , 'ins' - instrumental , 'abl' - prepositional
      *
      * @param value value of "name case" parameter.
@@ -61,6 +62,18 @@ public class UsersGetQuery extends AbstractQueryBuilder<UsersGetQuery, List<GetR
     @ApiParam("name_case")
     public UsersGetQuery nameCase(NameCase value) {
         return unsafeParam("name_case", value);
+    }
+
+    /**
+     * Set from group id
+     *
+     * @param value value of "from group id" parameter. By default 0. Entity - owner
+     *
+     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
+     */
+    @ApiParam("from_group_id")
+    public UsersGetQuery fromGroupId(Long value) {
+        return unsafeParam("from_group_id", value);
     }
 
     /**

@@ -9,6 +9,7 @@ import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.base.UserGroupFields;
 import com.vk.api.sdk.objects.messages.GetConversationsFilter;
 import com.vk.api.sdk.objects.messages.responses.GetConversationsResponse;
+
 import java.util.Arrays;
 import java.util.List;
 

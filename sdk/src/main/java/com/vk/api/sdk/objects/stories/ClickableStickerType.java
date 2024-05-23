@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.stories;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum ClickableStickerType implements EnumParam {
+public enum ClickableStickerType implements EnumParam<String> {
     @SerializedName("hashtag")
     HASHTAG("hashtag"),
 
@@ -51,7 +51,10 @@ public enum ClickableStickerType implements EnumParam {
     PLAYLIST("playlist"),
 
     @SerializedName("clip")
-    CLIP("clip");
+    CLIP("clip"),
+
+    @SerializedName("situational_template")
+    SITUATIONAL_TEMPLATE("situational_template");
 
     private final String value;
 

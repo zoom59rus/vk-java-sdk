@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.photos.Photo;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -23,6 +24,12 @@ public class GetResponse implements Validable {
     @SerializedName("items")
     @Required
     private List<Photo> items;
+
+    /**
+     * next from pagination cursor
+     */
+    @SerializedName("next_from")
+    private String nextFrom;
 
     public Integer getCount() {
         return count;
@@ -42,9 +49,18 @@ public class GetResponse implements Validable {
         return this;
     }
 
+    public String getNextFrom() {
+        return nextFrom;
+    }
+
+    public GetResponse setNextFrom(String nextFrom) {
+        this.nextFrom = nextFrom;
+        return this;
+    }
+
     @Override
     public int hashCode() {
-        return Objects.hash(count, items);
+        return Objects.hash(count, nextFrom, items);
     }
 
     @Override
@@ -52,7 +68,8 @@ public class GetResponse implements Validable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         GetResponse getResponse = (GetResponse) o;
-        return Objects.equals(count, getResponse.count) &&
+        return Objects.equals(nextFrom, getResponse.nextFrom) &&
+                Objects.equals(count, getResponse.count) &&
                 Objects.equals(items, getResponse.items);
     }
 
@@ -64,7 +81,8 @@ public class GetResponse implements Validable {
 
     public String toPrettyString() {
         final StringBuilder sb = new StringBuilder("GetResponse{");
-        sb.append("count=").append(count);
+        sb.append("nextFrom='").append(nextFrom).append("'");
+        sb.append(", count=").append(count);
         sb.append(", items=").append(items);
         sb.append('}');
         return sb.toString();

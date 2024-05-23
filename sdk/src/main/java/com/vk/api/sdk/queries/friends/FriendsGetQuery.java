@@ -9,6 +9,7 @@ import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.friends.GetOrder;
 import com.vk.api.sdk.objects.friends.responses.GetResponse;
 import com.vk.api.sdk.objects.users.Fields;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,17 +17,6 @@ import java.util.List;
  * Query for Friends.get method
  */
 public class FriendsGetQuery extends AbstractQueryBuilder<FriendsGetQuery, GetResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public FriendsGetQuery(VkApiClient client, UserActor actor) {
-        super(client, "friends.get", GetResponse.class);
-        accessToken(actor.getAccessToken());
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -37,6 +27,17 @@ public class FriendsGetQuery extends AbstractQueryBuilder<FriendsGetQuery, GetRe
         super(client, "friends.get", GetResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public FriendsGetQuery(VkApiClient client, UserActor actor) {
+        super(client, "friends.get", GetResponse.class);
+        accessToken(actor.getAccessToken());
     }
 
     /**

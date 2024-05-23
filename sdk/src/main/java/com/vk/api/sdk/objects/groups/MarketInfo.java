@@ -7,6 +7,7 @@ import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.base.BoolInt;
 import com.vk.api.sdk.objects.market.Currency;
 import com.vk.api.sdk.objects.market.Price;
+
 import java.util.Objects;
 
 /**

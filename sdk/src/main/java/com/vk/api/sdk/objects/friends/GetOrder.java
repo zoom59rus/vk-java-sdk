@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Sort order: , 'name' - by name (enabled only if the 'fields' parameter is used), 'hints' - by rating, similar to how friends are sorted in My friends section, , This parameter is available only for [vk.com/dev/standalone|desktop applications].
  */
-public enum GetOrder implements EnumParam {
+public enum GetOrder implements EnumParam<String> {
     @SerializedName("hints")
     HINTS("hints"),
 

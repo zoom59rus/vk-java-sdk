@@ -7,6 +7,7 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.video.SearchSort;
 import com.vk.api.sdk.objects.video.responses.SearchResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -160,7 +161,7 @@ public class VideoSearchQuery extends AbstractQueryBuilder<VideoSearchQuery, Sea
 
     /**
      * filters
-     * Filters to apply: 'youtube' - return YouTube videos only, 'vimeo' - return Vimeo videos only, 'short' - return short videos only, 'long' - return long videos only
+     * Filters to apply: 'youtube' - return YouTube videos only, 'vimeo' - return Vimeo videos only, 'vk' - return VK videos only, 'short' - return short videos only, 'long' - return long videos only
      *
      * @param value value of "filters" parameter.
      * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
@@ -171,7 +172,7 @@ public class VideoSearchQuery extends AbstractQueryBuilder<VideoSearchQuery, Sea
     }
 
     /**
-     * Filters to apply: 'youtube' - return YouTube videos only, 'vimeo' - return Vimeo videos only, 'short' - return short videos only, 'long' - return long videos only
+     * Filters to apply: 'youtube' - return YouTube videos only, 'vimeo' - return Vimeo videos only, 'vk' - return VK videos only, 'short' - return short videos only, 'long' - return long videos only
      *
      * @param value value of "filters" parameter.
      * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.

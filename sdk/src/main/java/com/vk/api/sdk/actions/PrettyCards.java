@@ -5,12 +5,8 @@ import com.vk.api.sdk.client.AbstractAction;
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiMethod;
-import com.vk.api.sdk.queries.prettycards.PrettyCardsCreateQuery;
-import com.vk.api.sdk.queries.prettycards.PrettyCardsDeleteQuery;
-import com.vk.api.sdk.queries.prettycards.PrettyCardsEditQuery;
-import com.vk.api.sdk.queries.prettycards.PrettyCardsGetByIdQuery;
-import com.vk.api.sdk.queries.prettycards.PrettyCardsGetQuery;
-import com.vk.api.sdk.queries.prettycards.PrettyCardsGetUploadURLQuery;
+import com.vk.api.sdk.queries.prettycards.*;
+
 import java.util.List;
 
 /**

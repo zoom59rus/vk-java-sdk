@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.bugtracker;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum AttachmentType implements EnumParam {
+public enum AttachmentType implements EnumParam<String> {
     @SerializedName("photo")
     PHOTO("photo"),
 

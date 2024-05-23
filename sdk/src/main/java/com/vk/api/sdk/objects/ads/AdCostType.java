@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Cost type
  */
-public enum AdCostType implements EnumParam {
+public enum AdCostType implements EnumParam<Integer> {
     @SerializedName("0")
     PER_CLICKS(0),
 
@@ -26,8 +26,8 @@ public enum AdCostType implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

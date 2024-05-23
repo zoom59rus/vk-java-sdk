@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Sex
  */
-public enum StatsSexValue implements EnumParam {
+public enum StatsSexValue implements EnumParam<String> {
     @SerializedName("f")
     FEMALE("f"),
 

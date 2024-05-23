@@ -1,9 +1,10 @@
 package com.vk.api.sdk.objects;
 
-import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.exceptions.RequiredFieldException;
-import java.lang.reflect.Field;
+import com.vk.api.sdk.objects.annotations.Required;
+
 import java.lang.annotation.Annotation;
+import java.lang.reflect.Field;
 
 public interface Validable {
 

@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.addresses;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum Fields implements EnumParam {
+public enum Fields implements EnumParam<String> {
     @SerializedName("id")
     ID("id"),
 

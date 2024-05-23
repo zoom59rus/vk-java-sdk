@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Sort order: 'asc' - oldest comment first, 'desc' - newest comment first
  */
-public enum GetCommentsSort implements EnumParam {
+public enum GetCommentsSort implements EnumParam<String> {
     @SerializedName("asc")
     OLDEST_COMMENT_FIRST("asc"),
 

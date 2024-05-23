@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
@@ -19,6 +20,7 @@ public class HistoryAttachment implements Validable {
      * Conversation Message ID
      */
     @SerializedName("cmid")
+    @Required
     private Integer cmid;
 
     /**
@@ -26,7 +28,7 @@ public class HistoryAttachment implements Validable {
      */
     @SerializedName("date")
     @Required
-    private Integer date;
+    private Long date;
 
     /**
      * Forward level (optional)
@@ -82,11 +84,11 @@ public class HistoryAttachment implements Validable {
         return this;
     }
 
-    public Integer getDate() {
+    public Long getDate() {
         return date;
     }
 
-    public HistoryAttachment setDate(Integer date) {
+    public HistoryAttachment setDate(Long date) {
         this.date = date;
         return this;
     }

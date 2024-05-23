@@ -1,8 +1,8 @@
 package com.vk.api.sdk.httpclient;
 
 import org.apache.http.client.methods.HttpUriRequest;
-import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.time.Instant;
 import java.util.Map;

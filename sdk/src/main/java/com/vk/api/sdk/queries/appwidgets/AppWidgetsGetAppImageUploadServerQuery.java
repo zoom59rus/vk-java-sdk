@@ -7,6 +7,7 @@ import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.appwidgets.GetAppImageUploadServerImageType;
 import com.vk.api.sdk.objects.appwidgets.responses.GetAppImageUploadServerResponse;
+
 import java.util.Arrays;
 import java.util.List;
 

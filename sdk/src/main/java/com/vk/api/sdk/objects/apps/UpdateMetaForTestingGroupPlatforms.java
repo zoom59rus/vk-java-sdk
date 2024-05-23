@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.apps;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum UpdateMetaForTestingGroupPlatforms implements EnumParam {
+public enum UpdateMetaForTestingGroupPlatforms implements EnumParam<String> {
     @SerializedName("mobile")
     MOBILE("mobile"),
 

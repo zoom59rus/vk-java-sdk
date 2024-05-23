@@ -11,6 +11,7 @@ import com.vk.api.sdk.objects.apps.GetPlatform;
 import com.vk.api.sdk.objects.apps.responses.GetResponse;
 import com.vk.api.sdk.objects.base.NameCase;
 import com.vk.api.sdk.objects.users.Fields;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -18,17 +19,6 @@ import java.util.List;
  * Query for Apps.get method
  */
 public class AppsGetQuery extends AbstractQueryBuilder<AppsGetQuery, GetResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public AppsGetQuery(VkApiClient client, UserActor actor) {
-        super(client, "apps.get", GetResponse.class);
-        accessToken(actor.getAccessToken());
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -39,6 +29,17 @@ public class AppsGetQuery extends AbstractQueryBuilder<AppsGetQuery, GetResponse
         super(client, "apps.get", GetResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public AppsGetQuery(VkApiClient client, UserActor actor) {
+        super(client, "apps.get", GetResponse.class);
+        accessToken(actor.getAccessToken());
     }
 
     /**

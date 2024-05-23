@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Type of occupation
  */
-public enum OccupationType implements EnumParam {
+public enum OccupationType implements EnumParam<String> {
     @SerializedName("school")
     SCHOOL("school"),
 

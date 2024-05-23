@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Type of online status of group
  */
-public enum OnlineStatusType implements EnumParam {
+public enum OnlineStatusType implements EnumParam<String> {
     @SerializedName("none")
     NONE("none"),
 

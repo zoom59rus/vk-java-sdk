@@ -6,6 +6,7 @@ import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.base.responses.OkResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -99,7 +100,7 @@ public class MarketEditQuery extends AbstractQueryBuilder<MarketEditQuery, OkRes
     /**
      * Item price.
      *
-     * @param value value of "price" parameter. Minimum is 0.
+     * @param value value of "price" parameter. Maximum is 2147483647. Minimum is 0.
      * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
      */
     @ApiParam("price")
@@ -110,7 +111,7 @@ public class MarketEditQuery extends AbstractQueryBuilder<MarketEditQuery, OkRes
     /**
      * Set old price
      *
-     * @param value value of "old price" parameter. Minimum is 0.
+     * @param value value of "old price" parameter. Maximum is 2147483647. Minimum is 0.
      * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
      */
     @ApiParam("old_price")

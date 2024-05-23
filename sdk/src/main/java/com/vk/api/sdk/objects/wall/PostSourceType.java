@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Type of post source
  */
-public enum PostSourceType implements EnumParam {
+public enum PostSourceType implements EnumParam<String> {
     @SerializedName("vk")
     VK("vk"),
 

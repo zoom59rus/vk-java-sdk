@@ -9,6 +9,7 @@ import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.base.UserGroupFields;
 import com.vk.api.sdk.objects.wall.GetCommentsSort;
 import com.vk.api.sdk.objects.wall.responses.GetCommentsResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,17 +17,6 @@ import java.util.List;
  * Query for Wall.getComments method
  */
 public class WallGetCommentsQuery extends AbstractQueryBuilder<WallGetCommentsQuery, GetCommentsResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public WallGetCommentsQuery(VkApiClient client, UserActor actor) {
-        super(client, "wall.getComments", GetCommentsResponse.class);
-        accessToken(actor.getAccessToken());
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -37,6 +27,17 @@ public class WallGetCommentsQuery extends AbstractQueryBuilder<WallGetCommentsQu
         super(client, "wall.getComments", GetCommentsResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public WallGetCommentsQuery(VkApiClient client, UserActor actor) {
+        super(client, "wall.getComments", GetCommentsResponse.class);
+        accessToken(actor.getAccessToken());
     }
 
     /**

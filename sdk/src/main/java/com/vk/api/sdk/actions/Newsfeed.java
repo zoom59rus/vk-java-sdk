@@ -8,26 +8,9 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiMethod;
 import com.vk.api.sdk.objects.newsfeed.IgnoreItemType;
 import com.vk.api.sdk.objects.newsfeed.UnsubscribeType;
-import com.vk.api.sdk.queries.newsfeed.NewsfeedAddBanQuery;
-import com.vk.api.sdk.queries.newsfeed.NewsfeedDeleteBanQuery;
-import com.vk.api.sdk.queries.newsfeed.NewsfeedDeleteListQuery;
-import com.vk.api.sdk.queries.newsfeed.NewsfeedGetBannedQuery;
-import com.vk.api.sdk.queries.newsfeed.NewsfeedGetBannedQueryWithExtended;
-import com.vk.api.sdk.queries.newsfeed.NewsfeedGetCommentsQuery;
-import com.vk.api.sdk.queries.newsfeed.NewsfeedGetListsQuery;
-import com.vk.api.sdk.queries.newsfeed.NewsfeedGetListsQueryWithExtended;
-import com.vk.api.sdk.queries.newsfeed.NewsfeedGetMentionsQuery;
-import com.vk.api.sdk.queries.newsfeed.NewsfeedGetQuery;
-import com.vk.api.sdk.queries.newsfeed.NewsfeedGetRecommendedQuery;
-import com.vk.api.sdk.queries.newsfeed.NewsfeedGetSuggestedSourcesQuery;
-import com.vk.api.sdk.queries.newsfeed.NewsfeedIgnoreItemQueryWithItem;
-import com.vk.api.sdk.queries.newsfeed.NewsfeedSaveListQuery;
-import com.vk.api.sdk.queries.newsfeed.NewsfeedSearchQuery;
-import com.vk.api.sdk.queries.newsfeed.NewsfeedSearchQueryWithExtended;
-import com.vk.api.sdk.queries.newsfeed.NewsfeedSearchQueryWithExtendedStrict;
-import com.vk.api.sdk.queries.newsfeed.NewsfeedSearchQueryWithStrict;
-import com.vk.api.sdk.queries.newsfeed.NewsfeedUnignoreItemQuery;
-import com.vk.api.sdk.queries.newsfeed.NewsfeedUnsubscribeQuery;
+import com.vk.api.sdk.queries.newsfeed.*;
+
+import java.util.List;
 
 /**
  * List of Newsfeed methods
@@ -199,11 +182,25 @@ public class Newsfeed extends AbstractAction {
      *
      * @param actor vk user actor
      * @param title list name.
+     * @param sourceIds users and communities identifiers to be added to the list. Community identifiers must be negative numbers.
      * @return query
      */
     @ApiMethod("newsfeed.saveList")
-    public NewsfeedSaveListQuery saveList(UserActor actor, String title) {
-        return new NewsfeedSaveListQuery(getClient(), actor, title);
+    public NewsfeedSaveListQuery saveList(UserActor actor, String title, Long... sourceIds) {
+        return new NewsfeedSaveListQuery(getClient(), actor, title, sourceIds);
+    }
+
+    /**
+     * Creates and edits user newsfeed lists
+     *
+     * @param actor vk user actor
+     * @param title list name.
+     * @param sourceIds users and communities identifiers to be added to the list. Community identifiers must be negative numbers.
+     * @return query
+     */
+    @ApiMethod("newsfeed.saveList")
+    public NewsfeedSaveListQuery saveList(UserActor actor, String title, List<Long> sourceIds) {
+        return new NewsfeedSaveListQuery(getClient(), actor, title, sourceIds);
     }
 
     /**
@@ -310,14 +307,11 @@ public class Newsfeed extends AbstractAction {
      *
      * @param actor vk user actor
      * @param type Item type. Possible values: *'wall' - post on the wall,, *'tag' - tag on a photo,, *'profilephoto' - profile photo,, *'video' - video,, *'audio' - audio.
-     * @param ownerId Item owner's identifier (user or community), "Note that community id must be negative. 'owner_id=1' - user , 'owner_id=-1' - community "
-     * @param itemId Item identifier
      * @return query
      */
     @ApiMethod("newsfeed.unignoreItem")
-    public NewsfeedUnignoreItemQuery unignoreItem(UserActor actor, IgnoreItemType type,
-            Long ownerId, Integer itemId) {
-        return new NewsfeedUnignoreItemQuery(getClient(), actor, type, ownerId, itemId);
+    public NewsfeedUnignoreItemQuery unignoreItem(UserActor actor, IgnoreItemType type) {
+        return new NewsfeedUnignoreItemQuery(getClient(), actor, type);
     }
 
     /**

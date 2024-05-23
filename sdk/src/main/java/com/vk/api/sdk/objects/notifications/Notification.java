@@ -4,6 +4,8 @@ package com.vk.api.sdk.objects.notifications;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
+import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
@@ -18,6 +20,10 @@ public class Notification implements Validable {
 
     @SerializedName("feedback")
     private Feedback feedback;
+
+    @SerializedName("inner_type")
+    @Required
+    private NotificationInnerType innerType;
 
     @SerializedName("parent")
     private Notification parent;
@@ -46,6 +52,15 @@ public class Notification implements Validable {
 
     public Notification setFeedback(Feedback feedback) {
         this.feedback = feedback;
+        return this;
+    }
+
+    public NotificationInnerType getInnerType() {
+        return innerType;
+    }
+
+    public Notification setInnerType(NotificationInnerType innerType) {
+        this.innerType = innerType;
         return this;
     }
 
@@ -78,7 +93,7 @@ public class Notification implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(date, feedback, parent, reply, type);
+        return Objects.hash(date, feedback, parent, innerType, reply, type);
     }
 
     @Override
@@ -89,6 +104,7 @@ public class Notification implements Validable {
         return Objects.equals(date, notification.date) &&
                 Objects.equals(feedback, notification.feedback) &&
                 Objects.equals(parent, notification.parent) &&
+                Objects.equals(innerType, notification.innerType) &&
                 Objects.equals(reply, notification.reply) &&
                 Objects.equals(type, notification.type);
     }
@@ -104,6 +120,7 @@ public class Notification implements Validable {
         sb.append("date=").append(date);
         sb.append(", feedback=").append(feedback);
         sb.append(", parent=").append(parent);
+        sb.append(", innerType='").append(innerType).append("'");
         sb.append(", reply=").append(reply);
         sb.append(", type='").append(type).append("'");
         sb.append('}');

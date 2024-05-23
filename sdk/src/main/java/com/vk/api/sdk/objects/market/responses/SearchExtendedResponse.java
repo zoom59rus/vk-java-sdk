@@ -7,6 +7,7 @@ import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.market.MarketItemFull;
 import com.vk.api.sdk.objects.market.ServicesViewType;
+
 import java.util.List;
 import java.util.Objects;
 

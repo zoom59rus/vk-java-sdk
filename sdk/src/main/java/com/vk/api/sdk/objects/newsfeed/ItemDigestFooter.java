@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
@@ -13,6 +14,9 @@ import java.util.Objects;
 public class ItemDigestFooter implements Validable {
     @SerializedName("button")
     private ItemDigestButton button;
+
+    @SerializedName("feed_id")
+    private String feedId;
 
     @SerializedName("style")
     @Required
@@ -31,6 +35,15 @@ public class ItemDigestFooter implements Validable {
 
     public ItemDigestFooter setButton(ItemDigestButton button) {
         this.button = button;
+        return this;
+    }
+
+    public String getFeedId() {
+        return feedId;
+    }
+
+    public ItemDigestFooter setFeedId(String feedId) {
+        this.feedId = feedId;
         return this;
     }
 
@@ -54,7 +67,7 @@ public class ItemDigestFooter implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(button, style, text);
+        return Objects.hash(button, feedId, style, text);
     }
 
     @Override
@@ -64,7 +77,8 @@ public class ItemDigestFooter implements Validable {
         ItemDigestFooter itemDigestFooter = (ItemDigestFooter) o;
         return Objects.equals(button, itemDigestFooter.button) &&
                 Objects.equals(style, itemDigestFooter.style) &&
-                Objects.equals(text, itemDigestFooter.text);
+                Objects.equals(text, itemDigestFooter.text) &&
+                Objects.equals(feedId, itemDigestFooter.feedId);
     }
 
     @Override
@@ -78,6 +92,7 @@ public class ItemDigestFooter implements Validable {
         sb.append("button=").append(button);
         sb.append(", style='").append(style).append("'");
         sb.append(", text='").append(text).append("'");
+        sb.append(", feedId='").append(feedId).append("'");
         sb.append('}');
         return sb.toString();
     }

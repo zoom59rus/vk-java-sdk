@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Request status
  */
-public enum NameRequestStatus implements EnumParam {
+public enum NameRequestStatus implements EnumParam<String> {
     @SerializedName("success")
     SUCCESS("success"),
 

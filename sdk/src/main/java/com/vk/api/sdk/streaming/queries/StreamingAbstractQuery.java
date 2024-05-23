@@ -2,15 +2,15 @@ package com.vk.api.sdk.streaming.queries;
 
 import com.google.gson.Gson;
 import com.google.gson.JsonSyntaxException;
-import com.vk.api.sdk.events.longpoll.LongPollQueryBuilder;
 import com.vk.api.sdk.client.TransportClient;
+import com.vk.api.sdk.events.longpoll.LongPollQueryBuilder;
 import com.vk.api.sdk.streaming.clients.VkStreamingApiClient;
 import com.vk.api.sdk.streaming.clients.actors.StreamingActor;
 import com.vk.api.sdk.streaming.exceptions.StreamingApiException;
 import com.vk.api.sdk.streaming.exceptions.StreamingClientException;
 import com.vk.api.sdk.streaming.objects.responses.StreamingResponse;
-import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.lang.reflect.Type;
 

@@ -9,6 +9,7 @@ import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.base.UserGroupFields;
 import com.vk.api.sdk.objects.wall.GetFilter;
 import com.vk.api.sdk.objects.wall.responses.GetExtendedResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,18 +17,6 @@ import java.util.List;
  * Query for Wall.get method
  */
 public class WallGetQueryWithExtended extends AbstractQueryBuilder<WallGetQueryWithExtended, GetExtendedResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public WallGetQueryWithExtended(VkApiClient client, UserActor actor) {
-        super(client, "wall.get", GetExtendedResponse.class);
-        accessToken(actor.getAccessToken());
-        extended(true);
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -42,21 +31,22 @@ public class WallGetQueryWithExtended extends AbstractQueryBuilder<WallGetQueryW
     }
 
     /**
-     * ID of the user or community that owns the wall. By default, current user ID. Use a negative value to designate a community ID.
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
      *
-     * @param value value of "owner id" parameter. Entity - owner
-     *
-     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
+     * @param client VK API client
+     * @param actor actor with access token
      */
-    @ApiParam("owner_id")
-    public WallGetQueryWithExtended ownerId(Long value) {
-        return unsafeParam("owner_id", value);
+    public WallGetQueryWithExtended(VkApiClient client, UserActor actor) {
+        super(client, "wall.get", GetExtendedResponse.class);
+        accessToken(actor.getAccessToken());
+        extended(true);
     }
 
     /**
      * User or community short address.
      *
-     * @param value value of "domain" parameter.
+     * @param value value of "domain" parameter. Entity - owner
+     *
      * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
      */
     @ApiParam("domain")

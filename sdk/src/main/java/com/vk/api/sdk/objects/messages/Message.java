@@ -7,6 +7,7 @@ import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.base.BoolInt;
 import com.vk.api.sdk.objects.base.Geo;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -31,6 +32,7 @@ public class Message implements Validable {
      * Unique auto-incremented number for all messages with this peer
      */
     @SerializedName("conversation_message_id")
+    @Required
     private Integer conversationMessageId;
 
     /**
@@ -83,10 +85,22 @@ public class Message implements Validable {
     private Boolean isHidden;
 
     /**
+     * Is message pinned in its conversation
+     */
+    @SerializedName("is_pinned")
+    private Boolean isPinned;
+
+    /**
      * Is silent message, push without sound
      */
     @SerializedName("is_silent")
     private Boolean isSilent;
+
+    /**
+     * Is message unavailable for some reason, including its id equals 0
+     */
+    @SerializedName("is_unavailable")
+    private Boolean isUnavailable;
 
     @SerializedName("keyboard")
     private Keyboard keyboard;
@@ -166,6 +180,10 @@ public class Message implements Validable {
      */
     @SerializedName("update_time")
     private Integer updateTime;
+
+    @SerializedName("version")
+    @Required
+    private Long version;
 
     /**
      * Was the audio message inside already listened by you
@@ -289,12 +307,30 @@ public class Message implements Validable {
         return this;
     }
 
+    public Boolean getIsPinned() {
+        return isPinned;
+    }
+
+    public Message setIsPinned(Boolean isPinned) {
+        this.isPinned = isPinned;
+        return this;
+    }
+
     public Boolean getIsSilent() {
         return isSilent;
     }
 
     public Message setIsSilent(Boolean isSilent) {
         this.isSilent = isSilent;
+        return this;
+    }
+
+    public Boolean getIsUnavailable() {
+        return isUnavailable;
+    }
+
+    public Message setIsUnavailable(Boolean isUnavailable) {
+        this.isUnavailable = isUnavailable;
         return this;
     }
 
@@ -432,6 +468,15 @@ public class Message implements Validable {
         return this;
     }
 
+    public Long getVersion() {
+        return version;
+    }
+
+    public Message setVersion(Long version) {
+        this.version = version;
+        return this;
+    }
+
     public Boolean getWasListened() {
         return wasListened;
     }
@@ -443,7 +488,7 @@ public class Message implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(date, peerId, attachments, adminAuthorId, out, pinnedAt, refSource, geo, ref, fwdMessages, randomId, conversationMessageId, payload, replyMessage, reactionId, wasListened, action, id, text, keyboard, membersCount, isCropped, lastReactionId, updateTime, fromId, isHidden, important, deleted, reactions, isSilent);
+        return Objects.hash(date, peerId, attachments, adminAuthorId, isUnavailable, out, pinnedAt, refSource, geo, ref, fwdMessages, randomId, conversationMessageId, payload, replyMessage, reactionId, wasListened, action, id, text, keyboard, membersCount, isPinned, isCropped, lastReactionId, updateTime, fromId, version, isHidden, important, deleted, reactions, isSilent);
     }
 
     @Override
@@ -455,6 +500,7 @@ public class Message implements Validable {
                 Objects.equals(attachments, message.attachments) &&
                 Objects.equals(fromId, message.fromId) &&
                 Objects.equals(isHidden, message.isHidden) &&
+                Objects.equals(isPinned, message.isPinned) &&
                 Objects.equals(out, message.out) &&
                 Objects.equals(peerId, message.peerId) &&
                 Objects.equals(geo, message.geo) &&
@@ -471,6 +517,8 @@ public class Message implements Validable {
                 Objects.equals(wasListened, message.wasListened) &&
                 Objects.equals(isSilent, message.isSilent) &&
                 Objects.equals(refSource, message.refSource) &&
+                Objects.equals(version, message.version) &&
+                Objects.equals(isUnavailable, message.isUnavailable) &&
                 Objects.equals(conversationMessageId, message.conversationMessageId) &&
                 Objects.equals(important, message.important) &&
                 Objects.equals(deleted, message.deleted) &&
@@ -495,6 +543,7 @@ public class Message implements Validable {
         sb.append(", attachments=").append(attachments);
         sb.append(", fromId=").append(fromId);
         sb.append(", isHidden=").append(isHidden);
+        sb.append(", isPinned=").append(isPinned);
         sb.append(", out=").append(out);
         sb.append(", peerId=").append(peerId);
         sb.append(", geo=").append(geo);
@@ -511,6 +560,8 @@ public class Message implements Validable {
         sb.append(", wasListened=").append(wasListened);
         sb.append(", isSilent=").append(isSilent);
         sb.append(", refSource='").append(refSource).append("'");
+        sb.append(", version=").append(version);
+        sb.append(", isUnavailable=").append(isUnavailable);
         sb.append(", conversationMessageId=").append(conversationMessageId);
         sb.append(", important=").append(important);
         sb.append(", deleted=").append(deleted);

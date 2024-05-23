@@ -11,6 +11,7 @@ import com.vk.api.sdk.objects.groups.GetMembersFilter;
 import com.vk.api.sdk.objects.groups.GetMembersSort;
 import com.vk.api.sdk.objects.groups.responses.GetMembersResponse;
 import com.vk.api.sdk.objects.users.Fields;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -30,17 +31,6 @@ public class GroupsGetMembersQuery extends AbstractQueryBuilder<GroupsGetMembers
     }
 
     /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public GroupsGetMembersQuery(VkApiClient client, UserActor actor) {
-        super(client, "groups.getMembers", GetMembersResponse.class);
-        accessToken(actor.getAccessToken());
-    }
-
-    /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
      * @param client VK API client
@@ -50,6 +40,17 @@ public class GroupsGetMembersQuery extends AbstractQueryBuilder<GroupsGetMembers
         super(client, "groups.getMembers", GetMembersResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public GroupsGetMembersQuery(VkApiClient client, UserActor actor) {
+        super(client, "groups.getMembers", GetMembersResponse.class);
+        accessToken(actor.getAccessToken());
     }
 
     /**
@@ -89,7 +90,7 @@ public class GroupsGetMembersQuery extends AbstractQueryBuilder<GroupsGetMembers
     /**
      * Number of community members to return.
      *
-     * @param value value of "count" parameter. Minimum is 0. By default 1000.
+     * @param value value of "count" parameter. Maximum is 1000. Minimum is 0. By default 1000.
      * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
      */
     @ApiParam("count")

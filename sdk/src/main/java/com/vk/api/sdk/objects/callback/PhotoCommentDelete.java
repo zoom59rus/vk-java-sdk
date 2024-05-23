@@ -3,14 +3,23 @@ package com.vk.api.sdk.objects.callback;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+import com.vk.api.sdk.events.CallbackEvent;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
  * PhotoCommentDelete object
  */
-public class PhotoCommentDelete implements Validable {
+public class PhotoCommentDelete implements Validable, CallbackEvent {
+    /**
+     * Entity: owner
+     */
+    @SerializedName("deleter_id")
+    @Required
+    private Long deleterId;
+
     @SerializedName("id")
     @Required
     private Integer id;
@@ -32,6 +41,15 @@ public class PhotoCommentDelete implements Validable {
     @SerializedName("user_id")
     @Required
     private Long userId;
+
+    public Long getDeleterId() {
+        return deleterId;
+    }
+
+    public PhotoCommentDelete setDeleterId(Long deleterId) {
+        this.deleterId = deleterId;
+        return this;
+    }
 
     public Integer getId() {
         return id;
@@ -71,7 +89,7 @@ public class PhotoCommentDelete implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(photoId, id, ownerId, userId);
+        return Objects.hash(photoId, id, ownerId, deleterId, userId);
     }
 
     @Override
@@ -82,6 +100,7 @@ public class PhotoCommentDelete implements Validable {
         return Objects.equals(photoId, photoCommentDelete.photoId) &&
                 Objects.equals(userId, photoCommentDelete.userId) &&
                 Objects.equals(ownerId, photoCommentDelete.ownerId) &&
+                Objects.equals(deleterId, photoCommentDelete.deleterId) &&
                 Objects.equals(id, photoCommentDelete.id);
     }
 
@@ -96,6 +115,7 @@ public class PhotoCommentDelete implements Validable {
         sb.append("photoId=").append(photoId);
         sb.append(", userId=").append(userId);
         sb.append(", ownerId=").append(ownerId);
+        sb.append(", deleterId=").append(deleterId);
         sb.append(", id=").append(id);
         sb.append('}');
         return sb.toString();

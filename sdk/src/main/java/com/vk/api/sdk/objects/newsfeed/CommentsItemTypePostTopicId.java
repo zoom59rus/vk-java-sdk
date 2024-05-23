@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Topic ID. Allowed values can be obtained from newsfeed.getPostTopics method
  */
-public enum CommentsItemTypePostTopicId implements EnumParam {
+public enum CommentsItemTypePostTopicId implements EnumParam<Integer> {
     @SerializedName("0")
     EMPTY_TOPIC(0),
 
@@ -50,8 +50,8 @@ public enum CommentsItemTypePostTopicId implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

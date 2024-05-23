@@ -3,28 +3,36 @@ package com.vk.api.sdk.objects.callback;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+import com.vk.api.sdk.events.CallbackEvent;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
  * MarketComment object
  */
-public class MarketComment implements Validable {
+public class MarketComment implements Validable, CallbackEvent {
     @SerializedName("date")
     @Required
     private Integer date;
 
+    /**
+     * Entity: owner
+     */
     @SerializedName("from_id")
     @Required
-    private Integer fromId;
+    private Long fromId;
 
     @SerializedName("id")
     @Required
     private Integer id;
 
+    /**
+     * Entity: owner
+     */
     @SerializedName("market_owner_id")
-    private Integer marketOwnerId;
+    private Long marketOwnerId;
 
     @SerializedName("photo_id")
     private Integer photoId;
@@ -41,11 +49,11 @@ public class MarketComment implements Validable {
         return this;
     }
 
-    public Integer getFromId() {
+    public Long getFromId() {
         return fromId;
     }
 
-    public MarketComment setFromId(Integer fromId) {
+    public MarketComment setFromId(Long fromId) {
         this.fromId = fromId;
         return this;
     }
@@ -59,11 +67,11 @@ public class MarketComment implements Validable {
         return this;
     }
 
-    public Integer getMarketOwnerId() {
+    public Long getMarketOwnerId() {
         return marketOwnerId;
     }
 
-    public MarketComment setMarketOwnerId(Integer marketOwnerId) {
+    public MarketComment setMarketOwnerId(Long marketOwnerId) {
         this.marketOwnerId = marketOwnerId;
         return this;
     }

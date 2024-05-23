@@ -8,6 +8,7 @@ import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.groups.CreateSubtype;
 import com.vk.api.sdk.objects.groups.CreateType;
 import com.vk.api.sdk.objects.groups.responses.CreateResponse;
+
 import java.util.Arrays;
 import java.util.List;
 

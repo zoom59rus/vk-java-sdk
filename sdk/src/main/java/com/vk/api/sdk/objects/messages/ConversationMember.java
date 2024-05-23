@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
@@ -31,6 +32,12 @@ public class ConversationMember implements Validable {
 
     @SerializedName("is_owner")
     private Boolean isOwner;
+
+    /**
+     * Does this member have write permission
+     */
+    @SerializedName("is_restricted_to_write")
+    private Boolean isRestrictedToWrite;
 
     @SerializedName("join_date")
     private Integer joinDate;
@@ -93,6 +100,15 @@ public class ConversationMember implements Validable {
         return this;
     }
 
+    public Boolean getIsRestrictedToWrite() {
+        return isRestrictedToWrite;
+    }
+
+    public ConversationMember setIsRestrictedToWrite(Boolean isRestrictedToWrite) {
+        this.isRestrictedToWrite = isRestrictedToWrite;
+        return this;
+    }
+
     public Integer getJoinDate() {
         return joinDate;
     }
@@ -122,7 +138,7 @@ public class ConversationMember implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(isMessageRequest, joinDate, invitedBy, isOwner, canKick, requestDate, isAdmin, memberId);
+        return Objects.hash(isMessageRequest, joinDate, invitedBy, isOwner, canKick, isRestrictedToWrite, requestDate, isAdmin, memberId);
     }
 
     @Override
@@ -137,7 +153,8 @@ public class ConversationMember implements Validable {
                 Objects.equals(canKick, conversationMember.canKick) &&
                 Objects.equals(requestDate, conversationMember.requestDate) &&
                 Objects.equals(invitedBy, conversationMember.invitedBy) &&
-                Objects.equals(isMessageRequest, conversationMember.isMessageRequest);
+                Objects.equals(isMessageRequest, conversationMember.isMessageRequest) &&
+                Objects.equals(isRestrictedToWrite, conversationMember.isRestrictedToWrite);
     }
 
     @Override
@@ -156,6 +173,7 @@ public class ConversationMember implements Validable {
         sb.append(", requestDate=").append(requestDate);
         sb.append(", invitedBy=").append(invitedBy);
         sb.append(", isMessageRequest=").append(isMessageRequest);
+        sb.append(", isRestrictedToWrite=").append(isRestrictedToWrite);
         sb.append('}');
         return sb.toString();
     }

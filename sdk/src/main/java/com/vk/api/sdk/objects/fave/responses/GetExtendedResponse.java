@@ -8,6 +8,7 @@ import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.fave.Bookmark;
 import com.vk.api.sdk.objects.groups.Group;
 import com.vk.api.sdk.objects.users.UserFull;
+
 import java.util.List;
 import java.util.Objects;
 

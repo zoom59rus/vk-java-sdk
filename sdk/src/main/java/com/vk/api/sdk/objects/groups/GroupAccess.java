@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.groups;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum GroupAccess implements EnumParam {
+public enum GroupAccess implements EnumParam<Integer> {
     @SerializedName("0")
     OPEN(0),
 
@@ -20,8 +20,8 @@ public enum GroupAccess implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

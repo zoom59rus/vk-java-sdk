@@ -5,12 +5,13 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
  * AnswerItem object
  */
-public class AnswerItem implements Validable {
+public class AnswerItem implements AnswerOneOf, Validable {
     @SerializedName("key")
     private String key;
 

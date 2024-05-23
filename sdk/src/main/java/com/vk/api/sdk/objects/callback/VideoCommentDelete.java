@@ -3,14 +3,23 @@ package com.vk.api.sdk.objects.callback;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+import com.vk.api.sdk.events.CallbackEvent;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
  * VideoCommentDelete object
  */
-public class VideoCommentDelete implements Validable {
+public class VideoCommentDelete implements Validable, CallbackEvent {
+    /**
+     * Entity: owner
+     */
+    @SerializedName("deleter_id")
+    @Required
+    private Long deleterId;
+
     @SerializedName("id")
     @Required
     private Integer id;
@@ -22,16 +31,18 @@ public class VideoCommentDelete implements Validable {
     @Required
     private Long ownerId;
 
-    /**
-     * Entity: owner
-     */
-    @SerializedName("user_id")
-    @Required
-    private Long userId;
-
     @SerializedName("video_id")
     @Required
     private Integer videoId;
+
+    public Long getDeleterId() {
+        return deleterId;
+    }
+
+    public VideoCommentDelete setDeleterId(Long deleterId) {
+        this.deleterId = deleterId;
+        return this;
+    }
 
     public Integer getId() {
         return id;
@@ -51,15 +62,6 @@ public class VideoCommentDelete implements Validable {
         return this;
     }
 
-    public Long getUserId() {
-        return userId;
-    }
-
-    public VideoCommentDelete setUserId(Long userId) {
-        this.userId = userId;
-        return this;
-    }
-
     public Integer getVideoId() {
         return videoId;
     }
@@ -71,7 +73,7 @@ public class VideoCommentDelete implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(videoId, id, ownerId, userId);
+        return Objects.hash(videoId, id, ownerId, deleterId);
     }
 
     @Override
@@ -79,8 +81,8 @@ public class VideoCommentDelete implements Validable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         VideoCommentDelete videoCommentDelete = (VideoCommentDelete) o;
-        return Objects.equals(userId, videoCommentDelete.userId) &&
-                Objects.equals(ownerId, videoCommentDelete.ownerId) &&
+        return Objects.equals(ownerId, videoCommentDelete.ownerId) &&
+                Objects.equals(deleterId, videoCommentDelete.deleterId) &&
                 Objects.equals(id, videoCommentDelete.id) &&
                 Objects.equals(videoId, videoCommentDelete.videoId);
     }
@@ -93,8 +95,8 @@ public class VideoCommentDelete implements Validable {
 
     public String toPrettyString() {
         final StringBuilder sb = new StringBuilder("VideoCommentDelete{");
-        sb.append("userId=").append(userId);
-        sb.append(", ownerId=").append(ownerId);
+        sb.append("ownerId=").append(ownerId);
+        sb.append(", deleterId=").append(deleterId);
         sb.append(", id=").append(id);
         sb.append(", videoId=").append(videoId);
         sb.append('}');

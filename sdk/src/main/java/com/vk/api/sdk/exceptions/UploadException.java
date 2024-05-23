@@ -1,5 +1,7 @@
 package com.vk.api.sdk.exceptions;
 
+import com.vk.api.sdk.objects.base.Error;
+
 import java.util.HashMap;
 import java.util.Map;
 
@@ -8,17 +10,11 @@ import java.util.Map;
  */
 public class UploadException extends ApiExtendedException {
 
-    public UploadException(Integer code, Integer statusCode, String description, String message) {
-        super(code, statusCode, new HashMap<>(), description, message);
+    public UploadException(Error error, Integer statusCode) {
+        super(error, statusCode, new HashMap<>());
     }
 
-    public UploadException(
-            Integer code,
-            Integer statusCode,
-            Map<String, String> headers,
-            String description,
-            String message
-    ) {
-        super(code, statusCode, headers, description, message);
+    public UploadException(Error error, Integer statusCode, Map<String, String> headers) {
+        super(error, statusCode, headers);
     }
 }

@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Template action type names
  */
-public enum TemplateActionTypeNames implements EnumParam {
+public enum TemplateActionTypeNames implements EnumParam<String> {
     @SerializedName("text")
     TEXT("text"),
 

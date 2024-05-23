@@ -5,13 +5,7 @@ import com.vk.api.sdk.client.AbstractAction;
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiMethod;
-import com.vk.api.sdk.queries.leadforms.LeadFormsCreateQuery;
-import com.vk.api.sdk.queries.leadforms.LeadFormsDeleteQuery;
-import com.vk.api.sdk.queries.leadforms.LeadFormsGetLeadsQuery;
-import com.vk.api.sdk.queries.leadforms.LeadFormsGetQuery;
-import com.vk.api.sdk.queries.leadforms.LeadFormsGetUploadURLQuery;
-import com.vk.api.sdk.queries.leadforms.LeadFormsListQuery;
-import com.vk.api.sdk.queries.leadforms.LeadFormsUpdateQuery;
+import com.vk.api.sdk.queries.leadforms.*;
 
 /**
  * List of LeadForms methods

@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -32,7 +33,7 @@ public class Conversation implements Validable {
     private Integer inRead;
 
     /**
-     * Is this conversation uread
+     * Is this conversation unread
      */
     @SerializedName("is_marked_unread")
     private Boolean isMarkedUnread;
@@ -41,6 +42,7 @@ public class Conversation implements Validable {
      * Conversation message ID of the last message in conversation
      */
     @SerializedName("last_conversation_message_id")
+    @Required
     private Integer lastConversationMessageId;
 
     /**
@@ -90,6 +92,10 @@ public class Conversation implements Validable {
      */
     @SerializedName("unread_count")
     private Integer unreadCount;
+
+    @SerializedName("version")
+    @Required
+    private Long version;
 
     public ConversationCanWrite getCanWrite() {
         return canWrite;
@@ -253,9 +259,18 @@ public class Conversation implements Validable {
         return this;
     }
 
+    public Long getVersion() {
+        return version;
+    }
+
+    public Conversation setVersion(Long version) {
+        this.version = version;
+        return this;
+    }
+
     @Override
     public int hashCode() {
-        return Objects.hash(outRead, unanswered, unreadCount, outReadBy, canWrite, isMarkedUnread, lastConversationMessageId, messageRequestData, important, chatSettings, sortId, peer, mentions, currentKeyboard, inRead, lastMessageId, pushSettings, specialServiceType);
+        return Objects.hash(outRead, unanswered, unreadCount, outReadBy, canWrite, isMarkedUnread, lastConversationMessageId, version, messageRequestData, important, chatSettings, sortId, peer, mentions, currentKeyboard, inRead, lastMessageId, pushSettings, specialServiceType);
     }
 
     @Override
@@ -268,6 +283,7 @@ public class Conversation implements Validable {
                 Objects.equals(chatSettings, conversation.chatSettings) &&
                 Objects.equals(unanswered, conversation.unanswered) &&
                 Objects.equals(isMarkedUnread, conversation.isMarkedUnread) &&
+                Objects.equals(version, conversation.version) &&
                 Objects.equals(sortId, conversation.sortId) &&
                 Objects.equals(important, conversation.important) &&
                 Objects.equals(lastMessageId, conversation.lastMessageId) &&
@@ -296,6 +312,7 @@ public class Conversation implements Validable {
         sb.append(", chatSettings=").append(chatSettings);
         sb.append(", unanswered=").append(unanswered);
         sb.append(", isMarkedUnread=").append(isMarkedUnread);
+        sb.append(", version=").append(version);
         sb.append(", sortId=").append(sortId);
         sb.append(", important=").append(important);
         sb.append(", lastMessageId=").append(lastMessageId);

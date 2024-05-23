@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.apps;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum GetScopesType implements EnumParam {
+public enum GetScopesType implements EnumParam<String> {
     @SerializedName("group")
     GROUP("group"),
 

@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.base;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum ImageTheme implements EnumParam {
+public enum ImageTheme implements EnumParam<String> {
     @SerializedName("light")
     LIGHT("light"),
 

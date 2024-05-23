@@ -6,6 +6,7 @@ import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.database.responses.GetCitiesResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -22,17 +23,6 @@ public class DatabaseGetCitiesQuery extends AbstractQueryBuilder<DatabaseGetCiti
     public DatabaseGetCitiesQuery(VkApiClient client, UserActor actor) {
         super(client, "database.getCities", GetCitiesResponse.class);
         accessToken(actor.getAccessToken());
-    }
-
-    /**
-     * Country ID.
-     *
-     * @param value value of "country id" parameter. Minimum is 0.
-     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
-     */
-    @ApiParam("country_id")
-    public DatabaseGetCitiesQuery countryId(Integer value) {
-        return unsafeParam("country_id", value);
     }
 
     /**

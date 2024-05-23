@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.ads;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum GetCampaignsFields implements EnumParam {
+public enum GetCampaignsFields implements EnumParam<String> {
     @SerializedName("ads_count")
     ADS_COUNT("ads_count");
 

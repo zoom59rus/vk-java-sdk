@@ -1,9 +1,10 @@
 package com.vk.api.sdk.events.longpoll;
 
+import com.vk.api.sdk.client.GsonHolder;
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.GroupActor;
 import com.vk.api.sdk.client.actors.UserActor;
-import com.vk.api.sdk.events.EventsHandler;
+import com.vk.api.sdk.events.CallbackEvent;
 import com.vk.api.sdk.exceptions.ApiException;
 import com.vk.api.sdk.exceptions.ClientException;
 import com.vk.api.sdk.objects.callback.longpoll.responses.GetLongPollEventsResponse;
@@ -11,12 +12,12 @@ import com.vk.api.sdk.objects.callback.messages.CallbackMessage;
 import com.vk.api.sdk.objects.groups.LongPollServer;
 import com.vk.api.sdk.objects.groups.responses.GetLongPollServerResponse;
 import org.apache.http.ConnectionClosedException;
-import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.concurrent.Executors;
 
-abstract class LongPollApi extends EventsHandler {
+abstract class LongPollApi implements CallbackEvent {
 
     private static final Logger LOG = LoggerFactory.getLogger(LongPollApi.class);
 
@@ -68,7 +69,7 @@ abstract class LongPollApi extends EventsHandler {
                         .getEvents(lpServer.getServer(), lpServer.getKey(), timestamp)
                         .waitTime(waitTime)
                         .execute();
-                eventsResponse.getUpdates().forEach(e -> parse(gson.fromJson(e, CallbackMessage.class)));
+                eventsResponse.getUpdates().forEach(e -> parse(new GsonHolder().getGson().fromJson(e, CallbackMessage.class)));
                 timestamp = eventsResponse.getTs();
             }
             LOG.info("LongPoll handler stopped to handle events");

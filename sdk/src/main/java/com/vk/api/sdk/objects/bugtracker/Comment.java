@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -25,6 +26,12 @@ public class Comment implements Validable {
     @Required
     private Integer bugreportId;
 
+    @SerializedName("can_edit")
+    private Boolean canEdit;
+
+    @SerializedName("can_remove")
+    private Boolean canRemove;
+
     @SerializedName("comment_id")
     @Required
     private Integer commentId;
@@ -32,9 +39,6 @@ public class Comment implements Validable {
     @SerializedName("created")
     @Required
     private Integer created;
-
-    @SerializedName("edit_hash")
-    private String editHash;
 
     @SerializedName("from_id")
     private Integer fromId;
@@ -47,9 +51,6 @@ public class Comment implements Validable {
 
     @SerializedName("meta_text")
     private String metaText;
-
-    @SerializedName("remove_hash")
-    private String removeHash;
 
     @SerializedName("text")
     @Required
@@ -91,6 +92,24 @@ public class Comment implements Validable {
         return this;
     }
 
+    public Boolean getCanEdit() {
+        return canEdit;
+    }
+
+    public Comment setCanEdit(Boolean canEdit) {
+        this.canEdit = canEdit;
+        return this;
+    }
+
+    public Boolean getCanRemove() {
+        return canRemove;
+    }
+
+    public Comment setCanRemove(Boolean canRemove) {
+        this.canRemove = canRemove;
+        return this;
+    }
+
     public Integer getCommentId() {
         return commentId;
     }
@@ -106,15 +125,6 @@ public class Comment implements Validable {
 
     public Comment setCreated(Integer created) {
         this.created = created;
-        return this;
-    }
-
-    public String getEditHash() {
-        return editHash;
-    }
-
-    public Comment setEditHash(String editHash) {
-        this.editHash = editHash;
         return this;
     }
 
@@ -154,15 +164,6 @@ public class Comment implements Validable {
         return this;
     }
 
-    public String getRemoveHash() {
-        return removeHash;
-    }
-
-    public Comment setRemoveHash(String removeHash) {
-        this.removeHash = removeHash;
-        return this;
-    }
-
     public String getText() {
         return text;
     }
@@ -174,7 +175,7 @@ public class Comment implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(attachments, created, removeHash, fromId, authorPhoto, isUnread, editHash, isHidden, bugreportId, metaText, authorName, commentId, text);
+        return Objects.hash(attachments, created, canEdit, fromId, authorPhoto, isUnread, isHidden, canRemove, bugreportId, metaText, authorName, commentId, text);
     }
 
     @Override
@@ -183,14 +184,14 @@ public class Comment implements Validable {
         if (o == null || getClass() != o.getClass()) return false;
         Comment comment = (Comment) o;
         return Objects.equals(authorName, comment.authorName) &&
-                Objects.equals(editHash, comment.editHash) &&
+                Objects.equals(canRemove, comment.canRemove) &&
                 Objects.equals(attachments, comment.attachments) &&
                 Objects.equals(fromId, comment.fromId) &&
                 Objects.equals(metaText, comment.metaText) &&
                 Objects.equals(created, comment.created) &&
                 Objects.equals(isHidden, comment.isHidden) &&
+                Objects.equals(canEdit, comment.canEdit) &&
                 Objects.equals(commentId, comment.commentId) &&
-                Objects.equals(removeHash, comment.removeHash) &&
                 Objects.equals(authorPhoto, comment.authorPhoto) &&
                 Objects.equals(bugreportId, comment.bugreportId) &&
                 Objects.equals(isUnread, comment.isUnread) &&
@@ -206,14 +207,14 @@ public class Comment implements Validable {
     public String toPrettyString() {
         final StringBuilder sb = new StringBuilder("Comment{");
         sb.append("authorName='").append(authorName).append("'");
-        sb.append(", editHash='").append(editHash).append("'");
+        sb.append(", canRemove=").append(canRemove);
         sb.append(", attachments=").append(attachments);
         sb.append(", fromId=").append(fromId);
         sb.append(", metaText='").append(metaText).append("'");
         sb.append(", created=").append(created);
         sb.append(", isHidden=").append(isHidden);
+        sb.append(", canEdit=").append(canEdit);
         sb.append(", commentId=").append(commentId);
-        sb.append(", removeHash='").append(removeHash).append("'");
         sb.append(", authorPhoto='").append(authorPhoto).append("'");
         sb.append(", bugreportId=").append(bugreportId);
         sb.append(", isUnread=").append(isUnread);

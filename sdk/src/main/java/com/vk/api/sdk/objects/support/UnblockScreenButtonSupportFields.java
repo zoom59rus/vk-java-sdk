@@ -5,12 +5,13 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
  * UnblockScreenButtonSupportFields object
  */
-public class UnblockScreenButtonSupportFields implements Validable {
+public class UnblockScreenButtonSupportFields implements UnblockScreenItem, Validable {
     @SerializedName("id")
     private Number id;
 

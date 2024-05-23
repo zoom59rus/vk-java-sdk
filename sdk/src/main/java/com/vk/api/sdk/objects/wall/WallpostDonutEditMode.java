@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Says what user can edit in post about donut properties
  */
-public enum WallpostDonutEditMode implements EnumParam {
+public enum WallpostDonutEditMode implements EnumParam<String> {
     @SerializedName("all")
     ALL("all"),
 

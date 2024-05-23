@@ -3,14 +3,22 @@ package com.vk.api.sdk.objects.callback;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+import com.vk.api.sdk.events.CallbackEvent;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
  * BoardPostDelete object
  */
-public class BoardPostDelete implements Validable {
+public class BoardPostDelete implements Validable, CallbackEvent {
+    /**
+     * Entity: owner
+     */
+    @SerializedName("deleter_id")
+    private Long deleterId;
+
     @SerializedName("id")
     @Required
     private Integer id;
@@ -19,9 +27,21 @@ public class BoardPostDelete implements Validable {
     @Required
     private Integer topicId;
 
+    /**
+     * Entity: owner
+     */
     @SerializedName("topic_owner_id")
     @Required
-    private Integer topicOwnerId;
+    private Long topicOwnerId;
+
+    public Long getDeleterId() {
+        return deleterId;
+    }
+
+    public BoardPostDelete setDeleterId(Long deleterId) {
+        this.deleterId = deleterId;
+        return this;
+    }
 
     public Integer getId() {
         return id;
@@ -41,18 +61,18 @@ public class BoardPostDelete implements Validable {
         return this;
     }
 
-    public Integer getTopicOwnerId() {
+    public Long getTopicOwnerId() {
         return topicOwnerId;
     }
 
-    public BoardPostDelete setTopicOwnerId(Integer topicOwnerId) {
+    public BoardPostDelete setTopicOwnerId(Long topicOwnerId) {
         this.topicOwnerId = topicOwnerId;
         return this;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(topicId, topicOwnerId, id);
+        return Objects.hash(topicId, topicOwnerId, id, deleterId);
     }
 
     @Override
@@ -61,6 +81,7 @@ public class BoardPostDelete implements Validable {
         if (o == null || getClass() != o.getClass()) return false;
         BoardPostDelete boardPostDelete = (BoardPostDelete) o;
         return Objects.equals(topicOwnerId, boardPostDelete.topicOwnerId) &&
+                Objects.equals(deleterId, boardPostDelete.deleterId) &&
                 Objects.equals(id, boardPostDelete.id) &&
                 Objects.equals(topicId, boardPostDelete.topicId);
     }
@@ -74,6 +95,7 @@ public class BoardPostDelete implements Validable {
     public String toPrettyString() {
         final StringBuilder sb = new StringBuilder("BoardPostDelete{");
         sb.append("topicOwnerId=").append(topicOwnerId);
+        sb.append(", deleterId=").append(deleterId);
         sb.append(", id=").append(id);
         sb.append(", topicId=").append(topicId);
         sb.append('}');

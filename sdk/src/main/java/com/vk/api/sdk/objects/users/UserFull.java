@@ -9,11 +9,11 @@ import com.vk.api.sdk.objects.apps.AppMin;
 import com.vk.api.sdk.objects.audio.Audio;
 import com.vk.api.sdk.objects.base.BoolInt;
 import com.vk.api.sdk.objects.base.City;
-import com.vk.api.sdk.objects.base.Country;
 import com.vk.api.sdk.objects.base.CropPhoto;
 import com.vk.api.sdk.objects.owner.State;
 import com.vk.api.sdk.objects.photos.Photo;
 import com.vk.api.sdk.objects.video.LiveInfo;
+
 import java.net.URI;
 import java.util.List;
 import java.util.Objects;
@@ -21,7 +21,7 @@ import java.util.Objects;
 /**
  * UserFull object
  */
-public class UserFull extends User implements Validable {
+public class UserFull extends User implements SubscriptionsItem, Validable {
     @SerializedName("about")
     private String about;
 
@@ -81,6 +81,12 @@ public class UserFull extends User implements Validable {
      */
     @SerializedName("can_call_from_group")
     private Boolean canCallFromGroup;
+
+    /**
+     * Information whether user/group can invite user as voicerooms speakr
+     */
+    @SerializedName("can_invite_as_voicerooms_speaker")
+    private Boolean canInviteAsVoiceroomsSpeaker;
 
     /**
      * Information whether current user can post on the user's wall
@@ -172,9 +178,6 @@ public class UserFull extends User implements Validable {
     @SerializedName("counters")
     private UserCounters counters;
 
-    @SerializedName("country")
-    private Country country;
-
     @SerializedName("crop_photo")
     private CropPhoto cropPhoto;
 
@@ -260,7 +263,7 @@ public class UserFull extends User implements Validable {
     private String firstNameNom;
 
     /**
-     * Number of user's followers
+     * Number of user's followers and friends
      */
     @SerializedName("followers_count")
     private Integer followersCount;
@@ -707,6 +710,15 @@ public class UserFull extends User implements Validable {
         return this;
     }
 
+    public Boolean getCanInviteAsVoiceroomsSpeaker() {
+        return canInviteAsVoiceroomsSpeaker;
+    }
+
+    public UserFull setCanInviteAsVoiceroomsSpeaker(Boolean canInviteAsVoiceroomsSpeaker) {
+        this.canInviteAsVoiceroomsSpeaker = canInviteAsVoiceroomsSpeaker;
+        return this;
+    }
+
     public boolean canPost() {
         return canPost == BoolInt.YES;
     }
@@ -850,15 +862,6 @@ public class UserFull extends User implements Validable {
 
     public UserFull setCounters(UserCounters counters) {
         this.counters = counters;
-        return this;
-    }
-
-    public Country getCountry() {
-        return country;
-    }
-
-    public UserFull setCountry(Country country) {
-        this.country = country;
         return this;
     }
 
@@ -1711,7 +1714,7 @@ public class UserFull extends User implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(canBeInvitedGroup, career, occupation, isNoIndex, about, instagram, type, quotes, relation, movies, ownerState, twitter, music, universities, homeTown, graduation, games, storiesArchiveCount, lastNameIns, firstNameGen, counters, contactId, canSeeAllPosts, photoMediumRec, personal, educationStatus, videoLiveCount, books, lastSeen, canSubscribePodcasts, hasPhoto, mobilePhone, schools, domain, lastNameNom, facultyName, followersCount, hash, facebookName, statusAudio, status, isMessageRequest, activity, city, maidenName, photo200, videoLiveLevel, skype, canPost, photoMaxSize, statusApp, canSeeGifts, nickname, wallDefault, commonCount, email, isVideoLiveNotificationsBlocked, photoBig, lastNameDat, canBan, facebook, videoLive, photoId, photo, photo200Orig, lastNameAcc, blacklisted, site, firstNameIns, interests, canSendFriendRequest, universityName, country, isBestFriend, canSubscribePosts, tv, bdate, language, educationForm, descriptions, faculty, canSeeAudio, photoMaxOrig, hasUnseenStories, military, firstNameNom, lastNameAbl, isService, canCallFromGroup, test, contactName, homePhone, livejournal, relatives, canUploadDoc, accessKey, lists, photo400Orig, isHiddenFromFeed, lastNameGen, isFavorite, relationPartner, cropPhoto, exports, timezone, university, isSubscribedPodcasts, photoMedium, photo400, firstNameAcc, clipsCount, universityGroupId, firstNameDat, wallComments, photoMax, isFriend, canSeeWishes, hasMobile, blacklistedByMe, canCall, photoRec, activities, firstNameAbl, serviceDescription, canWritePrivateMessage);
+        return Objects.hash(canBeInvitedGroup, career, occupation, isNoIndex, about, instagram, type, quotes, relation, movies, ownerState, twitter, music, universities, homeTown, graduation, games, storiesArchiveCount, lastNameIns, firstNameGen, counters, contactId, canSeeAllPosts, photoMediumRec, personal, educationStatus, videoLiveCount, books, lastSeen, canSubscribePodcasts, hasPhoto, mobilePhone, schools, domain, lastNameNom, facultyName, followersCount, hash, facebookName, statusAudio, status, isMessageRequest, activity, city, maidenName, photo200, videoLiveLevel, skype, canPost, photoMaxSize, statusApp, canSeeGifts, nickname, wallDefault, commonCount, email, isVideoLiveNotificationsBlocked, photoBig, lastNameDat, canBan, facebook, videoLive, photoId, photo, photo200Orig, lastNameAcc, blacklisted, site, firstNameIns, interests, canSendFriendRequest, universityName, isBestFriend, canSubscribePosts, tv, bdate, language, educationForm, descriptions, faculty, canSeeAudio, photoMaxOrig, hasUnseenStories, military, firstNameNom, lastNameAbl, isService, canCallFromGroup, test, contactName, homePhone, livejournal, relatives, canUploadDoc, accessKey, lists, photo400Orig, isHiddenFromFeed, lastNameGen, isFavorite, relationPartner, cropPhoto, exports, timezone, university, isSubscribedPodcasts, photoMedium, photo400, firstNameAcc, clipsCount, universityGroupId, firstNameDat, wallComments, photoMax, isFriend, canSeeWishes, hasMobile, blacklistedByMe, canCall, photoRec, canInviteAsVoiceroomsSpeaker, activities, firstNameAbl, serviceDescription, canWritePrivateMessage);
     }
 
     @Override
@@ -1782,7 +1785,6 @@ public class UserFull extends User implements Validable {
                 Objects.equals(photoRec, userFull.photoRec) &&
                 Objects.equals(interests, userFull.interests) &&
                 Objects.equals(isFriend, userFull.isFriend) &&
-                Objects.equals(country, userFull.country) &&
                 Objects.equals(tv, userFull.tv) &&
                 Objects.equals(bdate, userFull.bdate) &&
                 Objects.equals(canSendFriendRequest, userFull.canSendFriendRequest) &&
@@ -1823,6 +1825,7 @@ public class UserFull extends User implements Validable {
                 Objects.equals(canSubscribePosts, userFull.canSubscribePosts) &&
                 Objects.equals(firstNameDat, userFull.firstNameDat) &&
                 Objects.equals(contactId, userFull.contactId) &&
+                Objects.equals(canInviteAsVoiceroomsSpeaker, userFull.canInviteAsVoiceroomsSpeaker) &&
                 Objects.equals(facultyName, userFull.facultyName) &&
                 Objects.equals(photoMaxOrig, userFull.photoMaxOrig) &&
                 Objects.equals(lastNameDat, userFull.lastNameDat) &&
@@ -1917,7 +1920,6 @@ public class UserFull extends User implements Validable {
         sb.append(", photoRec=").append(photoRec);
         sb.append(", interests='").append(interests).append("'");
         sb.append(", isFriend=").append(isFriend);
-        sb.append(", country=").append(country);
         sb.append(", tv='").append(tv).append("'");
         sb.append(", bdate='").append(bdate).append("'");
         sb.append(", canSendFriendRequest=").append(canSendFriendRequest);
@@ -1958,6 +1960,7 @@ public class UserFull extends User implements Validable {
         sb.append(", canSubscribePosts=").append(canSubscribePosts);
         sb.append(", firstNameDat='").append(firstNameDat).append("'");
         sb.append(", contactId=").append(contactId);
+        sb.append(", canInviteAsVoiceroomsSpeaker=").append(canInviteAsVoiceroomsSpeaker);
         sb.append(", facultyName='").append(facultyName).append("'");
         sb.append(", photoMaxOrig=").append(photoMaxOrig);
         sb.append(", lastNameDat='").append(lastNameDat).append("'");

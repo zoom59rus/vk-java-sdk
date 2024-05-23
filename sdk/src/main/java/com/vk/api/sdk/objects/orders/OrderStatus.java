@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Order status
  */
-public enum OrderStatus implements EnumParam {
+public enum OrderStatus implements EnumParam<String> {
     @SerializedName("created")
     CREATED("created"),
 

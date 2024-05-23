@@ -8,6 +8,7 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.base.UserGroupFields;
 import com.vk.api.sdk.objects.wall.responses.GetByIdExtendedResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,34 +16,6 @@ import java.util.List;
  * Query for Wall.getById method
  */
 public class WallGetByIdQueryWithExtended extends AbstractQueryBuilder<WallGetByIdQueryWithExtended, GetByIdExtendedResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     * @param posts value of "posts" parameter.
-     */
-    public WallGetByIdQueryWithExtended(VkApiClient client, UserActor actor, String... posts) {
-        super(client, "wall.getById", GetByIdExtendedResponse.class);
-        accessToken(actor.getAccessToken());
-        posts(posts);
-        extended(true);
-    }
-
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     * @param posts value of "posts" parameter.
-     */
-    public WallGetByIdQueryWithExtended(VkApiClient client, UserActor actor, List<String> posts) {
-        super(client, "wall.getById", GetByIdExtendedResponse.class);
-        accessToken(actor.getAccessToken());
-        posts(posts);
-        extended(true);
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -70,6 +43,34 @@ public class WallGetByIdQueryWithExtended extends AbstractQueryBuilder<WallGetBy
         super(client, "wall.getById", GetByIdExtendedResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+        posts(posts);
+        extended(true);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     * @param posts value of "posts" parameter.
+     */
+    public WallGetByIdQueryWithExtended(VkApiClient client, UserActor actor, String... posts) {
+        super(client, "wall.getById", GetByIdExtendedResponse.class);
+        accessToken(actor.getAccessToken());
+        posts(posts);
+        extended(true);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     * @param posts value of "posts" parameter.
+     */
+    public WallGetByIdQueryWithExtended(VkApiClient client, UserActor actor, List<String> posts) {
+        super(client, "wall.getById", GetByIdExtendedResponse.class);
+        accessToken(actor.getAccessToken());
         posts(posts);
         extended(true);
     }

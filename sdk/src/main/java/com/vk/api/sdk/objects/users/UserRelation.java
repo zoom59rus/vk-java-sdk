@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.users;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum UserRelation implements EnumParam {
+public enum UserRelation implements EnumParam<Integer> {
     @SerializedName("0")
     NOT_SPECIFIED(0),
 
@@ -38,8 +38,8 @@ public enum UserRelation implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

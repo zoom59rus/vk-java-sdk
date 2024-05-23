@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.base;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum UserGroupFields implements EnumParam {
+public enum UserGroupFields implements EnumParam<String> {
     @SerializedName("about")
     ABOUT("about"),
 
@@ -88,9 +88,6 @@ public enum UserGroupFields implements EnumParam {
 
     @SerializedName("counters")
     COUNTERS("counters"),
-
-    @SerializedName("country")
-    COUNTRY("country"),
 
     @SerializedName("cover")
     COVER("cover"),
@@ -357,7 +354,10 @@ public enum UserGroupFields implements EnumParam {
     IS_NFT("is_nft"),
 
     @SerializedName("is_nft_photo")
-    IS_NFT_PHOTO("is_nft_photo");
+    IS_NFT_PHOTO("is_nft_photo"),
+
+    @SerializedName("is_verified")
+    IS_VERIFIED("is_verified");
 
     private final String value;
 

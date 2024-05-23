@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.base.BoolInt;
+
 import java.net.URI;
 import java.util.List;
 import java.util.Objects;
@@ -184,6 +185,18 @@ public class AdLayout implements Validable {
      */
     @SerializedName("video_src_1080")
     private String videoSrc1080;
+
+    /**
+     * Video source 1440p
+     */
+    @SerializedName("video_src_1440")
+    private String videoSrc1440;
+
+    /**
+     * Video source 2160p
+     */
+    @SerializedName("video_src_2160")
+    private String videoSrc2160;
 
     /**
      * Video source 240p
@@ -469,6 +482,24 @@ public class AdLayout implements Validable {
         return this;
     }
 
+    public String getVideoSrc1440() {
+        return videoSrc1440;
+    }
+
+    public AdLayout setVideoSrc1440(String videoSrc1440) {
+        this.videoSrc1440 = videoSrc1440;
+        return this;
+    }
+
+    public String getVideoSrc2160() {
+        return videoSrc2160;
+    }
+
+    public AdLayout setVideoSrc2160(String videoSrc2160) {
+        this.videoSrc2160 = videoSrc2160;
+        return this;
+    }
+
     public String getVideoSrc240() {
         return videoSrc240;
     }
@@ -507,7 +538,7 @@ public class AdLayout implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(iconSrc2x, iconSrc, description, imageSrc, video, title, post, repeatVideo, costType, linkUrl, imageSrc2x, clipsList, id, videoImageSrc2x, linkButton, goalType, videoSrc360, videoSrc240, social, videoSrc480, campaignId, previewLink, videoSrc720, storiesData, linkTitle, videoDuration, okved, videoSrc1080, ageRestriction, linkType, adFormat, linkDomain, videoImageSrc);
+        return Objects.hash(iconSrc2x, iconSrc, description, imageSrc, video, title, post, repeatVideo, costType, linkUrl, videoSrc2160, imageSrc2x, clipsList, id, videoImageSrc2x, linkButton, goalType, videoSrc360, videoSrc240, social, videoSrc480, campaignId, previewLink, videoSrc720, storiesData, videoSrc1440, linkTitle, videoDuration, okved, videoSrc1080, ageRestriction, linkType, adFormat, linkDomain, videoImageSrc);
     }
 
     @Override
@@ -529,6 +560,7 @@ public class AdLayout implements Validable {
                 Objects.equals(post, adLayout.post) &&
                 Objects.equals(iconSrc, adLayout.iconSrc) &&
                 Objects.equals(linkUrl, adLayout.linkUrl) &&
+                Objects.equals(videoSrc1440, adLayout.videoSrc1440) &&
                 Objects.equals(id, adLayout.id) &&
                 Objects.equals(campaignId, adLayout.campaignId) &&
                 Objects.equals(adFormat, adLayout.adFormat) &&
@@ -545,6 +577,7 @@ public class AdLayout implements Validable {
                 Objects.equals(okved, adLayout.okved) &&
                 Objects.equals(videoSrc720, adLayout.videoSrc720) &&
                 Objects.equals(videoImageSrc2x, adLayout.videoImageSrc2x) &&
+                Objects.equals(videoSrc2160, adLayout.videoSrc2160) &&
                 Objects.equals(ageRestriction, adLayout.ageRestriction) &&
                 Objects.equals(clipsList, adLayout.clipsList) &&
                 Objects.equals(repeatVideo, adLayout.repeatVideo);
@@ -572,6 +605,7 @@ public class AdLayout implements Validable {
         sb.append(", post=").append(post);
         sb.append(", iconSrc='").append(iconSrc).append("'");
         sb.append(", linkUrl=").append(linkUrl);
+        sb.append(", videoSrc1440='").append(videoSrc1440).append("'");
         sb.append(", id=").append(id);
         sb.append(", campaignId=").append(campaignId);
         sb.append(", adFormat=").append(adFormat);
@@ -588,6 +622,7 @@ public class AdLayout implements Validable {
         sb.append(", okved='").append(okved).append("'");
         sb.append(", videoSrc720='").append(videoSrc720).append("'");
         sb.append(", videoImageSrc2x='").append(videoImageSrc2x).append("'");
+        sb.append(", videoSrc2160='").append(videoSrc2160).append("'");
         sb.append(", ageRestriction=").append(ageRestriction);
         sb.append(", clipsList=").append(clipsList);
         sb.append(", repeatVideo=").append(repeatVideo);

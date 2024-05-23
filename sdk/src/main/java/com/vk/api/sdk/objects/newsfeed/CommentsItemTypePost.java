@@ -4,25 +4,21 @@ package com.vk.api.sdk.objects.newsfeed;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
+import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.base.BoolInt;
 import com.vk.api.sdk.objects.base.CommentsInfo;
 import com.vk.api.sdk.objects.base.LikesInfo;
 import com.vk.api.sdk.objects.base.RepostsInfo;
-import com.vk.api.sdk.objects.wall.Geo;
-import com.vk.api.sdk.objects.wall.PostCopyright;
-import com.vk.api.sdk.objects.wall.PostSource;
-import com.vk.api.sdk.objects.wall.PostType;
-import com.vk.api.sdk.objects.wall.Views;
-import com.vk.api.sdk.objects.wall.WallpostAttachment;
-import com.vk.api.sdk.objects.wall.WallpostDonut;
-import com.vk.api.sdk.objects.wall.WallpostFull;
+import com.vk.api.sdk.objects.wall.*;
+
+import java.net.URI;
 import java.util.List;
 import java.util.Objects;
 
 /**
  * CommentsItemTypePost object
  */
-public class CommentsItemTypePost extends CommentsItemBase implements Validable {
+public class CommentsItemTypePost extends CommentsItemBase implements CommentsItem, Validable {
     /**
      * Access key to private object
      */
@@ -84,6 +80,9 @@ public class CommentsItemTypePost extends CommentsItemBase implements Validable 
     @SerializedName("donut")
     private WallpostDonut donut;
 
+    @SerializedName("donut_miniapp_url")
+    private URI donutMiniappUrl;
+
     /**
      * Date of editing in Unixtime
      */
@@ -114,6 +113,10 @@ public class CommentsItemTypePost extends CommentsItemBase implements Validable 
      */
     @SerializedName("id")
     private Integer id;
+
+    @SerializedName("inner_type")
+    @Required
+    private CommentsItemTypePostInnerType innerType;
 
     /**
      * Is post archived, only for post owners
@@ -321,6 +324,15 @@ public class CommentsItemTypePost extends CommentsItemBase implements Validable 
         return this;
     }
 
+    public URI getDonutMiniappUrl() {
+        return donutMiniappUrl;
+    }
+
+    public CommentsItemTypePost setDonutMiniappUrl(URI donutMiniappUrl) {
+        this.donutMiniappUrl = donutMiniappUrl;
+        return this;
+    }
+
     public Integer getEdited() {
         return edited;
     }
@@ -372,6 +384,15 @@ public class CommentsItemTypePost extends CommentsItemBase implements Validable 
 
     public CommentsItemTypePost setId(Integer id) {
         this.id = id;
+        return this;
+    }
+
+    public CommentsItemTypePostInnerType getInnerType() {
+        return innerType;
+    }
+
+    public CommentsItemTypePost setInnerType(CommentsItemTypePostInnerType innerType) {
+        this.innerType = innerType;
         return this;
     }
 
@@ -528,7 +549,7 @@ public class CommentsItemTypePost extends CommentsItemBase implements Validable 
 
     @Override
     public int hashCode() {
-        return Objects.hash(toId, carouselOffset, copyright, attachments, isArchived, canEdit, ownerId, feedback, geo, deletedReason, parentsStack, isDeleted, donut, canDelete, id, text, markedAsAds, canPin, views, likes, comments, isPinned, postType, edited, deletedDetails, shortTextRate, postSource, fromId, topicId, signerId, createdBy, accessKey, hash, reposts, isFavorite, copyHistory);
+        return Objects.hash(toId, carouselOffset, copyright, attachments, isArchived, canEdit, ownerId, feedback, geo, deletedReason, parentsStack, isDeleted, donut, canDelete, id, text, donutMiniappUrl, markedAsAds, canPin, views, likes, comments, isPinned, postType, edited, deletedDetails, shortTextRate, postSource, fromId, topicId, signerId, createdBy, accessKey, innerType, hash, reposts, isFavorite, copyHistory);
     }
 
     @Override
@@ -537,6 +558,7 @@ public class CommentsItemTypePost extends CommentsItemBase implements Validable 
         if (o == null || getClass() != o.getClass()) return false;
         CommentsItemTypePost commentsItemTypePost = (CommentsItemTypePost) o;
         return Objects.equals(copyright, commentsItemTypePost.copyright) &&
+                Objects.equals(donutMiniappUrl, commentsItemTypePost.donutMiniappUrl) &&
                 Objects.equals(attachments, commentsItemTypePost.attachments) &&
                 Objects.equals(fromId, commentsItemTypePost.fromId) &&
                 Objects.equals(isFavorite, commentsItemTypePost.isFavorite) &&
@@ -547,6 +569,7 @@ public class CommentsItemTypePost extends CommentsItemBase implements Validable 
                 Objects.equals(feedback, commentsItemTypePost.feedback) &&
                 Objects.equals(geo, commentsItemTypePost.geo) &&
                 Objects.equals(isDeleted, commentsItemTypePost.isDeleted) &&
+                Objects.equals(innerType, commentsItemTypePost.innerType) &&
                 Objects.equals(canDelete, commentsItemTypePost.canDelete) &&
                 Objects.equals(donut, commentsItemTypePost.donut) &&
                 Objects.equals(deletedReason, commentsItemTypePost.deletedReason) &&
@@ -583,6 +606,7 @@ public class CommentsItemTypePost extends CommentsItemBase implements Validable 
     public String toPrettyString() {
         final StringBuilder sb = new StringBuilder("CommentsItemTypePost{");
         sb.append("copyright=").append(copyright);
+        sb.append(", donutMiniappUrl=").append(donutMiniappUrl);
         sb.append(", attachments=").append(attachments);
         sb.append(", fromId=").append(fromId);
         sb.append(", isFavorite=").append(isFavorite);
@@ -593,6 +617,7 @@ public class CommentsItemTypePost extends CommentsItemBase implements Validable 
         sb.append(", feedback=").append(feedback);
         sb.append(", geo=").append(geo);
         sb.append(", isDeleted=").append(isDeleted);
+        sb.append(", innerType='").append(innerType).append("'");
         sb.append(", canDelete=").append(canDelete);
         sb.append(", donut=").append(donut);
         sb.append(", deletedReason='").append(deletedReason).append("'");

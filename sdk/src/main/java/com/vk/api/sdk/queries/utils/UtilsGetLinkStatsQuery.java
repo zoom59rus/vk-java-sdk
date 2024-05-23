@@ -10,6 +10,7 @@ import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.utils.GetLinkStatsInterval;
 import com.vk.api.sdk.objects.utils.GetLinkStatsSource;
 import com.vk.api.sdk.objects.utils.responses.GetLinkStatsResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -42,30 +43,6 @@ public class UtilsGetLinkStatsQuery extends AbstractQueryBuilder<UtilsGetLinkSta
     }
 
     /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     * @param key value of "key" parameter.
-     */
-    public UtilsGetLinkStatsQuery(VkApiClient client, UserActor actor, String key) {
-        super(client, "utils.getLinkStats", GetLinkStatsResponse.class);
-        accessToken(actor.getAccessToken());
-        key(key);
-    }
-
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public UtilsGetLinkStatsQuery(VkApiClient client, UserActor actor) {
-        super(client, "utils.getLinkStats", GetLinkStatsResponse.class);
-        accessToken(actor.getAccessToken());
-    }
-
-    /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
      * @param client VK API client
@@ -89,6 +66,30 @@ public class UtilsGetLinkStatsQuery extends AbstractQueryBuilder<UtilsGetLinkSta
         super(client, "utils.getLinkStats", GetLinkStatsResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     * @param key value of "key" parameter.
+     */
+    public UtilsGetLinkStatsQuery(VkApiClient client, UserActor actor, String key) {
+        super(client, "utils.getLinkStats", GetLinkStatsResponse.class);
+        accessToken(actor.getAccessToken());
+        key(key);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public UtilsGetLinkStatsQuery(VkApiClient client, UserActor actor) {
+        super(client, "utils.getLinkStats", GetLinkStatsResponse.class);
+        accessToken(actor.getAccessToken());
     }
 
     /**

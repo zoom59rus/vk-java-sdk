@@ -3,15 +3,17 @@ package com.vk.api.sdk.objects.callback;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+import com.vk.api.sdk.events.CallbackEvent;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.photos.Photo;
+
 import java.util.Objects;
 
 /**
  * GroupChangePhoto object
  */
-public class GroupChangePhoto implements Validable {
+public class GroupChangePhoto implements Validable, CallbackEvent {
     @SerializedName("photo")
     @Required
     private Photo photo;

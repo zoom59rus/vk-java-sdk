@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Link type
  */
-public enum OfferLinkType implements EnumParam {
+public enum OfferLinkType implements EnumParam<String> {
     @SerializedName("profile")
     PROFILE("profile"),
 

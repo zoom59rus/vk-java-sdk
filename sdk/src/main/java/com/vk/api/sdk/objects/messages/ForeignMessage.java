@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.base.Geo;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -20,6 +21,7 @@ public class ForeignMessage implements Validable {
      * Conversation message ID
      */
     @SerializedName("conversation_message_id")
+    @Required
     private Integer conversationMessageId;
 
     /**

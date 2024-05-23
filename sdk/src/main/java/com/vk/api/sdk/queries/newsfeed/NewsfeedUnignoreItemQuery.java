@@ -7,6 +7,7 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.base.responses.OkResponse;
 import com.vk.api.sdk.objects.newsfeed.IgnoreItemType;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -20,17 +21,11 @@ public class NewsfeedUnignoreItemQuery extends AbstractQueryBuilder<NewsfeedUnig
      * @param client VK API client
      * @param actor actor with access token
      * @param type value of "type" parameter.
-     * @param ownerId value of "owner id" parameter. Entity - owner
-     *
-     * @param itemId value of "item id" parameter. Minimum is 0.
      */
-    public NewsfeedUnignoreItemQuery(VkApiClient client, UserActor actor, IgnoreItemType type,
-            Long ownerId, Integer itemId) {
+    public NewsfeedUnignoreItemQuery(VkApiClient client, UserActor actor, IgnoreItemType type) {
         super(client, "newsfeed.unignoreItem", OkResponse.class);
         accessToken(actor.getAccessToken());
         type(type);
-        ownerId(ownerId);
-        itemId(itemId);
     }
 
     /**
@@ -58,7 +53,7 @@ public class NewsfeedUnignoreItemQuery extends AbstractQueryBuilder<NewsfeedUnig
     /**
      * Item owner's identifier (user or community), "Note that community id must be negative. 'owner_id=1' - user , 'owner_id=-1' - community "
      *
-     * @param value value of "owner id" parameter. Entity - owner
+     * @param value value of "owner id" parameter. By default 0. Entity - owner
      *
      * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
      */
@@ -70,7 +65,7 @@ public class NewsfeedUnignoreItemQuery extends AbstractQueryBuilder<NewsfeedUnig
     /**
      * Item identifier
      *
-     * @param value value of "item id" parameter. Minimum is 0.
+     * @param value value of "item id" parameter. Minimum is 0. By default 0.
      * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
      */
     @ApiParam("item_id")
@@ -96,6 +91,6 @@ public class NewsfeedUnignoreItemQuery extends AbstractQueryBuilder<NewsfeedUnig
 
     @Override
     protected List<String> essentialKeys() {
-        return Arrays.asList("item_id", "type", "owner_id", "access_token");
+        return Arrays.asList("type", "access_token");
     }
 }

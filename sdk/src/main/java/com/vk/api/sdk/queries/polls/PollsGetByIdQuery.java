@@ -5,8 +5,9 @@ import com.vk.api.sdk.client.AbstractQueryBuilder;
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
-import com.vk.api.sdk.objects.polls.GetByIdNameCase;
+import com.vk.api.sdk.objects.base.NameCase;
 import com.vk.api.sdk.objects.polls.responses.GetByIdResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -97,11 +98,11 @@ public class PollsGetByIdQuery extends AbstractQueryBuilder<PollsGetByIdQuery, G
     /**
      * Set name case
      *
-     * @param value value of "name case" parameter. By default nom.
+     * @param value value of "name case" parameter.
      * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
      */
     @ApiParam("name_case")
-    public PollsGetByIdQuery nameCase(GetByIdNameCase value) {
+    public PollsGetByIdQuery nameCase(NameCase value) {
         return unsafeParam("name_case", value);
     }
 

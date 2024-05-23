@@ -11,6 +11,7 @@ import com.vk.api.sdk.objects.messages.Conversation;
 import com.vk.api.sdk.objects.messages.LongpollMessages;
 import com.vk.api.sdk.objects.messages.LongpollParams;
 import com.vk.api.sdk.objects.users.UserFull;
+
 import java.util.List;
 import java.util.Objects;
 

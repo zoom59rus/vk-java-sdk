@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.likes;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum Type implements EnumParam {
+public enum Type implements EnumParam<String> {
     @SerializedName("post")
     POST("post"),
 

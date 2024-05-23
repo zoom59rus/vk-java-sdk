@@ -7,6 +7,7 @@ import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.users.SubscriptionsItem;
+
 import java.util.List;
 import java.util.Objects;
 import java.util.stream.Collectors;
@@ -26,6 +27,18 @@ public class GetListExtendedResponse implements Validable {
     @Required
     private List<JsonObject> items;
 
+    /**
+     * Author of post if he liked the comment
+     */
+    @SerializedName("liked_by_author")
+    private SubscriptionsItem likedByAuthor;
+
+    /**
+     * Group where post is present if they liked the comment
+     */
+    @SerializedName("liked_by_group")
+    private SubscriptionsItem likedByGroup;
+
     public Integer getCount() {
         return count;
     }
@@ -36,12 +49,30 @@ public class GetListExtendedResponse implements Validable {
     }
 
     public List<SubscriptionsItem> getItems() {
-        return items.stream().map(SubscriptionsItem::new).collect(Collectors.toList());
+        return items.stream().map(item -> new com.vk.api.sdk.client.GsonHolder().getGson().fromJson(item, SubscriptionsItem.class)).collect(Collectors.toList());
+    }
+
+    public SubscriptionsItem getLikedByAuthor() {
+        return likedByAuthor;
+    }
+
+    public GetListExtendedResponse setLikedByAuthor(SubscriptionsItem likedByAuthor) {
+        this.likedByAuthor = likedByAuthor;
+        return this;
+    }
+
+    public SubscriptionsItem getLikedByGroup() {
+        return likedByGroup;
+    }
+
+    public GetListExtendedResponse setLikedByGroup(SubscriptionsItem likedByGroup) {
+        this.likedByGroup = likedByGroup;
+        return this;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(count, items);
+        return Objects.hash(likedByGroup, count, items, likedByAuthor);
     }
 
     @Override
@@ -49,7 +80,9 @@ public class GetListExtendedResponse implements Validable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         GetListExtendedResponse getListExtendedResponse = (GetListExtendedResponse) o;
-        return Objects.equals(count, getListExtendedResponse.count) &&
+        return Objects.equals(likedByAuthor, getListExtendedResponse.likedByAuthor) &&
+                Objects.equals(count, getListExtendedResponse.count) &&
+                Objects.equals(likedByGroup, getListExtendedResponse.likedByGroup) &&
                 Objects.equals(items, getListExtendedResponse.items);
     }
 
@@ -61,7 +94,9 @@ public class GetListExtendedResponse implements Validable {
 
     public String toPrettyString() {
         final StringBuilder sb = new StringBuilder("GetListExtendedResponse{");
-        sb.append("count=").append(count);
+        sb.append("likedByAuthor=").append(likedByAuthor);
+        sb.append(", count=").append(count);
+        sb.append(", likedByGroup=").append(likedByGroup);
         sb.append(", items=").append(items);
         sb.append('}');
         return sb.toString();

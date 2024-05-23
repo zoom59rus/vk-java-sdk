@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Source of scope
  */
-public enum GetLinkStatsSource implements EnumParam {
+public enum GetLinkStatsSource implements EnumParam<String> {
     @SerializedName("vk_cc")
     VK_CC("vk_cc"),
 

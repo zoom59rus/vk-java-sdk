@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * User's credentials as community admin
  */
-public enum RoleOptions implements EnumParam {
+public enum RoleOptions implements EnumParam<String> {
     @SerializedName("moderator")
     MODERATOR("moderator"),
 

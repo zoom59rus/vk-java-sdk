@@ -6,6 +6,7 @@ import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.GroupActor;
 import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.client.actors.UserActor;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -25,17 +26,6 @@ public class UtilsGetServerTimeQuery extends AbstractQueryBuilder<UtilsGetServer
     }
 
     /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public UtilsGetServerTimeQuery(VkApiClient client, UserActor actor) {
-        super(client, "utils.getServerTime", Integer.class);
-        accessToken(actor.getAccessToken());
-    }
-
-    /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
      * @param client VK API client
@@ -45,6 +35,17 @@ public class UtilsGetServerTimeQuery extends AbstractQueryBuilder<UtilsGetServer
         super(client, "utils.getServerTime", Integer.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public UtilsGetServerTimeQuery(VkApiClient client, UserActor actor) {
+        super(client, "utils.getServerTime", Integer.class);
+        accessToken(actor.getAccessToken());
     }
 
     @Override

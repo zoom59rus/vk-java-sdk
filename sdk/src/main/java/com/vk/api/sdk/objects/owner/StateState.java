@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.owner;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum StateState implements EnumParam {
+public enum StateState implements EnumParam<Integer> {
     @SerializedName("1")
     BANNED(1),
 
@@ -26,8 +26,8 @@ public enum StateState implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

@@ -5,13 +5,10 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
-import com.vk.api.sdk.objects.base.BoolInt;
-import com.vk.api.sdk.objects.base.Likes;
-import com.vk.api.sdk.objects.base.ObjectCount;
-import com.vk.api.sdk.objects.base.PropertyExists;
-import com.vk.api.sdk.objects.base.RepostsInfo;
+import com.vk.api.sdk.objects.base.*;
 import com.vk.api.sdk.objects.photos.Image;
 import com.vk.api.sdk.objects.photos.PhotoSizes;
+
 import java.net.URI;
 import java.util.List;
 import java.util.Objects;
@@ -19,7 +16,7 @@ import java.util.Objects;
 /**
  * CommentsItemTypePhoto object
  */
-public class CommentsItemTypePhoto extends CommentsItemBase implements Validable {
+public class CommentsItemTypePhoto extends CommentsItemBase implements CommentsItem, Validable {
     /**
      * Access key for the photo
      */
@@ -126,6 +123,12 @@ public class CommentsItemTypePhoto extends CommentsItemBase implements Validable
      */
     @SerializedName("text")
     private String text;
+
+    /**
+     * Thumb Hash
+     */
+    @SerializedName("thumb_hash")
+    private String thumbHash;
 
     /**
      * ID of the user who have uploaded the photo
@@ -329,6 +332,15 @@ public class CommentsItemTypePhoto extends CommentsItemBase implements Validable
         return this;
     }
 
+    public String getThumbHash() {
+        return thumbHash;
+    }
+
+    public CommentsItemTypePhoto setThumbHash(String thumbHash) {
+        this.thumbHash = thumbHash;
+        return this;
+    }
+
     public Long getUserId() {
         return userId;
     }
@@ -359,7 +371,7 @@ public class CommentsItemTypePhoto extends CommentsItemBase implements Validable
 
     @Override
     public int hashCode() {
-        return Objects.hash(verticalAlign, images, comments, hidden, lng, albumId, photo256, ownerId, userId, tags, realOffset, sizes, accessKey, width, hasTags, canComment, id, place, text, squareCrop, lat, reposts, height, likes);
+        return Objects.hash(hidden, albumId, ownerId, realOffset, sizes, hasTags, canComment, id, place, text, squareCrop, lat, height, likes, verticalAlign, images, comments, lng, photo256, userId, tags, accessKey, width, thumbHash, reposts);
     }
 
     @Override
@@ -367,30 +379,31 @@ public class CommentsItemTypePhoto extends CommentsItemBase implements Validable
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         CommentsItemTypePhoto commentsItemTypePhoto = (CommentsItemTypePhoto) o;
-        return Objects.equals(images, commentsItemTypePhoto.images) &&
-                Objects.equals(comments, commentsItemTypePhoto.comments) &&
-                Objects.equals(hidden, commentsItemTypePhoto.hidden) &&
-                Objects.equals(verticalAlign, commentsItemTypePhoto.verticalAlign) &&
+        return Objects.equals(hidden, commentsItemTypePhoto.hidden) &&
                 Objects.equals(ownerId, commentsItemTypePhoto.ownerId) &&
                 Objects.equals(lng, commentsItemTypePhoto.lng) &&
-                Objects.equals(tags, commentsItemTypePhoto.tags) &&
-                Objects.equals(realOffset, commentsItemTypePhoto.realOffset) &&
                 Objects.equals(canComment, commentsItemTypePhoto.canComment) &&
                 Objects.equals(sizes, commentsItemTypePhoto.sizes) &&
+                Objects.equals(id, commentsItemTypePhoto.id) &&
+                Objects.equals(place, commentsItemTypePhoto.place) &&
+                Objects.equals(text, commentsItemTypePhoto.text) &&
+                Objects.equals(lat, commentsItemTypePhoto.lat) &&
+                Objects.equals(height, commentsItemTypePhoto.height) &&
+                Objects.equals(likes, commentsItemTypePhoto.likes) &&
+                Objects.equals(images, commentsItemTypePhoto.images) &&
+                Objects.equals(comments, commentsItemTypePhoto.comments) &&
+                Objects.equals(verticalAlign, commentsItemTypePhoto.verticalAlign) &&
+                Objects.equals(tags, commentsItemTypePhoto.tags) &&
+                Objects.equals(realOffset, commentsItemTypePhoto.realOffset) &&
                 Objects.equals(userId, commentsItemTypePhoto.userId) &&
                 Objects.equals(accessKey, commentsItemTypePhoto.accessKey) &&
                 Objects.equals(width, commentsItemTypePhoto.width) &&
                 Objects.equals(albumId, commentsItemTypePhoto.albumId) &&
                 Objects.equals(hasTags, commentsItemTypePhoto.hasTags) &&
-                Objects.equals(id, commentsItemTypePhoto.id) &&
-                Objects.equals(place, commentsItemTypePhoto.place) &&
                 Objects.equals(squareCrop, commentsItemTypePhoto.squareCrop) &&
-                Objects.equals(text, commentsItemTypePhoto.text) &&
-                Objects.equals(lat, commentsItemTypePhoto.lat) &&
+                Objects.equals(thumbHash, commentsItemTypePhoto.thumbHash) &&
                 Objects.equals(photo256, commentsItemTypePhoto.photo256) &&
-                Objects.equals(reposts, commentsItemTypePhoto.reposts) &&
-                Objects.equals(height, commentsItemTypePhoto.height) &&
-                Objects.equals(likes, commentsItemTypePhoto.likes);
+                Objects.equals(reposts, commentsItemTypePhoto.reposts);
     }
 
     @Override
@@ -401,30 +414,31 @@ public class CommentsItemTypePhoto extends CommentsItemBase implements Validable
 
     public String toPrettyString() {
         final StringBuilder sb = new StringBuilder("CommentsItemTypePhoto{");
-        sb.append("images=").append(images);
-        sb.append(", comments=").append(comments);
-        sb.append(", hidden=").append(hidden);
-        sb.append(", verticalAlign='").append(verticalAlign).append("'");
+        sb.append("hidden=").append(hidden);
         sb.append(", ownerId=").append(ownerId);
         sb.append(", lng=").append(lng);
-        sb.append(", tags=").append(tags);
-        sb.append(", realOffset=").append(realOffset);
         sb.append(", canComment=").append(canComment);
         sb.append(", sizes=").append(sizes);
+        sb.append(", id=").append(id);
+        sb.append(", place='").append(place).append("'");
+        sb.append(", text='").append(text).append("'");
+        sb.append(", lat=").append(lat);
+        sb.append(", height=").append(height);
+        sb.append(", likes=").append(likes);
+        sb.append(", images=").append(images);
+        sb.append(", comments=").append(comments);
+        sb.append(", verticalAlign='").append(verticalAlign).append("'");
+        sb.append(", tags=").append(tags);
+        sb.append(", realOffset=").append(realOffset);
         sb.append(", userId=").append(userId);
         sb.append(", accessKey='").append(accessKey).append("'");
         sb.append(", width=").append(width);
         sb.append(", albumId=").append(albumId);
         sb.append(", hasTags=").append(hasTags);
-        sb.append(", id=").append(id);
-        sb.append(", place='").append(place).append("'");
         sb.append(", squareCrop='").append(squareCrop).append("'");
-        sb.append(", text='").append(text).append("'");
-        sb.append(", lat=").append(lat);
+        sb.append(", thumbHash='").append(thumbHash).append("'");
         sb.append(", photo256=").append(photo256);
         sb.append(", reposts=").append(reposts);
-        sb.append(", height=").append(height);
-        sb.append(", likes=").append(likes);
         sb.append('}');
         return sb.toString();
     }

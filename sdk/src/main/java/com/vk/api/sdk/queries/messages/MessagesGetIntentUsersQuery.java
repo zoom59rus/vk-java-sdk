@@ -5,8 +5,10 @@ import com.vk.api.sdk.client.AbstractQueryBuilder;
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.GroupActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
+import com.vk.api.sdk.objects.base.NameCase;
 import com.vk.api.sdk.objects.messages.GetIntentUsersIntent;
 import com.vk.api.sdk.objects.messages.responses.GetIntentUsersResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -95,25 +97,13 @@ public class MessagesGetIntentUsersQuery extends AbstractQueryBuilder<MessagesGe
     }
 
     /**
-     * nameCase
      * Set name case
      *
      * @param value value of "name case" parameter.
      * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
      */
     @ApiParam("name_case")
-    public MessagesGetIntentUsersQuery nameCase(String... value) {
-        return unsafeParam("name_case", value);
-    }
-
-    /**
-     * Set name case
-     *
-     * @param value value of "name case" parameter.
-     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
-     */
-    @ApiParam("name_case")
-    public MessagesGetIntentUsersQuery nameCase(List<String> value) {
+    public MessagesGetIntentUsersQuery nameCase(NameCase value) {
         return unsafeParam("name_case", value);
     }
 

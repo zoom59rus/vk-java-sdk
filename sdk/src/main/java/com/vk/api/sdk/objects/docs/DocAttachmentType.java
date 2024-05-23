@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Doc attachment type
  */
-public enum DocAttachmentType implements EnumParam {
+public enum DocAttachmentType implements EnumParam<String> {
     @SerializedName("doc")
     DOC("doc"),
 

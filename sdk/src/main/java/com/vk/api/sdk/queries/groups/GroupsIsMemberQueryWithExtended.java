@@ -8,6 +8,7 @@ import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.groups.responses.IsMemberExtendedResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -31,21 +32,6 @@ public class GroupsIsMemberQueryWithExtended extends AbstractQueryBuilder<Groups
     }
 
     /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     * @param groupId value of "group id" parameter. Entity - groups
-     *
-     */
-    public GroupsIsMemberQueryWithExtended(VkApiClient client, UserActor actor, String groupId) {
-        super(client, "groups.isMember", IsMemberExtendedResponse.class);
-        accessToken(actor.getAccessToken());
-        groupId(groupId);
-        extended(true);
-    }
-
-    /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
      * @param client VK API client
@@ -57,6 +43,21 @@ public class GroupsIsMemberQueryWithExtended extends AbstractQueryBuilder<Groups
         super(client, "groups.isMember", IsMemberExtendedResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+        groupId(groupId);
+        extended(true);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     * @param groupId value of "group id" parameter. Entity - groups
+     *
+     */
+    public GroupsIsMemberQueryWithExtended(VkApiClient client, UserActor actor, String groupId) {
+        super(client, "groups.isMember", IsMemberExtendedResponse.class);
+        accessToken(actor.getAccessToken());
         groupId(groupId);
         extended(true);
     }

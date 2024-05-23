@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Level of current user's credentials as manager
  */
-public enum GroupAdminLevel implements EnumParam {
+public enum GroupAdminLevel implements EnumParam<Integer> {
     @SerializedName("1")
     MODERATOR(1),
 
@@ -23,8 +23,8 @@ public enum GroupAdminLevel implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

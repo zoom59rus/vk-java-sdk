@@ -7,6 +7,7 @@ import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.database.responses.GetUniversitiesResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,17 +15,6 @@ import java.util.List;
  * Query for Database.getUniversities method
  */
 public class DatabaseGetUniversitiesQuery extends AbstractQueryBuilder<DatabaseGetUniversitiesQuery, GetUniversitiesResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public DatabaseGetUniversitiesQuery(VkApiClient client, UserActor actor) {
-        super(client, "database.getUniversities", GetUniversitiesResponse.class);
-        accessToken(actor.getAccessToken());
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -38,6 +28,17 @@ public class DatabaseGetUniversitiesQuery extends AbstractQueryBuilder<DatabaseG
     }
 
     /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public DatabaseGetUniversitiesQuery(VkApiClient client, UserActor actor) {
+        super(client, "database.getUniversities", GetUniversitiesResponse.class);
+        accessToken(actor.getAccessToken());
+    }
+
+    /**
      * Search query.
      *
      * @param value value of "q" parameter.
@@ -46,17 +47,6 @@ public class DatabaseGetUniversitiesQuery extends AbstractQueryBuilder<DatabaseG
     @ApiParam("q")
     public DatabaseGetUniversitiesQuery q(String value) {
         return unsafeParam("q", value);
-    }
-
-    /**
-     * Country ID.
-     *
-     * @param value value of "country id" parameter. Minimum is 0.
-     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
-     */
-    @ApiParam("country_id")
-    public DatabaseGetUniversitiesQuery countryId(Integer value) {
-        return unsafeParam("country_id", value);
     }
 
     /**

@@ -3,82 +3,36 @@ package com.vk.api.sdk.objects.callback;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+import com.vk.api.sdk.events.CallbackEvent;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+import com.vk.api.sdk.objects.wall.WallComment;
+
 import java.util.Objects;
 
 /**
  * PhotoComment object
  */
-public class PhotoComment implements Validable {
-    @SerializedName("date")
-    @Required
-    private Integer date;
-
-    @SerializedName("from_id")
-    @Required
-    private Integer fromId;
-
-    @SerializedName("id")
-    @Required
-    private Integer id;
-
+public class PhotoComment extends WallComment implements Validable, CallbackEvent {
+    /**
+     * Entity: owner
+     */
     @SerializedName("photo_owner_id")
     @Required
-    private Integer photoOwnerId;
+    private Long photoOwnerId;
 
-    @SerializedName("text")
-    @Required
-    private String text;
-
-    public Integer getDate() {
-        return date;
-    }
-
-    public PhotoComment setDate(Integer date) {
-        this.date = date;
-        return this;
-    }
-
-    public Integer getFromId() {
-        return fromId;
-    }
-
-    public PhotoComment setFromId(Integer fromId) {
-        this.fromId = fromId;
-        return this;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public PhotoComment setId(Integer id) {
-        this.id = id;
-        return this;
-    }
-
-    public Integer getPhotoOwnerId() {
+    public Long getPhotoOwnerId() {
         return photoOwnerId;
     }
 
-    public PhotoComment setPhotoOwnerId(Integer photoOwnerId) {
+    public PhotoComment setPhotoOwnerId(Long photoOwnerId) {
         this.photoOwnerId = photoOwnerId;
-        return this;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public PhotoComment setText(String text) {
-        this.text = text;
         return this;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(date, photoOwnerId, id, text, fromId);
+        return Objects.hash(photoOwnerId);
     }
 
     @Override
@@ -86,11 +40,7 @@ public class PhotoComment implements Validable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         PhotoComment photoComment = (PhotoComment) o;
-        return Objects.equals(date, photoComment.date) &&
-                Objects.equals(fromId, photoComment.fromId) &&
-                Objects.equals(id, photoComment.id) &&
-                Objects.equals(text, photoComment.text) &&
-                Objects.equals(photoOwnerId, photoComment.photoOwnerId);
+        return Objects.equals(photoOwnerId, photoComment.photoOwnerId);
     }
 
     @Override
@@ -101,11 +51,7 @@ public class PhotoComment implements Validable {
 
     public String toPrettyString() {
         final StringBuilder sb = new StringBuilder("PhotoComment{");
-        sb.append("date=").append(date);
-        sb.append(", fromId=").append(fromId);
-        sb.append(", id=").append(id);
-        sb.append(", text='").append(text).append("'");
-        sb.append(", photoOwnerId=").append(photoOwnerId);
+        sb.append("photoOwnerId=").append(photoOwnerId);
         sb.append('}');
         return sb.toString();
     }

@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Information whether community is closed
  */
-public enum GroupIsClosed implements EnumParam {
+public enum GroupIsClosed implements EnumParam<Integer> {
     @SerializedName("0")
     OPEN(0),
 
@@ -23,8 +23,8 @@ public enum GroupIsClosed implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

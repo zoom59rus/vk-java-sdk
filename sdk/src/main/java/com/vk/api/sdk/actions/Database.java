@@ -6,18 +6,7 @@ import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiMethod;
-import com.vk.api.sdk.queries.database.DatabaseGetChairsQuery;
-import com.vk.api.sdk.queries.database.DatabaseGetCitiesByIdQuery;
-import com.vk.api.sdk.queries.database.DatabaseGetCitiesQuery;
-import com.vk.api.sdk.queries.database.DatabaseGetCountriesByIdQuery;
-import com.vk.api.sdk.queries.database.DatabaseGetCountriesQuery;
-import com.vk.api.sdk.queries.database.DatabaseGetFacultiesQuery;
-import com.vk.api.sdk.queries.database.DatabaseGetMetroStationsByIdQuery;
-import com.vk.api.sdk.queries.database.DatabaseGetMetroStationsQuery;
-import com.vk.api.sdk.queries.database.DatabaseGetRegionsQuery;
-import com.vk.api.sdk.queries.database.DatabaseGetSchoolClassesQueryWithNew;
-import com.vk.api.sdk.queries.database.DatabaseGetSchoolsQuery;
-import com.vk.api.sdk.queries.database.DatabaseGetUniversitiesQuery;
+import com.vk.api.sdk.queries.database.*;
 
 /**
  * List of Database methods
@@ -262,19 +251,7 @@ public class Database extends AbstractAction {
      * Returns a list of regions.
      *
      * @param actor vk user actor
-     * @param countryId Country ID, received in [vk.com/dev/database.getCountries|database.getCountries] method.
      * @return query
-     */
-    @ApiMethod("database.getRegions")
-    public DatabaseGetRegionsQuery getRegions(UserActor actor, Integer countryId) {
-        return new DatabaseGetRegionsQuery(getClient(), actor, countryId);
-    }
-
-    /**
-     * Returns a list of regions.
-     *
-     * @param actor vk user actor
-     * @return only actor query 
      */
     @ApiMethod("database.getRegions")
     public DatabaseGetRegionsQuery getRegions(UserActor actor) {
@@ -285,19 +262,7 @@ public class Database extends AbstractAction {
      * Returns a list of regions.
      *
      * @param actor vk service actor
-     * @param countryId Country ID, received in [vk.com/dev/database.getCountries|database.getCountries] method.
      * @return query
-     */
-    @ApiMethod("database.getRegions")
-    public DatabaseGetRegionsQuery getRegions(ServiceActor actor, Integer countryId) {
-        return new DatabaseGetRegionsQuery(getClient(), actor, countryId);
-    }
-
-    /**
-     * Returns a list of regions.
-     *
-     * @param actor vk service actor
-     * @return only actor query 
      */
     @ApiMethod("database.getRegions")
     public DatabaseGetRegionsQuery getRegions(ServiceActor actor) {

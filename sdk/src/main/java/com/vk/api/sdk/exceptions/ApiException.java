@@ -1,39 +1,37 @@
 package com.vk.api.sdk.exceptions;
 
+import com.vk.api.sdk.objects.base.Error;
+
 public class ApiException extends Exception {
 
-    private String description;
+    private final Error error;
 
-    private String message;
-
-    private Integer code;
-
-    public ApiException(Integer code, String description, String message) {
-        this.description = description;
-        this.code = code;
-        this.message = message;
-    }
-
-    public ApiException(Integer code, String message) {
-        this(code, "Unknown", message);
-    }
-
-    public ApiException(String message) {
-        this(0, "Unknown", message);
+    public ApiException(Error error) {
+        this.error = error;
     }
 
     public String getDescription() {
-        return description;
+        return error.getErrorText();
     }
 
     public Integer getCode() {
-        return code;
+        return error.getErrorCode();
     }
 
-    public String getMessageRaw() { return message; }
+    public String getMessageRaw() {
+        return error.getErrorMsg();
+    }
+
+    public Error getErrorRaw() {
+        return error;
+    }
 
     @Override
     public String getMessage() {
-        return description + " (" + code + "): " + message;
+        return error.getErrorText() + " (" + error.getErrorCode() + "): " + error.getErrorMsg();
+    }
+
+    public String getCustomMessage(String customErrorSuffix) {
+        return error.getErrorText() + " (" + error.getErrorCode() + "): " + error.getErrorText() + ": " + customErrorSuffix;
     }
 }

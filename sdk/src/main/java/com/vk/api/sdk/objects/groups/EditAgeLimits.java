@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Community age limits. Possible values: *'1' - no limits,, *'2' - 16+,, *'3' - 18+.
  */
-public enum EditAgeLimits implements EnumParam {
+public enum EditAgeLimits implements EnumParam<Integer> {
     @SerializedName("1")
     _1(1),
 
@@ -23,8 +23,8 @@ public enum EditAgeLimits implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Setting name.
  */
-public enum SetInfoName implements EnumParam {
+public enum SetInfoName implements EnumParam<String> {
     @SerializedName("audio_autoplay")
     AUDIO_AUTOPLAY("audio_autoplay"),
 

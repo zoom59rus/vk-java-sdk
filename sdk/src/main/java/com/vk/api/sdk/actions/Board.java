@@ -7,21 +7,7 @@ import com.vk.api.sdk.client.actors.GroupActor;
 import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiMethod;
-import com.vk.api.sdk.queries.board.BoardAddTopicQuery;
-import com.vk.api.sdk.queries.board.BoardCloseTopicQuery;
-import com.vk.api.sdk.queries.board.BoardCreateCommentQuery;
-import com.vk.api.sdk.queries.board.BoardDeleteCommentQuery;
-import com.vk.api.sdk.queries.board.BoardDeleteTopicQuery;
-import com.vk.api.sdk.queries.board.BoardEditCommentQuery;
-import com.vk.api.sdk.queries.board.BoardEditTopicQuery;
-import com.vk.api.sdk.queries.board.BoardFixTopicQuery;
-import com.vk.api.sdk.queries.board.BoardGetCommentsQuery;
-import com.vk.api.sdk.queries.board.BoardGetCommentsQueryWithExtended;
-import com.vk.api.sdk.queries.board.BoardGetTopicsQuery;
-import com.vk.api.sdk.queries.board.BoardGetTopicsQueryWithExtended;
-import com.vk.api.sdk.queries.board.BoardOpenTopicQuery;
-import com.vk.api.sdk.queries.board.BoardRestoreCommentQuery;
-import com.vk.api.sdk.queries.board.BoardUnfixTopicQuery;
+import com.vk.api.sdk.queries.board.*;
 
 /**
  * List of Board methods

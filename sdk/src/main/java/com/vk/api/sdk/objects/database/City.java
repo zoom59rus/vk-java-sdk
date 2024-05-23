@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.base.BaseObject;
 import com.vk.api.sdk.objects.base.BoolInt;
+
 import java.util.Objects;
 
 /**
@@ -17,12 +18,6 @@ public class City extends BaseObject implements Validable {
      */
     @SerializedName("area")
     private String area;
-
-    /**
-     * Country title
-     */
-    @SerializedName("country")
-    private String country;
 
     /**
      * Information whether the city is included in important cities list
@@ -45,15 +40,6 @@ public class City extends BaseObject implements Validable {
         return this;
     }
 
-    public String getCountry() {
-        return country;
-    }
-
-    public City setCountry(String country) {
-        this.country = country;
-        return this;
-    }
-
     public boolean isImportant() {
         return important == BoolInt.YES;
     }
@@ -73,7 +59,7 @@ public class City extends BaseObject implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(area, important, country, region);
+        return Objects.hash(area, important, region);
     }
 
     @Override
@@ -83,7 +69,6 @@ public class City extends BaseObject implements Validable {
         City city = (City) o;
         return Objects.equals(area, city.area) &&
                 Objects.equals(important, city.important) &&
-                Objects.equals(country, city.country) &&
                 Objects.equals(region, city.region);
     }
 
@@ -97,7 +82,6 @@ public class City extends BaseObject implements Validable {
         final StringBuilder sb = new StringBuilder("City{");
         sb.append("area='").append(area).append("'");
         sb.append(", important=").append(important);
-        sb.append(", country='").append(country).append("'");
         sb.append(", region='").append(region).append("'");
         sb.append('}');
         return sb.toString();

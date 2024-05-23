@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Data grouping by dates: *day - statistics by days,, *month - statistics by months,, *overall - overall statistics. 'date_from' and 'date_to' parameters set temporary limits.
  */
-public enum GetStatisticsPeriod implements EnumParam {
+public enum GetStatisticsPeriod implements EnumParam<String> {
     @SerializedName("day")
     DAY("day"),
 

@@ -4,8 +4,11 @@ package com.vk.api.sdk.objects.wall;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
+import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.base.LikesInfo;
 import com.vk.api.sdk.objects.base.RepostsInfo;
+
+import java.net.URI;
 import java.util.List;
 import java.util.Objects;
 
@@ -40,6 +43,9 @@ public class Wallpost implements Validable {
     @SerializedName("deleted_reason")
     private String deletedReason;
 
+    @SerializedName("donut_miniapp_url")
+    private URI donutMiniappUrl;
+
     /**
      * Date of editing in Unixtime
      */
@@ -61,6 +67,10 @@ public class Wallpost implements Validable {
      */
     @SerializedName("id")
     private Integer id;
+
+    @SerializedName("inner_type")
+    @Required
+    private WallpostInnerType innerType;
 
     /**
      * Is post archived, only for post owners
@@ -184,6 +194,15 @@ public class Wallpost implements Validable {
         return this;
     }
 
+    public URI getDonutMiniappUrl() {
+        return donutMiniappUrl;
+    }
+
+    public Wallpost setDonutMiniappUrl(URI donutMiniappUrl) {
+        this.donutMiniappUrl = donutMiniappUrl;
+        return this;
+    }
+
     public Integer getEdited() {
         return edited;
     }
@@ -217,6 +236,15 @@ public class Wallpost implements Validable {
 
     public Wallpost setId(Integer id) {
         this.id = id;
+        return this;
+    }
+
+    public WallpostInnerType getInnerType() {
+        return innerType;
+    }
+
+    public Wallpost setInnerType(WallpostInnerType innerType) {
+        this.innerType = innerType;
         return this;
     }
 
@@ -339,7 +367,7 @@ public class Wallpost implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(date, copyright, attachments, edited, postType, isArchived, deletedDetails, postSource, postId, ownerId, fromId, geo, deletedReason, parentsStack, signerId, isDeleted, accessKey, id, text, reposts, views, isFavorite, likes);
+        return Objects.hash(date, copyright, attachments, isArchived, ownerId, geo, deletedReason, parentsStack, isDeleted, id, text, donutMiniappUrl, views, likes, postType, edited, deletedDetails, postSource, postId, fromId, signerId, accessKey, innerType, reposts, isFavorite);
     }
 
     @Override
@@ -349,27 +377,29 @@ public class Wallpost implements Validable {
         Wallpost wallpost = (Wallpost) o;
         return Objects.equals(date, wallpost.date) &&
                 Objects.equals(copyright, wallpost.copyright) &&
+                Objects.equals(donutMiniappUrl, wallpost.donutMiniappUrl) &&
                 Objects.equals(attachments, wallpost.attachments) &&
                 Objects.equals(fromId, wallpost.fromId) &&
                 Objects.equals(isFavorite, wallpost.isFavorite) &&
-                Objects.equals(signerId, wallpost.signerId) &&
-                Objects.equals(edited, wallpost.edited) &&
-                Objects.equals(parentsStack, wallpost.parentsStack) &&
                 Objects.equals(ownerId, wallpost.ownerId) &&
                 Objects.equals(deletedDetails, wallpost.deletedDetails) &&
                 Objects.equals(geo, wallpost.geo) &&
                 Objects.equals(isDeleted, wallpost.isDeleted) &&
-                Objects.equals(isArchived, wallpost.isArchived) &&
-                Objects.equals(postId, wallpost.postId) &&
-                Objects.equals(postSource, wallpost.postSource) &&
-                Objects.equals(accessKey, wallpost.accessKey) &&
+                Objects.equals(innerType, wallpost.innerType) &&
                 Objects.equals(deletedReason, wallpost.deletedReason) &&
                 Objects.equals(postType, wallpost.postType) &&
                 Objects.equals(id, wallpost.id) &&
                 Objects.equals(text, wallpost.text) &&
-                Objects.equals(reposts, wallpost.reposts) &&
                 Objects.equals(views, wallpost.views) &&
-                Objects.equals(likes, wallpost.likes);
+                Objects.equals(likes, wallpost.likes) &&
+                Objects.equals(signerId, wallpost.signerId) &&
+                Objects.equals(edited, wallpost.edited) &&
+                Objects.equals(parentsStack, wallpost.parentsStack) &&
+                Objects.equals(isArchived, wallpost.isArchived) &&
+                Objects.equals(postId, wallpost.postId) &&
+                Objects.equals(postSource, wallpost.postSource) &&
+                Objects.equals(accessKey, wallpost.accessKey) &&
+                Objects.equals(reposts, wallpost.reposts);
     }
 
     @Override
@@ -382,27 +412,29 @@ public class Wallpost implements Validable {
         final StringBuilder sb = new StringBuilder("Wallpost{");
         sb.append("date=").append(date);
         sb.append(", copyright=").append(copyright);
+        sb.append(", donutMiniappUrl=").append(donutMiniappUrl);
         sb.append(", attachments=").append(attachments);
         sb.append(", fromId=").append(fromId);
         sb.append(", isFavorite=").append(isFavorite);
-        sb.append(", signerId=").append(signerId);
-        sb.append(", edited=").append(edited);
-        sb.append(", parentsStack=").append(parentsStack);
         sb.append(", ownerId=").append(ownerId);
         sb.append(", deletedDetails='").append(deletedDetails).append("'");
         sb.append(", geo=").append(geo);
         sb.append(", isDeleted=").append(isDeleted);
-        sb.append(", isArchived=").append(isArchived);
-        sb.append(", postId=").append(postId);
-        sb.append(", postSource=").append(postSource);
-        sb.append(", accessKey='").append(accessKey).append("'");
+        sb.append(", innerType='").append(innerType).append("'");
         sb.append(", deletedReason='").append(deletedReason).append("'");
         sb.append(", postType=").append(postType);
         sb.append(", id=").append(id);
         sb.append(", text='").append(text).append("'");
-        sb.append(", reposts=").append(reposts);
         sb.append(", views=").append(views);
         sb.append(", likes=").append(likes);
+        sb.append(", signerId=").append(signerId);
+        sb.append(", edited=").append(edited);
+        sb.append(", parentsStack=").append(parentsStack);
+        sb.append(", isArchived=").append(isArchived);
+        sb.append(", postId=").append(postId);
+        sb.append(", postSource=").append(postSource);
+        sb.append(", accessKey='").append(accessKey).append("'");
+        sb.append(", reposts=").append(reposts);
         sb.append('}');
         return sb.toString();
     }

@@ -4,6 +4,7 @@ package com.vk.api.sdk.objects.messages;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -11,6 +12,9 @@ import java.util.Objects;
  * Forward object
  */
 public class Forward implements Validable {
+    @SerializedName("cmids")
+    private List<Integer> cmids;
+
     @SerializedName("conversation_message_ids")
     private List<Integer> conversationMessageIds;
 
@@ -36,6 +40,15 @@ public class Forward implements Validable {
      */
     @SerializedName("peer_id")
     private Long peerId;
+
+    public List<Integer> getCmids() {
+        return cmids;
+    }
+
+    public Forward setCmids(List<Integer> cmids) {
+        this.cmids = cmids;
+        return this;
+    }
 
     public List<Integer> getConversationMessageIds() {
         return conversationMessageIds;
@@ -84,7 +97,7 @@ public class Forward implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(peerId, messageIds, conversationMessageIds, ownerId, isReply);
+        return Objects.hash(peerId, cmids, messageIds, conversationMessageIds, ownerId, isReply);
     }
 
     @Override
@@ -94,6 +107,7 @@ public class Forward implements Validable {
         Forward forward = (Forward) o;
         return Objects.equals(conversationMessageIds, forward.conversationMessageIds) &&
                 Objects.equals(ownerId, forward.ownerId) &&
+                Objects.equals(cmids, forward.cmids) &&
                 Objects.equals(messageIds, forward.messageIds) &&
                 Objects.equals(isReply, forward.isReply) &&
                 Objects.equals(peerId, forward.peerId);
@@ -109,6 +123,7 @@ public class Forward implements Validable {
         final StringBuilder sb = new StringBuilder("Forward{");
         sb.append("conversationMessageIds=").append(conversationMessageIds);
         sb.append(", ownerId=").append(ownerId);
+        sb.append(", cmids=").append(cmids);
         sb.append(", messageIds=").append(messageIds);
         sb.append(", isReply=").append(isReply);
         sb.append(", peerId=").append(peerId);

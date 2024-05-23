@@ -5,11 +5,8 @@ import com.vk.api.sdk.client.AbstractAction;
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiMethod;
-import com.vk.api.sdk.queries.store.StoreAddStickersToFavoriteQuery;
-import com.vk.api.sdk.queries.store.StoreGetFavoriteStickersQuery;
-import com.vk.api.sdk.queries.store.StoreGetProductsQuery;
-import com.vk.api.sdk.queries.store.StoreGetStickersKeywordsQuery;
-import com.vk.api.sdk.queries.store.StoreRemoveStickersFromFavoriteQuery;
+import com.vk.api.sdk.queries.store.*;
+
 import java.util.List;
 
 /**

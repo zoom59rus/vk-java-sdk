@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Section title
  */
-public enum HintSection implements EnumParam {
+public enum HintSection implements EnumParam<String> {
     @SerializedName("groups")
     GROUPS("groups"),
 

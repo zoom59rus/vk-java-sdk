@@ -8,6 +8,7 @@ import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.link.TargetObject;
 import com.vk.api.sdk.objects.photos.Photo;
 import com.vk.api.sdk.objects.video.VideoFull;
+
 import java.net.URI;
 import java.util.Objects;
 

@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Friend status with the user
  */
-public enum FriendStatusStatus implements EnumParam {
+public enum FriendStatusStatus implements EnumParam<Integer> {
     @SerializedName("0")
     NOT_A_FRIEND(0),
 
@@ -26,8 +26,8 @@ public enum FriendStatusStatus implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

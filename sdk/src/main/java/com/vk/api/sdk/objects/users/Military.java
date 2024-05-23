@@ -5,19 +5,13 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
  * Military object
  */
 public class Military implements Validable {
-    /**
-     * Country ID
-     */
-    @SerializedName("country_id")
-    @Required
-    private Integer countryId;
-
     /**
      * From year
      */
@@ -49,15 +43,6 @@ public class Military implements Validable {
      */
     @SerializedName("until")
     private Integer until;
-
-    public Integer getCountryId() {
-        return countryId;
-    }
-
-    public Military setCountryId(Integer countryId) {
-        this.countryId = countryId;
-        return this;
-    }
 
     public Integer getFrom() {
         return from;
@@ -106,7 +91,7 @@ public class Military implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(unit, unitId, from, until, id, countryId);
+        return Objects.hash(unit, unitId, from, until, id);
     }
 
     @Override
@@ -118,8 +103,7 @@ public class Military implements Validable {
                 Objects.equals(from, military.from) &&
                 Objects.equals(until, military.until) &&
                 Objects.equals(id, military.id) &&
-                Objects.equals(unitId, military.unitId) &&
-                Objects.equals(countryId, military.countryId);
+                Objects.equals(unitId, military.unitId);
     }
 
     @Override
@@ -135,7 +119,6 @@ public class Military implements Validable {
         sb.append(", until=").append(until);
         sb.append(", id=").append(id);
         sb.append(", unitId=").append(unitId);
-        sb.append(", countryId=").append(countryId);
         sb.append('}');
         return sb.toString();
     }

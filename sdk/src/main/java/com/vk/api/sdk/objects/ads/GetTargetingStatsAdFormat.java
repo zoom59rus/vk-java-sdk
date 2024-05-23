@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Ad format. Possible values: *'1' - image and text,, *'2' - big image,, *'3' - exclusive format,, *'4' - community, square image,, *'7' - special app format,, *'8' - special community format,, *'9' - post in community,, *'10' - app board.
  */
-public enum GetTargetingStatsAdFormat implements EnumParam {
+public enum GetTargetingStatsAdFormat implements EnumParam<Integer> {
     @SerializedName("1")
     IMAGE_AND_TEXT(1),
 
@@ -38,8 +38,8 @@ public enum GetTargetingStatsAdFormat implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

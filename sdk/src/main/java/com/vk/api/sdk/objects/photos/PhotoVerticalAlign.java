@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Sets vertical alignment of a photo
  */
-public enum PhotoVerticalAlign implements EnumParam {
+public enum PhotoVerticalAlign implements EnumParam<String> {
     @SerializedName("top")
     TOP("top"),
 

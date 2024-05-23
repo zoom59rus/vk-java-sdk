@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.groups;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum GroupFullMemberStatus implements EnumParam {
+public enum GroupFullMemberStatus implements EnumParam<Integer> {
     @SerializedName("0")
     NOT_A_MEMBER(0),
 
@@ -29,8 +29,8 @@ public enum GroupFullMemberStatus implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

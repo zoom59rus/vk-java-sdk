@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * App fields available for response
  */
-public enum AppFields implements EnumParam {
+public enum AppFields implements EnumParam<String> {
     @SerializedName("author_group")
     AUTHOR_GROUP("author_group"),
 

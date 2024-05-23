@@ -7,483 +7,1006 @@ public class ExceptionMapper {
     public static ApiException parseException(Error error) {
         switch(error.getErrorCode()) {
             case 1:
-                return new ApiUnknownException(error.getErrorMsg());
+                return new ApiUnknownException(error);
             case 2:
-                return new ApiDisabledException(error.getErrorMsg());
+                return new ApiDisabledException(error);
             case 3:
-                return new ApiMethodException(error.getErrorMsg());
+                return new ApiMethodException(error);
             case 4:
-                return new ApiSignatureException(error.getErrorMsg());
+                return new ApiSignatureException(error);
             case 5:
-                return new ApiAuthException(error.getErrorMsg());
+                return new ApiAuthException(error);
             case 6:
-                return new ApiTooManyException(error.getErrorMsg());
+                return new ApiTooManyException(error);
             case 7:
-                return new ApiPermissionException(error.getErrorMsg());
+                return new ApiPermissionException(error);
             case 8:
-                return new ApiRequestException(error.getErrorMsg());
+                return new ApiRequestException(error);
             case 9:
-                return new ApiFloodException(error.getErrorMsg());
+                return new ApiFloodException(error);
             case 10:
-                return new ApiServerException(error.getErrorMsg());
+                return new ApiServerException(error);
             case 11:
-                return new ApiEnabledInTestException(error.getErrorMsg());
+                return new ApiEnabledInTestException(error);
             case 12:
-                return new ApiCompileException(error.getErrorMsg());
+                return new ApiCompileException(error);
             case 13:
-                return new ApiRuntimeException(error.getErrorMsg());
+                return new ApiRuntimeException(error);
             case 14:
-                return new ApiCaptchaException(error.getErrorMsg());
+                return new ApiCaptchaException(error);
             case 15:
-                return new ApiAccessException(error.getErrorMsg());
+                return new ApiAccessException(error);
             case 16:
-                return new ApiAuthHttpsException(error.getErrorMsg());
+                return new ApiAuthHttpsException(error);
             case 17:
-                return new ApiAuthValidationException(error.getErrorMsg());
+                return new ApiAuthValidationException(error);
             case 18:
-                return new ApiUserDeletedException(error.getErrorMsg());
+                return new ApiUserDeletedException(error);
             case 19:
-                return new ApiBlockedException(error.getErrorMsg());
+                return new ApiBlockedException(error);
             case 20:
-                return new ApiMethodPermissionException(error.getErrorMsg());
+                return new ApiMethodPermissionException(error);
             case 7701:
-                return new ApiAsrAudioDurationFloodedException(error.getErrorMsg());
+                return new ApiAsrAudioDurationFloodedException(error);
             case 21:
-                return new ApiMethodAdsException(error.getErrorMsg());
+                return new ApiMethodAdsException(error);
             case 7702:
-                return new ApiAsrFileIsTooBigException(error.getErrorMsg());
+                return new ApiAsrFileIsTooBigException(error);
             case 22:
-                return new ApiUploadException(error.getErrorMsg());
+                return new ApiUploadException(error);
             case 23:
-                return new ApiMethodDisabledException(error.getErrorMsg());
+                return new ApiMethodDisabledException(error);
             case 7703:
-                return new ApiAsrInvalidHashException(error.getErrorMsg());
+                return new ApiAsrInvalidHashException(error);
             case 24:
-                return new ApiNeedConfirmationException(error.getErrorMsg());
+                return new ApiNeedConfirmationException(error);
             case 7704:
-                return new ApiAsrNotFoundException(error.getErrorMsg());
+                return new ApiAsrNotFoundException(error);
             case 3609:
-                return new ApiTokenExtensionRequiredException(error.getErrorMsg());
+                return new ApiTokenExtensionRequiredException(error);
             case 25:
-                return new ApiNeedTokenConfirmationException(error.getErrorMsg());
+                return new ApiNeedTokenConfirmationException(error);
             case 3610:
-                return new ApiUserDeactivatedException(error.getErrorMsg());
+                return new ApiUserDeactivatedException(error);
             case 27:
-                return new ApiGroupAuthException(error.getErrorMsg());
+                return new ApiGroupAuthException(error);
             case 3611:
-                return new ApiUserServiceDeactivatedException(error.getErrorMsg());
+                return new ApiUserServiceDeactivatedException(error);
             case 28:
-                return new ApiAppAuthException(error.getErrorMsg());
+                return new ApiAppAuthException(error);
             case 29:
-                return new ApiRateLimitException(error.getErrorMsg());
+                return new ApiRateLimitException(error);
             case 30:
-                return new ApiPrivateProfileException(error.getErrorMsg());
+                return new ApiPrivateProfileException(error);
             case 3102:
-                return new ApiWallCheckLinkCantDetermineSourceException(error.getErrorMsg());
+                return new ApiWallCheckLinkCantDetermineSourceException(error);
             case 32:
-                return new ApiWaitException(error.getErrorMsg());
+                return new ApiWaitException(error);
             case 33:
-                return new ApiNotImplementedYetException(error.getErrorMsg());
+                return new ApiNotImplementedYetException(error);
             case 34:
-                return new ApiClientVersionDeprecatedException(error.getErrorMsg());
+                return new ApiClientVersionDeprecatedException(error);
             case 35:
-                return new ApiClientUpdateNeededException(error.getErrorMsg());
+                return new ApiClientUpdateNeededException(error);
             case 36:
-                return new ApiTimeoutException(error.getErrorMsg());
+                return new ApiTimeoutException(error);
             case 37:
-                return new ApiUserBannedException(error.getErrorMsg());
+                return new ApiUserBannedException(error);
             case 38:
-                return new ApiUnknownApplicationException(error.getErrorMsg());
+                return new ApiUnknownApplicationException(error);
             case 39:
-                return new ApiUnknownUserException(error.getErrorMsg());
+                return new ApiUnknownUserException(error);
             case 40:
-                return new ApiUnknownGroupException(error.getErrorMsg());
+                return new ApiUnknownGroupException(error);
             case 41:
-                return new ApiAdditionalSignupRequiredException(error.getErrorMsg());
+                return new ApiAdditionalSignupRequiredException(error);
             case 42:
-                return new ApiIpIsNotAllowedException(error.getErrorMsg());
+                return new ApiIpIsNotAllowedException(error);
             case 43:
-                return new ApiSectionDisabledException(error.getErrorMsg());
+                return new ApiSectionDisabledException(error);
             case 2100:
-                return new ApiStickersNotPurchasedException(error.getErrorMsg());
+                return new ApiStickersNotPurchasedException(error);
             case 2101:
-                return new ApiStickersTooManyFavoritesException(error.getErrorMsg());
+                return new ApiStickersTooManyFavoritesException(error);
             case 2102:
-                return new ApiStickersNotFavoriteException(error.getErrorMsg());
+                return new ApiStickersNotFavoriteException(error);
             case 1600:
-                return new ApiStoryExpiredException(error.getErrorMsg());
+                return new ApiStoryExpiredException(error);
             case 1602:
-                return new ApiStoryIncorrectReplyPrivacyException(error.getErrorMsg());
+                return new ApiStoryIncorrectReplyPrivacyException(error);
             case 1105:
-                return new ApiAuthFloodErrorException(error.getErrorMsg());
+                return new ApiAuthFloodErrorException(error);
             case 600:
-                return new ApiAdsPermissionException(error.getErrorMsg());
+                return new ApiAdsPermissionException(error);
             case 601:
-                return new ApiWeightedFloodException(error.getErrorMsg());
+                return new ApiWeightedFloodException(error);
             case 602:
-                return new ApiAdsPartialSuccessException(error.getErrorMsg());
+                return new ApiAdsPartialSuccessException(error);
             case 1114:
-                return new ApiAuthAnonymousTokenHasExpiredException(error.getErrorMsg());
+                return new ApiAuthAnonymousTokenHasExpiredException(error);
             case 603:
-                return new ApiAdsSpecificException(error.getErrorMsg());
+                return new ApiAdsSpecificException(error);
             case 1116:
-                return new ApiAuthAnonymousTokenIsInvalidException(error.getErrorMsg());
+                return new ApiAuthAnonymousTokenIsInvalidException(error);
             case 1117:
-                return new ApiAuthAccessTokenHasExpiredException(error.getErrorMsg());
+                return new ApiAuthAccessTokenHasExpiredException(error);
             case 1118:
-                return new ApiAuthAnonymousTokenIpMismatchException(error.getErrorMsg());
+                return new ApiAuthAnonymousTokenIpMismatchException(error);
             case 100:
-                return new ApiParamException(error.getErrorMsg());
+                return new ApiParamException(error);
             case 101:
-                return new ApiParamApiIdException(error.getErrorMsg());
+                return new ApiParamApiIdException(error);
             case 103:
-                return new ApiLimitsException(error.getErrorMsg());
+                return new ApiLimitsException(error);
             case 104:
-                return new ApiNotFoundException(error.getErrorMsg());
+                return new ApiNotFoundException(error);
             case 105:
-                return new ApiSaveFileException(error.getErrorMsg());
+                return new ApiSaveFileException(error);
             case 106:
-                return new ApiActionFailedException(error.getErrorMsg());
+                return new ApiActionFailedException(error);
             case 113:
-                return new ApiParamUserIdException(error.getErrorMsg());
+                return new ApiParamUserIdException(error);
             case 114:
-                return new ApiParamAlbumIdException(error.getErrorMsg());
+                return new ApiParamAlbumIdException(error);
             case 629:
-                return new ApiAdsObjectDeletedException(error.getErrorMsg());
+                return new ApiAdsObjectDeletedException(error);
             case 118:
-                return new ApiParamServerException(error.getErrorMsg());
+                return new ApiParamServerException(error);
             case 630:
-                return new ApiAdsLookalikeRequestAlreadyInProgressException(error.getErrorMsg());
+                return new ApiAdsLookalikeRequestAlreadyInProgressException(error);
             case 119:
-                return new ApiParamTitleException(error.getErrorMsg());
+                return new ApiParamTitleException(error);
             case 631:
-                return new ApiAdsLookalikeRequestMaxCountPerDayReachedException(error.getErrorMsg());
+                return new ApiAdsLookalikeRequestMaxCountPerDayReachedException(error);
             case 632:
-                return new ApiAdsLookalikeRequestAudienceTooSmallException(error.getErrorMsg());
+                return new ApiAdsLookalikeRequestAudienceTooSmallException(error);
             case 121:
-                return new ApiParamHashException(error.getErrorMsg());
+                return new ApiParamHashException(error);
             case 633:
-                return new ApiAdsLookalikeRequestAudienceTooLargeException(error.getErrorMsg());
+                return new ApiAdsLookalikeRequestAudienceTooLargeException(error);
             case 634:
-                return new ApiAdsLookalikeRequestExportAlreadyInProgressException(error.getErrorMsg());
+                return new ApiAdsLookalikeRequestExportAlreadyInProgressException(error);
             case 122:
-                return new ApiParamPhotosException(error.getErrorMsg());
+                return new ApiParamPhotosException(error);
             case 635:
-                return new ApiAdsLookalikeRequestExportMaxCountPerDayReachedException(error.getErrorMsg());
+                return new ApiAdsLookalikeRequestExportMaxCountPerDayReachedException(error);
             case 636:
-                return new ApiAdsLookalikeRequestExportRetargetingGroupLimitException(error.getErrorMsg());
+                return new ApiAdsLookalikeRequestExportRetargetingGroupLimitException(error);
             case 125:
-                return new ApiParamGroupIdException(error.getErrorMsg());
+                return new ApiParamGroupIdException(error);
             case 1150:
-                return new ApiParamDocIdException(error.getErrorMsg());
+                return new ApiParamDocIdException(error);
             case 1151:
-                return new ApiParamDocDeleteAccessException(error.getErrorMsg());
+                return new ApiParamDocDeleteAccessException(error);
             case 1152:
-                return new ApiParamDocTitleException(error.getErrorMsg());
+                return new ApiParamDocTitleException(error);
             case 1153:
-                return new ApiParamDocAccessException(error.getErrorMsg());
+                return new ApiParamDocAccessException(error);
             case 129:
-                return new ApiParamPhotoException(error.getErrorMsg());
+                return new ApiParamPhotoException(error);
             case 1154:
-                return new ApiParamDocRestoreAccessException(error.getErrorMsg());
+                return new ApiParamDocRestoreAccessException(error);
             case 1155:
-                return new ApiParamDocRestoreTimeoutException(error.getErrorMsg());
+                return new ApiParamDocRestoreTimeoutException(error);
             case 1160:
-                return new ApiPhotoChangedException(error.getErrorMsg());
+                return new ApiPhotoChangedException(error);
             case 140:
-                return new ApiParamPageIdException(error.getErrorMsg());
+                return new ApiParamPageIdException(error);
             case 141:
-                return new ApiAccessPageException(error.getErrorMsg());
+                return new ApiAccessPageException(error);
             case 1170:
-                return new ApiTooManyListsException(error.getErrorMsg());
+                return new ApiTooManyListsException(error);
             case 146:
-                return new ApiMobileNotActivatedException(error.getErrorMsg());
+                return new ApiMobileNotActivatedException(error);
             case 147:
-                return new ApiInsufficientFundsException(error.getErrorMsg());
+                return new ApiInsufficientFundsException(error);
             case 150:
-                return new ApiParamTimestampException(error.getErrorMsg());
+                return new ApiParamTimestampException(error);
             case 171:
-                return new ApiFriendsListIdException(error.getErrorMsg());
+                return new ApiFriendsListIdException(error);
             case 173:
-                return new ApiFriendsListLimitException(error.getErrorMsg());
+                return new ApiFriendsListLimitException(error);
             case 174:
-                return new ApiFriendsAddYourselfException(error.getErrorMsg());
+                return new ApiFriendsAddYourselfException(error);
             case 175:
-                return new ApiFriendsAddInEnemyException(error.getErrorMsg());
+                return new ApiFriendsAddInEnemyException(error);
             case 176:
-                return new ApiFriendsAddEnemyException(error.getErrorMsg());
+                return new ApiFriendsAddEnemyException(error);
             case 177:
-                return new ApiFriendsAddNotFoundException(error.getErrorMsg());
+                return new ApiFriendsAddNotFoundException(error);
             case 180:
-                return new ApiParamNoteIdException(error.getErrorMsg());
+                return new ApiParamNoteIdException(error);
             case 181:
-                return new ApiAccessNoteException(error.getErrorMsg());
+                return new ApiAccessNoteException(error);
             case 182:
-                return new ApiAccessNoteCommentException(error.getErrorMsg());
+                return new ApiAccessNoteCommentException(error);
             case 183:
-                return new ApiAccessCommentException(error.getErrorMsg());
+                return new ApiAccessCommentException(error);
             case 700:
-                return new ApiGroupChangeCreatorException(error.getErrorMsg());
+                return new ApiGroupChangeCreatorException(error);
             case 701:
-                return new ApiGroupNotInClubException(error.getErrorMsg());
+                return new ApiGroupNotInClubException(error);
             case 702:
-                return new ApiGroupTooManyOfficersException(error.getErrorMsg());
+                return new ApiGroupTooManyOfficersException(error);
             case 703:
-                return new ApiGroupNeed2faException(error.getErrorMsg());
+                return new ApiGroupNeed2faException(error);
             case 704:
-                return new ApiGroupHostNeed2faException(error.getErrorMsg());
+                return new ApiGroupHostNeed2faException(error);
             case 706:
-                return new ApiGroupTooManyAddressesException(error.getErrorMsg());
+                return new ApiGroupTooManyAddressesException(error);
             case 711:
-                return new ApiGroupAppIsNotInstalledInCommunityException(error.getErrorMsg());
+                return new ApiGroupAppIsNotInstalledInCommunityException(error);
             case 200:
-                return new ApiAccessAlbumException(error.getErrorMsg());
+                return new ApiAccessAlbumException(error);
             case 201:
-                return new ApiAccessAudioException(error.getErrorMsg());
+                return new ApiAccessAudioException(error);
             case 714:
-                return new ApiGroupInviteLinksNotValidException(error.getErrorMsg());
+                return new ApiGroupInviteLinksNotValidException(error);
             case 203:
-                return new ApiAccessGroupException(error.getErrorMsg());
+                return new ApiAccessGroupException(error);
             case 204:
-                return new ApiAccessVideoException(error.getErrorMsg());
+                return new ApiAccessVideoException(error);
             case 205:
-                return new ApiAccessMarketException(error.getErrorMsg());
+                return new ApiAccessMarketException(error);
             case 210:
-                return new ApiWallAccessPostException(error.getErrorMsg());
+                return new ApiWallAccessPostException(error);
             case 211:
-                return new ApiWallAccessCommentException(error.getErrorMsg());
+                return new ApiWallAccessCommentException(error);
             case 212:
-                return new ApiWallAccessRepliesException(error.getErrorMsg());
+                return new ApiWallAccessRepliesException(error);
             case 213:
-                return new ApiWallAccessAddReplyException(error.getErrorMsg());
+                return new ApiWallAccessAddReplyException(error);
             case 214:
-                return new ApiWallAddPostException(error.getErrorMsg());
+                return new ApiWallAddPostException(error);
             case 3800:
-                return new ApiFaveAliexpressTagException(error.getErrorMsg());
+                return new ApiFaveAliexpressTagException(error);
             case 219:
-                return new ApiWallAdsPublishedException(error.getErrorMsg());
+                return new ApiWallAdsPublishedException(error);
             case 220:
-                return new ApiWallTooManyRecipientsException(error.getErrorMsg());
+                return new ApiWallTooManyRecipientsException(error);
             case 221:
-                return new ApiStatusNoAudioException(error.getErrorMsg());
+                return new ApiStatusNoAudioException(error);
             case 222:
-                return new ApiWallLinksForbiddenException(error.getErrorMsg());
+                return new ApiWallLinksForbiddenException(error);
             case 223:
-                return new ApiWallReplyOwnerFloodException(error.getErrorMsg());
+                return new ApiWallReplyOwnerFloodException(error);
             case 224:
-                return new ApiWallAdsPostLimitReachedException(error.getErrorMsg());
+                return new ApiWallAdsPostLimitReachedException(error);
             case 225:
-                return new ApiWallDonutException(error.getErrorMsg());
+                return new ApiWallDonutException(error);
             case 1251:
-                return new ApiAppsAlreadyUnlockedException(error.getErrorMsg());
+                return new ApiAppsAlreadyUnlockedException(error);
             case 3300:
-                return new ApiRecaptchaException(error.getErrorMsg());
+                return new ApiRecaptchaException(error);
             case 3301:
-                return new ApiPhoneValidationNeedException(error.getErrorMsg());
+                return new ApiPhoneValidationNeedException(error);
             case 3302:
-                return new ApiPasswordValidationNeedException(error.getErrorMsg());
+                return new ApiPasswordValidationNeedException(error);
             case 3303:
-                return new ApiOtpValidationNeedException(error.getErrorMsg());
+                return new ApiOtpValidationNeedException(error);
             case 232:
-                return new ApiLikesReactionCanNotBeAppliedException(error.getErrorMsg());
+                return new ApiLikesReactionCanNotBeAppliedException(error);
             case 1256:
-                return new ApiAppsSubscriptionNotFoundException(error.getErrorMsg());
+                return new ApiAppsSubscriptionNotFoundException(error);
             case 3304:
-                return new ApiEmailConfirmationNeedException(error.getErrorMsg());
+                return new ApiEmailConfirmationNeedException(error);
             case 3305:
-                return new ApiAssertVotesException(error.getErrorMsg());
+                return new ApiAssertVotesException(error);
             case 1257:
-                return new ApiAppsSubscriptionInvalidStatusException(error.getErrorMsg());
+                return new ApiAppsSubscriptionInvalidStatusException(error);
             case 1260:
-                return new ApiInvalidAddressException(error.getErrorMsg());
+                return new ApiInvalidAddressException(error);
             case 11500:
-                return new ApiCuaConfirmationRequiredException(error.getErrorMsg());
+                return new ApiCuaConfirmationRequiredException(error);
+            case 242:
+                return new ApiFriendsTooManyFriendsException(error);
             case 250:
-                return new ApiPollsAccessException(error.getErrorMsg());
+                return new ApiPollsAccessException(error);
             case 251:
-                return new ApiPollsPollIdException(error.getErrorMsg());
+                return new ApiPollsPollIdException(error);
+            case 11003:
+                return new ApiAppsEmptyFilterParamsException(error);
+            case 11004:
+                return new ApiAppsEmptySnippetDataException(error);
             case 252:
-                return new ApiPollsAnswerIdException(error.getErrorMsg());
+                return new ApiPollsAnswerIdException(error);
+            case 11005:
+                return new ApiAppsTooManySnippetsException(error);
             case 253:
-                return new ApiPollsAccessWithoutVoteException(error.getErrorMsg());
+                return new ApiPollsAccessWithoutVoteException(error);
+            case 11006:
+                return new ApiAppsNotFoundSnippetException(error);
             case 260:
-                return new ApiAccessGroupsException(error.getErrorMsg());
+                return new ApiAccessGroupsException(error);
             case 9999:
-                return new ApiNotSupportedHttpMethodException(error.getErrorMsg());
+                return new ApiNotSupportedHttpMethodException(error);
             case 800:
-                return new ApiVideoAlreadyAddedException(error.getErrorMsg());
+                return new ApiVideoAlreadyAddedException(error);
             case 801:
-                return new ApiVideoCommentsClosedException(error.getErrorMsg());
+                return new ApiVideoCommentsClosedException(error);
             case 300:
-                return new ApiAlbumFullException(error.getErrorMsg());
+                return new ApiAlbumFullException(error);
             case 302:
-                return new ApiAlbumsLimitException(error.getErrorMsg());
+                return new ApiAlbumsLimitException(error);
             case 11101:
-                return new ApiTranslationsCantTranslateException(error.getErrorMsg());
+                return new ApiTranslationsCantTranslateException(error);
             case 11102:
-                return new ApiTranslationsMultipleSourceLangException(error.getErrorMsg());
+                return new ApiTranslationsMultipleSourceLangException(error);
             case 1900:
-                return new ApiPrettyCardsCardNotFoundException(error.getErrorMsg());
+                return new ApiPrettyCardsCardNotFoundException(error);
             case 1901:
-                return new ApiPrettyCardsTooManyCardsException(error.getErrorMsg());
+                return new ApiPrettyCardsTooManyCardsException(error);
             case 1902:
-                return new ApiPrettyCardsCardIsConnectedToPostException(error.getErrorMsg());
+                return new ApiPrettyCardsCardIsConnectedToPostException(error);
             case 1400:
-                return new ApiMarketRestoreTooLateException(error.getErrorMsg());
+                return new ApiMarketRestoreTooLateException(error);
             case 1401:
-                return new ApiMarketCommentsClosedException(error.getErrorMsg());
+                return new ApiMarketCommentsClosedException(error);
             case 1402:
-                return new ApiMarketAlbumNotFoundException(error.getErrorMsg());
+                return new ApiMarketAlbumNotFoundException(error);
             case 1403:
-                return new ApiMarketItemNotFoundException(error.getErrorMsg());
+                return new ApiMarketItemNotFoundException(error);
             case 1404:
-                return new ApiMarketItemAlreadyAddedException(error.getErrorMsg());
+                return new ApiMarketItemAlreadyAddedException(error);
             case 1405:
-                return new ApiMarketTooManyItemsException(error.getErrorMsg());
+                return new ApiMarketTooManyItemsException(error);
             case 1406:
-                return new ApiMarketTooManyItemsInAlbumException(error.getErrorMsg());
+                return new ApiMarketTooManyItemsInAlbumException(error);
             case 1407:
-                return new ApiMarketTooManyAlbumsException(error.getErrorMsg());
+                return new ApiMarketTooManyAlbumsException(error);
             case 1408:
-                return new ApiMarketItemHasBadLinksException(error.getErrorMsg());
+                return new ApiMarketItemHasBadLinksException(error);
             case 1409:
-                return new ApiMarketExtendedNotEnabledException(error.getErrorMsg());
+                return new ApiMarketExtendedNotEnabledException(error);
             case 1410:
-                return new ApiMarketVariantsNotEnabledException(error.getErrorMsg());
+                return new ApiMarketVariantsNotEnabledException(error);
             case 1411:
-                return new ApiMarketVariantsErrorException(error.getErrorMsg());
+                return new ApiMarketVariantsErrorException(error);
             case 1412:
-                return new ApiMarketGroupingItemsWithDifferentPropertiesException(error.getErrorMsg());
+                return new ApiMarketGroupingItemsWithDifferentPropertiesException(error);
             case 900:
-                return new ApiMessagesUserBlockedException(error.getErrorMsg());
+                return new ApiMessagesUserBlockedException(error);
             case 1413:
-                return new ApiMarketGroupingAlreadyHasSuchVariantException(error.getErrorMsg());
+                return new ApiMarketGroupingAlreadyHasSuchVariantException(error);
             case 901:
-                return new ApiMessagesDenySendException(error.getErrorMsg());
+                return new ApiMessagesDenySendException(error);
             case 1414:
-                return new ApiMarketGroupingHasOtherPropertiesException(error.getErrorMsg());
+                return new ApiMarketGroupingHasOtherPropertiesException(error);
             case 902:
-                return new ApiMessagesPrivacyException(error.getErrorMsg());
+                return new ApiMessagesPrivacyException(error);
             case 1415:
-                return new ApiMarketGroupingMustHaveVariantsException(error.getErrorMsg());
+                return new ApiMarketGroupingMustHaveVariantsException(error);
             case 1416:
-                return new ApiMarketVariantNotFoundException(error.getErrorMsg());
+                return new ApiMarketVariantNotFoundException(error);
             case 1417:
-                return new ApiMarketPropertyNotFoundException(error.getErrorMsg());
+                return new ApiMarketPropertyNotFoundException(error);
             case 1418:
-                return new ApiMarketMaxPropertiesLimitExceedException(error.getErrorMsg());
+                return new ApiMarketMaxPropertiesLimitExceedException(error);
             case 1419:
-                return new ApiMarketMaxVariantsLimitExceedException(error.getErrorMsg());
+                return new ApiMarketMaxVariantsLimitExceedException(error);
             case 907:
-                return new ApiMessagesTooOldPtsException(error.getErrorMsg());
+                return new ApiMessagesTooOldPtsException(error);
             case 908:
-                return new ApiMessagesTooNewPtsException(error.getErrorMsg());
+                return new ApiMessagesTooNewPtsException(error);
             case 909:
-                return new ApiMessagesEditExpiredException(error.getErrorMsg());
+                return new ApiMessagesEditExpiredException(error);
             case 1421:
-                return new ApiMarketNameTooLongException(error.getErrorMsg());
+                return new ApiMarketNameTooLongException(error);
             case 910:
-                return new ApiMessagesTooBigException(error.getErrorMsg());
+                return new ApiMessagesTooBigException(error);
             case 911:
-                return new ApiMessagesKeyboardInvalidException(error.getErrorMsg());
+                return new ApiMessagesKeyboardInvalidException(error);
             case 1423:
-                return new ApiMarketVariantValueTooLongException(error.getErrorMsg());
+                return new ApiMarketVariantValueTooLongException(error);
             case 1424:
-                return new ApiMarketUnknownPropertyTypeException(error.getErrorMsg());
+                return new ApiMarketUnknownPropertyTypeException(error);
             case 912:
-                return new ApiMessagesChatBotFeatureException(error.getErrorMsg());
+                return new ApiMessagesChatBotFeatureException(error);
             case 1425:
-                return new ApiMarketGroupingMustContainMoreThanOneItemException(error.getErrorMsg());
+                return new ApiMarketGroupingMustContainMoreThanOneItemException(error);
             case 913:
-                return new ApiMessagesTooLongForwardsException(error.getErrorMsg());
+                return new ApiMessagesTooLongForwardsException(error);
             case 914:
-                return new ApiMessagesTooLongMessageException(error.getErrorMsg());
+                return new ApiMessagesTooLongMessageException(error);
             case 1426:
-                return new ApiMarketGroupingItemsMustHaveDistinctPropertiesException(error.getErrorMsg());
+                return new ApiMarketGroupingItemsMustHaveDistinctPropertiesException(error);
             case 1427:
-                return new ApiMarketOrdersNoCartItemsException(error.getErrorMsg());
+                return new ApiMarketOrdersNoCartItemsException(error);
             case 917:
-                return new ApiMessagesChatUserNoAccessException(error.getErrorMsg());
+                return new ApiMessagesChatUserNoAccessException(error);
             case 1429:
-                return new ApiMarketInvalidDimensionsException(error.getErrorMsg());
+                return new ApiMarketInvalidDimensionsException(error);
             case 1430:
-                return new ApiMarketCantChangeVkpayStatusException(error.getErrorMsg());
+                return new ApiMarketCantChangeVkpayStatusException(error);
             case 919:
-                return new ApiMessagesCantSeeInviteLinkException(error.getErrorMsg());
+                return new ApiMessagesCantSeeInviteLinkException(error);
             case 1431:
-                return new ApiMarketShopAlreadyEnabledException(error.getErrorMsg());
+                return new ApiMarketShopAlreadyEnabledException(error);
             case 920:
-                return new ApiMessagesEditKindDisallowedException(error.getErrorMsg());
+                return new ApiMessagesEditKindDisallowedException(error);
             case 1432:
-                return new ApiMarketShopAlreadyDisabledException(error.getErrorMsg());
+                return new ApiMarketShopAlreadyDisabledException(error);
             case 921:
-                return new ApiMessagesCantFwdException(error.getErrorMsg());
+                return new ApiMessagesCantFwdException(error);
             case 1433:
-                return new ApiMarketPhotosCropInvalidFormatException(error.getErrorMsg());
+                return new ApiMarketPhotosCropInvalidFormatException(error);
             case 922:
-                return new ApiMessagesChatUserLeftException(error.getErrorMsg());
+                return new ApiMessagesChatUserLeftException(error);
             case 1434:
-                return new ApiMarketPhotosCropOverflowException(error.getErrorMsg());
+                return new ApiMarketPhotosCropOverflowException(error);
             case 1435:
-                return new ApiMarketPhotosCropSizeTooLowException(error.getErrorMsg());
+                return new ApiMarketPhotosCropSizeTooLowException(error);
             case 924:
-                return new ApiMessagesCantDeleteForAllException(error.getErrorMsg());
+                return new ApiMessagesCantDeleteForAllException(error);
             case 925:
-                return new ApiMessagesChatNotAdminException(error.getErrorMsg());
+                return new ApiMessagesChatNotAdminException(error);
             case 1438:
-                return new ApiMarketNotEnabledException(error.getErrorMsg());
+                return new ApiMarketNotEnabledException(error);
             case 927:
-                return new ApiMessagesChatNotExistException(error.getErrorMsg());
+                return new ApiMessagesChatNotExistException(error);
             case 931:
-                return new ApiMessagesCantChangeInviteLinkException(error.getErrorMsg());
+                return new ApiMessagesCantChangeInviteLinkException(error);
             case 932:
-                return new ApiMessagesGroupPeerAccessException(error.getErrorMsg());
+                return new ApiMessagesGroupPeerAccessException(error);
             case 1446:
-                return new ApiMarketAlbumMainHiddenException(error.getErrorMsg());
+                return new ApiMarketAlbumMainHiddenException(error);
             case 935:
-                return new ApiMessagesChatUserNotInChatException(error.getErrorMsg());
+                return new ApiMessagesChatUserNotInChatException(error);
             case 936:
-                return new ApiMessagesContactNotFoundException(error.getErrorMsg());
+                return new ApiMessagesContactNotFoundException(error);
             case 939:
-                return new ApiMessagesMessageRequestAlreadySentException(error.getErrorMsg());
+                return new ApiMessagesMessageRequestAlreadySentException(error);
             case 940:
-                return new ApiMessagesTooManyPostsException(error.getErrorMsg());
+                return new ApiMessagesTooManyPostsException(error);
             case 942:
-                return new ApiMessagesCantPinOneTimeStoryException(error.getErrorMsg());
+                return new ApiMessagesCantPinOneTimeStoryException(error);
             case 943:
-                return new ApiMessagesIntentCantUseException(error.getErrorMsg());
+                return new ApiMessagesIntentCantUseException(error);
             case 1456:
-                return new ApiMarketOrdersInvalidStatusException(error.getErrorMsg());
+                return new ApiMarketOrdersInvalidStatusException(error);
             case 944:
-                return new ApiMessagesIntentLimitOverflowException(error.getErrorMsg());
+                return new ApiMessagesIntentLimitOverflowException(error);
+            case 1457:
+                return new ApiMarketFailedToSetAlbumAsMainException(error);
             case 945:
-                return new ApiMessagesChatDisabledException(error.getErrorMsg());
+                return new ApiMessagesChatDisabledException(error);
+            case 1458:
+                return new ApiMarketFailedToUnsetAlbumAsMainException(error);
             case 946:
-                return new ApiMessagesChatUnsupportedException(error.getErrorMsg());
+                return new ApiMessagesChatUnsupportedException(error);
             case 947:
-                return new ApiMessagesMemberAccessToGroupDeniedException(error.getErrorMsg());
+                return new ApiMessagesMemberAccessToGroupDeniedException(error);
             case 949:
-                return new ApiMessagesCantEditPinnedYetException(error.getErrorMsg());
+                return new ApiMessagesCantEditPinnedYetException(error);
             case 950:
-                return new ApiMessagesPeerBlockedReasonByTimeException(error.getErrorMsg());
+                return new ApiMessagesPeerBlockedReasonByTimeException(error);
             case 962:
-                return new ApiMessagesUserNotDonException(error.getErrorMsg());
+                return new ApiMessagesUserNotDonException(error);
             case 969:
-                return new ApiMessagesMessageCannotBeForwardedException(error.getErrorMsg());
+                return new ApiMessagesMessageCannotBeForwardedException(error);
             case 970:
-                return new ApiMessagesCantPinExpiringMessageException(error.getErrorMsg());
+                return new ApiMessagesCantPinExpiringMessageException(error);
             case 2000:
-                return new ApiCallbackApiServersLimitException(error.getErrorMsg());
+                return new ApiCallbackApiServersLimitException(error);
+            case 985:
+                return new ApiMessagesGroupForNotificationsOnlyException(error);
+            case 1518:
+                return new ApiMarketItemIsNotDeletedException(error);
             case 1009:
-                return new ApiMessagesInvalidReactionIdException(error.getErrorMsg());
+                return new ApiMessagesInvalidReactionIdException(error);
             case 1010:
-                return new ApiMessagesForbiddenReactionException(error.getErrorMsg());
+                return new ApiMessagesForbiddenReactionException(error);
             case 1011:
-                return new ApiMessagesReactionsLimitReachedException(error.getErrorMsg());
+                return new ApiMessagesReactionsLimitReachedException(error);
             case 500:
-                return new ApiVotesPermissionException(error.getErrorMsg());
+                return new ApiVotesPermissionException(error);
+            case 1012:
+                return new ApiMessagesWritingDisabledForChatException(error);
             default:
-                return new ApiException(error.getErrorCode(), error.getErrorMsg());
+                return new ApiException(error);
+        }
+    }
+
+    public static ApiException buildExceptionByErrorCode(Integer errorCode) {
+        switch(errorCode) {
+            case 1:
+                return new ApiUnknownException();
+            case 2:
+                return new ApiDisabledException();
+            case 3:
+                return new ApiMethodException();
+            case 4:
+                return new ApiSignatureException();
+            case 5:
+                return new ApiAuthException();
+            case 6:
+                return new ApiTooManyException();
+            case 7:
+                return new ApiPermissionException();
+            case 8:
+                return new ApiRequestException();
+            case 9:
+                return new ApiFloodException();
+            case 10:
+                return new ApiServerException();
+            case 11:
+                return new ApiEnabledInTestException();
+            case 12:
+                return new ApiCompileException();
+            case 13:
+                return new ApiRuntimeException();
+            case 14:
+                return new ApiCaptchaException();
+            case 15:
+                return new ApiAccessException();
+            case 16:
+                return new ApiAuthHttpsException();
+            case 17:
+                return new ApiAuthValidationException();
+            case 18:
+                return new ApiUserDeletedException();
+            case 19:
+                return new ApiBlockedException();
+            case 20:
+                return new ApiMethodPermissionException();
+            case 7701:
+                return new ApiAsrAudioDurationFloodedException();
+            case 21:
+                return new ApiMethodAdsException();
+            case 7702:
+                return new ApiAsrFileIsTooBigException();
+            case 22:
+                return new ApiUploadException();
+            case 23:
+                return new ApiMethodDisabledException();
+            case 7703:
+                return new ApiAsrInvalidHashException();
+            case 24:
+                return new ApiNeedConfirmationException();
+            case 7704:
+                return new ApiAsrNotFoundException();
+            case 3609:
+                return new ApiTokenExtensionRequiredException();
+            case 25:
+                return new ApiNeedTokenConfirmationException();
+            case 3610:
+                return new ApiUserDeactivatedException();
+            case 27:
+                return new ApiGroupAuthException();
+            case 3611:
+                return new ApiUserServiceDeactivatedException();
+            case 28:
+                return new ApiAppAuthException();
+            case 29:
+                return new ApiRateLimitException();
+            case 30:
+                return new ApiPrivateProfileException();
+            case 3102:
+                return new ApiWallCheckLinkCantDetermineSourceException();
+            case 32:
+                return new ApiWaitException();
+            case 33:
+                return new ApiNotImplementedYetException();
+            case 34:
+                return new ApiClientVersionDeprecatedException();
+            case 35:
+                return new ApiClientUpdateNeededException();
+            case 36:
+                return new ApiTimeoutException();
+            case 37:
+                return new ApiUserBannedException();
+            case 38:
+                return new ApiUnknownApplicationException();
+            case 39:
+                return new ApiUnknownUserException();
+            case 40:
+                return new ApiUnknownGroupException();
+            case 41:
+                return new ApiAdditionalSignupRequiredException();
+            case 42:
+                return new ApiIpIsNotAllowedException();
+            case 43:
+                return new ApiSectionDisabledException();
+            case 2100:
+                return new ApiStickersNotPurchasedException();
+            case 2101:
+                return new ApiStickersTooManyFavoritesException();
+            case 2102:
+                return new ApiStickersNotFavoriteException();
+            case 1600:
+                return new ApiStoryExpiredException();
+            case 1602:
+                return new ApiStoryIncorrectReplyPrivacyException();
+            case 1105:
+                return new ApiAuthFloodErrorException();
+            case 600:
+                return new ApiAdsPermissionException();
+            case 601:
+                return new ApiWeightedFloodException();
+            case 602:
+                return new ApiAdsPartialSuccessException();
+            case 1114:
+                return new ApiAuthAnonymousTokenHasExpiredException();
+            case 603:
+                return new ApiAdsSpecificException();
+            case 1116:
+                return new ApiAuthAnonymousTokenIsInvalidException();
+            case 1117:
+                return new ApiAuthAccessTokenHasExpiredException();
+            case 1118:
+                return new ApiAuthAnonymousTokenIpMismatchException();
+            case 100:
+                return new ApiParamException();
+            case 101:
+                return new ApiParamApiIdException();
+            case 103:
+                return new ApiLimitsException();
+            case 104:
+                return new ApiNotFoundException();
+            case 105:
+                return new ApiSaveFileException();
+            case 106:
+                return new ApiActionFailedException();
+            case 113:
+                return new ApiParamUserIdException();
+            case 114:
+                return new ApiParamAlbumIdException();
+            case 629:
+                return new ApiAdsObjectDeletedException();
+            case 118:
+                return new ApiParamServerException();
+            case 630:
+                return new ApiAdsLookalikeRequestAlreadyInProgressException();
+            case 119:
+                return new ApiParamTitleException();
+            case 631:
+                return new ApiAdsLookalikeRequestMaxCountPerDayReachedException();
+            case 632:
+                return new ApiAdsLookalikeRequestAudienceTooSmallException();
+            case 121:
+                return new ApiParamHashException();
+            case 633:
+                return new ApiAdsLookalikeRequestAudienceTooLargeException();
+            case 634:
+                return new ApiAdsLookalikeRequestExportAlreadyInProgressException();
+            case 122:
+                return new ApiParamPhotosException();
+            case 635:
+                return new ApiAdsLookalikeRequestExportMaxCountPerDayReachedException();
+            case 636:
+                return new ApiAdsLookalikeRequestExportRetargetingGroupLimitException();
+            case 125:
+                return new ApiParamGroupIdException();
+            case 1150:
+                return new ApiParamDocIdException();
+            case 1151:
+                return new ApiParamDocDeleteAccessException();
+            case 1152:
+                return new ApiParamDocTitleException();
+            case 1153:
+                return new ApiParamDocAccessException();
+            case 129:
+                return new ApiParamPhotoException();
+            case 1154:
+                return new ApiParamDocRestoreAccessException();
+            case 1155:
+                return new ApiParamDocRestoreTimeoutException();
+            case 1160:
+                return new ApiPhotoChangedException();
+            case 140:
+                return new ApiParamPageIdException();
+            case 141:
+                return new ApiAccessPageException();
+            case 1170:
+                return new ApiTooManyListsException();
+            case 146:
+                return new ApiMobileNotActivatedException();
+            case 147:
+                return new ApiInsufficientFundsException();
+            case 150:
+                return new ApiParamTimestampException();
+            case 171:
+                return new ApiFriendsListIdException();
+            case 173:
+                return new ApiFriendsListLimitException();
+            case 174:
+                return new ApiFriendsAddYourselfException();
+            case 175:
+                return new ApiFriendsAddInEnemyException();
+            case 176:
+                return new ApiFriendsAddEnemyException();
+            case 177:
+                return new ApiFriendsAddNotFoundException();
+            case 180:
+                return new ApiParamNoteIdException();
+            case 181:
+                return new ApiAccessNoteException();
+            case 182:
+                return new ApiAccessNoteCommentException();
+            case 183:
+                return new ApiAccessCommentException();
+            case 700:
+                return new ApiGroupChangeCreatorException();
+            case 701:
+                return new ApiGroupNotInClubException();
+            case 702:
+                return new ApiGroupTooManyOfficersException();
+            case 703:
+                return new ApiGroupNeed2faException();
+            case 704:
+                return new ApiGroupHostNeed2faException();
+            case 706:
+                return new ApiGroupTooManyAddressesException();
+            case 711:
+                return new ApiGroupAppIsNotInstalledInCommunityException();
+            case 200:
+                return new ApiAccessAlbumException();
+            case 201:
+                return new ApiAccessAudioException();
+            case 714:
+                return new ApiGroupInviteLinksNotValidException();
+            case 203:
+                return new ApiAccessGroupException();
+            case 204:
+                return new ApiAccessVideoException();
+            case 205:
+                return new ApiAccessMarketException();
+            case 210:
+                return new ApiWallAccessPostException();
+            case 211:
+                return new ApiWallAccessCommentException();
+            case 212:
+                return new ApiWallAccessRepliesException();
+            case 213:
+                return new ApiWallAccessAddReplyException();
+            case 214:
+                return new ApiWallAddPostException();
+            case 3800:
+                return new ApiFaveAliexpressTagException();
+            case 219:
+                return new ApiWallAdsPublishedException();
+            case 220:
+                return new ApiWallTooManyRecipientsException();
+            case 221:
+                return new ApiStatusNoAudioException();
+            case 222:
+                return new ApiWallLinksForbiddenException();
+            case 223:
+                return new ApiWallReplyOwnerFloodException();
+            case 224:
+                return new ApiWallAdsPostLimitReachedException();
+            case 225:
+                return new ApiWallDonutException();
+            case 1251:
+                return new ApiAppsAlreadyUnlockedException();
+            case 3300:
+                return new ApiRecaptchaException();
+            case 3301:
+                return new ApiPhoneValidationNeedException();
+            case 3302:
+                return new ApiPasswordValidationNeedException();
+            case 3303:
+                return new ApiOtpValidationNeedException();
+            case 232:
+                return new ApiLikesReactionCanNotBeAppliedException();
+            case 1256:
+                return new ApiAppsSubscriptionNotFoundException();
+            case 3304:
+                return new ApiEmailConfirmationNeedException();
+            case 3305:
+                return new ApiAssertVotesException();
+            case 1257:
+                return new ApiAppsSubscriptionInvalidStatusException();
+            case 1260:
+                return new ApiInvalidAddressException();
+            case 11500:
+                return new ApiCuaConfirmationRequiredException();
+            case 242:
+                return new ApiFriendsTooManyFriendsException();
+            case 250:
+                return new ApiPollsAccessException();
+            case 251:
+                return new ApiPollsPollIdException();
+            case 11003:
+                return new ApiAppsEmptyFilterParamsException();
+            case 11004:
+                return new ApiAppsEmptySnippetDataException();
+            case 252:
+                return new ApiPollsAnswerIdException();
+            case 11005:
+                return new ApiAppsTooManySnippetsException();
+            case 253:
+                return new ApiPollsAccessWithoutVoteException();
+            case 11006:
+                return new ApiAppsNotFoundSnippetException();
+            case 260:
+                return new ApiAccessGroupsException();
+            case 9999:
+                return new ApiNotSupportedHttpMethodException();
+            case 800:
+                return new ApiVideoAlreadyAddedException();
+            case 801:
+                return new ApiVideoCommentsClosedException();
+            case 300:
+                return new ApiAlbumFullException();
+            case 302:
+                return new ApiAlbumsLimitException();
+            case 11101:
+                return new ApiTranslationsCantTranslateException();
+            case 11102:
+                return new ApiTranslationsMultipleSourceLangException();
+            case 1900:
+                return new ApiPrettyCardsCardNotFoundException();
+            case 1901:
+                return new ApiPrettyCardsTooManyCardsException();
+            case 1902:
+                return new ApiPrettyCardsCardIsConnectedToPostException();
+            case 1400:
+                return new ApiMarketRestoreTooLateException();
+            case 1401:
+                return new ApiMarketCommentsClosedException();
+            case 1402:
+                return new ApiMarketAlbumNotFoundException();
+            case 1403:
+                return new ApiMarketItemNotFoundException();
+            case 1404:
+                return new ApiMarketItemAlreadyAddedException();
+            case 1405:
+                return new ApiMarketTooManyItemsException();
+            case 1406:
+                return new ApiMarketTooManyItemsInAlbumException();
+            case 1407:
+                return new ApiMarketTooManyAlbumsException();
+            case 1408:
+                return new ApiMarketItemHasBadLinksException();
+            case 1409:
+                return new ApiMarketExtendedNotEnabledException();
+            case 1410:
+                return new ApiMarketVariantsNotEnabledException();
+            case 1411:
+                return new ApiMarketVariantsErrorException();
+            case 1412:
+                return new ApiMarketGroupingItemsWithDifferentPropertiesException();
+            case 900:
+                return new ApiMessagesUserBlockedException();
+            case 1413:
+                return new ApiMarketGroupingAlreadyHasSuchVariantException();
+            case 901:
+                return new ApiMessagesDenySendException();
+            case 1414:
+                return new ApiMarketGroupingHasOtherPropertiesException();
+            case 902:
+                return new ApiMessagesPrivacyException();
+            case 1415:
+                return new ApiMarketGroupingMustHaveVariantsException();
+            case 1416:
+                return new ApiMarketVariantNotFoundException();
+            case 1417:
+                return new ApiMarketPropertyNotFoundException();
+            case 1418:
+                return new ApiMarketMaxPropertiesLimitExceedException();
+            case 1419:
+                return new ApiMarketMaxVariantsLimitExceedException();
+            case 907:
+                return new ApiMessagesTooOldPtsException();
+            case 908:
+                return new ApiMessagesTooNewPtsException();
+            case 909:
+                return new ApiMessagesEditExpiredException();
+            case 1421:
+                return new ApiMarketNameTooLongException();
+            case 910:
+                return new ApiMessagesTooBigException();
+            case 911:
+                return new ApiMessagesKeyboardInvalidException();
+            case 1423:
+                return new ApiMarketVariantValueTooLongException();
+            case 1424:
+                return new ApiMarketUnknownPropertyTypeException();
+            case 912:
+                return new ApiMessagesChatBotFeatureException();
+            case 1425:
+                return new ApiMarketGroupingMustContainMoreThanOneItemException();
+            case 913:
+                return new ApiMessagesTooLongForwardsException();
+            case 914:
+                return new ApiMessagesTooLongMessageException();
+            case 1426:
+                return new ApiMarketGroupingItemsMustHaveDistinctPropertiesException();
+            case 1427:
+                return new ApiMarketOrdersNoCartItemsException();
+            case 917:
+                return new ApiMessagesChatUserNoAccessException();
+            case 1429:
+                return new ApiMarketInvalidDimensionsException();
+            case 1430:
+                return new ApiMarketCantChangeVkpayStatusException();
+            case 919:
+                return new ApiMessagesCantSeeInviteLinkException();
+            case 1431:
+                return new ApiMarketShopAlreadyEnabledException();
+            case 920:
+                return new ApiMessagesEditKindDisallowedException();
+            case 1432:
+                return new ApiMarketShopAlreadyDisabledException();
+            case 921:
+                return new ApiMessagesCantFwdException();
+            case 1433:
+                return new ApiMarketPhotosCropInvalidFormatException();
+            case 922:
+                return new ApiMessagesChatUserLeftException();
+            case 1434:
+                return new ApiMarketPhotosCropOverflowException();
+            case 1435:
+                return new ApiMarketPhotosCropSizeTooLowException();
+            case 924:
+                return new ApiMessagesCantDeleteForAllException();
+            case 925:
+                return new ApiMessagesChatNotAdminException();
+            case 1438:
+                return new ApiMarketNotEnabledException();
+            case 927:
+                return new ApiMessagesChatNotExistException();
+            case 931:
+                return new ApiMessagesCantChangeInviteLinkException();
+            case 932:
+                return new ApiMessagesGroupPeerAccessException();
+            case 1446:
+                return new ApiMarketAlbumMainHiddenException();
+            case 935:
+                return new ApiMessagesChatUserNotInChatException();
+            case 936:
+                return new ApiMessagesContactNotFoundException();
+            case 939:
+                return new ApiMessagesMessageRequestAlreadySentException();
+            case 940:
+                return new ApiMessagesTooManyPostsException();
+            case 942:
+                return new ApiMessagesCantPinOneTimeStoryException();
+            case 943:
+                return new ApiMessagesIntentCantUseException();
+            case 1456:
+                return new ApiMarketOrdersInvalidStatusException();
+            case 944:
+                return new ApiMessagesIntentLimitOverflowException();
+            case 1457:
+                return new ApiMarketFailedToSetAlbumAsMainException();
+            case 945:
+                return new ApiMessagesChatDisabledException();
+            case 1458:
+                return new ApiMarketFailedToUnsetAlbumAsMainException();
+            case 946:
+                return new ApiMessagesChatUnsupportedException();
+            case 947:
+                return new ApiMessagesMemberAccessToGroupDeniedException();
+            case 949:
+                return new ApiMessagesCantEditPinnedYetException();
+            case 950:
+                return new ApiMessagesPeerBlockedReasonByTimeException();
+            case 962:
+                return new ApiMessagesUserNotDonException();
+            case 969:
+                return new ApiMessagesMessageCannotBeForwardedException();
+            case 970:
+                return new ApiMessagesCantPinExpiringMessageException();
+            case 2000:
+                return new ApiCallbackApiServersLimitException();
+            case 985:
+                return new ApiMessagesGroupForNotificationsOnlyException();
+            case 1518:
+                return new ApiMarketItemIsNotDeletedException();
+            case 1009:
+                return new ApiMessagesInvalidReactionIdException();
+            case 1010:
+                return new ApiMessagesForbiddenReactionException();
+            case 1011:
+                return new ApiMessagesReactionsLimitReachedException();
+            case 500:
+                return new ApiVotesPermissionException();
+            case 1012:
+                return new ApiMessagesWritingDisabledForChatException();
+            default:
+                return new ApiException(new Error().setErrorCode(errorCode));
         }
     }
 }

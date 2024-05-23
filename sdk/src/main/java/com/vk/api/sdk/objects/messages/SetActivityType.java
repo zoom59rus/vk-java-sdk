@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * 'typing' - user has started to type.
  */
-public enum SetActivityType implements EnumParam {
+public enum SetActivityType implements EnumParam<String> {
     @SerializedName("audiomessage")
     AUDIOMESSAGE("audiomessage"),
 

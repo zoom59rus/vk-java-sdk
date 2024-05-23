@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.support;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum UnblockScreenTextBackgroundFieldsType implements EnumParam {
+public enum UnblockScreenTextBackgroundFieldsType implements EnumParam<String> {
     @SerializedName("text_background")
     TEXT_BACKGROUND("text_background");
 

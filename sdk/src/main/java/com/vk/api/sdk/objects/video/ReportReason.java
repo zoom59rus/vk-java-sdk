@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Reason for the complaint: '0' - spam, '1' - child pornography, '2' - extremism, '3' - violence, '4' - drug propaganda, '5' - adult material, '6' - insult, abuse
  */
-public enum ReportReason implements EnumParam {
+public enum ReportReason implements EnumParam<Integer> {
     @SerializedName("0")
     _0(0),
 
@@ -68,8 +68,8 @@ public enum ReportReason implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

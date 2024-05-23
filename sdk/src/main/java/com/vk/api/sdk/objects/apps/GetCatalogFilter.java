@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * 'installed' - to return list of installed apps (only for mobile platform).
  */
-public enum GetCatalogFilter implements EnumParam {
+public enum GetCatalogFilter implements EnumParam<String> {
     @SerializedName("favorite")
     FAVORITE("favorite"),
 

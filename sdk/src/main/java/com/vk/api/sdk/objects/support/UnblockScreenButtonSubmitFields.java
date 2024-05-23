@@ -5,12 +5,13 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
  * UnblockScreenButtonSubmitFields object
  */
-public class UnblockScreenButtonSubmitFields implements Validable {
+public class UnblockScreenButtonSubmitFields implements UnblockScreenItem, Validable {
     @SerializedName("disabled")
     private Boolean disabled;
 

@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.support;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum UnblockScreenTextBorderedFieldsType implements EnumParam {
+public enum UnblockScreenTextBorderedFieldsType implements EnumParam<String> {
     @SerializedName("text_bordered")
     TEXT_BORDERED("text_bordered");
 

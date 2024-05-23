@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Attachment type
  */
-public enum MessageAttachmentType implements EnumParam {
+public enum MessageAttachmentType implements EnumParam<String> {
     @SerializedName("photo")
     PHOTO("photo"),
 
@@ -28,9 +28,6 @@ public enum MessageAttachmentType implements EnumParam {
 
     @SerializedName("market")
     MARKET("market"),
-
-    @SerializedName("market_album")
-    MARKET_ALBUM("market_album"),
 
     @SerializedName("gift")
     GIFT("gift"),

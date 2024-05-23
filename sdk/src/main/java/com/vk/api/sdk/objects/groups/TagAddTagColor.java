@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.groups;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum TagAddTagColor implements EnumParam {
+public enum TagAddTagColor implements EnumParam<String> {
     @SerializedName("454647")
     _454647("454647"),
 

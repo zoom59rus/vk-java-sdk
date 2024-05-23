@@ -8,6 +8,7 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.address.Fields;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.groups.responses.GetAddressesResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,31 +16,6 @@ import java.util.List;
  * Query for Groups.getAddresses method
  */
 public class GroupsGetAddressesQuery extends AbstractQueryBuilder<GroupsGetAddressesQuery, GetAddressesResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     * @param groupId value of "group id" parameter. Minimum is 1. Entity - owner
-     *
-     */
-    public GroupsGetAddressesQuery(VkApiClient client, UserActor actor, Long groupId) {
-        super(client, "groups.getAddresses", GetAddressesResponse.class);
-        accessToken(actor.getAccessToken());
-        groupId(groupId);
-    }
-
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public GroupsGetAddressesQuery(VkApiClient client, UserActor actor) {
-        super(client, "groups.getAddresses", GetAddressesResponse.class);
-        accessToken(actor.getAccessToken());
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -65,6 +41,31 @@ public class GroupsGetAddressesQuery extends AbstractQueryBuilder<GroupsGetAddre
         super(client, "groups.getAddresses", GetAddressesResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     * @param groupId value of "group id" parameter. Minimum is 1. Entity - owner
+     *
+     */
+    public GroupsGetAddressesQuery(VkApiClient client, UserActor actor, Long groupId) {
+        super(client, "groups.getAddresses", GetAddressesResponse.class);
+        accessToken(actor.getAccessToken());
+        groupId(groupId);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public GroupsGetAddressesQuery(VkApiClient client, UserActor actor) {
+        super(client, "groups.getAddresses", GetAddressesResponse.class);
+        accessToken(actor.getAccessToken());
     }
 
     /**

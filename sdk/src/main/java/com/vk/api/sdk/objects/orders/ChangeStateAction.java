@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * action to be done with the order. Available actions: *cancel - to cancel unconfirmed order. *charge - to confirm unconfirmed order. Applies only if processing of [vk.com/dev/payments_status|order_change_state] notification failed. *refund - to cancel confirmed order.
  */
-public enum ChangeStateAction implements EnumParam {
+public enum ChangeStateAction implements EnumParam<String> {
     @SerializedName("cancel")
     CANCEL("cancel"),
 

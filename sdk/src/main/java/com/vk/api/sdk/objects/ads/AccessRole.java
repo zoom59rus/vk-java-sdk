@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Current user's role
  */
-public enum AccessRole implements EnumParam {
+public enum AccessRole implements EnumParam<String> {
     @SerializedName("admin")
     ADMIN("admin"),
 

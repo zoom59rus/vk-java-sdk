@@ -6,10 +6,8 @@ import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.objects.annotations.ApiMethod;
 import com.vk.api.sdk.queries.streaming.StreamingGetServerUrlQuery;
-import com.vk.api.sdk.queries.streaming.StreamingGetSettingsQuery;
 import com.vk.api.sdk.queries.streaming.StreamingGetStatsQuery;
 import com.vk.api.sdk.queries.streaming.StreamingGetStemQuery;
-import com.vk.api.sdk.queries.streaming.StreamingSetSettingsQuery;
 
 /**
  * List of Streaming methods
@@ -39,15 +37,6 @@ public class Streaming extends AbstractAction {
      * @param actor vk service actor
      * @return query
      */
-    @ApiMethod("streaming.getSettings")
-    public StreamingGetSettingsQuery getSettings(ServiceActor actor) {
-        return new StreamingGetSettingsQuery(getClient(), actor);
-    }
-
-    /**
-     * @param actor vk service actor
-     * @return query
-     */
     @ApiMethod("streaming.getStats")
     public StreamingGetStatsQuery getStats(ServiceActor actor) {
         return new StreamingGetStatsQuery(getClient(), actor);
@@ -70,14 +59,5 @@ public class Streaming extends AbstractAction {
     @ApiMethod("streaming.getStem")
     public StreamingGetStemQuery getStem(ServiceActor actor) {
         return new StreamingGetStemQuery(getClient(), actor);
-    }
-
-    /**
-     * @param actor vk service actor
-     * @return query
-     */
-    @ApiMethod("streaming.setSettings")
-    public StreamingSetSettingsQuery setSettings(ServiceActor actor) {
-        return new StreamingSetSettingsQuery(getClient(), actor);
     }
 }

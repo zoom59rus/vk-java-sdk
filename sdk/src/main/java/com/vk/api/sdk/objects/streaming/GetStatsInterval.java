@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.streaming;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum GetStatsInterval implements EnumParam {
+public enum GetStatsInterval implements EnumParam<String> {
     @SerializedName("1h")
     _1H("1h"),
 

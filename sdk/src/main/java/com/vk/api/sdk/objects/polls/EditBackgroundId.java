@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.polls;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum EditBackgroundId implements EnumParam {
+public enum EditBackgroundId implements EnumParam<String> {
     @SerializedName("0")
     _0("0"),
 

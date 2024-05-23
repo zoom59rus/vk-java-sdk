@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Relationship status: '0' - Not specified, '1' - Not married, '2' - In a relationship, '3' - Engaged, '4' - Married, '5' - It's complicated, '6' - Actively searching, '7' - In love, '8' - In a civil union
  */
-public enum SearchStatus implements EnumParam {
+public enum SearchStatus implements EnumParam<Integer> {
     @SerializedName("0")
     NOT_SPECIFIED(0),
 
@@ -41,8 +41,8 @@ public enum SearchStatus implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

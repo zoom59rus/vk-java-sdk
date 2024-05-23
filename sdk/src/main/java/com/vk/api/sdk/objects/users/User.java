@@ -8,6 +8,7 @@ import com.vk.api.sdk.objects.base.BoolInt;
 import com.vk.api.sdk.objects.base.Sex;
 import com.vk.api.sdk.objects.friends.FriendStatusStatus;
 import com.vk.api.sdk.objects.friends.RequestsMutual;
+
 import java.net.URI;
 import java.util.Objects;
 

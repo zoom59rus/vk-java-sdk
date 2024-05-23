@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.groups;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum Filter implements EnumParam {
+public enum Filter implements EnumParam<String> {
     @SerializedName("admin")
     ADMIN("admin"),
 

@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.support;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum UnblockScreenSlidersFieldsType implements EnumParam {
+public enum UnblockScreenSlidersFieldsType implements EnumParam<String> {
     @SerializedName("sliders")
     SLIDERS("sliders");
 

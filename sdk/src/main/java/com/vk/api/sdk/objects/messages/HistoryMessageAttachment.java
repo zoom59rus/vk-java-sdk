@@ -9,6 +9,7 @@ import com.vk.api.sdk.objects.audio.Audio;
 import com.vk.api.sdk.objects.docs.Doc;
 import com.vk.api.sdk.objects.market.MarketItem;
 import com.vk.api.sdk.objects.photos.Photo;
+
 import java.util.Objects;
 
 /**

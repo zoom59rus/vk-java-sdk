@@ -4,12 +4,13 @@ package com.vk.api.sdk.objects.newsfeed;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
+
 import java.util.Objects;
 
 /**
  * ItemVideo object
  */
-public class ItemVideo extends ItemBase implements Validable {
+public class ItemVideo extends ItemBase implements NewsfeedItem, Validable {
     /**
      * Index of current carousel element
      */

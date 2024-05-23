@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Place type
  */
-public enum GeoType implements EnumParam {
+public enum GeoType implements EnumParam<String> {
     @SerializedName("place")
     PLACE("place"),
 

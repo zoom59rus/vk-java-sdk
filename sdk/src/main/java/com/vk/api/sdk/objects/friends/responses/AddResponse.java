@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Friend request status
  */
-public enum AddResponse implements EnumParam {
+public enum AddResponse implements EnumParam<Integer> {
     @SerializedName("1")
     SEND(1),
 
@@ -23,8 +23,8 @@ public enum AddResponse implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

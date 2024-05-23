@@ -9,6 +9,7 @@ import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.base.NameCase;
 import com.vk.api.sdk.objects.users.Fields;
 import com.vk.api.sdk.objects.users.responses.GetFollowersResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,17 +17,6 @@ import java.util.List;
  * Query for Users.getFollowers method
  */
 public class UsersGetFollowersQuery extends AbstractQueryBuilder<UsersGetFollowersQuery, GetFollowersResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public UsersGetFollowersQuery(VkApiClient client, UserActor actor) {
-        super(client, "users.getFollowers", GetFollowersResponse.class);
-        accessToken(actor.getAccessToken());
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -37,6 +27,17 @@ public class UsersGetFollowersQuery extends AbstractQueryBuilder<UsersGetFollowe
         super(client, "users.getFollowers", GetFollowersResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public UsersGetFollowersQuery(VkApiClient client, UserActor actor) {
+        super(client, "users.getFollowers", GetFollowersResponse.class);
+        accessToken(actor.getAccessToken());
     }
 
     /**

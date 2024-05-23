@@ -5,12 +5,13 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
  * UnblockScreenTextBorderedFields object
  */
-public class UnblockScreenTextBorderedFields implements Validable {
+public class UnblockScreenTextBorderedFields implements UnblockScreenItem, Validable {
     /**
      * Нужна ли кнопка 'Получить уведомление'
      */

@@ -8,64 +8,8 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiMethod;
 import com.vk.api.sdk.objects.messages.GetIntentUsersIntent;
 import com.vk.api.sdk.objects.users.Fields;
-import com.vk.api.sdk.queries.messages.MessagesAddChatUserQuery;
-import com.vk.api.sdk.queries.messages.MessagesAddChatUsersQuery;
-import com.vk.api.sdk.queries.messages.MessagesAllowMessagesFromGroupQuery;
-import com.vk.api.sdk.queries.messages.MessagesCreateChatQueryWithWithpeerids;
-import com.vk.api.sdk.queries.messages.MessagesDeleteChatPhotoQuery;
-import com.vk.api.sdk.queries.messages.MessagesDeleteConversationQuery;
-import com.vk.api.sdk.queries.messages.MessagesDeleteQueryWithFull;
-import com.vk.api.sdk.queries.messages.MessagesDeleteReactionQuery;
-import com.vk.api.sdk.queries.messages.MessagesDenyMessagesFromGroupQuery;
-import com.vk.api.sdk.queries.messages.MessagesEditChatQuery;
-import com.vk.api.sdk.queries.messages.MessagesEditQuery;
-import com.vk.api.sdk.queries.messages.MessagesGetByConversationMessageIdQuery;
-import com.vk.api.sdk.queries.messages.MessagesGetByConversationMessageIdQueryWithExtended;
-import com.vk.api.sdk.queries.messages.MessagesGetByIdQuery;
-import com.vk.api.sdk.queries.messages.MessagesGetByIdQueryWithExtended;
-import com.vk.api.sdk.queries.messages.MessagesGetChatPreviewQuery;
-import com.vk.api.sdk.queries.messages.MessagesGetChatQuery;
-import com.vk.api.sdk.queries.messages.MessagesGetChatQueryWithChatIds;
-import com.vk.api.sdk.queries.messages.MessagesGetChatQueryWithChatIdsFields;
-import com.vk.api.sdk.queries.messages.MessagesGetChatQueryWithFields;
-import com.vk.api.sdk.queries.messages.MessagesGetConversationMembersQuery;
-import com.vk.api.sdk.queries.messages.MessagesGetConversationsByIdQuery;
-import com.vk.api.sdk.queries.messages.MessagesGetConversationsByIdQueryWithExtended;
-import com.vk.api.sdk.queries.messages.MessagesGetConversationsQuery;
-import com.vk.api.sdk.queries.messages.MessagesGetHistoryAttachmentsQuery;
-import com.vk.api.sdk.queries.messages.MessagesGetHistoryQuery;
-import com.vk.api.sdk.queries.messages.MessagesGetHistoryQueryWithExtended;
-import com.vk.api.sdk.queries.messages.MessagesGetImportantMessagesQuery;
-import com.vk.api.sdk.queries.messages.MessagesGetImportantMessagesQueryWithExtended;
-import com.vk.api.sdk.queries.messages.MessagesGetIntentUsersQuery;
-import com.vk.api.sdk.queries.messages.MessagesGetInviteLinkQuery;
-import com.vk.api.sdk.queries.messages.MessagesGetLastActivityQuery;
-import com.vk.api.sdk.queries.messages.MessagesGetLongPollHistoryQuery;
-import com.vk.api.sdk.queries.messages.MessagesGetLongPollServerQuery;
-import com.vk.api.sdk.queries.messages.MessagesGetMessagesReactionsQuery;
-import com.vk.api.sdk.queries.messages.MessagesGetReactedPeersQuery;
-import com.vk.api.sdk.queries.messages.MessagesGetReactionsAssetsQuery;
-import com.vk.api.sdk.queries.messages.MessagesIsMessagesFromGroupAllowedQuery;
-import com.vk.api.sdk.queries.messages.MessagesJoinChatByInviteLinkQuery;
-import com.vk.api.sdk.queries.messages.MessagesMarkAsAnsweredConversationQuery;
-import com.vk.api.sdk.queries.messages.MessagesMarkAsImportantConversationQuery;
-import com.vk.api.sdk.queries.messages.MessagesMarkAsImportantQueryWithDeprecated;
-import com.vk.api.sdk.queries.messages.MessagesMarkAsReadQuery;
-import com.vk.api.sdk.queries.messages.MessagesMarkReactionsAsReadQuery;
-import com.vk.api.sdk.queries.messages.MessagesPinQuery;
-import com.vk.api.sdk.queries.messages.MessagesRemoveChatUserQuery;
-import com.vk.api.sdk.queries.messages.MessagesRestoreQuery;
-import com.vk.api.sdk.queries.messages.MessagesSearchConversationsQuery;
-import com.vk.api.sdk.queries.messages.MessagesSearchConversationsQueryWithExtended;
-import com.vk.api.sdk.queries.messages.MessagesSearchQuery;
-import com.vk.api.sdk.queries.messages.MessagesSearchQueryWithExtended;
-import com.vk.api.sdk.queries.messages.MessagesSendMessageEventAnswerQuery;
-import com.vk.api.sdk.queries.messages.MessagesSendQueryWithDeprecated;
-import com.vk.api.sdk.queries.messages.MessagesSendQueryWithUserIds;
-import com.vk.api.sdk.queries.messages.MessagesSendReactionQuery;
-import com.vk.api.sdk.queries.messages.MessagesSetActivityQuery;
-import com.vk.api.sdk.queries.messages.MessagesSetChatPhotoQuery;
-import com.vk.api.sdk.queries.messages.MessagesUnpinQuery;
+import com.vk.api.sdk.queries.messages.*;
+
 import java.util.List;
 
 /**
@@ -974,6 +918,28 @@ public class Messages extends AbstractAction {
     @ApiMethod("messages.getIntentUsers")
     public MessagesGetIntentUsersQuery getIntentUsers(GroupActor actor) {
         return new MessagesGetIntentUsersQuery(getClient(), actor);
+    }
+
+    /**
+     * @param actor vk user actor
+     * @param peerId Destination ID.
+     * @return query
+     */
+    @ApiMethod("messages.getInviteLink")
+    public MessagesGetInviteLinkQueryWithByOwner getInviteLinkByOwner(UserActor actor,
+            Long peerId) {
+        return new MessagesGetInviteLinkQueryWithByOwner(getClient(), actor, peerId);
+    }
+
+    /**
+     * @param actor vk group actor
+     * @param peerId Destination ID.
+     * @return query
+     */
+    @ApiMethod("messages.getInviteLink")
+    public MessagesGetInviteLinkQueryWithByOwner getInviteLinkByOwner(GroupActor actor,
+            Long peerId) {
+        return new MessagesGetInviteLinkQueryWithByOwner(getClient(), actor, peerId);
     }
 
     /**

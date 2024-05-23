@@ -9,6 +9,7 @@ import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.messages.GetHistoryRev;
 import com.vk.api.sdk.objects.messages.responses.GetHistoryExtendedResponse;
 import com.vk.api.sdk.objects.users.Fields;
+
 import java.util.Arrays;
 import java.util.List;
 

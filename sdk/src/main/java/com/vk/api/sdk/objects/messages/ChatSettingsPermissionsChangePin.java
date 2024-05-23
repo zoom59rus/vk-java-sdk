@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Who can change pinned message
  */
-public enum ChatSettingsPermissionsChangePin implements EnumParam {
+public enum ChatSettingsPermissionsChangePin implements EnumParam<String> {
     @SerializedName("owner")
     OWNER("owner"),
 

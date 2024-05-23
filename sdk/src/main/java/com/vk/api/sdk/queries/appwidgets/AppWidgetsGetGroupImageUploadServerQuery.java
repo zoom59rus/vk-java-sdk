@@ -7,6 +7,7 @@ import com.vk.api.sdk.client.actors.GroupActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.appwidgets.GetGroupImageUploadServerImageType;
 import com.vk.api.sdk.objects.appwidgets.responses.GetGroupImageUploadServerResponse;
+
 import java.util.Arrays;
 import java.util.List;
 

@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.market;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum SearchItemsSortBy implements EnumParam {
+public enum SearchItemsSortBy implements EnumParam<Integer> {
     @SerializedName("1")
     DATE(1),
 
@@ -20,8 +20,8 @@ public enum SearchItemsSortBy implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

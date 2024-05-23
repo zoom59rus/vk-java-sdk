@@ -5,12 +5,13 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
  * UnblockScreenContentBlockFields object
  */
-public class UnblockScreenContentBlockFields implements Validable {
+public class UnblockScreenContentBlockFields implements UnblockScreenItem, Validable {
     /**
      * Тип контента
      */

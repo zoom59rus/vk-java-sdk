@@ -10,7 +10,8 @@ import com.vk.api.sdk.objects.groups.Group;
 import com.vk.api.sdk.objects.notifications.NotificationItem;
 import com.vk.api.sdk.objects.photos.Photo;
 import com.vk.api.sdk.objects.users.User;
-import com.vk.api.sdk.objects.video.Video;
+import com.vk.api.sdk.objects.video.VideoFull;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -54,7 +55,7 @@ public class GetResponse implements Validable {
     private Integer ttl;
 
     @SerializedName("videos")
-    private List<Video> videos;
+    private List<VideoFull> videos;
 
     public List<App> getApps() {
         return apps;
@@ -137,11 +138,11 @@ public class GetResponse implements Validable {
         return this;
     }
 
-    public List<Video> getVideos() {
+    public List<VideoFull> getVideos() {
         return videos;
     }
 
-    public GetResponse setVideos(List<Video> videos) {
+    public GetResponse setVideos(List<VideoFull> videos) {
         this.videos = videos;
         return this;
     }

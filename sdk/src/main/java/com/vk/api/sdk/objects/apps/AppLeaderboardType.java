@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Leaderboard type
  */
-public enum AppLeaderboardType implements EnumParam {
+public enum AppLeaderboardType implements EnumParam<Integer> {
     @SerializedName("0")
     NOT_SUPPORTED(0),
 
@@ -23,8 +23,8 @@ public enum AppLeaderboardType implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

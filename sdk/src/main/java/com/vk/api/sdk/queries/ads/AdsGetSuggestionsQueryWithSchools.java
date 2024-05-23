@@ -9,6 +9,7 @@ import com.vk.api.sdk.objects.ads.GetSuggestionsSection;
 import com.vk.api.sdk.objects.ads.responses.GetSuggestionsSchoolsResponse;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.base.Lang;
+
 import java.util.Arrays;
 import java.util.List;
 

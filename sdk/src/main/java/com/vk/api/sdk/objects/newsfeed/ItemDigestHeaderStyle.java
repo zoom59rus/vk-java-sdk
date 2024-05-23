@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.newsfeed;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum ItemDigestHeaderStyle implements EnumParam {
+public enum ItemDigestHeaderStyle implements EnumParam<String> {
     @SerializedName("singleline")
     SINGLELINE("singleline"),
 

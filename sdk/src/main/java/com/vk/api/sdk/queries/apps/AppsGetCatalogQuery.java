@@ -9,7 +9,9 @@ import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.apps.GetCatalogFilter;
 import com.vk.api.sdk.objects.apps.GetCatalogSort;
 import com.vk.api.sdk.objects.apps.responses.GetCatalogResponse;
+import com.vk.api.sdk.objects.base.NameCase;
 import com.vk.api.sdk.objects.users.Fields;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,17 +19,6 @@ import java.util.List;
  * Query for Apps.getCatalog method
  */
 public class AppsGetCatalogQuery extends AbstractQueryBuilder<AppsGetCatalogQuery, GetCatalogResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public AppsGetCatalogQuery(VkApiClient client, UserActor actor) {
-        super(client, "apps.getCatalog", GetCatalogResponse.class);
-        accessToken(actor.getAccessToken());
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -38,6 +29,17 @@ public class AppsGetCatalogQuery extends AbstractQueryBuilder<AppsGetCatalogQuer
         super(client, "apps.getCatalog", GetCatalogResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public AppsGetCatalogQuery(VkApiClient client, UserActor actor) {
+        super(client, "apps.getCatalog", GetCatalogResponse.class);
+        accessToken(actor.getAccessToken());
     }
 
     /**
@@ -113,7 +115,7 @@ public class AppsGetCatalogQuery extends AbstractQueryBuilder<AppsGetCatalogQuer
      * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
      */
     @ApiParam("name_case")
-    public AppsGetCatalogQuery nameCase(String value) {
+    public AppsGetCatalogQuery nameCase(NameCase value) {
         return unsafeParam("name_case", value);
     }
 

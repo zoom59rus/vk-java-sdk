@@ -3,14 +3,16 @@ package com.vk.api.sdk.objects.callback;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+import com.vk.api.sdk.events.CallbackEvent;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
  * DonutMoneyWithdrawError object
  */
-public class DonutMoneyWithdrawError implements Validable {
+public class DonutMoneyWithdrawError implements Validable, CallbackEvent {
     @SerializedName("reason")
     @Required
     private String reason;

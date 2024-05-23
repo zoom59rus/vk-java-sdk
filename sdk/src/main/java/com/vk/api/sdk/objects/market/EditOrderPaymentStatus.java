@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.market;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum EditOrderPaymentStatus implements EnumParam {
+public enum EditOrderPaymentStatus implements EnumParam<String> {
     @SerializedName("not_paid")
     NOT_PAID("not_paid"),
 

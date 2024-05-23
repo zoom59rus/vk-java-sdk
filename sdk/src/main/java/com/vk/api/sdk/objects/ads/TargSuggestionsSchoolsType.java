@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * School type
  */
-public enum TargSuggestionsSchoolsType implements EnumParam {
+public enum TargSuggestionsSchoolsType implements EnumParam<String> {
     @SerializedName("school")
     SCHOOL("school"),
 

@@ -7,6 +7,7 @@ import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.photos.responses.SearchResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,17 +15,6 @@ import java.util.List;
  * Query for Photos.search method
  */
 public class PhotosSearchQuery extends AbstractQueryBuilder<PhotosSearchQuery, SearchResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public PhotosSearchQuery(VkApiClient client, UserActor actor) {
-        super(client, "photos.search", SearchResponse.class);
-        accessToken(actor.getAccessToken());
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -35,6 +25,17 @@ public class PhotosSearchQuery extends AbstractQueryBuilder<PhotosSearchQuery, S
         super(client, "photos.search", SearchResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public PhotosSearchQuery(VkApiClient client, UserActor actor) {
+        super(client, "photos.search", SearchResponse.class);
+        accessToken(actor.getAccessToken());
     }
 
     /**
@@ -77,7 +78,7 @@ public class PhotosSearchQuery extends AbstractQueryBuilder<PhotosSearchQuery, S
      * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
      */
     @ApiParam("start_time")
-    public PhotosSearchQuery startTime(Integer value) {
+    public PhotosSearchQuery startTime(Number value) {
         return unsafeParam("start_time", value);
     }
 
@@ -88,7 +89,7 @@ public class PhotosSearchQuery extends AbstractQueryBuilder<PhotosSearchQuery, S
      * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
      */
     @ApiParam("end_time")
-    public PhotosSearchQuery endTime(Integer value) {
+    public PhotosSearchQuery endTime(Number value) {
         return unsafeParam("end_time", value);
     }
 

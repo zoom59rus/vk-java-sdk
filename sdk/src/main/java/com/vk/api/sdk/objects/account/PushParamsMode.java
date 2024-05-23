@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Settings parameters
  */
-public enum PushParamsMode implements EnumParam {
+public enum PushParamsMode implements EnumParam<String> {
     @SerializedName("on")
     ON("on"),
 

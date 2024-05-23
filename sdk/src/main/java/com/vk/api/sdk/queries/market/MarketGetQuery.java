@@ -6,6 +6,7 @@ import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.market.responses.GetResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -136,6 +137,29 @@ public class MarketGetQuery extends AbstractQueryBuilder<MarketGetQuery, GetResp
     @ApiParam("with_disabled")
     public MarketGetQuery withDisabled(Boolean value) {
         return unsafeParam("with_disabled", value);
+    }
+
+    /**
+     * fields
+     * Set fields
+     *
+     * @param value value of "fields" parameter.
+     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
+     */
+    @ApiParam("fields")
+    public MarketGetQuery fields(String... value) {
+        return unsafeParam("fields", value);
+    }
+
+    /**
+     * Set fields
+     *
+     * @param value value of "fields" parameter.
+     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
+     */
+    @ApiParam("fields")
+    public MarketGetQuery fields(List<String> value) {
+        return unsafeParam("fields", value);
     }
 
     @Override

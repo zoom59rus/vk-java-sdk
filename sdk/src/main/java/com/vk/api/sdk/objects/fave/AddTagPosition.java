@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.fave;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum AddTagPosition implements EnumParam {
+public enum AddTagPosition implements EnumParam<String> {
     @SerializedName("back")
     BACK("back"),
 

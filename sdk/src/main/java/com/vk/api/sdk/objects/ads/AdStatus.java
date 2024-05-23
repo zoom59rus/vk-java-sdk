@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Ad atatus
  */
-public enum AdStatus implements EnumParam {
+public enum AdStatus implements EnumParam<Integer> {
     @SerializedName("0")
     STOPPED(0),
 
@@ -23,8 +23,8 @@ public enum AdStatus implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

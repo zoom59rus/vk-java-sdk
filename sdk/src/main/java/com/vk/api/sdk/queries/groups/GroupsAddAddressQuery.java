@@ -8,6 +8,7 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.groups.AddAddressWorkInfoStatus;
 import com.vk.api.sdk.objects.groups.responses.AddAddressResponse;
+
 import java.util.Arrays;
 import java.util.List;
 

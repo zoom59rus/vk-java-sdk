@@ -10,18 +10,19 @@ import com.vk.api.sdk.client.ClientResponse;
 import com.vk.api.sdk.client.ClientResponseTypeable;
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.exceptions.*;
+import com.vk.api.sdk.objects.base.Error;
 import org.apache.http.Header;
 import org.apache.http.message.BasicHeader;
-import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.StringReader;
 import java.io.UnsupportedEncodingException;
 import java.lang.reflect.Type;
+import java.net.URI;
 import java.net.URLEncoder;
 import java.util.*;
 import java.util.stream.Collectors;
-import java.net.URI;
 
 public abstract class LongPollQueryBuilder<T, R> extends ApiRequest<R> {
 
@@ -38,7 +39,7 @@ public abstract class LongPollQueryBuilder<T, R> extends ApiRequest<R> {
     private final List<Header> headers = new ArrayList<>();
 
     public LongPollQueryBuilder(VkApiClient client, URI url, Type type) {
-        super(url.toString(), client.getTransportClient(), client.getGson(), RETRY_ATTEMPTS, type);
+        super(url.toString(), client.getTransportClient(), RETRY_ATTEMPTS, type);
     }
 
     private static String escape(String data) {
@@ -136,20 +137,17 @@ public abstract class LongPollQueryBuilder<T, R> extends ApiRequest<R> {
         if (json.has(FAILED_CODE)) {
             JsonPrimitive failedParam = json.getAsJsonPrimitive(FAILED_CODE);
             int code = failedParam.getAsInt();
+            Error error = new Error()
+                    .setErrorCode(LongPollServerTsException.ERROR_CODE)
+                    .setErrorText(LongPollServerTsException.ERROR_DESCRIPTION);
             switch (code) {
                 case INCORRECT_TS_VALUE_ERROR_CODE:
                     int ts = json.getAsJsonPrimitive("ts").getAsInt();
-                    throw new LongPollServerTsException(
-                            response.getStatusCode(),
-                            "\'ts\' value is incorrect, minimal value is 1, maximal value is " + ts,
-                            response.getHeaders()
-                    );
+                    error.setErrorMsg("\\'ts\\' value is incorrect, minimal value is 1, maximal value is " + ts);
+                    throw new LongPollServerTsException(error, response.getStatusCode(), response.getHeaders());
                 case TOKEN_EXPIRED_ERROR_CODE:
-                    throw new LongPollServerKeyExpiredException(
-                            response.getStatusCode(),
-                            "Try to generate a new key.",
-                            response.getHeaders()
-                    );
+                    error.setErrorMsg("Try to generate a new key.");
+                    throw new LongPollServerKeyExpiredException(error, response.getStatusCode(), response.getHeaders());
                 default:
                     throw new ClientException("Unknown LongPollServer exception, something went wrong.");
             }

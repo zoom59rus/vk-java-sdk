@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Public page subtype. Possible values: *'1' - place or small business,, *'2' - company, organization or website,, *'3' - famous person or group of people,, *'4' - product or work of art.
  */
-public enum CreateSubtype implements EnumParam {
+public enum CreateSubtype implements EnumParam<Integer> {
     @SerializedName("0")
     NONE(0),
 
@@ -29,8 +29,8 @@ public enum CreateSubtype implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

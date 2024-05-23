@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * '0' - do not use reverse order, '1' - use reverse order
  */
-public enum SearchRev implements EnumParam {
+public enum SearchRev implements EnumParam<Integer> {
     @SerializedName("0")
     NORMAL(0),
 
@@ -20,8 +20,8 @@ public enum SearchRev implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

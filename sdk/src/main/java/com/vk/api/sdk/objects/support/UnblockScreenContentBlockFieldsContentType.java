@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Тип контента
  */
-public enum UnblockScreenContentBlockFieldsContentType implements EnumParam {
+public enum UnblockScreenContentBlockFieldsContentType implements EnumParam<String> {
     @SerializedName("post")
     POST("post"),
 

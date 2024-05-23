@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.messages;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum GetHistoryAttachmentsAttachmentTypes implements EnumParam {
+public enum GetHistoryAttachmentsAttachmentTypes implements EnumParam<String> {
     @SerializedName("app_action_games")
     APP_ACTION_GAMES("app_action_games"),
 
@@ -16,6 +16,9 @@ public enum GetHistoryAttachmentsAttachmentTypes implements EnumParam {
 
     @SerializedName("audio_message")
     AUDIO_MESSAGE("audio_message"),
+
+    @SerializedName("clip")
+    CLIP("clip"),
 
     @SerializedName("doc")
     DOC("doc"),

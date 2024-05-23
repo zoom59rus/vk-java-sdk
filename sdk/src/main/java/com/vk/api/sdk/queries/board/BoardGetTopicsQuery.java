@@ -9,6 +9,7 @@ import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.board.GetTopicsOrder;
 import com.vk.api.sdk.objects.board.GetTopicsPreview;
 import com.vk.api.sdk.objects.board.responses.GetTopicsResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,31 +17,6 @@ import java.util.List;
  * Query for Board.getTopics method
  */
 public class BoardGetTopicsQuery extends AbstractQueryBuilder<BoardGetTopicsQuery, GetTopicsResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     * @param groupId value of "group id" parameter. Minimum is 1. Entity - owner
-     *
-     */
-    public BoardGetTopicsQuery(VkApiClient client, UserActor actor, Long groupId) {
-        super(client, "board.getTopics", GetTopicsResponse.class);
-        accessToken(actor.getAccessToken());
-        groupId(groupId);
-    }
-
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public BoardGetTopicsQuery(VkApiClient client, UserActor actor) {
-        super(client, "board.getTopics", GetTopicsResponse.class);
-        accessToken(actor.getAccessToken());
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -66,6 +42,31 @@ public class BoardGetTopicsQuery extends AbstractQueryBuilder<BoardGetTopicsQuer
         super(client, "board.getTopics", GetTopicsResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     * @param groupId value of "group id" parameter. Minimum is 1. Entity - owner
+     *
+     */
+    public BoardGetTopicsQuery(VkApiClient client, UserActor actor, Long groupId) {
+        super(client, "board.getTopics", GetTopicsResponse.class);
+        accessToken(actor.getAccessToken());
+        groupId(groupId);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public BoardGetTopicsQuery(VkApiClient client, UserActor actor) {
+        super(client, "board.getTopics", GetTopicsResponse.class);
+        accessToken(actor.getAccessToken());
     }
 
     /**

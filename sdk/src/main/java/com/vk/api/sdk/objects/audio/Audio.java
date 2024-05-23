@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.net.URI;
 import java.util.Objects;
 
@@ -64,6 +65,12 @@ public class Audio implements Validable {
      */
     @SerializedName("performer")
     private String performer;
+
+    /**
+     * Stream duration in seconds
+     */
+    @SerializedName("stream_duration")
+    private Integer streamDuration;
 
     /**
      * Title
@@ -150,6 +157,15 @@ public class Audio implements Validable {
         return this;
     }
 
+    public Integer getStreamDuration() {
+        return streamDuration;
+    }
+
+    public Audio setStreamDuration(Integer streamDuration) {
+        this.streamDuration = streamDuration;
+        return this;
+    }
+
     public String getTitle() {
         return title;
     }
@@ -170,7 +186,7 @@ public class Audio implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(date, duration, performer, artist, accessKey, albumId, id, ownerId, title, url);
+        return Objects.hash(date, duration, performer, artist, accessKey, streamDuration, albumId, id, ownerId, title, url);
     }
 
     @Override
@@ -183,6 +199,7 @@ public class Audio implements Validable {
                 Objects.equals(performer, audio.performer) &&
                 Objects.equals(artist, audio.artist) &&
                 Objects.equals(ownerId, audio.ownerId) &&
+                Objects.equals(streamDuration, audio.streamDuration) &&
                 Objects.equals(accessKey, audio.accessKey) &&
                 Objects.equals(albumId, audio.albumId) &&
                 Objects.equals(id, audio.id) &&
@@ -203,6 +220,7 @@ public class Audio implements Validable {
         sb.append(", performer='").append(performer).append("'");
         sb.append(", artist='").append(artist).append("'");
         sb.append(", ownerId=").append(ownerId);
+        sb.append(", streamDuration=").append(streamDuration);
         sb.append(", accessKey='").append(accessKey).append("'");
         sb.append(", albumId=").append(albumId);
         sb.append(", id=").append(id);

@@ -8,6 +8,7 @@ import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.base.BoolInt;
 import com.vk.api.sdk.objects.base.Image;
 import com.vk.api.sdk.objects.base.StickerNew;
+
 import java.net.URI;
 import java.util.List;
 import java.util.Objects;
@@ -61,6 +62,12 @@ public class Product implements Validable {
      */
     @SerializedName("is_new")
     private Boolean isNew;
+
+    /**
+     * Information whether the product is a sticker pack with popup stickers (for stickers product type)
+     */
+    @SerializedName("is_popup")
+    private Boolean isPopup;
 
     /**
      * Information whether sticker pack is a vmoji pack
@@ -206,6 +213,15 @@ public class Product implements Validable {
         return this;
     }
 
+    public Boolean getIsPopup() {
+        return isPopup;
+    }
+
+    public Product setIsPopup(Boolean isPopup) {
+        this.isPopup = isPopup;
+        return this;
+    }
+
     public Boolean getIsVmoji() {
         return isVmoji;
     }
@@ -332,7 +348,7 @@ public class Product implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(copyright, purchaseDate, hasAnimation, icon, active, baseId, isNew, promoted, title, type, url, styleIds, descriptionLangKey, purchased, isVmoji, styleStickerIds, subtitle, previews, stickers, paymentRegion, id, titleLangKey);
+        return Objects.hash(copyright, purchaseDate, isPopup, hasAnimation, icon, active, baseId, isNew, promoted, title, type, url, styleIds, descriptionLangKey, purchased, isVmoji, styleStickerIds, subtitle, previews, stickers, paymentRegion, id, titleLangKey);
     }
 
     @Override
@@ -355,6 +371,7 @@ public class Product implements Validable {
                 Objects.equals(isVmoji, product.isVmoji) &&
                 Objects.equals(purchased, product.purchased) &&
                 Objects.equals(styleStickerIds, product.styleStickerIds) &&
+                Objects.equals(isPopup, product.isPopup) &&
                 Objects.equals(styleIds, product.styleIds) &&
                 Objects.equals(descriptionLangKey, product.descriptionLangKey) &&
                 Objects.equals(subtitle, product.subtitle) &&
@@ -387,6 +404,7 @@ public class Product implements Validable {
         sb.append(", isVmoji=").append(isVmoji);
         sb.append(", purchased=").append(purchased);
         sb.append(", styleStickerIds=").append(styleStickerIds);
+        sb.append(", isPopup=").append(isPopup);
         sb.append(", styleIds=").append(styleIds);
         sb.append(", descriptionLangKey='").append(descriptionLangKey).append("'");
         sb.append(", subtitle='").append(subtitle).append("'");

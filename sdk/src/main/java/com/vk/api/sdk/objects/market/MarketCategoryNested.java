@@ -5,18 +5,24 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+import com.vk.api.sdk.objects.base.LinkProductCategory;
+
 import java.util.Objects;
 
 /**
  * MarketCategoryNested object
  */
-public class MarketCategoryNested implements Validable {
+public class MarketCategoryNested implements LinkProductCategory, Validable {
     /**
      * Category ID
      */
     @SerializedName("id")
     @Required
     private Integer id;
+
+    @SerializedName("inner_type")
+    @Required
+    private MarketCategoryNestedInnerType innerType;
 
     /**
      * Is v2 category
@@ -40,6 +46,15 @@ public class MarketCategoryNested implements Validable {
 
     public MarketCategoryNested setId(Integer id) {
         this.id = id;
+        return this;
+    }
+
+    public MarketCategoryNestedInnerType getInnerType() {
+        return innerType;
+    }
+
+    public MarketCategoryNested setInnerType(MarketCategoryNestedInnerType innerType) {
+        this.innerType = innerType;
         return this;
     }
 
@@ -72,7 +87,7 @@ public class MarketCategoryNested implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(parent, isV2, name, id);
+        return Objects.hash(parent, isV2, innerType, name, id);
     }
 
     @Override
@@ -81,6 +96,7 @@ public class MarketCategoryNested implements Validable {
         if (o == null || getClass() != o.getClass()) return false;
         MarketCategoryNested marketCategoryNested = (MarketCategoryNested) o;
         return Objects.equals(parent, marketCategoryNested.parent) &&
+                Objects.equals(innerType, marketCategoryNested.innerType) &&
                 Objects.equals(name, marketCategoryNested.name) &&
                 Objects.equals(id, marketCategoryNested.id) &&
                 Objects.equals(isV2, marketCategoryNested.isV2);
@@ -95,6 +111,7 @@ public class MarketCategoryNested implements Validable {
     public String toPrettyString() {
         final StringBuilder sb = new StringBuilder("MarketCategoryNested{");
         sb.append("parent=").append(parent);
+        sb.append(", innerType='").append(innerType).append("'");
         sb.append(", name='").append(name).append("'");
         sb.append(", id=").append(id);
         sb.append(", isV2=").append(isV2);

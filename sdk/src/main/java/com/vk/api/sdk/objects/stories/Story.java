@@ -8,6 +8,7 @@ import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.base.BoolInt;
 import com.vk.api.sdk.objects.photos.Photo;
 import com.vk.api.sdk.objects.video.VideoFull;
+
 import java.util.Objects;
 
 /**

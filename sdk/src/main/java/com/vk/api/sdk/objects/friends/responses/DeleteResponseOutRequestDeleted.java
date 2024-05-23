@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Returns 1 if out request has been canceled
  */
-public enum DeleteResponseOutRequestDeleted implements EnumParam {
+public enum DeleteResponseOutRequestDeleted implements EnumParam<Integer> {
     @SerializedName("1")
     OK(1);
 
@@ -17,8 +17,8 @@ public enum DeleteResponseOutRequestDeleted implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

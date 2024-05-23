@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Type of media files to return: *'photo',, *'video',, *'audio',, *'doc',, *'link'.,*'market'.,*'wall'.,*'share'
  */
-public enum GetHistoryAttachmentsMediaType implements EnumParam {
+public enum GetHistoryAttachmentsMediaType implements EnumParam<String> {
     @SerializedName("app_action_games")
     APP_ACTION_GAMES("app_action_games"),
 
@@ -19,6 +19,9 @@ public enum GetHistoryAttachmentsMediaType implements EnumParam {
 
     @SerializedName("audio_message")
     AUDIO_MESSAGE("audio_message"),
+
+    @SerializedName("clip")
+    CLIP("clip"),
 
     @SerializedName("doc")
     DOC("doc"),

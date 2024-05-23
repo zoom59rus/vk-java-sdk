@@ -6,6 +6,7 @@ import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.polls.responses.SavePhotoResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -13,21 +14,6 @@ import java.util.List;
  * Query for Polls.savePhoto method
  */
 public class PollsSavePhotoQuery extends AbstractQueryBuilder<PollsSavePhotoQuery, SavePhotoResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     * @param photo value of "photo" parameter.
-     * @param hash value of "hash" parameter.
-     */
-    public PollsSavePhotoQuery(VkApiClient client, UserActor actor, String photo, String hash) {
-        super(client, "polls.savePhoto", SavePhotoResponse.class);
-        accessToken(actor.getAccessToken());
-        photo(photo);
-        hash(hash);
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
      *
@@ -68,6 +54,6 @@ public class PollsSavePhotoQuery extends AbstractQueryBuilder<PollsSavePhotoQuer
 
     @Override
     protected List<String> essentialKeys() {
-        return Arrays.asList("photo", "hash", "access_token");
+        return Arrays.asList("access_token");
     }
 }

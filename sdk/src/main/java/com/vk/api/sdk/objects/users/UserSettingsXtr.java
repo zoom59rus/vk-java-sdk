@@ -10,8 +10,8 @@ import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.audio.Audio;
 import com.vk.api.sdk.objects.base.BoolInt;
 import com.vk.api.sdk.objects.base.City;
-import com.vk.api.sdk.objects.base.Country;
 import com.vk.api.sdk.objects.base.Sex;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -36,9 +36,6 @@ public class UserSettingsXtr implements Validable {
 
     @SerializedName("connections")
     private UserConnections connections;
-
-    @SerializedName("country")
-    private Country country;
 
     /**
      * User first name
@@ -156,15 +153,6 @@ public class UserSettingsXtr implements Validable {
 
     public UserSettingsXtr setConnections(UserConnections connections) {
         this.connections = connections;
-        return this;
-    }
-
-    public Country getCountry() {
-        return country;
-    }
-
-    public UserSettingsXtr setCountry(Country country) {
-        this.country = country;
         return this;
     }
 
@@ -322,7 +310,7 @@ public class UserSettingsXtr implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(country, lastName, bdate, relationPartner, languages, city, sex, maidenName, personal, bdateVisibility, screenName, relation, firstName, relationRequests, homeTown, phone, relationPending, interests, nameRequest, connections, statusAudio, status);
+        return Objects.hash(lastName, bdate, relationPartner, languages, city, sex, maidenName, personal, bdateVisibility, screenName, relation, firstName, relationRequests, homeTown, phone, relationPending, interests, nameRequest, connections, statusAudio, status);
     }
 
     @Override
@@ -330,8 +318,7 @@ public class UserSettingsXtr implements Validable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         UserSettingsXtr userSettingsXtr = (UserSettingsXtr) o;
-        return Objects.equals(country, userSettingsXtr.country) &&
-                Objects.equals(maidenName, userSettingsXtr.maidenName) &&
+        return Objects.equals(maidenName, userSettingsXtr.maidenName) &&
                 Objects.equals(bdate, userSettingsXtr.bdate) &&
                 Objects.equals(languages, userSettingsXtr.languages) &&
                 Objects.equals(city, userSettingsXtr.city) &&
@@ -362,8 +349,7 @@ public class UserSettingsXtr implements Validable {
 
     public String toPrettyString() {
         final StringBuilder sb = new StringBuilder("UserSettingsXtr{");
-        sb.append("country=").append(country);
-        sb.append(", maidenName='").append(maidenName).append("'");
+        sb.append("maidenName='").append(maidenName).append("'");
         sb.append(", bdate='").append(bdate).append("'");
         sb.append(", languages='").append(languages).append("'");
         sb.append(", city=").append(city);

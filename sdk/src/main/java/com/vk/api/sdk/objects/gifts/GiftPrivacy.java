@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Gift privacy
  */
-public enum GiftPrivacy implements EnumParam {
+public enum GiftPrivacy implements EnumParam<Integer> {
     @SerializedName("0")
     NAME_AND_MESSAGE_FOR_ALL(0),
 
@@ -23,8 +23,8 @@ public enum GiftPrivacy implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

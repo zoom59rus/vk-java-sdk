@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Status representation
  */
-public enum LinkProductStatus implements EnumParam {
+public enum LinkProductStatus implements EnumParam<String> {
     @SerializedName("active")
     ACTIVE("active"),
 

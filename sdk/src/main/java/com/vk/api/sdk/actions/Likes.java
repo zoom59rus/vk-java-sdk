@@ -7,11 +7,7 @@ import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiMethod;
 import com.vk.api.sdk.objects.likes.Type;
-import com.vk.api.sdk.queries.likes.LikesAddQuery;
-import com.vk.api.sdk.queries.likes.LikesDeleteQuery;
-import com.vk.api.sdk.queries.likes.LikesGetListQuery;
-import com.vk.api.sdk.queries.likes.LikesGetListQueryWithExtended;
-import com.vk.api.sdk.queries.likes.LikesIsLikedQuery;
+import com.vk.api.sdk.queries.likes.*;
 
 /**
  * List of Likes methods

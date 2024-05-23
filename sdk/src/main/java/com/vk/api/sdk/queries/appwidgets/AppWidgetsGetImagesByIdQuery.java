@@ -9,6 +9,7 @@ import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.appwidgets.responses.GetImagesByIdResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -54,43 +55,6 @@ public class AppWidgetsGetImagesByIdQuery extends AbstractQueryBuilder<AppWidget
     }
 
     /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     * @param images value of "images" parameter.
-     */
-    public AppWidgetsGetImagesByIdQuery(VkApiClient client, UserActor actor, String... images) {
-        super(client, "appWidgets.getImagesById", Utils.buildParametrizedType(List.class, GetImagesByIdResponse.class));
-        accessToken(actor.getAccessToken());
-        images(images);
-    }
-
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     * @param images value of "images" parameter.
-     */
-    public AppWidgetsGetImagesByIdQuery(VkApiClient client, UserActor actor, List<String> images) {
-        super(client, "appWidgets.getImagesById", Utils.buildParametrizedType(List.class, GetImagesByIdResponse.class));
-        accessToken(actor.getAccessToken());
-        images(images);
-    }
-
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public AppWidgetsGetImagesByIdQuery(VkApiClient client, UserActor actor) {
-        super(client, "appWidgets.getImagesById", Utils.buildParametrizedType(List.class, GetImagesByIdResponse.class));
-        accessToken(actor.getAccessToken());
-    }
-
-    /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
      * @param client VK API client
@@ -129,6 +93,43 @@ public class AppWidgetsGetImagesByIdQuery extends AbstractQueryBuilder<AppWidget
         super(client, "appWidgets.getImagesById", Utils.buildParametrizedType(List.class, GetImagesByIdResponse.class));
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     * @param images value of "images" parameter.
+     */
+    public AppWidgetsGetImagesByIdQuery(VkApiClient client, UserActor actor, String... images) {
+        super(client, "appWidgets.getImagesById", Utils.buildParametrizedType(List.class, GetImagesByIdResponse.class));
+        accessToken(actor.getAccessToken());
+        images(images);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     * @param images value of "images" parameter.
+     */
+    public AppWidgetsGetImagesByIdQuery(VkApiClient client, UserActor actor, List<String> images) {
+        super(client, "appWidgets.getImagesById", Utils.buildParametrizedType(List.class, GetImagesByIdResponse.class));
+        accessToken(actor.getAccessToken());
+        images(images);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public AppWidgetsGetImagesByIdQuery(VkApiClient client, UserActor actor) {
+        super(client, "appWidgets.getImagesById", Utils.buildParametrizedType(List.class, GetImagesByIdResponse.class));
+        accessToken(actor.getAccessToken());
     }
 
     /**

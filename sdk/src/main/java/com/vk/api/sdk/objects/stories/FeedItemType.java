@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Type of Feed Item
  */
-public enum FeedItemType implements EnumParam {
+public enum FeedItemType implements EnumParam<String> {
     @SerializedName("promo_stories")
     PROMO_STORIES("promo_stories"),
 

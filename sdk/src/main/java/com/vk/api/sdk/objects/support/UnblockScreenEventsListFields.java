@@ -5,13 +5,14 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.List;
 import java.util.Objects;
 
 /**
  * UnblockScreenEventsListFields object
  */
-public class UnblockScreenEventsListFields implements Validable {
+public class UnblockScreenEventsListFields implements UnblockScreenItem, Validable {
     /**
      * Заголовок над пунктами
      */

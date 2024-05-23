@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Campaign type
  */
-public enum CampaignType implements EnumParam {
+public enum CampaignType implements EnumParam<String> {
     @SerializedName("normal")
     NORMAL("normal"),
 

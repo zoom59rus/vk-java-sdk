@@ -9,17 +9,8 @@ import com.vk.api.sdk.client.actors.GroupActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.base.responses.OkResponse;
-import com.vk.api.sdk.objects.groups.EditAgeLimits;
-import com.vk.api.sdk.objects.groups.GroupAccess;
-import com.vk.api.sdk.objects.groups.GroupAudio;
-import com.vk.api.sdk.objects.groups.GroupDocs;
-import com.vk.api.sdk.objects.groups.GroupMarketCurrency;
-import com.vk.api.sdk.objects.groups.GroupPhotos;
-import com.vk.api.sdk.objects.groups.GroupSubject;
-import com.vk.api.sdk.objects.groups.GroupTopics;
-import com.vk.api.sdk.objects.groups.GroupVideo;
-import com.vk.api.sdk.objects.groups.GroupWall;
-import com.vk.api.sdk.objects.groups.GroupWiki;
+import com.vk.api.sdk.objects.groups.*;
+
 import java.util.Arrays;
 import java.util.List;
 

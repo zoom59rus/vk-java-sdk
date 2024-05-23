@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
@@ -36,7 +37,7 @@ public class Musician implements Validable {
      */
     @SerializedName("original_id")
     @Required
-    private Long originalId;
+    private String originalId;
 
     public String getAvatar() {
         return avatar;
@@ -65,11 +66,11 @@ public class Musician implements Validable {
         return this;
     }
 
-    public Long getOriginalId() {
+    public String getOriginalId() {
         return originalId;
     }
 
-    public Musician setOriginalId(Long originalId) {
+    public Musician setOriginalId(String originalId) {
         this.originalId = originalId;
         return this;
     }
@@ -101,7 +102,7 @@ public class Musician implements Validable {
         sb.append("name='").append(name).append("'");
         sb.append(", avatar='").append(avatar).append("'");
         sb.append(", id=").append(id);
-        sb.append(", originalId=").append(originalId);
+        sb.append(", originalId='").append(originalId).append("'");
         sb.append('}');
         return sb.toString();
     }

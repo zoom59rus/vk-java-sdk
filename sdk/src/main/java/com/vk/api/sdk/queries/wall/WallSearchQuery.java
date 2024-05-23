@@ -8,6 +8,7 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.base.UserGroupFields;
 import com.vk.api.sdk.objects.wall.responses.SearchResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,17 +16,6 @@ import java.util.List;
  * Query for Wall.search method
  */
 public class WallSearchQuery extends AbstractQueryBuilder<WallSearchQuery, SearchResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public WallSearchQuery(VkApiClient client, UserActor actor) {
-        super(client, "wall.search", SearchResponse.class);
-        accessToken(actor.getAccessToken());
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -39,21 +29,21 @@ public class WallSearchQuery extends AbstractQueryBuilder<WallSearchQuery, Searc
     }
 
     /**
-     * User or community id. "Remember that for a community 'owner_id' must be negative."
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
      *
-     * @param value value of "owner id" parameter. Entity - owner
-     *
-     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
+     * @param client VK API client
+     * @param actor actor with access token
      */
-    @ApiParam("owner_id")
-    public WallSearchQuery ownerId(Long value) {
-        return unsafeParam("owner_id", value);
+    public WallSearchQuery(VkApiClient client, UserActor actor) {
+        super(client, "wall.search", SearchResponse.class);
+        accessToken(actor.getAccessToken());
     }
 
     /**
      * User or community screen name.
      *
-     * @param value value of "domain" parameter.
+     * @param value value of "domain" parameter. Entity - owner
+     *
      * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
      */
     @ApiParam("domain")

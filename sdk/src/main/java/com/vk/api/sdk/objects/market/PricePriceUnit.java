@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.market;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum PricePriceUnit implements EnumParam {
+public enum PricePriceUnit implements EnumParam<Integer> {
     @SerializedName("0")
     ITEM(0),
 
@@ -23,8 +23,8 @@ public enum PricePriceUnit implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

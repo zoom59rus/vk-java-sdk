@@ -16,6 +16,7 @@ import com.vk.api.sdk.objects.photos.Photo;
 import com.vk.api.sdk.objects.polls.Poll;
 import com.vk.api.sdk.objects.stories.Story;
 import com.vk.api.sdk.objects.wall.WallComment;
+
 import java.util.Objects;
 
 /**

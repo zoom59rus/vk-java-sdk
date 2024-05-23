@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Link status
  */
-public enum LinkCheckedStatus implements EnumParam {
+public enum LinkCheckedStatus implements EnumParam<String> {
     @SerializedName("not_banned")
     NOT_BANNED("not_banned"),
 

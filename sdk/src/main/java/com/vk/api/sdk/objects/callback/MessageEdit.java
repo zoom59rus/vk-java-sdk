@@ -3,15 +3,17 @@ package com.vk.api.sdk.objects.callback;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+import com.vk.api.sdk.events.CallbackEvent;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.messages.Message;
+
 import java.util.Objects;
 
 /**
  * MessageEdit object
  */
-public class MessageEdit extends Base implements Validable {
+public class MessageEdit extends Base implements Validable, CallbackEvent {
     @SerializedName("object")
     @Required
     private Message object;

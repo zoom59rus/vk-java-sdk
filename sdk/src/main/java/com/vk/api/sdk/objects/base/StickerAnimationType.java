@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Type of animation script
  */
-public enum StickerAnimationType implements EnumParam {
+public enum StickerAnimationType implements EnumParam<String> {
     @SerializedName("light")
     LIGHT("light"),
 

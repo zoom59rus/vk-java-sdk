@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.photos.Photo;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -23,6 +24,12 @@ public class GetUserPhotosResponse implements Validable {
     @SerializedName("items")
     @Required
     private List<Photo> items;
+
+    /**
+     * next from pagination cursor
+     */
+    @SerializedName("next_from")
+    private String nextFrom;
 
     public Integer getCount() {
         return count;
@@ -42,9 +49,18 @@ public class GetUserPhotosResponse implements Validable {
         return this;
     }
 
+    public String getNextFrom() {
+        return nextFrom;
+    }
+
+    public GetUserPhotosResponse setNextFrom(String nextFrom) {
+        this.nextFrom = nextFrom;
+        return this;
+    }
+
     @Override
     public int hashCode() {
-        return Objects.hash(count, items);
+        return Objects.hash(count, nextFrom, items);
     }
 
     @Override
@@ -52,7 +68,8 @@ public class GetUserPhotosResponse implements Validable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         GetUserPhotosResponse getUserPhotosResponse = (GetUserPhotosResponse) o;
-        return Objects.equals(count, getUserPhotosResponse.count) &&
+        return Objects.equals(nextFrom, getUserPhotosResponse.nextFrom) &&
+                Objects.equals(count, getUserPhotosResponse.count) &&
                 Objects.equals(items, getUserPhotosResponse.items);
     }
 
@@ -64,7 +81,8 @@ public class GetUserPhotosResponse implements Validable {
 
     public String toPrettyString() {
         final StringBuilder sb = new StringBuilder("GetUserPhotosResponse{");
-        sb.append("count=").append(count);
+        sb.append("nextFrom='").append(nextFrom).append("'");
+        sb.append(", count=").append(count);
         sb.append(", items=").append(items);
         sb.append('}');
         return sb.toString();

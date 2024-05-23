@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.base;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum PropertyExists implements EnumParam {
+public enum PropertyExists implements EnumParam<Integer> {
     @SerializedName("1")
     PROPERTY_EXISTS(1);
 
@@ -14,8 +14,8 @@ public enum PropertyExists implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

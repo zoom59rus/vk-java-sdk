@@ -8,6 +8,7 @@ import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.base.Country;
 import com.vk.api.sdk.objects.database.CityById;
 import com.vk.api.sdk.objects.database.Station;
+
 import java.util.Objects;
 
 /**
@@ -43,12 +44,6 @@ public class Address implements Validable {
      */
     @SerializedName("country")
     private Country country;
-
-    /**
-     * Country id of address
-     */
-    @SerializedName("country_id")
-    private Integer countryId;
 
     /**
      * Distance from the point
@@ -165,15 +160,6 @@ public class Address implements Validable {
         return this;
     }
 
-    public Integer getCountryId() {
-        return countryId;
-    }
-
-    public Address setCountryId(Integer countryId) {
-        this.countryId = countryId;
-        return this;
-    }
-
     public Integer getDistance() {
         return distance;
     }
@@ -284,7 +270,7 @@ public class Address implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(country, address, workInfoStatus, distance, city, latitude, metroStationId, placeId, timeOffset, cityId, title, countryId, timetable, phone, additionalAddress, id, metroStation, longitude);
+        return Objects.hash(country, address, workInfoStatus, distance, city, latitude, metroStationId, placeId, timeOffset, cityId, title, timetable, phone, additionalAddress, id, metroStation, longitude);
     }
 
     @Override
@@ -306,7 +292,6 @@ public class Address implements Validable {
                 Objects.equals(metroStation, address.metroStation) &&
                 Objects.equals(phone, address.phone) &&
                 Objects.equals(id, address.id) &&
-                Objects.equals(countryId, address.countryId) &&
                 Objects.equals(placeId, address.placeId) &&
                 Objects.equals(cityId, address.cityId) &&
                 Objects.equals(longitude, address.longitude);
@@ -334,7 +319,6 @@ public class Address implements Validable {
         sb.append(", metroStation=").append(metroStation);
         sb.append(", phone='").append(phone).append("'");
         sb.append(", id=").append(id);
-        sb.append(", countryId=").append(countryId);
         sb.append(", placeId=").append(placeId);
         sb.append(", cityId=").append(cityId);
         sb.append(", longitude=").append(longitude);

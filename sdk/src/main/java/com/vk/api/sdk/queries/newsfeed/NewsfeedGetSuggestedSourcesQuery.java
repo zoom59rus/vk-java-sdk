@@ -7,6 +7,7 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.base.UserGroupFields;
 import com.vk.api.sdk.objects.newsfeed.responses.GetSuggestedSourcesResponse;
+
 import java.util.Arrays;
 import java.util.List;
 

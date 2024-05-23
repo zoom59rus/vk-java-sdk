@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.appwidgets;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum GetGroupImageUploadServerImageType implements EnumParam {
+public enum GetGroupImageUploadServerImageType implements EnumParam<String> {
     @SerializedName("160x160")
     _160X160("160x160"),
 

@@ -8,6 +8,7 @@ import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.utils.responses.CheckLinkResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -40,30 +41,6 @@ public class UtilsCheckLinkQuery extends AbstractQueryBuilder<UtilsCheckLinkQuer
     }
 
     /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     * @param url value of "url" parameter.
-     */
-    public UtilsCheckLinkQuery(VkApiClient client, UserActor actor, String url) {
-        super(client, "utils.checkLink", CheckLinkResponse.class);
-        accessToken(actor.getAccessToken());
-        url(url);
-    }
-
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public UtilsCheckLinkQuery(VkApiClient client, UserActor actor) {
-        super(client, "utils.checkLink", CheckLinkResponse.class);
-        accessToken(actor.getAccessToken());
-    }
-
-    /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
      * @param client VK API client
@@ -87,6 +64,30 @@ public class UtilsCheckLinkQuery extends AbstractQueryBuilder<UtilsCheckLinkQuer
         super(client, "utils.checkLink", CheckLinkResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     * @param url value of "url" parameter.
+     */
+    public UtilsCheckLinkQuery(VkApiClient client, UserActor actor, String url) {
+        super(client, "utils.checkLink", CheckLinkResponse.class);
+        accessToken(actor.getAccessToken());
+        url(url);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public UtilsCheckLinkQuery(VkApiClient client, UserActor actor) {
+        super(client, "utils.checkLink", CheckLinkResponse.class);
+        accessToken(actor.getAccessToken());
     }
 
     /**

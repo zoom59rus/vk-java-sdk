@@ -3,14 +3,16 @@ package com.vk.api.sdk.objects.callback;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+import com.vk.api.sdk.events.CallbackEvent;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
  * GroupJoin object
  */
-public class GroupJoin implements Validable {
+public class GroupJoin implements Validable, CallbackEvent {
     @SerializedName("join_type")
     @Required
     private GroupJoinType joinType;

@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Scope name
  */
-public enum ScopeName implements EnumParam {
+public enum ScopeName implements EnumParam<String> {
     @SerializedName("friends")
     FRIENDS("friends"),
 

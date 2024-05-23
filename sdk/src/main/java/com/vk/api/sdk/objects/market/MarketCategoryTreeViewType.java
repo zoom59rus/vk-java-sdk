@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.market;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum MarketCategoryTreeViewType implements EnumParam {
+public enum MarketCategoryTreeViewType implements EnumParam<String> {
     @SerializedName("tab_root")
     TAB_ROOT("tab_root");
 

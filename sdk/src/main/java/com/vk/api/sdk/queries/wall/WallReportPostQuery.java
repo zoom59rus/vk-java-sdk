@@ -7,6 +7,7 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.base.responses.OkResponse;
 import com.vk.api.sdk.objects.wall.ReportPostReason;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -22,12 +23,15 @@ public class WallReportPostQuery extends AbstractQueryBuilder<WallReportPostQuer
      * @param ownerId value of "owner id" parameter. Entity - owner
      *
      * @param postId value of "post id" parameter. Minimum is 0.
+     * @param reason value of "reason" parameter. Minimum is 0.
      */
-    public WallReportPostQuery(VkApiClient client, UserActor actor, Long ownerId, Integer postId) {
+    public WallReportPostQuery(VkApiClient client, UserActor actor, Long ownerId, Integer postId,
+            ReportPostReason reason) {
         super(client, "wall.reportPost", OkResponse.class);
         accessToken(actor.getAccessToken());
         ownerId(ownerId);
         postId(postId);
+        reason(reason);
     }
 
     /**
@@ -82,6 +86,6 @@ public class WallReportPostQuery extends AbstractQueryBuilder<WallReportPostQuer
 
     @Override
     protected List<String> essentialKeys() {
-        return Arrays.asList("post_id", "owner_id", "access_token");
+        return Arrays.asList("post_id", "reason", "owner_id", "access_token");
     }
 }

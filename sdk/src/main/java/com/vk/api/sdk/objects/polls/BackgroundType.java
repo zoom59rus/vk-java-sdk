@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.polls;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum BackgroundType implements EnumParam {
+public enum BackgroundType implements EnumParam<String> {
     @SerializedName("gradient")
     GRADIENT("gradient"),
 

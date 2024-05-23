@@ -4,6 +4,7 @@ package com.vk.api.sdk.objects.account;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
+
 import java.util.Objects;
 
 /**
@@ -59,7 +60,7 @@ public class AccountCounters implements Validable {
     private Integer memories;
 
     /**
-     * New messages number
+     * New messages number. Will be removed when messages.getCounters is released.
      */
     @SerializedName("messages")
     private Integer messages;

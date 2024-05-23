@@ -8,6 +8,7 @@ import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.photos.responses.GetByIdResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,43 +16,6 @@ import java.util.List;
  * Query for Photos.getById method
  */
 public class PhotosGetByIdQuery extends AbstractQueryBuilder<PhotosGetByIdQuery, List<GetByIdResponse>> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     * @param photos value of "photos" parameter.
-     */
-    public PhotosGetByIdQuery(VkApiClient client, UserActor actor, String... photos) {
-        super(client, "photos.getById", Utils.buildParametrizedType(List.class, GetByIdResponse.class));
-        accessToken(actor.getAccessToken());
-        photos(photos);
-    }
-
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     * @param photos value of "photos" parameter.
-     */
-    public PhotosGetByIdQuery(VkApiClient client, UserActor actor, List<String> photos) {
-        super(client, "photos.getById", Utils.buildParametrizedType(List.class, GetByIdResponse.class));
-        accessToken(actor.getAccessToken());
-        photos(photos);
-    }
-
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public PhotosGetByIdQuery(VkApiClient client, UserActor actor) {
-        super(client, "photos.getById", Utils.buildParametrizedType(List.class, GetByIdResponse.class));
-        accessToken(actor.getAccessToken());
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -90,6 +54,43 @@ public class PhotosGetByIdQuery extends AbstractQueryBuilder<PhotosGetByIdQuery,
         super(client, "photos.getById", Utils.buildParametrizedType(List.class, GetByIdResponse.class));
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     * @param photos value of "photos" parameter.
+     */
+    public PhotosGetByIdQuery(VkApiClient client, UserActor actor, String... photos) {
+        super(client, "photos.getById", Utils.buildParametrizedType(List.class, GetByIdResponse.class));
+        accessToken(actor.getAccessToken());
+        photos(photos);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     * @param photos value of "photos" parameter.
+     */
+    public PhotosGetByIdQuery(VkApiClient client, UserActor actor, List<String> photos) {
+        super(client, "photos.getById", Utils.buildParametrizedType(List.class, GetByIdResponse.class));
+        accessToken(actor.getAccessToken());
+        photos(photos);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public PhotosGetByIdQuery(VkApiClient client, UserActor actor) {
+        super(client, "photos.getById", Utils.buildParametrizedType(List.class, GetByIdResponse.class));
+        accessToken(actor.getAccessToken());
     }
 
     /**

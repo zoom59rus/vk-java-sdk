@@ -6,14 +6,7 @@ import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiMethod;
-import com.vk.api.sdk.queries.pages.PagesClearCacheQuery;
-import com.vk.api.sdk.queries.pages.PagesGetHistoryQuery;
-import com.vk.api.sdk.queries.pages.PagesGetQuery;
-import com.vk.api.sdk.queries.pages.PagesGetTitlesQuery;
-import com.vk.api.sdk.queries.pages.PagesGetVersionQuery;
-import com.vk.api.sdk.queries.pages.PagesParseWikiQuery;
-import com.vk.api.sdk.queries.pages.PagesSaveAccessQuery;
-import com.vk.api.sdk.queries.pages.PagesSaveQuery;
+import com.vk.api.sdk.queries.pages.*;
 
 /**
  * List of Pages methods

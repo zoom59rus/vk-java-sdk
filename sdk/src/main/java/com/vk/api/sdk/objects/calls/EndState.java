@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * State in which call ended up
  */
-public enum EndState implements EnumParam {
+public enum EndState implements EnumParam<String> {
     @SerializedName("canceled_by_initiator")
     CANCELED_BY_INITIATOR("canceled_by_initiator"),
 

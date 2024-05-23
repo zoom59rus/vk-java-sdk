@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.messages;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum KeyboardButtonActionTextType implements EnumParam {
+public enum KeyboardButtonActionTextType implements EnumParam<String> {
     @SerializedName("text")
     TEXT("text");
 

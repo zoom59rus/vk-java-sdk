@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Who can use mass mentions
  */
-public enum ChatSettingsPermissionsUseMassMentions implements EnumParam {
+public enum ChatSettingsPermissionsUseMassMentions implements EnumParam<String> {
     @SerializedName("owner")
     OWNER("owner"),
 

@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.users;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum Fields implements EnumParam {
+public enum Fields implements EnumParam<String> {
     @SerializedName("first_name_nom")
     FIRST_NAME_NOM("first_name_nom"),
 
@@ -58,9 +58,6 @@ public enum Fields implements EnumParam {
 
     @SerializedName("city")
     CITY("city"),
-
-    @SerializedName("country")
-    COUNTRY("country"),
 
     @SerializedName("home_town")
     HOME_TOWN("home_town"),
@@ -361,6 +358,9 @@ public enum Fields implements EnumParam {
 
     @SerializedName("is_sber_verified")
     IS_SBER_VERIFIED("is_sber_verified"),
+
+    @SerializedName("is_verified")
+    IS_VERIFIED("is_verified"),
 
     @SerializedName("oauth_linked")
     OAUTH_LINKED("oauth_linked"),

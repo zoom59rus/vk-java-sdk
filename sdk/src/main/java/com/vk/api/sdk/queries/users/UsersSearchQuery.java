@@ -10,6 +10,7 @@ import com.vk.api.sdk.objects.users.SearchSex;
 import com.vk.api.sdk.objects.users.SearchSort;
 import com.vk.api.sdk.objects.users.SearchStatus;
 import com.vk.api.sdk.objects.users.responses.SearchResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -390,6 +391,18 @@ public class UsersSearchQuery extends AbstractQueryBuilder<UsersSearchQuery, Sea
     @ApiParam("screen_ref")
     public UsersSearchQuery screenRef(String value) {
         return unsafeParam("screen_ref", value);
+    }
+
+    /**
+     * Set from group id
+     *
+     * @param value value of "from group id" parameter. By default 0. Entity - owner
+     *
+     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
+     */
+    @ApiParam("from_group_id")
+    public UsersSearchQuery fromGroupId(Long value) {
+        return unsafeParam("from_group_id", value);
     }
 
     /**

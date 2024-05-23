@@ -2,8 +2,8 @@ package com.vk.api.sdk.objects.callback.longpoll.responses;
 
 import com.google.gson.annotations.SerializedName;
 
-import java.util.Objects;
 import java.net.URI;
+import java.util.Objects;
 
 public class GetLongPollServerResponse {
 

@@ -6,12 +6,13 @@ import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.wall.WallpostFull;
+
 import java.util.Objects;
 
 /**
  * ItemWallpost object
  */
-public class ItemWallpost extends WallpostFull implements Validable {
+public class ItemWallpost extends WallpostFull implements NewsfeedItem, Validable {
     /**
      * Item source ID
      * Entity: owner

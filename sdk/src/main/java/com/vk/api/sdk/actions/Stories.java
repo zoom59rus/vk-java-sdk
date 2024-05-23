@@ -7,24 +7,8 @@ import com.vk.api.sdk.client.actors.GroupActor;
 import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiMethod;
-import com.vk.api.sdk.queries.stories.StoriesBanOwnerQuery;
-import com.vk.api.sdk.queries.stories.StoriesDeleteQuery;
-import com.vk.api.sdk.queries.stories.StoriesGetBannedQuery;
-import com.vk.api.sdk.queries.stories.StoriesGetBannedQueryWithExtended;
-import com.vk.api.sdk.queries.stories.StoriesGetByIdQueryWithExtended;
-import com.vk.api.sdk.queries.stories.StoriesGetDetailedStatsQueryWithV5200;
-import com.vk.api.sdk.queries.stories.StoriesGetPhotoUploadServerQuery;
-import com.vk.api.sdk.queries.stories.StoriesGetQueryWithV5113;
-import com.vk.api.sdk.queries.stories.StoriesGetRepliesQueryWithV5113;
-import com.vk.api.sdk.queries.stories.StoriesGetStatsQuery;
-import com.vk.api.sdk.queries.stories.StoriesGetVideoUploadServerQuery;
-import com.vk.api.sdk.queries.stories.StoriesGetViewersQueryWithExtendedV5115;
-import com.vk.api.sdk.queries.stories.StoriesHideAllRepliesQuery;
-import com.vk.api.sdk.queries.stories.StoriesHideReplyQuery;
-import com.vk.api.sdk.queries.stories.StoriesSaveQuery;
-import com.vk.api.sdk.queries.stories.StoriesSearchQueryWithV5113;
-import com.vk.api.sdk.queries.stories.StoriesSendInteractionQuery;
-import com.vk.api.sdk.queries.stories.StoriesUnbanOwnerQuery;
+import com.vk.api.sdk.queries.stories.*;
+
 import java.util.List;
 
 /**

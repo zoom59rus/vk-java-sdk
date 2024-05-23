@@ -6,6 +6,7 @@ import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.market.responses.AddResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -93,7 +94,7 @@ public class MarketAddQuery extends AbstractQueryBuilder<MarketAddQuery, AddResp
     /**
      * Item price.
      *
-     * @param value value of "price" parameter. Minimum is 0.
+     * @param value value of "price" parameter. Maximum is 2147483647. Minimum is 0.
      * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
      */
     @ApiParam("price")
@@ -104,7 +105,7 @@ public class MarketAddQuery extends AbstractQueryBuilder<MarketAddQuery, AddResp
     /**
      * Set old price
      *
-     * @param value value of "old price" parameter. Minimum is 0.
+     * @param value value of "old price" parameter. Maximum is 2147483647. Minimum is 0.
      * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
      */
     @ApiParam("old_price")

@@ -7,14 +7,7 @@ import com.vk.api.sdk.client.actors.GroupActor;
 import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiMethod;
-import com.vk.api.sdk.queries.utils.UtilsCheckLinkQuery;
-import com.vk.api.sdk.queries.utils.UtilsDeleteFromLastShortenedQuery;
-import com.vk.api.sdk.queries.utils.UtilsGetLastShortenedLinksQuery;
-import com.vk.api.sdk.queries.utils.UtilsGetLinkStatsQuery;
-import com.vk.api.sdk.queries.utils.UtilsGetLinkStatsQueryWithExtended;
-import com.vk.api.sdk.queries.utils.UtilsGetServerTimeQuery;
-import com.vk.api.sdk.queries.utils.UtilsGetShortLinkQuery;
-import com.vk.api.sdk.queries.utils.UtilsResolveScreenNameQuery;
+import com.vk.api.sdk.queries.utils.*;
 
 /**
  * List of Utils methods

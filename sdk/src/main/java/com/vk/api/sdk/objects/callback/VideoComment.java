@@ -3,82 +3,34 @@ package com.vk.api.sdk.objects.callback;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+import com.vk.api.sdk.events.CallbackEvent;
 import com.vk.api.sdk.objects.Validable;
-import com.vk.api.sdk.objects.annotations.Required;
+import com.vk.api.sdk.objects.wall.WallComment;
+
 import java.util.Objects;
 
 /**
  * VideoComment object
  */
-public class VideoComment implements Validable {
-    @SerializedName("date")
-    @Required
-    private Integer date;
-
-    @SerializedName("from_id")
-    @Required
-    private Integer fromId;
-
-    @SerializedName("id")
-    @Required
-    private Integer id;
-
-    @SerializedName("text")
-    @Required
-    private String text;
-
+public class VideoComment extends WallComment implements Validable, CallbackEvent {
+    /**
+     * Entity: owner
+     */
     @SerializedName("video_owner_id")
-    @Required
-    private Integer videoOwnerId;
+    private Long videoOwnerId;
 
-    public Integer getDate() {
-        return date;
-    }
-
-    public VideoComment setDate(Integer date) {
-        this.date = date;
-        return this;
-    }
-
-    public Integer getFromId() {
-        return fromId;
-    }
-
-    public VideoComment setFromId(Integer fromId) {
-        this.fromId = fromId;
-        return this;
-    }
-
-    public Integer getId() {
-        return id;
-    }
-
-    public VideoComment setId(Integer id) {
-        this.id = id;
-        return this;
-    }
-
-    public String getText() {
-        return text;
-    }
-
-    public VideoComment setText(String text) {
-        this.text = text;
-        return this;
-    }
-
-    public Integer getVideoOwnerId() {
+    public Long getVideoOwnerId() {
         return videoOwnerId;
     }
 
-    public VideoComment setVideoOwnerId(Integer videoOwnerId) {
+    public VideoComment setVideoOwnerId(Long videoOwnerId) {
         this.videoOwnerId = videoOwnerId;
         return this;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(date, id, text, fromId, videoOwnerId);
+        return Objects.hash(videoOwnerId);
     }
 
     @Override
@@ -86,11 +38,7 @@ public class VideoComment implements Validable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         VideoComment videoComment = (VideoComment) o;
-        return Objects.equals(date, videoComment.date) &&
-                Objects.equals(fromId, videoComment.fromId) &&
-                Objects.equals(id, videoComment.id) &&
-                Objects.equals(text, videoComment.text) &&
-                Objects.equals(videoOwnerId, videoComment.videoOwnerId);
+        return Objects.equals(videoOwnerId, videoComment.videoOwnerId);
     }
 
     @Override
@@ -101,11 +49,7 @@ public class VideoComment implements Validable {
 
     public String toPrettyString() {
         final StringBuilder sb = new StringBuilder("VideoComment{");
-        sb.append("date=").append(date);
-        sb.append(", fromId=").append(fromId);
-        sb.append(", id=").append(id);
-        sb.append(", text='").append(text).append("'");
-        sb.append(", videoOwnerId=").append(videoOwnerId);
+        sb.append("videoOwnerId=").append(videoOwnerId);
         sb.append('}');
         return sb.toString();
     }

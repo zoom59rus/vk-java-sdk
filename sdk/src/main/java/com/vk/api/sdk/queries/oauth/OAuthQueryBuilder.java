@@ -10,8 +10,8 @@ import com.vk.api.sdk.exceptions.ApiException;
 import com.vk.api.sdk.exceptions.ClientException;
 import com.vk.api.sdk.exceptions.OAuthException;
 import com.vk.api.sdk.objects.oauth.Error;
-import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.io.StringReader;
 import java.lang.reflect.Type;
@@ -42,7 +42,11 @@ public abstract class OAuthQueryBuilder<T, R> extends AbstractQueryBuilder<T, R>
                 throw new ClientException("Can't parse json response");
             }
 
-            OAuthException exception = new OAuthException(error.getError(), error.getErrorDescription(), error.getRedirectUri());
+            com.vk.api.sdk.objects.base.Error errorExc = new com.vk.api.sdk.objects.base.Error()
+                    .setErrorCode(OAuthException.ERROR_CODE)
+                    .setErrorText(error.getErrorDescription())
+                    .setErrorMsg("");
+            OAuthException exception = new OAuthException(errorExc, error.getRedirectUri());
             LOG.error("API error", exception);
             throw exception;
         }

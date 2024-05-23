@@ -5,12 +5,13 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
  * UnblockScreenTextBackgroundFields object
  */
-public class UnblockScreenTextBackgroundFields implements Validable {
+public class UnblockScreenTextBackgroundFields implements UnblockScreenItem, Validable {
     /**
      * Полный URL фонового изображения
      */

@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Media type
  */
-public enum CommentMediaType implements EnumParam {
+public enum CommentMediaType implements EnumParam<String> {
     @SerializedName("audio")
     AUDIO("audio"),
 

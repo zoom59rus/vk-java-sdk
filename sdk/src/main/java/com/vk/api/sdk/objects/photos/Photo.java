@@ -5,11 +5,8 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
-import com.vk.api.sdk.objects.base.BoolInt;
-import com.vk.api.sdk.objects.base.Likes;
-import com.vk.api.sdk.objects.base.ObjectCount;
-import com.vk.api.sdk.objects.base.PropertyExists;
-import com.vk.api.sdk.objects.base.RepostsInfo;
+import com.vk.api.sdk.objects.base.*;
+
 import java.net.URI;
 import java.util.List;
 import java.util.Objects;
@@ -137,6 +134,12 @@ public class Photo implements Validable {
      */
     @SerializedName("text")
     private String text;
+
+    /**
+     * Thumb Hash
+     */
+    @SerializedName("thumb_hash")
+    private String thumbHash;
 
     /**
      * ID of the user who have uploaded the photo
@@ -358,6 +361,15 @@ public class Photo implements Validable {
         return this;
     }
 
+    public String getThumbHash() {
+        return thumbHash;
+    }
+
+    public Photo setThumbHash(String thumbHash) {
+        this.thumbHash = thumbHash;
+        return this;
+    }
+
     public Long getUserId() {
         return userId;
     }
@@ -387,7 +399,7 @@ public class Photo implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(date, hidden, albumId, ownerId, realOffset, sizes, hasTags, canComment, id, place, text, squareCrop, lat, height, likes, verticalAlign, images, comments, lng, photo256, postId, userId, tags, accessKey, width, reposts);
+        return Objects.hash(date, hidden, albumId, ownerId, realOffset, sizes, hasTags, canComment, id, place, text, squareCrop, lat, height, likes, verticalAlign, images, comments, lng, photo256, postId, userId, tags, accessKey, width, thumbHash, reposts);
     }
 
     @Override
@@ -419,6 +431,7 @@ public class Photo implements Validable {
                 Objects.equals(albumId, photo.albumId) &&
                 Objects.equals(hasTags, photo.hasTags) &&
                 Objects.equals(squareCrop, photo.squareCrop) &&
+                Objects.equals(thumbHash, photo.thumbHash) &&
                 Objects.equals(photo256, photo.photo256) &&
                 Objects.equals(reposts, photo.reposts);
     }
@@ -455,6 +468,7 @@ public class Photo implements Validable {
         sb.append(", albumId=").append(albumId);
         sb.append(", hasTags=").append(hasTags);
         sb.append(", squareCrop='").append(squareCrop).append("'");
+        sb.append(", thumbHash='").append(thumbHash).append("'");
         sb.append(", photo256=").append(photo256);
         sb.append(", reposts=").append(reposts);
         sb.append('}');

@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.messages;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum SendIntent implements EnumParam {
+public enum SendIntent implements EnumParam<String> {
     @SerializedName("account_update")
     ACCOUNT_UPDATE("account_update"),
 

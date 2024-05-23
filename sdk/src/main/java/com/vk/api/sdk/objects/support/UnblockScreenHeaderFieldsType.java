@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.support;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum UnblockScreenHeaderFieldsType implements EnumParam {
+public enum UnblockScreenHeaderFieldsType implements EnumParam<String> {
     @SerializedName("header")
     HEADER("header");
 

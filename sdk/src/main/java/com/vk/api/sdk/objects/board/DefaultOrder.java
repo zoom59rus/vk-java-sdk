@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Sort type
  */
-public enum DefaultOrder implements EnumParam {
+public enum DefaultOrder implements EnumParam<Integer> {
     @SerializedName("1")
     DESC_UPDATED(1),
 
@@ -26,8 +26,8 @@ public enum DefaultOrder implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

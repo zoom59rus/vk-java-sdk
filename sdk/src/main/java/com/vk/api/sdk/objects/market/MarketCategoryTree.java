@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -34,6 +35,24 @@ public class MarketCategoryTree implements Validable {
     @SerializedName("name")
     @Required
     private String name;
+
+    /**
+     * Description for category's page. Used for SEO
+     */
+    @SerializedName("page_description")
+    private String pageDescription;
+
+    /**
+     * Title for category's page. Used for SEO
+     */
+    @SerializedName("page_title")
+    private String pageTitle;
+
+    /**
+     * SEO-friendly variant of category's name
+     */
+    @SerializedName("seo_name")
+    private String seoName;
 
     /**
      * SEO-friendly URL to page with category's items
@@ -80,6 +99,33 @@ public class MarketCategoryTree implements Validable {
         return this;
     }
 
+    public String getPageDescription() {
+        return pageDescription;
+    }
+
+    public MarketCategoryTree setPageDescription(String pageDescription) {
+        this.pageDescription = pageDescription;
+        return this;
+    }
+
+    public String getPageTitle() {
+        return pageTitle;
+    }
+
+    public MarketCategoryTree setPageTitle(String pageTitle) {
+        this.pageTitle = pageTitle;
+        return this;
+    }
+
+    public String getSeoName() {
+        return seoName;
+    }
+
+    public MarketCategoryTree setSeoName(String seoName) {
+        this.seoName = seoName;
+        return this;
+    }
+
     public String getUrl() {
         return url;
     }
@@ -100,7 +146,7 @@ public class MarketCategoryTree implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(view, children, iconName, name, id, url);
+        return Objects.hash(view, children, iconName, pageTitle, name, pageDescription, id, url, seoName);
     }
 
     @Override
@@ -110,10 +156,13 @@ public class MarketCategoryTree implements Validable {
         MarketCategoryTree marketCategoryTree = (MarketCategoryTree) o;
         return Objects.equals(view, marketCategoryTree.view) &&
                 Objects.equals(children, marketCategoryTree.children) &&
+                Objects.equals(pageTitle, marketCategoryTree.pageTitle) &&
                 Objects.equals(name, marketCategoryTree.name) &&
+                Objects.equals(seoName, marketCategoryTree.seoName) &&
                 Objects.equals(id, marketCategoryTree.id) &&
                 Objects.equals(iconName, marketCategoryTree.iconName) &&
-                Objects.equals(url, marketCategoryTree.url);
+                Objects.equals(url, marketCategoryTree.url) &&
+                Objects.equals(pageDescription, marketCategoryTree.pageDescription);
     }
 
     @Override
@@ -126,10 +175,13 @@ public class MarketCategoryTree implements Validable {
         final StringBuilder sb = new StringBuilder("MarketCategoryTree{");
         sb.append("view=").append(view);
         sb.append(", children=").append(children);
+        sb.append(", pageTitle='").append(pageTitle).append("'");
         sb.append(", name='").append(name).append("'");
+        sb.append(", seoName='").append(seoName).append("'");
         sb.append(", id=").append(id);
         sb.append(", iconName='").append(iconName).append("'");
         sb.append(", url='").append(url).append("'");
+        sb.append(", pageDescription='").append(pageDescription).append("'");
         sb.append('}');
         return sb.toString();
     }

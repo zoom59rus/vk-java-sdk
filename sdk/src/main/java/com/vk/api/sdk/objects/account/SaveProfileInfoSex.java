@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * User sex. Possible values: , * '1' - female,, * '2' - male.
  */
-public enum SaveProfileInfoSex implements EnumParam {
+public enum SaveProfileInfoSex implements EnumParam<Integer> {
     @SerializedName("0")
     UNDEFINED(0),
 
@@ -23,8 +23,8 @@ public enum SaveProfileInfoSex implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

@@ -4,7 +4,6 @@ import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.audio.Audio;
 import com.vk.api.sdk.objects.board.TopicComment;
 import com.vk.api.sdk.objects.callback.*;
-import com.vk.api.sdk.objects.messages.Message;
 import com.vk.api.sdk.objects.photos.Photo;
 import com.vk.api.sdk.objects.video.Video;
 import com.vk.api.sdk.objects.wall.WallComment;
@@ -15,19 +14,19 @@ import java.lang.reflect.Type;
 public enum Events {
 
     @SerializedName("message_new")
-    MESSAGE_NEW(Message.class),
+    MESSAGE_NEW(MessageNew.class),
 
     @SerializedName("message_reply")
-    MESSAGE_REPLY(Message.class),
+    MESSAGE_REPLY(MessageReply.class),
 
     @SerializedName("message_allow")
-    MESSAGE_ALLOW(Message.class),
+    MESSAGE_ALLOW(MessageAllow.class),
 
     @SerializedName("message_deny")
-    MESSAGE_DENY(MessageAllow.class),
+    MESSAGE_DENY(MessageDeny.class),
 
     @SerializedName("message_edit")
-    MESSAGE_EDIT(MessageDeny.class),
+    MESSAGE_EDIT(MessageEdit.class),
 
     @SerializedName("photo_new")
     PHOTO_NEW(Photo.class),
@@ -129,7 +128,7 @@ public enum Events {
     USER_UNBLOCK(UserUnblock.class),
 
     @SerializedName("confirmation")
-    CONFIRMATION(null);
+    CONFIRMATION(Confirmation.class);
 
     private final Type type;
 

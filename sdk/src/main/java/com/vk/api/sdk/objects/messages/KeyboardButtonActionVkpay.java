@@ -5,12 +5,13 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
  * Description of the action, that should be performed on button click
  */
-public class KeyboardButtonActionVkpay implements Validable {
+public class KeyboardButtonActionVkpay implements KeyboardButtonPropertyAction, Validable {
     /**
      * Fragment value in app link like vk.com/app123456_-654321#{hash}
      */

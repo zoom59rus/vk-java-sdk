@@ -10,6 +10,7 @@ import com.vk.api.sdk.objects.likes.GetListFilter;
 import com.vk.api.sdk.objects.likes.GetListFriendsOnly;
 import com.vk.api.sdk.objects.likes.Type;
 import com.vk.api.sdk.objects.likes.responses.GetListResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -17,30 +18,6 @@ import java.util.List;
  * Query for Likes.getList method
  */
 public class LikesGetListQuery extends AbstractQueryBuilder<LikesGetListQuery, GetListResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     * @param type value of "type" parameter.
-     */
-    public LikesGetListQuery(VkApiClient client, UserActor actor, Type type) {
-        super(client, "likes.getList", GetListResponse.class);
-        accessToken(actor.getAccessToken());
-        type(type);
-    }
-
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public LikesGetListQuery(VkApiClient client, UserActor actor) {
-        super(client, "likes.getList", GetListResponse.class);
-        accessToken(actor.getAccessToken());
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -65,6 +42,30 @@ public class LikesGetListQuery extends AbstractQueryBuilder<LikesGetListQuery, G
         super(client, "likes.getList", GetListResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     * @param type value of "type" parameter.
+     */
+    public LikesGetListQuery(VkApiClient client, UserActor actor, Type type) {
+        super(client, "likes.getList", GetListResponse.class);
+        accessToken(actor.getAccessToken());
+        type(type);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public LikesGetListQuery(VkApiClient client, UserActor actor) {
+        super(client, "likes.getList", GetListResponse.class);
+        accessToken(actor.getAccessToken());
     }
 
     /**

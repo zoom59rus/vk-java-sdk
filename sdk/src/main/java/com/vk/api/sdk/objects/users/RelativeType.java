@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Relative type
  */
-public enum RelativeType implements EnumParam {
+public enum RelativeType implements EnumParam<String> {
     @SerializedName("parent")
     PARENT("parent"),
 

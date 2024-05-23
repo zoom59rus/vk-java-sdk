@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.pages;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum PrivacySettings implements EnumParam {
+public enum PrivacySettings implements EnumParam<Integer> {
     @SerializedName("0")
     COMMUNITY_MANAGERS_ONLY(0),
 
@@ -20,8 +20,8 @@ public enum PrivacySettings implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

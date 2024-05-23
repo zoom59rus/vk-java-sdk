@@ -7,6 +7,7 @@ import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.database.responses.GetRegionsResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,44 +15,6 @@ import java.util.List;
  * Query for Database.getRegions method
  */
 public class DatabaseGetRegionsQuery extends AbstractQueryBuilder<DatabaseGetRegionsQuery, GetRegionsResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     * @param countryId value of "country id" parameter. Minimum is 0.
-     */
-    public DatabaseGetRegionsQuery(VkApiClient client, UserActor actor, Integer countryId) {
-        super(client, "database.getRegions", GetRegionsResponse.class);
-        accessToken(actor.getAccessToken());
-        countryId(countryId);
-    }
-
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public DatabaseGetRegionsQuery(VkApiClient client, UserActor actor) {
-        super(client, "database.getRegions", GetRegionsResponse.class);
-        accessToken(actor.getAccessToken());
-    }
-
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     * @param countryId value of "country id" parameter. Minimum is 0.
-     */
-    public DatabaseGetRegionsQuery(VkApiClient client, ServiceActor actor, Integer countryId) {
-        super(client, "database.getRegions", GetRegionsResponse.class);
-        accessToken(actor.getAccessToken());
-        clientSecret(actor.getClientSecret());
-        countryId(countryId);
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -65,14 +28,14 @@ public class DatabaseGetRegionsQuery extends AbstractQueryBuilder<DatabaseGetReg
     }
 
     /**
-     * Country ID, received in [vk.com/dev/database.getCountries|database.getCountries] method.
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
      *
-     * @param value value of "country id" parameter. Minimum is 0.
-     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
+     * @param client VK API client
+     * @param actor actor with access token
      */
-    @ApiParam("country_id")
-    public DatabaseGetRegionsQuery countryId(Integer value) {
-        return unsafeParam("country_id", value);
+    public DatabaseGetRegionsQuery(VkApiClient client, UserActor actor) {
+        super(client, "database.getRegions", GetRegionsResponse.class);
+        accessToken(actor.getAccessToken());
     }
 
     /**
@@ -115,6 +78,6 @@ public class DatabaseGetRegionsQuery extends AbstractQueryBuilder<DatabaseGetReg
 
     @Override
     protected List<String> essentialKeys() {
-        return Arrays.asList("country_id", "access_token");
+        return Arrays.asList("access_token");
     }
 }

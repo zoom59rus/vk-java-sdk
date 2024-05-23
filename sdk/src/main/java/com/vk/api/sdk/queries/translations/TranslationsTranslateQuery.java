@@ -7,6 +7,7 @@ import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.translations.responses.TranslateResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -14,49 +15,6 @@ import java.util.List;
  * Query for Translations.translate method
  */
 public class TranslationsTranslateQuery extends AbstractQueryBuilder<TranslationsTranslateQuery, TranslateResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     * @param translationLanguage value of "translation language" parameter.
-     * @param texts value of "texts" parameter.
-     */
-    public TranslationsTranslateQuery(VkApiClient client, UserActor actor,
-            String translationLanguage, String... texts) {
-        super(client, "translations.translate", TranslateResponse.class);
-        accessToken(actor.getAccessToken());
-        translationLanguage(translationLanguage);
-        texts(texts);
-    }
-
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     * @param translationLanguage value of "translation language" parameter.
-     * @param texts value of "texts" parameter.
-     */
-    public TranslationsTranslateQuery(VkApiClient client, UserActor actor,
-            String translationLanguage, List<String> texts) {
-        super(client, "translations.translate", TranslateResponse.class);
-        accessToken(actor.getAccessToken());
-        translationLanguage(translationLanguage);
-        texts(texts);
-    }
-
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public TranslationsTranslateQuery(VkApiClient client, UserActor actor) {
-        super(client, "translations.translate", TranslateResponse.class);
-        accessToken(actor.getAccessToken());
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -101,6 +59,49 @@ public class TranslationsTranslateQuery extends AbstractQueryBuilder<Translation
         super(client, "translations.translate", TranslateResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     * @param translationLanguage value of "translation language" parameter.
+     * @param texts value of "texts" parameter.
+     */
+    public TranslationsTranslateQuery(VkApiClient client, UserActor actor,
+            String translationLanguage, String... texts) {
+        super(client, "translations.translate", TranslateResponse.class);
+        accessToken(actor.getAccessToken());
+        translationLanguage(translationLanguage);
+        texts(texts);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     * @param translationLanguage value of "translation language" parameter.
+     * @param texts value of "texts" parameter.
+     */
+    public TranslationsTranslateQuery(VkApiClient client, UserActor actor,
+            String translationLanguage, List<String> texts) {
+        super(client, "translations.translate", TranslateResponse.class);
+        accessToken(actor.getAccessToken());
+        translationLanguage(translationLanguage);
+        texts(texts);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public TranslationsTranslateQuery(VkApiClient client, UserActor actor) {
+        super(client, "translations.translate", TranslateResponse.class);
+        accessToken(actor.getAccessToken());
     }
 
     /**

@@ -3,187 +3,475 @@ package com.vk.api.sdk.objects.callback;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+import com.vk.api.sdk.events.CallbackEvent;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.callback.groups.CallbackGroupSettingsChange;
-import com.vk.api.sdk.objects.groups.GroupAudio;
-import com.vk.api.sdk.objects.groups.GroupFullAgeLimits;
-import com.vk.api.sdk.objects.groups.GroupIsClosed;
-import com.vk.api.sdk.objects.groups.GroupPhotos;
-import com.vk.api.sdk.objects.groups.GroupVideo;
-import com.vk.api.sdk.objects.groups.GroupWall;
+
 import java.util.Objects;
 
 /**
  * GroupSettingsChanges object
  */
-public class GroupSettingsChanges implements Validable {
+public class GroupSettingsChanges implements Validable, CallbackEvent {
     @SerializedName("access")
-    private CallbackGroupSettingsChange<GroupIsClosed> access;
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> access;
+
+    @SerializedName("address")
+    private CallbackGroupSettingsChange<GroupSettingsChangesStringValues> address;
 
     @SerializedName("age_limits")
-    private CallbackGroupSettingsChange<GroupFullAgeLimits> ageLimits;
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> ageLimits;
+
+    @SerializedName("audio")
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> audio;
+
+    @SerializedName("board")
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> board;
+
+    @SerializedName("can_post_albums")
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> canPostAlbums;
+
+    @SerializedName("can_post_topics")
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> canPostTopics;
+
+    @SerializedName("can_post_video")
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> canPostVideo;
+
+    @SerializedName("category_v2")
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> categoryV2;
+
+    @SerializedName("city_id")
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> cityId;
+
+    @SerializedName("country_id")
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> countryId;
 
     @SerializedName("description")
-    private CallbackGroupSettingsChange<String> description;
+    private CallbackGroupSettingsChange<GroupSettingsChangesStringValues> description;
 
-    @SerializedName("enable_audio")
-    private CallbackGroupSettingsChange<GroupAudio> enableAudio;
+    @SerializedName("disable_market_comments")
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> disableMarketComments;
 
-    @SerializedName("enable_market")
-    private CallbackGroupSettingsChange<GroupMarket> enableMarket;
+    @SerializedName("docs")
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> docs;
 
-    @SerializedName("enable_photo")
-    private CallbackGroupSettingsChange<GroupPhotos> enablePhoto;
+    @SerializedName("donations")
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> donations;
 
-    @SerializedName("enable_status_default")
-    private CallbackGroupSettingsChange<GroupWall> enableStatusDefault;
+    @SerializedName("email")
+    private CallbackGroupSettingsChange<GroupSettingsChangesStringValues> email;
 
-    @SerializedName("enable_video")
-    private CallbackGroupSettingsChange<GroupVideo> enableVideo;
+    @SerializedName("event_finish_date")
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> eventFinishDate;
+
+    @SerializedName("event_group_id")
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> eventGroupId;
+
+    @SerializedName("event_start_date")
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> eventStartDate;
+
+    @SerializedName("links")
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> links;
+
+    @SerializedName("market")
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> market;
+
+    @SerializedName("market_wiki")
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> marketWiki;
+
+    @SerializedName("messages")
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> messages;
+
+    @SerializedName("phone")
+    private CallbackGroupSettingsChange<GroupSettingsChangesStringValues> phone;
+
+    @SerializedName("photos")
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> photos;
 
     @SerializedName("public_category")
-    private CallbackGroupSettingsChange<Integer> publicCategory;
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> publicCategory;
 
     @SerializedName("public_subcategory")
-    private CallbackGroupSettingsChange<Integer> publicSubcategory;
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> publicSubcategory;
+
+    @SerializedName("replies")
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> replies;
 
     @SerializedName("screen_name")
-    private CallbackGroupSettingsChange<String> screenName;
+    private CallbackGroupSettingsChange<GroupSettingsChangesStringValues> screenName;
+
+    @SerializedName("status_default")
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> statusDefault;
 
     @SerializedName("title")
-    private CallbackGroupSettingsChange<String> title;
+    private CallbackGroupSettingsChange<GroupSettingsChangesStringValues> title;
+
+    @SerializedName("topics")
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> topics;
+
+    @SerializedName("video")
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> video;
+
+    @SerializedName("wall")
+    private CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> wall;
 
     @SerializedName("website")
-    private CallbackGroupSettingsChange<String> website;
+    private CallbackGroupSettingsChange<GroupSettingsChangesStringValues> website;
 
-    public CallbackGroupSettingsChange<GroupIsClosed> getAccess() {
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getAccess() {
         return access;
     }
 
-    public GroupSettingsChanges setAccess(CallbackGroupSettingsChange<GroupIsClosed> access) {
+    public GroupSettingsChanges setAccess(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> access) {
         this.access = access;
         return this;
     }
 
-    public CallbackGroupSettingsChange<GroupFullAgeLimits> getAgeLimits() {
+    public CallbackGroupSettingsChange<GroupSettingsChangesStringValues> getAddress() {
+        return address;
+    }
+
+    public GroupSettingsChanges setAddress(
+            CallbackGroupSettingsChange<GroupSettingsChangesStringValues> address) {
+        this.address = address;
+        return this;
+    }
+
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getAgeLimits() {
         return ageLimits;
     }
 
     public GroupSettingsChanges setAgeLimits(
-            CallbackGroupSettingsChange<GroupFullAgeLimits> ageLimits) {
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> ageLimits) {
         this.ageLimits = ageLimits;
         return this;
     }
 
-    public CallbackGroupSettingsChange<String> getDescription() {
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getAudio() {
+        return audio;
+    }
+
+    public GroupSettingsChanges setAudio(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> audio) {
+        this.audio = audio;
+        return this;
+    }
+
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getBoard() {
+        return board;
+    }
+
+    public GroupSettingsChanges setBoard(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> board) {
+        this.board = board;
+        return this;
+    }
+
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getCanPostAlbums() {
+        return canPostAlbums;
+    }
+
+    public GroupSettingsChanges setCanPostAlbums(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> canPostAlbums) {
+        this.canPostAlbums = canPostAlbums;
+        return this;
+    }
+
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getCanPostTopics() {
+        return canPostTopics;
+    }
+
+    public GroupSettingsChanges setCanPostTopics(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> canPostTopics) {
+        this.canPostTopics = canPostTopics;
+        return this;
+    }
+
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getCanPostVideo() {
+        return canPostVideo;
+    }
+
+    public GroupSettingsChanges setCanPostVideo(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> canPostVideo) {
+        this.canPostVideo = canPostVideo;
+        return this;
+    }
+
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getCategoryV2() {
+        return categoryV2;
+    }
+
+    public GroupSettingsChanges setCategoryV2(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> categoryV2) {
+        this.categoryV2 = categoryV2;
+        return this;
+    }
+
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getCityId() {
+        return cityId;
+    }
+
+    public GroupSettingsChanges setCityId(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> cityId) {
+        this.cityId = cityId;
+        return this;
+    }
+
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getCountryId() {
+        return countryId;
+    }
+
+    public GroupSettingsChanges setCountryId(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> countryId) {
+        this.countryId = countryId;
+        return this;
+    }
+
+    public CallbackGroupSettingsChange<GroupSettingsChangesStringValues> getDescription() {
         return description;
     }
 
-    public GroupSettingsChanges setDescription(CallbackGroupSettingsChange<String> description) {
+    public GroupSettingsChanges setDescription(
+            CallbackGroupSettingsChange<GroupSettingsChangesStringValues> description) {
         this.description = description;
         return this;
     }
 
-    public CallbackGroupSettingsChange<GroupAudio> getEnableAudio() {
-        return enableAudio;
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getDisableMarketComments(
+            ) {
+        return disableMarketComments;
     }
 
-    public GroupSettingsChanges setEnableAudio(
-            CallbackGroupSettingsChange<GroupAudio> enableAudio) {
-        this.enableAudio = enableAudio;
+    public GroupSettingsChanges setDisableMarketComments(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> disableMarketComments) {
+        this.disableMarketComments = disableMarketComments;
         return this;
     }
 
-    public CallbackGroupSettingsChange<GroupMarket> getEnableMarket() {
-        return enableMarket;
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getDocs() {
+        return docs;
     }
 
-    public GroupSettingsChanges setEnableMarket(
-            CallbackGroupSettingsChange<GroupMarket> enableMarket) {
-        this.enableMarket = enableMarket;
+    public GroupSettingsChanges setDocs(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> docs) {
+        this.docs = docs;
         return this;
     }
 
-    public CallbackGroupSettingsChange<GroupPhotos> getEnablePhoto() {
-        return enablePhoto;
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getDonations() {
+        return donations;
     }
 
-    public GroupSettingsChanges setEnablePhoto(
-            CallbackGroupSettingsChange<GroupPhotos> enablePhoto) {
-        this.enablePhoto = enablePhoto;
+    public GroupSettingsChanges setDonations(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> donations) {
+        this.donations = donations;
         return this;
     }
 
-    public CallbackGroupSettingsChange<GroupWall> getEnableStatusDefault() {
-        return enableStatusDefault;
+    public CallbackGroupSettingsChange<GroupSettingsChangesStringValues> getEmail() {
+        return email;
     }
 
-    public GroupSettingsChanges setEnableStatusDefault(
-            CallbackGroupSettingsChange<GroupWall> enableStatusDefault) {
-        this.enableStatusDefault = enableStatusDefault;
+    public GroupSettingsChanges setEmail(
+            CallbackGroupSettingsChange<GroupSettingsChangesStringValues> email) {
+        this.email = email;
         return this;
     }
 
-    public CallbackGroupSettingsChange<GroupVideo> getEnableVideo() {
-        return enableVideo;
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getEventFinishDate() {
+        return eventFinishDate;
     }
 
-    public GroupSettingsChanges setEnableVideo(
-            CallbackGroupSettingsChange<GroupVideo> enableVideo) {
-        this.enableVideo = enableVideo;
+    public GroupSettingsChanges setEventFinishDate(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> eventFinishDate) {
+        this.eventFinishDate = eventFinishDate;
         return this;
     }
 
-    public CallbackGroupSettingsChange<Integer> getPublicCategory() {
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getEventGroupId() {
+        return eventGroupId;
+    }
+
+    public GroupSettingsChanges setEventGroupId(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> eventGroupId) {
+        this.eventGroupId = eventGroupId;
+        return this;
+    }
+
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getEventStartDate() {
+        return eventStartDate;
+    }
+
+    public GroupSettingsChanges setEventStartDate(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> eventStartDate) {
+        this.eventStartDate = eventStartDate;
+        return this;
+    }
+
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getLinks() {
+        return links;
+    }
+
+    public GroupSettingsChanges setLinks(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> links) {
+        this.links = links;
+        return this;
+    }
+
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getMarket() {
+        return market;
+    }
+
+    public GroupSettingsChanges setMarket(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> market) {
+        this.market = market;
+        return this;
+    }
+
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getMarketWiki() {
+        return marketWiki;
+    }
+
+    public GroupSettingsChanges setMarketWiki(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> marketWiki) {
+        this.marketWiki = marketWiki;
+        return this;
+    }
+
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getMessages() {
+        return messages;
+    }
+
+    public GroupSettingsChanges setMessages(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> messages) {
+        this.messages = messages;
+        return this;
+    }
+
+    public CallbackGroupSettingsChange<GroupSettingsChangesStringValues> getPhone() {
+        return phone;
+    }
+
+    public GroupSettingsChanges setPhone(
+            CallbackGroupSettingsChange<GroupSettingsChangesStringValues> phone) {
+        this.phone = phone;
+        return this;
+    }
+
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getPhotos() {
+        return photos;
+    }
+
+    public GroupSettingsChanges setPhotos(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> photos) {
+        this.photos = photos;
+        return this;
+    }
+
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getPublicCategory() {
         return publicCategory;
     }
 
     public GroupSettingsChanges setPublicCategory(
-            CallbackGroupSettingsChange<Integer> publicCategory) {
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> publicCategory) {
         this.publicCategory = publicCategory;
         return this;
     }
 
-    public CallbackGroupSettingsChange<Integer> getPublicSubcategory() {
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getPublicSubcategory() {
         return publicSubcategory;
     }
 
     public GroupSettingsChanges setPublicSubcategory(
-            CallbackGroupSettingsChange<Integer> publicSubcategory) {
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> publicSubcategory) {
         this.publicSubcategory = publicSubcategory;
         return this;
     }
 
-    public CallbackGroupSettingsChange<String> getScreenName() {
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getReplies() {
+        return replies;
+    }
+
+    public GroupSettingsChanges setReplies(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> replies) {
+        this.replies = replies;
+        return this;
+    }
+
+    public CallbackGroupSettingsChange<GroupSettingsChangesStringValues> getScreenName() {
         return screenName;
     }
 
-    public GroupSettingsChanges setScreenName(CallbackGroupSettingsChange<String> screenName) {
+    public GroupSettingsChanges setScreenName(
+            CallbackGroupSettingsChange<GroupSettingsChangesStringValues> screenName) {
         this.screenName = screenName;
         return this;
     }
 
-    public CallbackGroupSettingsChange<String> getTitle() {
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getStatusDefault() {
+        return statusDefault;
+    }
+
+    public GroupSettingsChanges setStatusDefault(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> statusDefault) {
+        this.statusDefault = statusDefault;
+        return this;
+    }
+
+    public CallbackGroupSettingsChange<GroupSettingsChangesStringValues> getTitle() {
         return title;
     }
 
-    public GroupSettingsChanges setTitle(CallbackGroupSettingsChange<String> title) {
+    public GroupSettingsChanges setTitle(
+            CallbackGroupSettingsChange<GroupSettingsChangesStringValues> title) {
         this.title = title;
         return this;
     }
 
-    public CallbackGroupSettingsChange<String> getWebsite() {
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getTopics() {
+        return topics;
+    }
+
+    public GroupSettingsChanges setTopics(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> topics) {
+        this.topics = topics;
+        return this;
+    }
+
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getVideo() {
+        return video;
+    }
+
+    public GroupSettingsChanges setVideo(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> video) {
+        this.video = video;
+        return this;
+    }
+
+    public CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> getWall() {
+        return wall;
+    }
+
+    public GroupSettingsChanges setWall(
+            CallbackGroupSettingsChange<GroupSettingsChangesIntegerValues> wall) {
+        this.wall = wall;
+        return this;
+    }
+
+    public CallbackGroupSettingsChange<GroupSettingsChangesStringValues> getWebsite() {
         return website;
     }
 
-    public GroupSettingsChanges setWebsite(CallbackGroupSettingsChange<String> website) {
+    public GroupSettingsChanges setWebsite(
+            CallbackGroupSettingsChange<GroupSettingsChangesStringValues> website) {
         this.website = website;
         return this;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(website, access, description, enableVideo, screenName, title, ageLimits, publicSubcategory, enablePhoto, enableMarket, enableStatusDefault, enableAudio, publicCategory);
+        return Objects.hash(access, donations, description, video, screenName, cityId, title, photos, countryId, docs, canPostTopics, marketWiki, disableMarketComments, links, audio, publicCategory, categoryV2, email, eventGroupId, website, address, topics, statusDefault, canPostAlbums, market, ageLimits, canPostVideo, publicSubcategory, replies, phone, messages, eventFinishDate, wall, board, eventStartDate);
     }
 
     @Override
@@ -191,19 +479,41 @@ public class GroupSettingsChanges implements Validable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         GroupSettingsChanges groupSettingsChanges = (GroupSettingsChanges) o;
-        return Objects.equals(enableStatusDefault, groupSettingsChanges.enableStatusDefault) &&
-                Objects.equals(website, groupSettingsChanges.website) &&
-                Objects.equals(access, groupSettingsChanges.access) &&
-                Objects.equals(enableAudio, groupSettingsChanges.enableAudio) &&
-                Objects.equals(enableMarket, groupSettingsChanges.enableMarket) &&
+        return Objects.equals(access, groupSettingsChanges.access) &&
+                Objects.equals(donations, groupSettingsChanges.donations) &&
                 Objects.equals(publicCategory, groupSettingsChanges.publicCategory) &&
                 Objects.equals(publicSubcategory, groupSettingsChanges.publicSubcategory) &&
                 Objects.equals(description, groupSettingsChanges.description) &&
+                Objects.equals(video, groupSettingsChanges.video) &&
+                Objects.equals(eventFinishDate, groupSettingsChanges.eventFinishDate) &&
                 Objects.equals(title, groupSettingsChanges.title) &&
-                Objects.equals(ageLimits, groupSettingsChanges.ageLimits) &&
+                Objects.equals(photos, groupSettingsChanges.photos) &&
+                Objects.equals(canPostTopics, groupSettingsChanges.canPostTopics) &&
+                Objects.equals(docs, groupSettingsChanges.docs) &&
                 Objects.equals(screenName, groupSettingsChanges.screenName) &&
-                Objects.equals(enablePhoto, groupSettingsChanges.enablePhoto) &&
-                Objects.equals(enableVideo, groupSettingsChanges.enableVideo);
+                Objects.equals(marketWiki, groupSettingsChanges.marketWiki) &&
+                Objects.equals(statusDefault, groupSettingsChanges.statusDefault) &&
+                Objects.equals(canPostVideo, groupSettingsChanges.canPostVideo) &&
+                Objects.equals(links, groupSettingsChanges.links) &&
+                Objects.equals(audio, groupSettingsChanges.audio) &&
+                Objects.equals(email, groupSettingsChanges.email) &&
+                Objects.equals(website, groupSettingsChanges.website) &&
+                Objects.equals(address, groupSettingsChanges.address) &&
+                Objects.equals(topics, groupSettingsChanges.topics) &&
+                Objects.equals(canPostAlbums, groupSettingsChanges.canPostAlbums) &&
+                Objects.equals(market, groupSettingsChanges.market) &&
+                Objects.equals(ageLimits, groupSettingsChanges.ageLimits) &&
+                Objects.equals(replies, groupSettingsChanges.replies) &&
+                Objects.equals(categoryV2, groupSettingsChanges.categoryV2) &&
+                Objects.equals(phone, groupSettingsChanges.phone) &&
+                Objects.equals(messages, groupSettingsChanges.messages) &&
+                Objects.equals(disableMarketComments, groupSettingsChanges.disableMarketComments) &&
+                Objects.equals(eventGroupId, groupSettingsChanges.eventGroupId) &&
+                Objects.equals(wall, groupSettingsChanges.wall) &&
+                Objects.equals(board, groupSettingsChanges.board) &&
+                Objects.equals(countryId, groupSettingsChanges.countryId) &&
+                Objects.equals(eventStartDate, groupSettingsChanges.eventStartDate) &&
+                Objects.equals(cityId, groupSettingsChanges.cityId);
     }
 
     @Override
@@ -214,19 +524,41 @@ public class GroupSettingsChanges implements Validable {
 
     public String toPrettyString() {
         final StringBuilder sb = new StringBuilder("GroupSettingsChanges{");
-        sb.append("enableStatusDefault=").append(enableStatusDefault);
-        sb.append(", website='").append(website).append("'");
-        sb.append(", access=").append(access);
-        sb.append(", enableAudio=").append(enableAudio);
-        sb.append(", enableMarket=").append(enableMarket);
+        sb.append("access=").append(access);
+        sb.append(", donations=").append(donations);
         sb.append(", publicCategory=").append(publicCategory);
         sb.append(", publicSubcategory=").append(publicSubcategory);
         sb.append(", description='").append(description).append("'");
+        sb.append(", video=").append(video);
+        sb.append(", eventFinishDate=").append(eventFinishDate);
         sb.append(", title='").append(title).append("'");
-        sb.append(", ageLimits=").append(ageLimits);
+        sb.append(", photos=").append(photos);
+        sb.append(", canPostTopics=").append(canPostTopics);
+        sb.append(", docs=").append(docs);
         sb.append(", screenName='").append(screenName).append("'");
-        sb.append(", enablePhoto=").append(enablePhoto);
-        sb.append(", enableVideo=").append(enableVideo);
+        sb.append(", marketWiki=").append(marketWiki);
+        sb.append(", statusDefault=").append(statusDefault);
+        sb.append(", canPostVideo=").append(canPostVideo);
+        sb.append(", links=").append(links);
+        sb.append(", audio=").append(audio);
+        sb.append(", email='").append(email).append("'");
+        sb.append(", website='").append(website).append("'");
+        sb.append(", address='").append(address).append("'");
+        sb.append(", topics=").append(topics);
+        sb.append(", canPostAlbums=").append(canPostAlbums);
+        sb.append(", market=").append(market);
+        sb.append(", ageLimits=").append(ageLimits);
+        sb.append(", replies=").append(replies);
+        sb.append(", categoryV2=").append(categoryV2);
+        sb.append(", phone='").append(phone).append("'");
+        sb.append(", messages=").append(messages);
+        sb.append(", disableMarketComments=").append(disableMarketComments);
+        sb.append(", eventGroupId=").append(eventGroupId);
+        sb.append(", wall=").append(wall);
+        sb.append(", board=").append(board);
+        sb.append(", countryId=").append(countryId);
+        sb.append(", eventStartDate=").append(eventStartDate);
+        sb.append(", cityId=").append(cityId);
         sb.append('}');
         return sb.toString();
     }

@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.messages;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum GetIntentUsersIntent implements EnumParam {
+public enum GetIntentUsersIntent implements EnumParam<String> {
     @SerializedName("confirmed_notification")
     CONFIRMED_NOTIFICATION("confirmed_notification"),
 

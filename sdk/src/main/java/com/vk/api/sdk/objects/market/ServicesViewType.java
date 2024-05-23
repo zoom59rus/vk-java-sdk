@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Type of view. 1 - cards, 2 - rows
  */
-public enum ServicesViewType implements EnumParam {
+public enum ServicesViewType implements EnumParam<Integer> {
     @SerializedName("1")
     CARDS(1),
 
@@ -20,8 +20,8 @@ public enum ServicesViewType implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

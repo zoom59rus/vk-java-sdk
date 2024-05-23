@@ -10,6 +10,7 @@ import com.vk.api.sdk.objects.base.BoolInt;
 import com.vk.api.sdk.objects.base.Link;
 import com.vk.api.sdk.objects.groups.Group;
 import com.vk.api.sdk.objects.users.UserMin;
+
 import java.util.Objects;
 
 /**

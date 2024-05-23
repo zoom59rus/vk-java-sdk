@@ -7,30 +7,8 @@ import com.vk.api.sdk.client.actors.ServiceActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiMethod;
 import com.vk.api.sdk.objects.users.Fields;
-import com.vk.api.sdk.queries.friends.FriendsAddListQuery;
-import com.vk.api.sdk.queries.friends.FriendsAddQuery;
-import com.vk.api.sdk.queries.friends.FriendsAreFriendsQuery;
-import com.vk.api.sdk.queries.friends.FriendsAreFriendsQueryWithExtended;
-import com.vk.api.sdk.queries.friends.FriendsDeleteAllRequestsQuery;
-import com.vk.api.sdk.queries.friends.FriendsDeleteListQuery;
-import com.vk.api.sdk.queries.friends.FriendsDeleteQuery;
-import com.vk.api.sdk.queries.friends.FriendsEditListQuery;
-import com.vk.api.sdk.queries.friends.FriendsEditQuery;
-import com.vk.api.sdk.queries.friends.FriendsGetAppUsersQuery;
-import com.vk.api.sdk.queries.friends.FriendsGetByPhonesQuery;
-import com.vk.api.sdk.queries.friends.FriendsGetListsQuery;
-import com.vk.api.sdk.queries.friends.FriendsGetMutualQuery;
-import com.vk.api.sdk.queries.friends.FriendsGetMutualQueryWithTargetUids;
-import com.vk.api.sdk.queries.friends.FriendsGetOnlineQuery;
-import com.vk.api.sdk.queries.friends.FriendsGetOnlineQueryWithOnlineMobile;
-import com.vk.api.sdk.queries.friends.FriendsGetQuery;
-import com.vk.api.sdk.queries.friends.FriendsGetQueryWithFields;
-import com.vk.api.sdk.queries.friends.FriendsGetRecentQuery;
-import com.vk.api.sdk.queries.friends.FriendsGetRequestsQuery;
-import com.vk.api.sdk.queries.friends.FriendsGetRequestsQueryWithExtended;
-import com.vk.api.sdk.queries.friends.FriendsGetRequestsQueryWithNeedMutual;
-import com.vk.api.sdk.queries.friends.FriendsGetSuggestionsQuery;
-import com.vk.api.sdk.queries.friends.FriendsSearchQuery;
+import com.vk.api.sdk.queries.friends.*;
+
 import java.util.List;
 
 /**
@@ -289,17 +267,6 @@ public class Friends extends AbstractAction {
     }
 
     /**
-     * Returns a list of the current user's friends whose phone numbers, validated or specified in a profile, are in a given list.
-     *
-     * @param actor vk user actor
-     * @return query
-     */
-    @ApiMethod("friends.getByPhones")
-    public FriendsGetByPhonesQuery getByPhones(UserActor actor) {
-        return new FriendsGetByPhonesQuery(getClient(), actor);
-    }
-
-    /**
      * Returns a list of the user's friend lists.
      *
      * @param actor vk user actor
@@ -330,6 +297,17 @@ public class Friends extends AbstractAction {
      * @return query
      */
     @ApiMethod("friends.getMutual")
+    public FriendsGetMutualQueryWithTotalCount getMutualTotalCount(UserActor actor) {
+        return new FriendsGetMutualQueryWithTotalCount(getClient(), actor);
+    }
+
+    /**
+     * Returns a list of user IDs of the mutual friends of two users.
+     *
+     * @param actor vk user actor
+     * @return query
+     */
+    @ApiMethod("friends.getMutual")
     public FriendsGetMutualQuery getMutual(UserActor actor) {
         return new FriendsGetMutualQuery(getClient(), actor);
     }
@@ -349,6 +327,17 @@ public class Friends extends AbstractAction {
      * Returns a list of user IDs of a user's friends who are online.
      *
      * @param actor vk user actor
+     * @return query
+     */
+    @ApiMethod("friends.getOnline")
+    public FriendsGetOnlineQueryWithExtended getOnlineExtended(UserActor actor) {
+        return new FriendsGetOnlineQueryWithExtended(getClient(), actor);
+    }
+
+    /**
+     * Returns a list of user IDs of a user's friends who are online.
+     *
+     * @param actor vk user actor
      * @param onlineMobile '1' - to return an additional 'online_mobile' field, '0' - (default),
      * @return query
      */
@@ -356,6 +345,18 @@ public class Friends extends AbstractAction {
     public FriendsGetOnlineQueryWithOnlineMobile getOnlineWithOnlineMobile(UserActor actor,
             Boolean onlineMobile) {
         return new FriendsGetOnlineQueryWithOnlineMobile(getClient(), actor, onlineMobile);
+    }
+
+    /**
+     * Returns a list of user IDs of a user's friends who are online.
+     *
+     * @param actor vk user actor
+     * @return query
+     */
+    @ApiMethod("friends.getOnline")
+    public FriendsGetOnlineQueryWithOnlineMobileExtended getOnlineOnlineMobileExtended(
+            UserActor actor) {
+        return new FriendsGetOnlineQueryWithOnlineMobileExtended(getClient(), actor);
     }
 
     /**

@@ -3,14 +3,16 @@ package com.vk.api.sdk.objects.callback;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+import com.vk.api.sdk.events.CallbackEvent;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
  * Base object
  */
-public class Base implements Validable {
+public class Base implements Validable, CallbackEvent {
     /**
      * Unique event id. If it passed twice or more - you should ignore it.
      */

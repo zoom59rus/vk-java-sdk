@@ -9,6 +9,7 @@ import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.friends.GetOrder;
 import com.vk.api.sdk.objects.friends.responses.GetFieldsResponse;
 import com.vk.api.sdk.objects.users.Fields;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -16,30 +17,6 @@ import java.util.List;
  * Query for Friends.get method
  */
 public class FriendsGetQueryWithFields extends AbstractQueryBuilder<FriendsGetQueryWithFields, GetFieldsResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public FriendsGetQueryWithFields(VkApiClient client, UserActor actor, Fields... fields) {
-        super(client, "friends.get", GetFieldsResponse.class);
-        accessToken(actor.getAccessToken());
-        fields(fields);
-    }
-
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public FriendsGetQueryWithFields(VkApiClient client, UserActor actor, List<Fields> fields) {
-        super(client, "friends.get", GetFieldsResponse.class);
-        accessToken(actor.getAccessToken());
-        fields(fields);
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -63,6 +40,30 @@ public class FriendsGetQueryWithFields extends AbstractQueryBuilder<FriendsGetQu
         super(client, "friends.get", GetFieldsResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+        fields(fields);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public FriendsGetQueryWithFields(VkApiClient client, UserActor actor, Fields... fields) {
+        super(client, "friends.get", GetFieldsResponse.class);
+        accessToken(actor.getAccessToken());
+        fields(fields);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public FriendsGetQueryWithFields(VkApiClient client, UserActor actor, List<Fields> fields) {
+        super(client, "friends.get", GetFieldsResponse.class);
+        accessToken(actor.getAccessToken());
         fields(fields);
     }
 

@@ -9,6 +9,7 @@ import com.vk.api.sdk.objects.base.Likes;
 import com.vk.api.sdk.objects.base.PropertyExists;
 import com.vk.api.sdk.objects.base.RepostsInfo;
 import com.vk.api.sdk.objects.video.VideoImage;
+
 import java.net.URI;
 import java.util.List;
 import java.util.Objects;
@@ -16,7 +17,7 @@ import java.util.Objects;
 /**
  * CommentsItemTypeVideo object
  */
-public class CommentsItemTypeVideo extends CommentsItemBase implements Validable {
+public class CommentsItemTypeVideo extends CommentsItemBase implements CommentsItem, Validable {
     /**
      * Video access key
      */

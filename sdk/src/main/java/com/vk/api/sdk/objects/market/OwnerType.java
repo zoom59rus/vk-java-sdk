@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Type of the market group
  */
-public enum OwnerType implements EnumParam {
+public enum OwnerType implements EnumParam<String> {
     @SerializedName("base")
     BASE("base"),
 

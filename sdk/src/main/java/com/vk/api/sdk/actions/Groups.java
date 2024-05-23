@@ -11,67 +11,7 @@ import com.vk.api.sdk.objects.groups.GetMembersFilter;
 import com.vk.api.sdk.objects.groups.TagBindAct;
 import com.vk.api.sdk.objects.groups.ToggleMarketState;
 import com.vk.api.sdk.objects.users.Fields;
-import com.vk.api.sdk.queries.groups.GroupsAddAddressQuery;
-import com.vk.api.sdk.queries.groups.GroupsAddCallbackServerQuery;
-import com.vk.api.sdk.queries.groups.GroupsAddLinkQuery;
-import com.vk.api.sdk.queries.groups.GroupsApproveRequestQuery;
-import com.vk.api.sdk.queries.groups.GroupsBanQuery;
-import com.vk.api.sdk.queries.groups.GroupsCreateQuery;
-import com.vk.api.sdk.queries.groups.GroupsDeleteAddressQuery;
-import com.vk.api.sdk.queries.groups.GroupsDeleteCallbackServerQuery;
-import com.vk.api.sdk.queries.groups.GroupsDeleteLinkQuery;
-import com.vk.api.sdk.queries.groups.GroupsDisableOnlineQuery;
-import com.vk.api.sdk.queries.groups.GroupsEditAddressQuery;
-import com.vk.api.sdk.queries.groups.GroupsEditCallbackServerQuery;
-import com.vk.api.sdk.queries.groups.GroupsEditLinkQuery;
-import com.vk.api.sdk.queries.groups.GroupsEditManagerQuery;
-import com.vk.api.sdk.queries.groups.GroupsEditQuery;
-import com.vk.api.sdk.queries.groups.GroupsEnableOnlineQuery;
-import com.vk.api.sdk.queries.groups.GroupsGetAddressesQuery;
-import com.vk.api.sdk.queries.groups.GroupsGetBannedQuery;
-import com.vk.api.sdk.queries.groups.GroupsGetByIdQueryWithObject;
-import com.vk.api.sdk.queries.groups.GroupsGetCallbackConfirmationCodeQuery;
-import com.vk.api.sdk.queries.groups.GroupsGetCallbackServersQuery;
-import com.vk.api.sdk.queries.groups.GroupsGetCallbackSettingsQuery;
-import com.vk.api.sdk.queries.groups.GroupsGetCatalogInfoQuery;
-import com.vk.api.sdk.queries.groups.GroupsGetCatalogInfoQueryWithExtended;
-import com.vk.api.sdk.queries.groups.GroupsGetInvitedUsersQuery;
-import com.vk.api.sdk.queries.groups.GroupsGetInvitesQuery;
-import com.vk.api.sdk.queries.groups.GroupsGetInvitesQueryWithExtended;
-import com.vk.api.sdk.queries.groups.GroupsGetLongPollServerQuery;
-import com.vk.api.sdk.queries.groups.GroupsGetLongPollSettingsQuery;
-import com.vk.api.sdk.queries.groups.GroupsGetMembersQuery;
-import com.vk.api.sdk.queries.groups.GroupsGetMembersQueryWithFields;
-import com.vk.api.sdk.queries.groups.GroupsGetMembersQueryWithFilter;
-import com.vk.api.sdk.queries.groups.GroupsGetOnlineStatusQuery;
-import com.vk.api.sdk.queries.groups.GroupsGetQuery;
-import com.vk.api.sdk.queries.groups.GroupsGetQueryWithObjectExtended;
-import com.vk.api.sdk.queries.groups.GroupsGetRequestsQuery;
-import com.vk.api.sdk.queries.groups.GroupsGetRequestsQueryWithFields;
-import com.vk.api.sdk.queries.groups.GroupsGetSettingsQuery;
-import com.vk.api.sdk.queries.groups.GroupsGetTagListQuery;
-import com.vk.api.sdk.queries.groups.GroupsGetTokenPermissionsQuery;
-import com.vk.api.sdk.queries.groups.GroupsInviteQuery;
-import com.vk.api.sdk.queries.groups.GroupsInviteQueryWithUserIdsList;
-import com.vk.api.sdk.queries.groups.GroupsIsMemberQuery;
-import com.vk.api.sdk.queries.groups.GroupsIsMemberQueryWithExtended;
-import com.vk.api.sdk.queries.groups.GroupsIsMemberQueryWithUserIds;
-import com.vk.api.sdk.queries.groups.GroupsIsMemberQueryWithUserIdsExtended;
-import com.vk.api.sdk.queries.groups.GroupsJoinQuery;
-import com.vk.api.sdk.queries.groups.GroupsLeaveQuery;
-import com.vk.api.sdk.queries.groups.GroupsRemoveUserQuery;
-import com.vk.api.sdk.queries.groups.GroupsReorderLinkQuery;
-import com.vk.api.sdk.queries.groups.GroupsSearchQuery;
-import com.vk.api.sdk.queries.groups.GroupsSetCallbackSettingsQuery;
-import com.vk.api.sdk.queries.groups.GroupsSetLongPollSettingsQuery;
-import com.vk.api.sdk.queries.groups.GroupsSetSettingsQuery;
-import com.vk.api.sdk.queries.groups.GroupsSetUserNoteQuery;
-import com.vk.api.sdk.queries.groups.GroupsTagAddQuery;
-import com.vk.api.sdk.queries.groups.GroupsTagBindQuery;
-import com.vk.api.sdk.queries.groups.GroupsTagDeleteQuery;
-import com.vk.api.sdk.queries.groups.GroupsTagUpdateQuery;
-import com.vk.api.sdk.queries.groups.GroupsToggleMarketQuery;
-import com.vk.api.sdk.queries.groups.GroupsUnbanQuery;
+import com.vk.api.sdk.queries.groups.*;
 
 /**
  * List of Groups methods
@@ -1562,7 +1502,19 @@ public class Groups extends AbstractAction {
      * With this method you can join the group or public page, and also confirm your participation in an event.
      *
      * @param actor vk user actor
+     * @param groupId ID or screen name of the community.
      * @return query
+     */
+    @ApiMethod("groups.join")
+    public GroupsJoinQuery join(UserActor actor, Long groupId) {
+        return new GroupsJoinQuery(getClient(), actor, groupId);
+    }
+
+    /**
+     * With this method you can join the group or public page, and also confirm your participation in an event.
+     *
+     * @param actor vk user actor
+     * @return only actor query 
      */
     @ApiMethod("groups.join")
     public GroupsJoinQuery join(UserActor actor) {

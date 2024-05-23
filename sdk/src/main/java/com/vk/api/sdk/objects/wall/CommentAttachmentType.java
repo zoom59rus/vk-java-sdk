@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Attachment type
  */
-public enum CommentAttachmentType implements EnumParam {
+public enum CommentAttachmentType implements EnumParam<String> {
     @SerializedName("photo")
     PHOTO("photo"),
 

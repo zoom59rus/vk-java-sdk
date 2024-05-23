@@ -4,13 +4,14 @@ package com.vk.api.sdk.objects.newsfeed;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
+
 import java.util.List;
 import java.util.Objects;
 
 /**
  * ItemPromoButton object
  */
-public class ItemPromoButton extends ItemBase implements Validable {
+public class ItemPromoButton extends ItemBase implements NewsfeedItem, Validable {
     @SerializedName("action")
     private ItemPromoButtonAction action;
 

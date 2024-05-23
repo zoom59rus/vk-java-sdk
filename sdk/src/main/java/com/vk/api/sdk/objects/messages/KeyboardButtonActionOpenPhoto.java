@@ -5,12 +5,13 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
  * Description of the action, that should be performed on button click
  */
-public class KeyboardButtonActionOpenPhoto implements Validable {
+public class KeyboardButtonActionOpenPhoto implements KeyboardButtonPropertyAction, Validable {
     @SerializedName("type")
     @Required
     private KeyboardButtonActionOpenPhotoType type;

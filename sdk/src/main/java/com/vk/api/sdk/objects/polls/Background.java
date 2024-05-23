@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.base.GradientPoint;
 import com.vk.api.sdk.objects.base.Image;
+
 import java.util.List;
 import java.util.Objects;
 

@@ -8,6 +8,7 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.users.Fields;
 import com.vk.api.sdk.objects.users.responses.GetSubscriptionsExtendedResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,18 +16,6 @@ import java.util.List;
  * Query for Users.getSubscriptions method
  */
 public class UsersGetSubscriptionsQueryWithExtended extends AbstractQueryBuilder<UsersGetSubscriptionsQueryWithExtended, GetSubscriptionsExtendedResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public UsersGetSubscriptionsQueryWithExtended(VkApiClient client, UserActor actor) {
-        super(client, "users.getSubscriptions", GetSubscriptionsExtendedResponse.class);
-        accessToken(actor.getAccessToken());
-        extended(true);
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -37,6 +26,18 @@ public class UsersGetSubscriptionsQueryWithExtended extends AbstractQueryBuilder
         super(client, "users.getSubscriptions", GetSubscriptionsExtendedResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+        extended(true);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public UsersGetSubscriptionsQueryWithExtended(VkApiClient client, UserActor actor) {
+        super(client, "users.getSubscriptions", GetSubscriptionsExtendedResponse.class);
+        accessToken(actor.getAccessToken());
         extended(true);
     }
 

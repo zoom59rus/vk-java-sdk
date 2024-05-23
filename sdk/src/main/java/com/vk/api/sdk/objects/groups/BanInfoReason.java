@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Ban reason
  */
-public enum BanInfoReason implements EnumParam {
+public enum BanInfoReason implements EnumParam<Integer> {
     @SerializedName("0")
     OTHER(0),
 
@@ -29,8 +29,8 @@ public enum BanInfoReason implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

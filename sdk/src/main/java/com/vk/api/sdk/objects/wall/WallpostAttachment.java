@@ -19,6 +19,7 @@ import com.vk.api.sdk.objects.photos.PhotoAlbum;
 import com.vk.api.sdk.objects.polls.Poll;
 import com.vk.api.sdk.objects.video.VideoAlbumFull;
 import com.vk.api.sdk.objects.video.VideoFull;
+
 import java.util.Objects;
 
 /**

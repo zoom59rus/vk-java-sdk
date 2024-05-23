@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Statistic state
  */
-public enum StoryStatsState implements EnumParam {
+public enum StoryStatsState implements EnumParam<String> {
     @SerializedName("on")
     ON("on"),
 

@@ -8,6 +8,7 @@ import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.friends.GetRequestsSort;
 import com.vk.api.sdk.objects.friends.responses.GetRequestsResponse;
 import com.vk.api.sdk.objects.users.Fields;
+
 import java.util.Arrays;
 import java.util.List;
 

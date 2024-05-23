@@ -4,6 +4,7 @@ package com.vk.api.sdk.objects.ads;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
+
 import java.util.Objects;
 
 /**
@@ -48,7 +49,6 @@ public class StoriesOwner implements Validable {
 
     /**
      * Owner id
-     * Entity: owner
      */
     @SerializedName("id")
     private Long id;

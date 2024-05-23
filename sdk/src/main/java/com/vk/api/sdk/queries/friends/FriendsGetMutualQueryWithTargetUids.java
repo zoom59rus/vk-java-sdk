@@ -7,6 +7,7 @@ import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.friends.responses.GetMutualTargetUidsResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -95,6 +96,17 @@ public class FriendsGetMutualQueryWithTargetUids extends AbstractQueryBuilder<Fr
     @ApiParam("offset")
     public FriendsGetMutualQueryWithTargetUids offset(Integer value) {
         return unsafeParam("offset", value);
+    }
+
+    /**
+     * Return mutual friends total count
+     *
+     * @param value value of "need common count" parameter.
+     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
+     */
+    @ApiParam("need_common_count")
+    public FriendsGetMutualQueryWithTargetUids needCommonCount(Boolean value) {
+        return unsafeParam("need_common_count", value);
     }
 
     /**

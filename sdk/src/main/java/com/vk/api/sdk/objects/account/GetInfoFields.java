@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.account;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum GetInfoFields implements EnumParam {
+public enum GetInfoFields implements EnumParam<String> {
     @SerializedName("country")
     COUNTRY("country"),
 

@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Filter to apply: 'all' - all conversations, 'unread' - conversations with unread messages, 'important' - conversations, marked as important (only for community messages), 'unanswered' - conversations, marked as unanswered (only for community messages)
  */
-public enum GetConversationsFilter implements EnumParam {
+public enum GetConversationsFilter implements EnumParam<String> {
     @SerializedName("all")
     ALL("all"),
 

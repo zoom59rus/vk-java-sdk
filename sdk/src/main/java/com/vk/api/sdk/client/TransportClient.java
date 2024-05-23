@@ -1,10 +1,10 @@
 package com.vk.api.sdk.client;
 
+import org.apache.http.Header;
+
 import java.io.File;
 import java.io.IOException;
 import java.util.Map;
-
-import org.apache.http.Header;
 
 public interface TransportClient {
 

@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Peer type
  */
-public enum ConversationPeerType implements EnumParam {
+public enum ConversationPeerType implements EnumParam<String> {
     @SerializedName("chat")
     CHAT("chat"),
 

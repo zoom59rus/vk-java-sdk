@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Object type
  */
-public enum ObjectType implements EnumParam {
+public enum ObjectType implements EnumParam<String> {
     @SerializedName("ad")
     AD("ad"),
 

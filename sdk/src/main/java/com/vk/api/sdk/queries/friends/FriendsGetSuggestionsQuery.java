@@ -8,6 +8,7 @@ import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.base.NameCase;
 import com.vk.api.sdk.objects.friends.responses.GetSuggestionsResponse;
 import com.vk.api.sdk.objects.users.Fields;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -29,7 +30,7 @@ public class FriendsGetSuggestionsQuery extends AbstractQueryBuilder<FriendsGetS
     /**
      * Number of suggestions to return.
      *
-     * @param value value of "count" parameter. Maximum is 500. Minimum is 0. By default 500.
+     * @param value value of "count" parameter. Maximum is 100. Minimum is 0. By default 100.
      * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
      */
     @ApiParam("count")

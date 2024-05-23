@@ -9,6 +9,7 @@ import com.vk.api.sdk.objects.annotations.ApiMethod;
 import com.vk.api.sdk.queries.notifications.NotificationsGetQuery;
 import com.vk.api.sdk.queries.notifications.NotificationsMarkAsViewedQuery;
 import com.vk.api.sdk.queries.notifications.NotificationsSendMessageQuery;
+
 import java.util.List;
 
 /**

@@ -4,6 +4,7 @@ package com.vk.api.sdk.objects.base;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
+
 import java.net.URI;
 import java.util.Objects;
 
@@ -22,12 +23,6 @@ public class Place implements Validable {
      */
     @SerializedName("checkins")
     private Integer checkins;
-
-    /**
-     * City name
-     */
-    @SerializedName("city")
-    private String city;
 
     /**
      * Country name
@@ -92,15 +87,6 @@ public class Place implements Validable {
 
     public Place setCheckins(Integer checkins) {
         this.checkins = checkins;
-        return this;
-    }
-
-    public String getCity() {
-        return city;
-    }
-
-    public Place setCity(String city) {
-        this.city = city;
         return this;
     }
 
@@ -178,7 +164,7 @@ public class Place implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(country, address, city, created, latitude, icon, id, title, type, checkins, longitude);
+        return Objects.hash(country, address, created, latitude, icon, id, title, type, checkins, longitude);
     }
 
     @Override
@@ -188,7 +174,6 @@ public class Place implements Validable {
         Place place = (Place) o;
         return Objects.equals(country, place.country) &&
                 Objects.equals(address, place.address) &&
-                Objects.equals(city, place.city) &&
                 Objects.equals(created, place.created) &&
                 Objects.equals(latitude, place.latitude) &&
                 Objects.equals(icon, place.icon) &&
@@ -209,7 +194,6 @@ public class Place implements Validable {
         final StringBuilder sb = new StringBuilder("Place{");
         sb.append("country='").append(country).append("'");
         sb.append(", address='").append(address).append("'");
-        sb.append(", city='").append(city).append("'");
         sb.append(", created=").append(created);
         sb.append(", latitude=").append(latitude);
         sb.append(", icon=").append(icon);

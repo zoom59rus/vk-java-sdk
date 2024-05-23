@@ -4,6 +4,7 @@ package com.vk.api.sdk.objects.stats;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
+
 import java.util.Objects;
 
 /**
@@ -20,10 +21,10 @@ public class Period implements Validable {
     private Integer periodTo;
 
     @SerializedName("reach")
-    private ReachOneOf reach;
+    private Reach reach;
 
     @SerializedName("visitors")
-    private VisitorsOneOf visitors;
+    private Views visitors;
 
     public Activity getActivity() {
         return activity;
@@ -52,20 +53,20 @@ public class Period implements Validable {
         return this;
     }
 
-    public ReachOneOf getReach() {
+    public Reach getReach() {
         return reach;
     }
 
-    public Period setReach(ReachOneOf reach) {
+    public Period setReach(Reach reach) {
         this.reach = reach;
         return this;
     }
 
-    public VisitorsOneOf getVisitors() {
+    public Views getVisitors() {
         return visitors;
     }
 
-    public Period setVisitors(VisitorsOneOf visitors) {
+    public Period setVisitors(Views visitors) {
         this.visitors = visitors;
         return this;
     }

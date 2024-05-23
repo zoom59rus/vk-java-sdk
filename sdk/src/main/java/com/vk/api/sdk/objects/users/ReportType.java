@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Type of complaint: 'porn' - pornography, 'spam' - spamming, 'insult' - abusive behavior, 'advertisement' - disruptive advertisements
  */
-public enum ReportType implements EnumParam {
+public enum ReportType implements EnumParam<String> {
     @SerializedName("advertisement")
     ADVERTISEMENT("advertisement"),
 

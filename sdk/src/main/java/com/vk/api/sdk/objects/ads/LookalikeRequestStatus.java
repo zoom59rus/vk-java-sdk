@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Lookalike request status
  */
-public enum LookalikeRequestStatus implements EnumParam {
+public enum LookalikeRequestStatus implements EnumParam<String> {
     @SerializedName("search_in_progress")
     SEARCH_IN_PROGRESS("search_in_progress"),
 

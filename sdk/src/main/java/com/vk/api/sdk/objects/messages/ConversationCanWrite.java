@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
@@ -17,6 +18,9 @@ public class ConversationCanWrite implements Validable {
 
     @SerializedName("reason")
     private Integer reason;
+
+    @SerializedName("until")
+    private Integer until;
 
     public Boolean getAllowed() {
         return allowed;
@@ -36,9 +40,18 @@ public class ConversationCanWrite implements Validable {
         return this;
     }
 
+    public Integer getUntil() {
+        return until;
+    }
+
+    public ConversationCanWrite setUntil(Integer until) {
+        this.until = until;
+        return this;
+    }
+
     @Override
     public int hashCode() {
-        return Objects.hash(reason, allowed);
+        return Objects.hash(reason, allowed, until);
     }
 
     @Override
@@ -47,7 +60,8 @@ public class ConversationCanWrite implements Validable {
         if (o == null || getClass() != o.getClass()) return false;
         ConversationCanWrite conversationCanWrite = (ConversationCanWrite) o;
         return Objects.equals(reason, conversationCanWrite.reason) &&
-                Objects.equals(allowed, conversationCanWrite.allowed);
+                Objects.equals(allowed, conversationCanWrite.allowed) &&
+                Objects.equals(until, conversationCanWrite.until);
     }
 
     @Override
@@ -60,6 +74,7 @@ public class ConversationCanWrite implements Validable {
         final StringBuilder sb = new StringBuilder("ConversationCanWrite{");
         sb.append("reason=").append(reason);
         sb.append(", allowed=").append(allowed);
+        sb.append(", until=").append(until);
         sb.append('}');
         return sb.toString();
     }

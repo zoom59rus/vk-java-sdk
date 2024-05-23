@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Declares state if market is enabled in group.
  */
-public enum MarketState implements EnumParam {
+public enum MarketState implements EnumParam<String> {
     @SerializedName("none")
     NONE("none"),
 

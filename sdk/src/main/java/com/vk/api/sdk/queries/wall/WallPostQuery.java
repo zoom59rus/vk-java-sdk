@@ -5,8 +5,8 @@ import com.vk.api.sdk.client.AbstractQueryBuilder;
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
-import com.vk.api.sdk.objects.wall.PostTopicId;
 import com.vk.api.sdk.objects.wall.responses.PostResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -170,6 +170,28 @@ public class WallPostQuery extends AbstractQueryBuilder<WallPostQuery, PostRespo
     }
 
     /**
+     * Set link title
+     *
+     * @param value value of "link title" parameter.
+     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
+     */
+    @ApiParam("link_title")
+    public WallPostQuery linkTitle(String value) {
+        return unsafeParam("link_title", value);
+    }
+
+    /**
+     * Set link photo id
+     *
+     * @param value value of "link photo id" parameter.
+     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
+     */
+    @ApiParam("link_photo_id")
+    public WallPostQuery linkPhotoId(String value) {
+        return unsafeParam("link_photo_id", value);
+    }
+
+    /**
      * Set close comments
      *
      * @param value value of "close comments" parameter.
@@ -214,17 +236,6 @@ public class WallPostQuery extends AbstractQueryBuilder<WallPostQuery, PostRespo
     }
 
     /**
-     * Topic ID. Allowed values can be obtained from newsfeed.getPostTopics method
-     *
-     * @param value value of "topic id" parameter. Minimum is 0.
-     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
-     */
-    @ApiParam("topic_id")
-    public WallPostQuery topicId(PostTopicId value) {
-        return unsafeParam("topic_id", value);
-    }
-
-    /**
      * attachments
      * (Required if 'message' is not set.) List of objects attached to the post, in the following format: "<owner_id>_<media_id>,<owner_id>_<media_id>", ' - Type of media attachment: 'photo' - photo, 'video' - video, 'audio' - audio, 'doc' - document, 'page' - wiki-page, 'note' - note, 'poll' - poll, 'album' - photo album, '<owner_id>' - ID of the media application owner. '<media_id>' - Media application ID. Example: "photo100172_166443618,photo66748_265827614", May contain a link to an external page to include in the post. Example: "photo66748_265827614,http://habrahabr.ru", "NOTE: If more than one link is being attached, an error will be thrown."
      *
@@ -245,29 +256,6 @@ public class WallPostQuery extends AbstractQueryBuilder<WallPostQuery, PostRespo
     @ApiParam("attachments")
     public WallPostQuery attachments(List<String> value) {
         return unsafeParam("attachments", value);
-    }
-
-    /**
-     * primaryAttachments
-     * Set primary attachments
-     *
-     * @param value value of "primary attachments" parameter.
-     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
-     */
-    @ApiParam("primary_attachments")
-    public WallPostQuery primaryAttachments(String... value) {
-        return unsafeParam("primary_attachments", value);
-    }
-
-    /**
-     * Set primary attachments
-     *
-     * @param value value of "primary attachments" parameter.
-     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
-     */
-    @ApiParam("primary_attachments")
-    public WallPostQuery primaryAttachments(List<String> value) {
-        return unsafeParam("primary_attachments", value);
     }
 
     @Override

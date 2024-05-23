@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Button color
  */
-public enum KeyboardButtonColor implements EnumParam {
+public enum KeyboardButtonColor implements EnumParam<String> {
     @SerializedName("default")
     DEFAULT("default"),
 

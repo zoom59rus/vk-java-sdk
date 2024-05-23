@@ -8,10 +8,11 @@ import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.audio.Audio;
 import com.vk.api.sdk.objects.base.BaseObject;
 import com.vk.api.sdk.objects.base.BoolInt;
-import com.vk.api.sdk.objects.base.Country;
 import com.vk.api.sdk.objects.base.CropPhoto;
 import com.vk.api.sdk.objects.base.OwnerCover;
+import com.vk.api.sdk.objects.users.SubscriptionsItem;
 import com.vk.api.sdk.objects.video.LiveInfo;
+
 import java.net.URI;
 import java.util.List;
 import java.util.Objects;
@@ -19,7 +20,7 @@ import java.util.Objects;
 /**
  * GroupFull object
  */
-public class GroupFull extends ClassifiedsProperties implements Validable {
+public class GroupFull extends MarketProperties implements SubscriptionsItem, Validable {
     /**
      * Type of group, start date of event or category of public page
      */
@@ -137,9 +138,6 @@ public class GroupFull extends ClassifiedsProperties implements Validable {
     @SerializedName("counters")
     private CountersGroup counters;
 
-    @SerializedName("country")
-    private Country country;
-
     @SerializedName("cover")
     private OwnerCover cover;
 
@@ -181,12 +179,6 @@ public class GroupFull extends ClassifiedsProperties implements Validable {
 
     @SerializedName("has_group_channel")
     private Boolean hasGroupChannel;
-
-    /**
-     * Information whether community has installed market app
-     */
-    @SerializedName("has_market_app")
-    private Boolean hasMarketApp;
 
     /**
      * Information whether community has photo
@@ -288,9 +280,6 @@ public class GroupFull extends ClassifiedsProperties implements Validable {
 
     @SerializedName("main_section")
     private GroupFullSection mainSection;
-
-    @SerializedName("market")
-    private MarketInfo market;
 
     /**
      * Current user's member status
@@ -433,14 +422,14 @@ public class GroupFull extends ClassifiedsProperties implements Validable {
     @SerializedName("type")
     private GroupType type;
 
-    @SerializedName("using_vkpay_market_app")
-    private Boolean usingVkpayMarketApp;
-
     /**
      * Information whether community is verified
      */
     @SerializedName("verified")
     private BoolInt verified;
+
+    @SerializedName("video_cover")
+    private OwnerCover videoCover;
 
     @SerializedName("video_live")
     private LiveInfo videoLive;
@@ -663,15 +652,6 @@ public class GroupFull extends ClassifiedsProperties implements Validable {
         return this;
     }
 
-    public Country getCountry() {
-        return country;
-    }
-
-    public GroupFull setCountry(Country country) {
-        this.country = country;
-        return this;
-    }
-
     public OwnerCover getCover() {
         return cover;
     }
@@ -741,15 +721,6 @@ public class GroupFull extends ClassifiedsProperties implements Validable {
 
     public GroupFull setHasGroupChannel(Boolean hasGroupChannel) {
         this.hasGroupChannel = hasGroupChannel;
-        return this;
-    }
-
-    public Boolean getHasMarketApp() {
-        return hasMarketApp;
-    }
-
-    public GroupFull setHasMarketApp(Boolean hasMarketApp) {
-        this.hasMarketApp = hasMarketApp;
         return this;
     }
 
@@ -911,15 +882,6 @@ public class GroupFull extends ClassifiedsProperties implements Validable {
 
     public GroupFull setMainSection(GroupFullSection mainSection) {
         this.mainSection = mainSection;
-        return this;
-    }
-
-    public MarketInfo getMarket() {
-        return market;
-    }
-
-    public GroupFull setMarket(MarketInfo market) {
-        this.market = market;
         return this;
     }
 
@@ -1156,21 +1118,21 @@ public class GroupFull extends ClassifiedsProperties implements Validable {
         return this;
     }
 
-    public Boolean getUsingVkpayMarketApp() {
-        return usingVkpayMarketApp;
-    }
-
-    public GroupFull setUsingVkpayMarketApp(Boolean usingVkpayMarketApp) {
-        this.usingVkpayMarketApp = usingVkpayMarketApp;
-        return this;
-    }
-
     public boolean isVerified() {
         return verified == BoolInt.YES;
     }
 
     public BoolInt getVerified() {
         return verified;
+    }
+
+    public OwnerCover getVideoCover() {
+        return videoCover;
+    }
+
+    public GroupFull setVideoCover(OwnerCover videoCover) {
+        this.videoCover = videoCover;
+        return this;
     }
 
     public LiveInfo getVideoLive() {
@@ -1230,7 +1192,7 @@ public class GroupFull extends ClassifiedsProperties implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(trending, country, canSubscribePosts, addresses, canCreateTopic, invitedBy, adminLevel, banInfo, onlineStatus, videoNotificationsStatus, screenName, isMember, type, deactivated, cover, mainAlbumId, isSubscribed, canUploadVideo, photoMaxOrig, hasUnseenStories, storiesArchiveCount, links, id, membersCount, counters, requestsCount, canSeeAllPosts, canSuggest, isAdmin, canMessage, market, videoLiveCount, canUploadDoc, canSubscribePodcasts, hasPhoto, hasGroupChannel, photo400Orig, name, fixedPost, canCallToCommunity, isHiddenFromFeed, startDate, statusAudio, status, isFavorite, wikiPage, estDate, mainSection, isAdvertiser, activity, city, cropPhoto, isSubscribedPodcasts, photo50, description, memberStatus, photo400, photo200, canSendNotify, videoLiveLevel, publicDateLabel, clipsCount, hasMarketApp, textlivesCount, canPost, photoMaxSize, photoMax, isAdult, isMessagesBlocked, isVideoLiveNotificationsBlocked, videoLive, verified, photo200Orig, secondarySection, canUploadClip, ageLimits, membersCountText, site, photo100, isClosed, finishDate, usingVkpayMarketApp, liveCovers, wall, canUploadStory, contacts);
+        return Objects.hash(trending, canSubscribePosts, addresses, canCreateTopic, invitedBy, adminLevel, banInfo, onlineStatus, videoNotificationsStatus, screenName, isMember, type, deactivated, cover, mainAlbumId, isSubscribed, canUploadVideo, photoMaxOrig, hasUnseenStories, storiesArchiveCount, links, id, membersCount, counters, requestsCount, canSeeAllPosts, canSuggest, isAdmin, canMessage, videoLiveCount, canUploadDoc, canSubscribePodcasts, hasPhoto, hasGroupChannel, photo400Orig, name, fixedPost, canCallToCommunity, isHiddenFromFeed, startDate, statusAudio, status, isFavorite, wikiPage, estDate, mainSection, isAdvertiser, activity, city, cropPhoto, isSubscribedPodcasts, photo50, description, memberStatus, photo400, photo200, canSendNotify, videoLiveLevel, publicDateLabel, clipsCount, textlivesCount, canPost, photoMaxSize, photoMax, isAdult, isMessagesBlocked, isVideoLiveNotificationsBlocked, videoLive, verified, photo200Orig, secondarySection, canUploadClip, ageLimits, membersCountText, site, photo100, isClosed, videoCover, finishDate, liveCovers, wall, canUploadStory, contacts);
     }
 
     @Override
@@ -1241,7 +1203,6 @@ public class GroupFull extends ClassifiedsProperties implements Validable {
         return Objects.equals(canCallToCommunity, groupFull.canCallToCommunity) &&
                 Objects.equals(trending, groupFull.trending) &&
                 Objects.equals(canUploadStory, groupFull.canUploadStory) &&
-                Objects.equals(country, groupFull.country) &&
                 Objects.equals(requestsCount, groupFull.requestsCount) &&
                 Objects.equals(addresses, groupFull.addresses) &&
                 Objects.equals(textlivesCount, groupFull.textlivesCount) &&
@@ -1272,7 +1233,6 @@ public class GroupFull extends ClassifiedsProperties implements Validable {
                 Objects.equals(videoLiveCount, groupFull.videoLiveCount) &&
                 Objects.equals(publicDateLabel, groupFull.publicDateLabel) &&
                 Objects.equals(photoMax, groupFull.photoMax) &&
-                Objects.equals(market, groupFull.market) &&
                 Objects.equals(ageLimits, groupFull.ageLimits) &&
                 Objects.equals(isSubscribedPodcasts, groupFull.isSubscribedPodcasts) &&
                 Objects.equals(name, groupFull.name) &&
@@ -1286,6 +1246,7 @@ public class GroupFull extends ClassifiedsProperties implements Validable {
                 Objects.equals(status, groupFull.status) &&
                 Objects.equals(wikiPage, groupFull.wikiPage) &&
                 Objects.equals(canCreateTopic, groupFull.canCreateTopic) &&
+                Objects.equals(videoCover, groupFull.videoCover) &&
                 Objects.equals(clipsCount, groupFull.clipsCount) &&
                 Objects.equals(fixedPost, groupFull.fixedPost) &&
                 Objects.equals(isFavorite, groupFull.isFavorite) &&
@@ -1306,14 +1267,12 @@ public class GroupFull extends ClassifiedsProperties implements Validable {
                 Objects.equals(isHiddenFromFeed, groupFull.isHiddenFromFeed) &&
                 Objects.equals(canPost, groupFull.canPost) &&
                 Objects.equals(photo200, groupFull.photo200) &&
-                Objects.equals(usingVkpayMarketApp, groupFull.usingVkpayMarketApp) &&
                 Objects.equals(secondarySection, groupFull.secondarySection) &&
                 Objects.equals(photo400, groupFull.photo400) &&
                 Objects.equals(startDate, groupFull.startDate) &&
                 Objects.equals(hasGroupChannel, groupFull.hasGroupChannel) &&
                 Objects.equals(liveCovers, groupFull.liveCovers) &&
                 Objects.equals(isVideoLiveNotificationsBlocked, groupFull.isVideoLiveNotificationsBlocked) &&
-                Objects.equals(hasMarketApp, groupFull.hasMarketApp) &&
                 Objects.equals(onlineStatus, groupFull.onlineStatus) &&
                 Objects.equals(verified, groupFull.verified) &&
                 Objects.equals(videoLiveLevel, groupFull.videoLiveLevel) &&
@@ -1337,7 +1296,6 @@ public class GroupFull extends ClassifiedsProperties implements Validable {
         sb.append("canCallToCommunity=").append(canCallToCommunity);
         sb.append(", trending=").append(trending);
         sb.append(", canUploadStory=").append(canUploadStory);
-        sb.append(", country=").append(country);
         sb.append(", requestsCount=").append(requestsCount);
         sb.append(", addresses=").append(addresses);
         sb.append(", textlivesCount=").append(textlivesCount);
@@ -1368,7 +1326,6 @@ public class GroupFull extends ClassifiedsProperties implements Validable {
         sb.append(", videoLiveCount=").append(videoLiveCount);
         sb.append(", publicDateLabel='").append(publicDateLabel).append("'");
         sb.append(", photoMax=").append(photoMax);
-        sb.append(", market=").append(market);
         sb.append(", ageLimits=").append(ageLimits);
         sb.append(", isSubscribedPodcasts=").append(isSubscribedPodcasts);
         sb.append(", name='").append(name).append("'");
@@ -1382,6 +1339,7 @@ public class GroupFull extends ClassifiedsProperties implements Validable {
         sb.append(", status='").append(status).append("'");
         sb.append(", wikiPage='").append(wikiPage).append("'");
         sb.append(", canCreateTopic=").append(canCreateTopic);
+        sb.append(", videoCover=").append(videoCover);
         sb.append(", clipsCount=").append(clipsCount);
         sb.append(", fixedPost=").append(fixedPost);
         sb.append(", isFavorite=").append(isFavorite);
@@ -1402,14 +1360,12 @@ public class GroupFull extends ClassifiedsProperties implements Validable {
         sb.append(", isHiddenFromFeed=").append(isHiddenFromFeed);
         sb.append(", canPost=").append(canPost);
         sb.append(", photo200=").append(photo200);
-        sb.append(", usingVkpayMarketApp=").append(usingVkpayMarketApp);
         sb.append(", secondarySection=").append(secondarySection);
         sb.append(", photo400=").append(photo400);
         sb.append(", startDate=").append(startDate);
         sb.append(", hasGroupChannel=").append(hasGroupChannel);
         sb.append(", liveCovers=").append(liveCovers);
         sb.append(", isVideoLiveNotificationsBlocked=").append(isVideoLiveNotificationsBlocked);
-        sb.append(", hasMarketApp=").append(hasMarketApp);
         sb.append(", onlineStatus=").append(onlineStatus);
         sb.append(", verified=").append(verified);
         sb.append(", videoLiveLevel=").append(videoLiveLevel);

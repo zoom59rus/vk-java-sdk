@@ -8,6 +8,7 @@ import com.vk.api.sdk.client.actors.GroupActor;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.messages.responses.DeleteFullResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -47,6 +48,17 @@ public class MessagesDeleteQueryWithFull extends AbstractQueryBuilder<MessagesDe
     @ApiParam("spam")
     public MessagesDeleteQueryWithFull spam(Boolean value) {
         return unsafeParam("spam", value);
+    }
+
+    /**
+     * Reason for spam
+     *
+     * @param value value of "reason" parameter. Minimum is 0.
+     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
+     */
+    @ApiParam("reason")
+    public MessagesDeleteQueryWithFull reason(Integer value) {
+        return unsafeParam("reason", value);
     }
 
     /**

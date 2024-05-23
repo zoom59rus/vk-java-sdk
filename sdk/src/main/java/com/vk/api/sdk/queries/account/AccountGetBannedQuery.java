@@ -6,6 +6,8 @@ import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.account.responses.GetBannedResponse;
 import com.vk.api.sdk.objects.annotations.ApiParam;
+import com.vk.api.sdk.objects.base.UserGroupFields;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -44,6 +46,29 @@ public class AccountGetBannedQuery extends AbstractQueryBuilder<AccountGetBanned
     @ApiParam("count")
     public AccountGetBannedQuery count(Integer value) {
         return unsafeParam("count", value);
+    }
+
+    /**
+     * fields
+     * Additional fields of [vk.com/dev/fields|profiles] and [vk.com/dev/fields_groups|communities] to return.
+     *
+     * @param value value of "fields" parameter.
+     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
+     */
+    @ApiParam("fields")
+    public AccountGetBannedQuery fields(UserGroupFields... value) {
+        return unsafeParam("fields", value);
+    }
+
+    /**
+     * Additional fields of [vk.com/dev/fields|profiles] and [vk.com/dev/fields_groups|communities] to return.
+     *
+     * @param value value of "fields" parameter.
+     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
+     */
+    @ApiParam("fields")
+    public AccountGetBannedQuery fields(List<UserGroupFields> value) {
+        return unsafeParam("fields", value);
     }
 
     @Override

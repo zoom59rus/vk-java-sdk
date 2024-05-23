@@ -3,12 +3,12 @@ package com.vk.api.sdk.client;
 import com.google.gson.*;
 import com.google.gson.stream.JsonReader;
 import com.vk.api.sdk.exceptions.*;
+import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.base.Error;
 import org.apache.http.Header;
 import org.apache.http.message.BasicHeader;
-import org.slf4j.LoggerFactory;
 import org.slf4j.Logger;
-import com.vk.api.sdk.objects.Validable;
+import org.slf4j.LoggerFactory;
 
 import java.io.IOException;
 import java.io.StringReader;
@@ -36,11 +36,11 @@ public abstract class ApiRequest<T> {
 
     private Map<String, String> cookies = new HashMap<>();
 
-    public ApiRequest(String url, TransportClient client, Gson gson, int retryAttempts, Type responseClass) {
+    public ApiRequest(String url, TransportClient client, int retryAttempts, Type responseClass) {
         this.client = client;
         this.url = url;
         this.responseClass = responseClass;
-        this.gson = gson;
+        this.gson = new GsonHolder().getGsonBuilder().disableHtmlEscaping().create();
         this.retryAttempts = retryAttempts;
     }
 
@@ -175,14 +175,11 @@ public abstract class ApiRequest<T> {
                 LOG.error("Invalid JSON: " + textResponse, e);
                 throw new ClientException("Can't parse json response");
             }
-
-            ApiException apiException = ExceptionMapper.parseException(error);
+            ApiException exc = ExceptionMapper.parseException(error);
             ApiExtendedException extendedException = new ApiExtendedException(
-                    apiException.getCode(),
+                    error.setErrorText(exc.getDescription()),
                     clientResponse.getStatusCode(),
-                    clientResponse.getHeaders(),
-                    apiException.getDescription(),
-                    apiException.getMessageRaw()
+                    clientResponse.getHeaders()
             );
 
             LOG.error("API error", extendedException);

@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -58,6 +59,9 @@ public class ChatSettings implements Validable {
 
     @SerializedName("pinned_message")
     private PinnedMessage pinnedMessage;
+
+    @SerializedName("pinned_messages_count")
+    private Integer pinnedMessagesCount;
 
     @SerializedName("state")
     @Required
@@ -190,6 +194,15 @@ public class ChatSettings implements Validable {
         return this;
     }
 
+    public Integer getPinnedMessagesCount() {
+        return pinnedMessagesCount;
+    }
+
+    public ChatSettings setPinnedMessagesCount(Integer pinnedMessagesCount) {
+        this.pinnedMessagesCount = pinnedMessagesCount;
+        return this;
+    }
+
     public ChatSettingsState getState() {
         return state;
     }
@@ -219,7 +232,7 @@ public class ChatSettings implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(membersCount, disappearingChatLink, photo, isDisappearing, friendsCount, acl, ownerId, title, pinnedMessage, adminIds, permissions, isGroupChannel, theme, state, activeIds, isService);
+        return Objects.hash(membersCount, disappearingChatLink, photo, isDisappearing, friendsCount, acl, ownerId, title, pinnedMessage, adminIds, permissions, isGroupChannel, theme, state, activeIds, pinnedMessagesCount, isService);
     }
 
     @Override
@@ -232,6 +245,7 @@ public class ChatSettings implements Validable {
                 Objects.equals(activeIds, chatSettings.activeIds) &&
                 Objects.equals(ownerId, chatSettings.ownerId) &&
                 Objects.equals(photo, chatSettings.photo) &&
+                Objects.equals(pinnedMessagesCount, chatSettings.pinnedMessagesCount) &&
                 Objects.equals(acl, chatSettings.acl) &&
                 Objects.equals(title, chatSettings.title) &&
                 Objects.equals(pinnedMessage, chatSettings.pinnedMessage) &&
@@ -258,6 +272,7 @@ public class ChatSettings implements Validable {
         sb.append(", activeIds=").append(activeIds);
         sb.append(", ownerId=").append(ownerId);
         sb.append(", photo=").append(photo);
+        sb.append(", pinnedMessagesCount=").append(pinnedMessagesCount);
         sb.append(", acl=").append(acl);
         sb.append(", title='").append(title).append("'");
         sb.append(", pinnedMessage=").append(pinnedMessage);

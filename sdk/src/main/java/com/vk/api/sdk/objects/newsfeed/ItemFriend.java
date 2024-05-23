@@ -4,12 +4,13 @@ package com.vk.api.sdk.objects.newsfeed;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
+
 import java.util.Objects;
 
 /**
  * ItemFriend object
  */
-public class ItemFriend extends ItemBase implements Validable {
+public class ItemFriend extends ItemBase implements NewsfeedItem, Validable {
     @SerializedName("friends")
     private ItemFriendFriends friends;
 

@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
@@ -12,7 +13,7 @@ import java.util.Objects;
  */
 public class LikesInfo implements Validable {
     /**
-     * Information whether author of the post/reply liked it
+     * Information whether post author liked the reply
      */
     @SerializedName("author_liked")
     private Boolean authorLiked;
@@ -23,6 +24,18 @@ public class LikesInfo implements Validable {
     @SerializedName("can_like")
     @Required
     private BoolInt canLike;
+
+    /**
+     * Whether user can like comment as author
+     */
+    @SerializedName("can_like_as_author")
+    private BoolInt canLikeAsAuthor;
+
+    /**
+     * Whether current owner of the group can like the reply
+     */
+    @SerializedName("can_like_by_group")
+    private BoolInt canLikeByGroup;
 
     /**
      * Information whether current user can repost
@@ -36,6 +49,12 @@ public class LikesInfo implements Validable {
     @SerializedName("count")
     @Required
     private Integer count;
+
+    /**
+     * Information whether group liked the reply
+     */
+    @SerializedName("group_liked")
+    private Boolean groupLiked;
 
     /**
      * Remove repost feature for post
@@ -67,6 +86,22 @@ public class LikesInfo implements Validable {
         return canLike;
     }
 
+    public boolean canLikeAsAuthor() {
+        return canLikeAsAuthor == BoolInt.YES;
+    }
+
+    public BoolInt getCanLikeAsAuthor() {
+        return canLikeAsAuthor;
+    }
+
+    public boolean canLikeByGroup() {
+        return canLikeByGroup == BoolInt.YES;
+    }
+
+    public BoolInt getCanLikeByGroup() {
+        return canLikeByGroup;
+    }
+
     public boolean canPublish() {
         return canPublish == BoolInt.YES;
     }
@@ -81,6 +116,15 @@ public class LikesInfo implements Validable {
 
     public LikesInfo setCount(Integer count) {
         this.count = count;
+        return this;
+    }
+
+    public Boolean getGroupLiked() {
+        return groupLiked;
+    }
+
+    public LikesInfo setGroupLiked(Boolean groupLiked) {
+        this.groupLiked = groupLiked;
         return this;
     }
 
@@ -103,7 +147,7 @@ public class LikesInfo implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(authorLiked, canLike, canPublish, repostDisabled, count, userLikes);
+        return Objects.hash(canLikeAsAuthor, authorLiked, canLike, canPublish, repostDisabled, count, canLikeByGroup, userLikes, groupLiked);
     }
 
     @Override
@@ -111,11 +155,14 @@ public class LikesInfo implements Validable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         LikesInfo likesInfo = (LikesInfo) o;
-        return Objects.equals(userLikes, likesInfo.userLikes) &&
+        return Objects.equals(canLikeAsAuthor, likesInfo.canLikeAsAuthor) &&
+                Objects.equals(userLikes, likesInfo.userLikes) &&
                 Objects.equals(canPublish, likesInfo.canPublish) &&
                 Objects.equals(canLike, likesInfo.canLike) &&
                 Objects.equals(repostDisabled, likesInfo.repostDisabled) &&
+                Objects.equals(canLikeByGroup, likesInfo.canLikeByGroup) &&
                 Objects.equals(count, likesInfo.count) &&
+                Objects.equals(groupLiked, likesInfo.groupLiked) &&
                 Objects.equals(authorLiked, likesInfo.authorLiked);
     }
 
@@ -127,11 +174,14 @@ public class LikesInfo implements Validable {
 
     public String toPrettyString() {
         final StringBuilder sb = new StringBuilder("LikesInfo{");
-        sb.append("userLikes=").append(userLikes);
+        sb.append("canLikeAsAuthor=").append(canLikeAsAuthor);
+        sb.append(", userLikes=").append(userLikes);
         sb.append(", canPublish=").append(canPublish);
         sb.append(", canLike=").append(canLike);
         sb.append(", repostDisabled=").append(repostDisabled);
+        sb.append(", canLikeByGroup=").append(canLikeByGroup);
         sb.append(", count=").append(count);
+        sb.append(", groupLiked=").append(groupLiked);
         sb.append(", authorLiked=").append(authorLiked);
         sb.append('}');
         return sb.toString();

@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Sort order. Available values: 'id_asc', 'id_desc', 'time_asc', 'time_desc'. 'time_asc' and 'time_desc' are availavle only if the method is called by the group's 'moderator'.
  */
-public enum GetMembersSort implements EnumParam {
+public enum GetMembersSort implements EnumParam<String> {
     @SerializedName("id_asc")
     ID_ASC("id_asc"),
 

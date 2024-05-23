@@ -9,6 +9,7 @@ import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.messages.GetHistoryAttachmentsMediaType;
 import com.vk.api.sdk.objects.messages.responses.GetHistoryAttachmentsResponse;
 import com.vk.api.sdk.objects.users.Fields;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -127,6 +128,17 @@ public class MessagesGetHistoryAttachmentsQuery extends AbstractQueryBuilder<Mes
     @ApiParam("max_forwards_level")
     public MessagesGetHistoryAttachmentsQuery maxForwardsLevel(Integer value) {
         return unsafeParam("max_forwards_level", value);
+    }
+
+    /**
+     * Set message video
+     *
+     * @param value value of "message video" parameter. By default false.
+     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
+     */
+    @ApiParam("message_video")
+    public MessagesGetHistoryAttachmentsQuery messageVideo(Boolean value) {
+        return unsafeParam("message_video", value);
     }
 
     /**

@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.stories;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum ClickableStickerStyle implements EnumParam {
+public enum ClickableStickerStyle implements EnumParam<String> {
     @SerializedName("transparent")
     TRANSPARENT("transparent"),
 
@@ -33,7 +33,52 @@ public enum ClickableStickerStyle implements EnumParam {
     LIGHT("light"),
 
     @SerializedName("impressive")
-    IMPRESSIVE("impressive");
+    IMPRESSIVE("impressive"),
+
+    @SerializedName("dark")
+    DARK("dark"),
+
+    @SerializedName("accent_background")
+    ACCENT_BACKGROUND("accent_background"),
+
+    @SerializedName("accent_text")
+    ACCENT_TEXT("accent_text"),
+
+    @SerializedName("dark_unique")
+    DARK_UNIQUE("dark_unique"),
+
+    @SerializedName("light_unique")
+    LIGHT_UNIQUE("light_unique"),
+
+    @SerializedName("light_text")
+    LIGHT_TEXT("light_text"),
+
+    @SerializedName("dark_text")
+    DARK_TEXT("dark_text"),
+
+    @SerializedName("black")
+    BLACK("black"),
+
+    @SerializedName("dark_without_bg")
+    DARK_WITHOUT_BG("dark_without_bg"),
+
+    @SerializedName("light_without_bg")
+    LIGHT_WITHOUT_BG("light_without_bg"),
+
+    @SerializedName("rectangle")
+    RECTANGLE("rectangle"),
+
+    @SerializedName("circle")
+    CIRCLE("circle"),
+
+    @SerializedName("poop")
+    POOP("poop"),
+
+    @SerializedName("heart")
+    HEART("heart"),
+
+    @SerializedName("star")
+    STAR("star");
 
     private final String value;
 

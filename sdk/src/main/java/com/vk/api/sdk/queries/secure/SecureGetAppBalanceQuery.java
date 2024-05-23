@@ -4,6 +4,7 @@ package com.vk.api.sdk.queries.secure;
 import com.vk.api.sdk.client.AbstractSecureQueryBuilder;
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.ServiceActor;
+
 import java.util.Arrays;
 import java.util.List;
 

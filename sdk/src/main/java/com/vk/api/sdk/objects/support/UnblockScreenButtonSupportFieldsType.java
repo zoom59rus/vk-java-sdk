@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.support;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum UnblockScreenButtonSupportFieldsType implements EnumParam {
+public enum UnblockScreenButtonSupportFieldsType implements EnumParam<String> {
     @SerializedName("support_button")
     SUPPORT_BUTTON("support_button");
 

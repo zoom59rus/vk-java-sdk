@@ -5,7 +5,8 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
-import com.vk.api.sdk.objects.groups.BannedItem;
+import com.vk.api.sdk.objects.groups.OwnerXtrBanInfo;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -22,7 +23,7 @@ public class GetBannedResponse implements Validable {
 
     @SerializedName("items")
     @Required
-    private List<BannedItem> items;
+    private List<OwnerXtrBanInfo> items;
 
     public Integer getCount() {
         return count;
@@ -33,11 +34,11 @@ public class GetBannedResponse implements Validable {
         return this;
     }
 
-    public List<BannedItem> getItems() {
+    public List<OwnerXtrBanInfo> getItems() {
         return items;
     }
 
-    public GetBannedResponse setItems(List<BannedItem> items) {
+    public GetBannedResponse setItems(List<OwnerXtrBanInfo> items) {
         this.items = items;
         return this;
     }

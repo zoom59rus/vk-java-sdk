@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.bugtracker;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum GetCompanyMembersFilterRole implements EnumParam {
+public enum GetCompanyMembersFilterRole implements EnumParam<Integer> {
     @SerializedName("0")
     _0(0),
 
@@ -17,8 +17,8 @@ public enum GetCompanyMembersFilterRole implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Returns 1 if suggestion has been declined
  */
-public enum DeleteResponseSuggestionDeleted implements EnumParam {
+public enum DeleteResponseSuggestionDeleted implements EnumParam<Integer> {
     @SerializedName("1")
     OK(1);
 
@@ -17,8 +17,8 @@ public enum DeleteResponseSuggestionDeleted implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

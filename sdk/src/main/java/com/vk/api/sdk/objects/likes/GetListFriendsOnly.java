@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Specifies which users are returned: '1' - to return only the current user's friends, '0' - to return all users (default)
  */
-public enum GetListFriendsOnly implements EnumParam {
+public enum GetListFriendsOnly implements EnumParam<Integer> {
     @SerializedName("0")
     _0(0),
 
@@ -26,8 +26,8 @@ public enum GetListFriendsOnly implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

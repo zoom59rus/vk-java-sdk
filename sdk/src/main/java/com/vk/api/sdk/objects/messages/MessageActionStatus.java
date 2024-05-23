@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Action status
  */
-public enum MessageActionStatus implements EnumParam {
+public enum MessageActionStatus implements EnumParam<String> {
     @SerializedName("chat_photo_update")
     CHAT_PHOTO_UPDATE("chat_photo_update"),
 

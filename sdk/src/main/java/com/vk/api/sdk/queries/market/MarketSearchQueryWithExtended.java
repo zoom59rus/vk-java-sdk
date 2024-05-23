@@ -8,6 +8,7 @@ import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.market.SearchRev;
 import com.vk.api.sdk.objects.market.SearchSort;
 import com.vk.api.sdk.objects.market.responses.SearchExtendedResponse;
+
 import java.util.Arrays;
 import java.util.List;
 

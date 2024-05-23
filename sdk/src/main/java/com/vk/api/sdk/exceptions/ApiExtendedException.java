@@ -1,5 +1,7 @@
 package com.vk.api.sdk.exceptions;
 
+import com.vk.api.sdk.objects.base.Error;
+
 import java.util.Map;
 
 public class ApiExtendedException extends ApiException {
@@ -8,13 +10,11 @@ public class ApiExtendedException extends ApiException {
     private Map<String, String> headers;
 
     public ApiExtendedException(
-            Integer code,
+            Error error,
             Integer statusCode,
-            Map<String, String> headers,
-            String description,
-            String message
+            Map<String, String> headers
     ) {
-        super(code, description, message);
+        super(error);
         this.statusCode = statusCode;
         this.headers = headers;
     }

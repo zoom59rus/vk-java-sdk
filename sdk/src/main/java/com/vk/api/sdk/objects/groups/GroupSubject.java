@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.groups;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum GroupSubject implements EnumParam {
+public enum GroupSubject implements EnumParam<Integer> {
     @SerializedName("1")
     AUTO(1),
 
@@ -137,8 +137,8 @@ public enum GroupSubject implements EnumParam {
         this.value = value;
     }
 
-    public String getValue() {
-        return value.toString();
+    public Integer getValue() {
+        return value;
     }
 
     @Override

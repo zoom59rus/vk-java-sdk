@@ -1,8 +1,9 @@
 package com.vk.api.sdk.actions;
 
-import com.vk.api.sdk.queries.longpoll.GetLongPollEventsQuery;
 import com.vk.api.sdk.client.AbstractAction;
 import com.vk.api.sdk.client.VkApiClient;
+import com.vk.api.sdk.queries.longpoll.GetLongPollEventsQuery;
+
 import java.net.URI;
 
 public class LongPoll extends AbstractAction {

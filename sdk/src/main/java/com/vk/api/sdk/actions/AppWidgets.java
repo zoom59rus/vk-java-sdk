@@ -10,14 +10,8 @@ import com.vk.api.sdk.objects.annotations.ApiMethod;
 import com.vk.api.sdk.objects.appwidgets.GetAppImageUploadServerImageType;
 import com.vk.api.sdk.objects.appwidgets.GetGroupImageUploadServerImageType;
 import com.vk.api.sdk.objects.appwidgets.UpdateType;
-import com.vk.api.sdk.queries.appwidgets.AppWidgetsGetAppImageUploadServerQuery;
-import com.vk.api.sdk.queries.appwidgets.AppWidgetsGetAppImagesQuery;
-import com.vk.api.sdk.queries.appwidgets.AppWidgetsGetGroupImageUploadServerQuery;
-import com.vk.api.sdk.queries.appwidgets.AppWidgetsGetGroupImagesQuery;
-import com.vk.api.sdk.queries.appwidgets.AppWidgetsGetImagesByIdQuery;
-import com.vk.api.sdk.queries.appwidgets.AppWidgetsSaveAppImageQuery;
-import com.vk.api.sdk.queries.appwidgets.AppWidgetsSaveGroupImageQuery;
-import com.vk.api.sdk.queries.appwidgets.AppWidgetsUpdateQuery;
+import com.vk.api.sdk.queries.appwidgets.*;
+
 import java.util.List;
 
 /**

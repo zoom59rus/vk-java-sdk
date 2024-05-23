@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.newsfeed;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum IgnoreItemType implements EnumParam {
+public enum IgnoreItemType implements EnumParam<String> {
     @SerializedName("wall")
     POST_ON_THE_WALL("wall"),
 

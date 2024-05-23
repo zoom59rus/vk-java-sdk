@@ -8,6 +8,7 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.board.GetCommentsSort;
 import com.vk.api.sdk.objects.board.responses.GetCommentsResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,34 +16,6 @@ import java.util.List;
  * Query for Board.getComments method
  */
 public class BoardGetCommentsQuery extends AbstractQueryBuilder<BoardGetCommentsQuery, GetCommentsResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     * @param groupId value of "group id" parameter. Minimum is 1. Entity - owner
-     *
-     * @param topicId value of "topic id" parameter. Minimum is 0.
-     */
-    public BoardGetCommentsQuery(VkApiClient client, UserActor actor, Long groupId,
-            Integer topicId) {
-        super(client, "board.getComments", GetCommentsResponse.class);
-        accessToken(actor.getAccessToken());
-        groupId(groupId);
-        topicId(topicId);
-    }
-
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public BoardGetCommentsQuery(VkApiClient client, UserActor actor) {
-        super(client, "board.getComments", GetCommentsResponse.class);
-        accessToken(actor.getAccessToken());
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -71,6 +44,34 @@ public class BoardGetCommentsQuery extends AbstractQueryBuilder<BoardGetComments
         super(client, "board.getComments", GetCommentsResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     * @param groupId value of "group id" parameter. Minimum is 1. Entity - owner
+     *
+     * @param topicId value of "topic id" parameter. Minimum is 0.
+     */
+    public BoardGetCommentsQuery(VkApiClient client, UserActor actor, Long groupId,
+            Integer topicId) {
+        super(client, "board.getComments", GetCommentsResponse.class);
+        accessToken(actor.getAccessToken());
+        groupId(groupId);
+        topicId(topicId);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public BoardGetCommentsQuery(VkApiClient client, UserActor actor) {
+        super(client, "board.getComments", GetCommentsResponse.class);
+        accessToken(actor.getAccessToken());
     }
 
     /**

@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.callback;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum LikeAddRemoveObjectType implements EnumParam {
+public enum LikeAddRemoveObjectType implements EnumParam<String> {
     @SerializedName("video")
     VIDEO("video"),
 

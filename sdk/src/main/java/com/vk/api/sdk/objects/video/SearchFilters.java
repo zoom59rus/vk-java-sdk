@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.video;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum SearchFilters implements EnumParam {
+public enum SearchFilters implements EnumParam<String> {
     @SerializedName("long")
     LONG("long"),
 
@@ -13,6 +13,9 @@ public enum SearchFilters implements EnumParam {
 
     @SerializedName("vimeo")
     VIMEO("vimeo"),
+
+    @SerializedName("vk")
+    VK("vk"),
 
     @SerializedName("youtube")
     YOUTUBE("youtube");

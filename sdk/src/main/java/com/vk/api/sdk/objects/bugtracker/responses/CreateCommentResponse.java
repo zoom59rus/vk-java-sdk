@@ -7,6 +7,7 @@ import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.bugtracker.BugreportSubscribeState;
 import com.vk.api.sdk.objects.bugtracker.Comment;
+
 import java.util.Objects;
 
 /**

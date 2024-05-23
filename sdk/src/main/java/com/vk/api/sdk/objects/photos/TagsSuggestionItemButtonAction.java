@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.photos;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum TagsSuggestionItemButtonAction implements EnumParam {
+public enum TagsSuggestionItemButtonAction implements EnumParam<String> {
     @SerializedName("confirm")
     CONFIRM("confirm"),
 

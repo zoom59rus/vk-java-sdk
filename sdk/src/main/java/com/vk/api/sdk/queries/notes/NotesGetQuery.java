@@ -7,6 +7,7 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.notes.GetSort;
 import com.vk.api.sdk.objects.notes.responses.GetResponse;
+
 import java.util.Arrays;
 import java.util.List;
 

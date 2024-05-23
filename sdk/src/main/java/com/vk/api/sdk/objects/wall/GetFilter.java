@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Filter to apply: 'owner' - posts by the wall owner, 'others' - posts by someone else, 'all' - posts by the wall owner and others (default), 'postponed' - timed posts (only available for calls with an 'access_token'), 'suggests' - suggested posts on a community wall
  */
-public enum GetFilter implements EnumParam {
+public enum GetFilter implements EnumParam<String> {
     @SerializedName("owner")
     OWNER("owner"),
 

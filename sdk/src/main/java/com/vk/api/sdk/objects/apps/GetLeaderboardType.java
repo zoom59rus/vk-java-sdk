@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Leaderboard type. Possible values: *'level' - by level,, *'points' - by mission points,, *'score' - by score ().
  */
-public enum GetLeaderboardType implements EnumParam {
+public enum GetLeaderboardType implements EnumParam<String> {
     @SerializedName("level")
     LEVEL("level"),
 

@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Action type
  */
-public enum LinkButtonActionType implements EnumParam {
+public enum LinkButtonActionType implements EnumParam<String> {
     @SerializedName("open_url")
     OPEN_URL("open_url"),
 
@@ -27,7 +27,10 @@ public enum LinkButtonActionType implements EnumParam {
     ADD_FRIENDS("add_friends"),
 
     @SerializedName("onboarding")
-    ONBOARDING("onboarding");
+    ONBOARDING("onboarding"),
+
+    @SerializedName("show_filters")
+    SHOW_FILTERS("show_filters");
 
     private final String value;
 

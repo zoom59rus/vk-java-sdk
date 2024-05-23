@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.groups;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum SettingsTwitterStatus implements EnumParam {
+public enum SettingsTwitterStatus implements EnumParam<String> {
     @SerializedName("loading")
     LOADING("loading"),
 

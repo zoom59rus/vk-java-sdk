@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Object type: *'community' - community,, *'post' - community post,, *'application' - VK application,, *'video' - video,, *'site' - external site.
  */
-public enum CheckLinkLinkType implements EnumParam {
+public enum CheckLinkLinkType implements EnumParam<String> {
     @SerializedName("application")
     APPLICATION("application"),
 

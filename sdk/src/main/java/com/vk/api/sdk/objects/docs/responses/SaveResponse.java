@@ -8,6 +8,7 @@ import com.vk.api.sdk.objects.docs.Doc;
 import com.vk.api.sdk.objects.docs.DocAttachmentType;
 import com.vk.api.sdk.objects.messages.AudioMessage;
 import com.vk.api.sdk.objects.messages.Graffiti;
+
 import java.util.Objects;
 
 /**

@@ -9,6 +9,7 @@ import com.vk.api.sdk.objects.base.Likes;
 import com.vk.api.sdk.objects.base.Link;
 import com.vk.api.sdk.objects.base.RepostsInfo;
 import com.vk.api.sdk.objects.photos.Photo;
+
 import java.util.List;
 import java.util.Objects;
 
@@ -42,6 +43,12 @@ public class MarketItemFull extends MarketItem implements Validable {
      */
     @SerializedName("can_edit")
     private Boolean canEdit;
+
+    /**
+     * Can item be restored by current user?
+     */
+    @SerializedName("can_recover")
+    private Boolean canRecover;
 
     /**
      * Information whether current use can repost the item
@@ -159,6 +166,15 @@ public class MarketItemFull extends MarketItem implements Validable {
 
     public MarketItemFull setCanEdit(Boolean canEdit) {
         this.canEdit = canEdit;
+        return this;
+    }
+
+    public Boolean getCanRecover() {
+        return canRecover;
+    }
+
+    public MarketItemFull setCanRecover(Boolean canRecover) {
+        this.canRecover = canRecover;
         return this;
     }
 
@@ -289,7 +305,7 @@ public class MarketItemFull extends MarketItem implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(canRepost, wishlistItemId, cancelInfo, canEdit, rating, viewsCount, ownerInfo, photos, userAgreementInfo, canShowConvertToService, ordersCount, adId, vkPayDiscount, albumsIds, canDelete, canComment, reposts, likes, promotion);
+        return Objects.hash(canRecover, canRepost, wishlistItemId, cancelInfo, canEdit, rating, viewsCount, ownerInfo, photos, userAgreementInfo, canShowConvertToService, ordersCount, adId, vkPayDiscount, albumsIds, canDelete, canComment, reposts, likes, promotion);
     }
 
     @Override
@@ -307,6 +323,7 @@ public class MarketItemFull extends MarketItem implements Validable {
                 Objects.equals(canComment, marketItemFull.canComment) &&
                 Objects.equals(userAgreementInfo, marketItemFull.userAgreementInfo) &&
                 Objects.equals(canDelete, marketItemFull.canDelete) &&
+                Objects.equals(canRecover, marketItemFull.canRecover) &&
                 Objects.equals(wishlistItemId, marketItemFull.wishlistItemId) &&
                 Objects.equals(canShowConvertToService, marketItemFull.canShowConvertToService) &&
                 Objects.equals(viewsCount, marketItemFull.viewsCount) &&
@@ -336,6 +353,7 @@ public class MarketItemFull extends MarketItem implements Validable {
         sb.append(", canComment=").append(canComment);
         sb.append(", userAgreementInfo='").append(userAgreementInfo).append("'");
         sb.append(", canDelete=").append(canDelete);
+        sb.append(", canRecover=").append(canRecover);
         sb.append(", wishlistItemId=").append(wishlistItemId);
         sb.append(", canShowConvertToService=").append(canShowConvertToService);
         sb.append(", viewsCount=").append(viewsCount);

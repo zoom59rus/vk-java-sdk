@@ -3,25 +3,33 @@ package com.vk.api.sdk.objects.callback;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+import com.vk.api.sdk.events.CallbackEvent;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
  * LikeAddRemove object
  */
-public class LikeAddRemove implements Validable {
+public class LikeAddRemove implements Validable, CallbackEvent {
+    /**
+     * Entity: owner
+     */
     @SerializedName("liker_id")
     @Required
-    private Integer likerId;
+    private Long likerId;
 
     @SerializedName("object_id")
     @Required
     private Integer objectId;
 
+    /**
+     * Entity: owner
+     */
     @SerializedName("object_owner_id")
     @Required
-    private Integer objectOwnerId;
+    private Long objectOwnerId;
 
     @SerializedName("object_type")
     @Required
@@ -34,11 +42,11 @@ public class LikeAddRemove implements Validable {
     @SerializedName("thread_reply_id")
     private Integer threadReplyId;
 
-    public Integer getLikerId() {
+    public Long getLikerId() {
         return likerId;
     }
 
-    public LikeAddRemove setLikerId(Integer likerId) {
+    public LikeAddRemove setLikerId(Long likerId) {
         this.likerId = likerId;
         return this;
     }
@@ -52,11 +60,11 @@ public class LikeAddRemove implements Validable {
         return this;
     }
 
-    public Integer getObjectOwnerId() {
+    public Long getObjectOwnerId() {
         return objectOwnerId;
     }
 
-    public LikeAddRemove setObjectOwnerId(Integer objectOwnerId) {
+    public LikeAddRemove setObjectOwnerId(Long objectOwnerId) {
         this.objectOwnerId = objectOwnerId;
         return this;
     }

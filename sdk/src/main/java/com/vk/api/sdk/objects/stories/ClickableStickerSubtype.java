@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.stories;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum ClickableStickerSubtype implements EnumParam {
+public enum ClickableStickerSubtype implements EnumParam<String> {
     @SerializedName("market_item")
     MARKET_ITEM("market_item"),
 

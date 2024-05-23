@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Document type.
  */
-public enum GetMessagesUploadServerType implements EnumParam {
+public enum GetMessagesUploadServerType implements EnumParam<String> {
     @SerializedName("audio_message")
     AUDIO_MESSAGE("audio_message"),
 

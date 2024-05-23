@@ -3,7 +3,9 @@ package com.vk.api.sdk.actions;
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.GroupActor;
 import com.vk.api.sdk.client.actors.UserActor;
-import com.vk.api.sdk.queries.groups.*;
+import com.vk.api.sdk.queries.groups.GroupsGetLongPollServerQuery;
+import com.vk.api.sdk.queries.groups.GroupsGetLongPollSettingsQuery;
+import com.vk.api.sdk.queries.groups.GroupsSetLongPollSettingsQuery;
 
 /**
  * List of Groups methods

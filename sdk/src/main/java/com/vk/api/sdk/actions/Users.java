@@ -9,13 +9,7 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiMethod;
 import com.vk.api.sdk.objects.users.Fields;
 import com.vk.api.sdk.objects.users.ReportType;
-import com.vk.api.sdk.queries.users.UsersGetFollowersQuery;
-import com.vk.api.sdk.queries.users.UsersGetFollowersQueryWithFields;
-import com.vk.api.sdk.queries.users.UsersGetQuery;
-import com.vk.api.sdk.queries.users.UsersGetSubscriptionsQuery;
-import com.vk.api.sdk.queries.users.UsersGetSubscriptionsQueryWithExtended;
-import com.vk.api.sdk.queries.users.UsersReportQuery;
-import com.vk.api.sdk.queries.users.UsersSearchQuery;
+import com.vk.api.sdk.queries.users.*;
 
 /**
  * List of Users methods

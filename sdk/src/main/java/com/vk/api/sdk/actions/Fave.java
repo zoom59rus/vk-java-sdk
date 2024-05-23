@@ -5,30 +5,8 @@ import com.vk.api.sdk.client.AbstractAction;
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiMethod;
-import com.vk.api.sdk.queries.fave.FaveAddArticleQuery;
-import com.vk.api.sdk.queries.fave.FaveAddLinkQuery;
-import com.vk.api.sdk.queries.fave.FaveAddPageQuery;
-import com.vk.api.sdk.queries.fave.FaveAddPostQuery;
-import com.vk.api.sdk.queries.fave.FaveAddProductQuery;
-import com.vk.api.sdk.queries.fave.FaveAddTagQuery;
-import com.vk.api.sdk.queries.fave.FaveAddVideoQuery;
-import com.vk.api.sdk.queries.fave.FaveEditTagQuery;
-import com.vk.api.sdk.queries.fave.FaveGetPagesQuery;
-import com.vk.api.sdk.queries.fave.FaveGetQuery;
-import com.vk.api.sdk.queries.fave.FaveGetQueryWithExtended;
-import com.vk.api.sdk.queries.fave.FaveGetTagsQuery;
-import com.vk.api.sdk.queries.fave.FaveMarkSeenQuery;
-import com.vk.api.sdk.queries.fave.FaveRemoveArticleQuery;
-import com.vk.api.sdk.queries.fave.FaveRemoveLinkQuery;
-import com.vk.api.sdk.queries.fave.FaveRemovePageQuery;
-import com.vk.api.sdk.queries.fave.FaveRemovePostQuery;
-import com.vk.api.sdk.queries.fave.FaveRemoveProductQuery;
-import com.vk.api.sdk.queries.fave.FaveRemoveTagQuery;
-import com.vk.api.sdk.queries.fave.FaveRemoveVideoQuery;
-import com.vk.api.sdk.queries.fave.FaveReorderTagsQuery;
-import com.vk.api.sdk.queries.fave.FaveSetPageTagsQuery;
-import com.vk.api.sdk.queries.fave.FaveSetTagsQuery;
-import com.vk.api.sdk.queries.fave.FaveTrackPageInteractionQuery;
+import com.vk.api.sdk.queries.fave.*;
+
 import java.util.List;
 
 /**

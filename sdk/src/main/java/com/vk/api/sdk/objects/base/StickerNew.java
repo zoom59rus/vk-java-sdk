@@ -4,6 +4,8 @@ package com.vk.api.sdk.objects.base;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
+import com.vk.api.sdk.objects.annotations.Required;
+
 import java.net.URI;
 import java.util.List;
 import java.util.Objects;
@@ -29,6 +31,10 @@ public class StickerNew implements Validable {
 
     @SerializedName("images_with_background")
     private List<Image> imagesWithBackground;
+
+    @SerializedName("inner_type")
+    @Required
+    private StickerNewInnerType innerType;
 
     /**
      * Information whether the sticker is allowed
@@ -84,6 +90,15 @@ public class StickerNew implements Validable {
         return this;
     }
 
+    public StickerNewInnerType getInnerType() {
+        return innerType;
+    }
+
+    public StickerNew setInnerType(StickerNewInnerType innerType) {
+        this.innerType = innerType;
+        return this;
+    }
+
     public Boolean getIsAllowed() {
         return isAllowed;
     }
@@ -113,7 +128,7 @@ public class StickerNew implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(isAllowed, images, animationUrl, productId, animations, imagesWithBackground, stickerId);
+        return Objects.hash(isAllowed, images, animationUrl, productId, animations, innerType, imagesWithBackground, stickerId);
     }
 
     @Override
@@ -124,6 +139,7 @@ public class StickerNew implements Validable {
         return Objects.equals(animationUrl, stickerNew.animationUrl) &&
                 Objects.equals(images, stickerNew.images) &&
                 Objects.equals(stickerId, stickerNew.stickerId) &&
+                Objects.equals(innerType, stickerNew.innerType) &&
                 Objects.equals(animations, stickerNew.animations) &&
                 Objects.equals(productId, stickerNew.productId) &&
                 Objects.equals(isAllowed, stickerNew.isAllowed) &&
@@ -141,6 +157,7 @@ public class StickerNew implements Validable {
         sb.append("animationUrl=").append(animationUrl);
         sb.append(", images=").append(images);
         sb.append(", stickerId=").append(stickerId);
+        sb.append(", innerType='").append(innerType).append("'");
         sb.append(", animations=").append(animations);
         sb.append(", productId=").append(productId);
         sb.append(", isAllowed=").append(isAllowed);

@@ -7,12 +7,12 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Filters to apply: 'likes' - returns information about all users who liked the object (default), 'copies' - returns information only about users who told their friends about the object
  */
-public enum GetListFilter implements EnumParam {
-    @SerializedName("likes")
-    LIKES("likes"),
-
+public enum GetListFilter implements EnumParam<String> {
     @SerializedName("copies")
-    COPIES("copies");
+    COPIES("copies"),
+
+    @SerializedName("likes")
+    LIKES("likes");
 
     private final String value;
 

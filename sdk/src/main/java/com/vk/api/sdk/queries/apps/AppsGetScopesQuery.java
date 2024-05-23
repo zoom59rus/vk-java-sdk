@@ -7,6 +7,7 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.apps.GetScopesType;
 import com.vk.api.sdk.objects.apps.responses.GetScopesResponse;
+
 import java.util.Arrays;
 import java.util.List;
 

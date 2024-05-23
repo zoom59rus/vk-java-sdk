@@ -8,6 +8,7 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.stories.UploadLinkText;
 import com.vk.api.sdk.objects.stories.responses.GetPhotoUploadServerResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -113,7 +114,7 @@ public class StoriesGetPhotoUploadServerQuery extends AbstractQueryBuilder<Stori
      * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
      */
     @ApiParam("user_ids")
-    public StoriesGetPhotoUploadServerQuery userIds(Integer... value) {
+    public StoriesGetPhotoUploadServerQuery userIds(Long... value) {
         return unsafeParam("user_ids", value);
     }
 
@@ -124,7 +125,7 @@ public class StoriesGetPhotoUploadServerQuery extends AbstractQueryBuilder<Stori
      * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
      */
     @ApiParam("user_ids")
-    public StoriesGetPhotoUploadServerQuery userIds(List<Integer> value) {
+    public StoriesGetPhotoUploadServerQuery userIds(List<Long> value) {
         return unsafeParam("user_ids", value);
     }
 

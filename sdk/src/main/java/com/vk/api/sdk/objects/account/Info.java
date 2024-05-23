@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.base.BoolInt;
+
 import java.util.Objects;
 
 /**
@@ -18,12 +19,6 @@ public class Info implements Validable {
     private BoolInt _2faRequired;
 
     /**
-     * Country code
-     */
-    @SerializedName("country")
-    private String country;
-
-    /**
      * Information whether HTTPS-only is enabled
      */
     @SerializedName("https_required")
@@ -33,7 +28,7 @@ public class Info implements Validable {
      * Information whether user has been processed intro
      */
     @SerializedName("intro")
-    private BoolInt intro;
+    private Integer intro;
 
     /**
      * Language ID
@@ -61,15 +56,6 @@ public class Info implements Validable {
         return _2faRequired;
     }
 
-    public String getCountry() {
-        return country;
-    }
-
-    public Info setCountry(String country) {
-        this.country = country;
-        return this;
-    }
-
     public boolean isHttpsRequired() {
         return httpsRequired == BoolInt.YES;
     }
@@ -78,12 +64,13 @@ public class Info implements Validable {
         return httpsRequired;
     }
 
-    public boolean isIntro() {
-        return intro == BoolInt.YES;
+    public Integer getIntro() {
+        return intro;
     }
 
-    public BoolInt getIntro() {
-        return intro;
+    public Info setIntro(Integer intro) {
+        this.intro = intro;
+        return this;
     }
 
     public Integer getLang() {
@@ -113,7 +100,7 @@ public class Info implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(country, intro, lang, ownPostsDefault, noWallReplies, _2faRequired, httpsRequired);
+        return Objects.hash(intro, lang, ownPostsDefault, noWallReplies, _2faRequired, httpsRequired);
     }
 
     @Override
@@ -121,8 +108,7 @@ public class Info implements Validable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         Info info = (Info) o;
-        return Objects.equals(country, info.country) &&
-                Objects.equals(noWallReplies, info.noWallReplies) &&
+        return Objects.equals(noWallReplies, info.noWallReplies) &&
                 Objects.equals(ownPostsDefault, info.ownPostsDefault) &&
                 Objects.equals(intro, info.intro) &&
                 Objects.equals(httpsRequired, info.httpsRequired) &&
@@ -138,8 +124,7 @@ public class Info implements Validable {
 
     public String toPrettyString() {
         final StringBuilder sb = new StringBuilder("Info{");
-        sb.append("country='").append(country).append("'");
-        sb.append(", noWallReplies=").append(noWallReplies);
+        sb.append("noWallReplies=").append(noWallReplies);
         sb.append(", ownPostsDefault=").append(ownPostsDefault);
         sb.append(", intro=").append(intro);
         sb.append(", httpsRequired=").append(httpsRequired);

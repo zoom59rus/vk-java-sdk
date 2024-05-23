@@ -11,6 +11,7 @@ import com.vk.api.sdk.objects.groups.GetMembersFilter;
 import com.vk.api.sdk.objects.groups.GetMembersSort;
 import com.vk.api.sdk.objects.groups.responses.GetMembersFieldsResponse;
 import com.vk.api.sdk.objects.users.Fields;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -44,31 +45,6 @@ public class GroupsGetMembersQueryWithFields extends AbstractQueryBuilder<Groups
     }
 
     /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public GroupsGetMembersQueryWithFields(VkApiClient client, UserActor actor, Fields... fields) {
-        super(client, "groups.getMembers", GetMembersFieldsResponse.class);
-        accessToken(actor.getAccessToken());
-        fields(fields);
-    }
-
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public GroupsGetMembersQueryWithFields(VkApiClient client, UserActor actor,
-            List<Fields> fields) {
-        super(client, "groups.getMembers", GetMembersFieldsResponse.class);
-        accessToken(actor.getAccessToken());
-        fields(fields);
-    }
-
-    /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
      * @param client VK API client
@@ -93,6 +69,31 @@ public class GroupsGetMembersQueryWithFields extends AbstractQueryBuilder<Groups
         super(client, "groups.getMembers", GetMembersFieldsResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+        fields(fields);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public GroupsGetMembersQueryWithFields(VkApiClient client, UserActor actor, Fields... fields) {
+        super(client, "groups.getMembers", GetMembersFieldsResponse.class);
+        accessToken(actor.getAccessToken());
+        fields(fields);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public GroupsGetMembersQueryWithFields(VkApiClient client, UserActor actor,
+            List<Fields> fields) {
+        super(client, "groups.getMembers", GetMembersFieldsResponse.class);
+        accessToken(actor.getAccessToken());
         fields(fields);
     }
 
@@ -133,7 +134,7 @@ public class GroupsGetMembersQueryWithFields extends AbstractQueryBuilder<Groups
     /**
      * Number of community members to return.
      *
-     * @param value value of "count" parameter. Minimum is 0. By default 1000.
+     * @param value value of "count" parameter. Maximum is 1000. Minimum is 0. By default 1000.
      * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
      */
     @ApiParam("count")

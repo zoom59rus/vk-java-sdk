@@ -1,12 +1,13 @@
 package com.vk.api.sdk.events.callback;
 
 import com.google.gson.JsonObject;
-import com.vk.api.sdk.events.EventsHandler;
+import com.vk.api.sdk.client.GsonHolder;
+import com.vk.api.sdk.events.CallbackEvent;
 import com.vk.api.sdk.objects.callback.messages.CallbackMessage;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
-public abstract class CallbackApi extends EventsHandler {
+public abstract class CallbackApi implements CallbackEvent {
 
     private static final Logger LOG = LoggerFactory.getLogger(CallbackApi.class);
 
@@ -23,7 +24,7 @@ public abstract class CallbackApi extends EventsHandler {
     }
 
     @Override
-    protected String confirmation() {
+    public String confirmation() {
         return this.confirmationCode;
     }
 
@@ -38,17 +39,16 @@ public abstract class CallbackApi extends EventsHandler {
     }
 
     public String parse(String json) {
-        return parse(gson.fromJson(json, CallbackMessage.class));
+        return parse(new GsonHolder().getGson().fromJson(json, CallbackMessage.class));
     }
 
     public String parse(JsonObject json) {
-        return parse(gson.fromJson(json, CallbackMessage.class));
+        return parse(new GsonHolder().getGson().fromJson(json, CallbackMessage.class));
     }
 
-    @Override
-    public String parse(CallbackMessage message) {
+    public String parseMessage(CallbackMessage message) {
         if (isSecretKeyValid(message.getSecret()))
-            return super.parse(message);
+            return this.parse(message);
         LOG.error("Secret key check was failed");
         return "failed";
     }

@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * In case user online is not visible, it indicates approximate timeframe of user online
  */
-public enum OnlineInfoStatus implements EnumParam {
+public enum OnlineInfoStatus implements EnumParam<String> {
     @SerializedName("recently")
     RECENTLY("recently"),
 

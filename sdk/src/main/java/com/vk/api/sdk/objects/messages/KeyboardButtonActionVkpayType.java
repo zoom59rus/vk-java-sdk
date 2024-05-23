@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.messages;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum KeyboardButtonActionVkpayType implements EnumParam {
+public enum KeyboardButtonActionVkpayType implements EnumParam<String> {
     @SerializedName("vkpay")
     VKPAY("vkpay");
 

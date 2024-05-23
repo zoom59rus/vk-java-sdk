@@ -9,6 +9,7 @@ import com.vk.api.sdk.objects.account.SaveProfileInfoRelation;
 import com.vk.api.sdk.objects.account.SaveProfileInfoSex;
 import com.vk.api.sdk.objects.account.responses.SaveProfileInfoResponse;
 import com.vk.api.sdk.objects.annotations.ApiParam;
+
 import java.util.Arrays;
 import java.util.List;
 

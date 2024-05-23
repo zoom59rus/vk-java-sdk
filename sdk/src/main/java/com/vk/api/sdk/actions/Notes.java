@@ -5,16 +5,7 @@ import com.vk.api.sdk.client.AbstractAction;
 import com.vk.api.sdk.client.VkApiClient;
 import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiMethod;
-import com.vk.api.sdk.queries.notes.NotesAddQuery;
-import com.vk.api.sdk.queries.notes.NotesCreateCommentQuery;
-import com.vk.api.sdk.queries.notes.NotesDeleteCommentQuery;
-import com.vk.api.sdk.queries.notes.NotesDeleteQuery;
-import com.vk.api.sdk.queries.notes.NotesEditCommentQuery;
-import com.vk.api.sdk.queries.notes.NotesEditQuery;
-import com.vk.api.sdk.queries.notes.NotesGetByIdQuery;
-import com.vk.api.sdk.queries.notes.NotesGetCommentsQuery;
-import com.vk.api.sdk.queries.notes.NotesGetQuery;
-import com.vk.api.sdk.queries.notes.NotesRestoreCommentQuery;
+import com.vk.api.sdk.queries.notes.*;
 
 /**
  * List of Notes methods

@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.base.MessageError;
+
 import java.util.Objects;
 
 /**
@@ -13,6 +14,7 @@ import java.util.Objects;
  */
 public class SendUserIdsResponseItem implements Validable {
     @SerializedName("conversation_message_id")
+    @Required
     private Integer conversationMessageId;
 
     @SerializedName("error")

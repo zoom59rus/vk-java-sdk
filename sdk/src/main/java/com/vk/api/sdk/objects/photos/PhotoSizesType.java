@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Size type
  */
-public enum PhotoSizesType implements EnumParam {
+public enum PhotoSizesType implements EnumParam<String> {
     @SerializedName("t")
     T("t"),
 

@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Describe the action
  */
-public enum TagBindAct implements EnumParam {
+public enum TagBindAct implements EnumParam<String> {
     @SerializedName("bind")
     BIND("bind"),
 

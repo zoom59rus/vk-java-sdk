@@ -6,14 +6,27 @@ import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.base.Image;
 import com.vk.api.sdk.objects.base.PropertyExists;
+
 import java.util.Objects;
 
 /**
  * VideoImage object
  */
 public class VideoImage extends Image implements Validable {
+    @SerializedName("size")
+    private String size;
+
     @SerializedName("with_padding")
     private PropertyExists withPadding;
+
+    public String getSize() {
+        return size;
+    }
+
+    public VideoImage setSize(String size) {
+        this.size = size;
+        return this;
+    }
 
     public boolean isWithPadding() {
         return withPadding == PropertyExists.PROPERTY_EXISTS;
@@ -21,7 +34,7 @@ public class VideoImage extends Image implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(withPadding);
+        return Objects.hash(size, withPadding);
     }
 
     @Override
@@ -29,7 +42,8 @@ public class VideoImage extends Image implements Validable {
         if (this == o) return true;
         if (o == null || getClass() != o.getClass()) return false;
         VideoImage videoImage = (VideoImage) o;
-        return Objects.equals(withPadding, videoImage.withPadding);
+        return Objects.equals(size, videoImage.size) &&
+                Objects.equals(withPadding, videoImage.withPadding);
     }
 
     @Override
@@ -40,7 +54,8 @@ public class VideoImage extends Image implements Validable {
 
     public String toPrettyString() {
         final StringBuilder sb = new StringBuilder("VideoImage{");
-        sb.append("withPadding=").append(withPadding);
+        sb.append("size='").append(size).append("'");
+        sb.append(", withPadding=").append(withPadding);
         sb.append('}');
         return sb.toString();
     }

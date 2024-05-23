@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.support;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum UnblockScreenButtonSubmitFieldsType implements EnumParam {
+public enum UnblockScreenButtonSubmitFieldsType implements EnumParam<String> {
     @SerializedName("button_submit")
     BUTTON_SUBMIT("button_submit");
 

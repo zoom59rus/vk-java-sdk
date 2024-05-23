@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.base.BoolInt;
+
 import java.util.Objects;
 
 /**
@@ -212,6 +213,14 @@ public class LongPollEvents implements Validable {
     @SerializedName("wall_repost")
     @Required
     private BoolInt wallRepost;
+
+    @SerializedName("wall_schedule_post_delete")
+    @Required
+    private BoolInt wallSchedulePostDelete;
+
+    @SerializedName("wall_schedule_post_new")
+    @Required
+    private BoolInt wallSchedulePostNew;
 
     public boolean isAudioNew() {
         return audioNew == BoolInt.YES;
@@ -621,9 +630,25 @@ public class LongPollEvents implements Validable {
         return wallRepost;
     }
 
+    public boolean isWallSchedulePostDelete() {
+        return wallSchedulePostDelete == BoolInt.YES;
+    }
+
+    public BoolInt getWallSchedulePostDelete() {
+        return wallSchedulePostDelete;
+    }
+
+    public boolean isWallSchedulePostNew() {
+        return wallSchedulePostNew == BoolInt.YES;
+    }
+
+    public BoolInt getWallSchedulePostNew() {
+        return wallSchedulePostNew;
+    }
+
     @Override
     public int hashCode() {
-        return Objects.hash(pollVoteNew, wallReplyDelete, videoNew, donutMoneyWithdraw, photoNew, donutMoneyWithdrawError, donutSubscriptionPriceChanged, groupOfficersEdit, wallReplyNew, photoCommentRestore, messageNew, donutSubscriptionCancelled, userBlock, donutSubscriptionProlonged, messageReactionEvent, groupLeave, wallReplyEdit, messageAllow, leadFormsNew, marketOrderEdit, messageReply, photoCommentEdit, audioNew, messageTypingState, messageRead, groupChangeSettings, boardPostNew, userUnblock, wallPostNew, wallReplyRestore, videoCommentEdit, boardPostDelete, marketCommentEdit, photoCommentDelete, marketCommentRestore, videoCommentDelete, marketCommentDelete, messageDeny, groupJoin, messageEdit, videoCommentRestore, wallRepost, marketOrderNew, donutSubscriptionCreate, photoCommentNew, boardPostEdit, videoCommentNew, boardPostRestore, marketCommentNew, groupChangePhoto, donutSubscriptionExpired);
+        return Objects.hash(pollVoteNew, wallReplyDelete, videoNew, donutMoneyWithdraw, photoNew, donutMoneyWithdrawError, donutSubscriptionPriceChanged, groupOfficersEdit, wallReplyNew, photoCommentRestore, messageNew, donutSubscriptionCancelled, userBlock, donutSubscriptionProlonged, messageReactionEvent, groupLeave, wallReplyEdit, messageAllow, leadFormsNew, marketOrderEdit, messageReply, photoCommentEdit, audioNew, messageTypingState, messageRead, groupChangeSettings, boardPostNew, userUnblock, wallPostNew, wallReplyRestore, videoCommentEdit, boardPostDelete, marketCommentEdit, photoCommentDelete, marketCommentRestore, videoCommentDelete, marketCommentDelete, messageDeny, groupJoin, messageEdit, videoCommentRestore, wallRepost, marketOrderNew, wallSchedulePostDelete, donutSubscriptionCreate, photoCommentNew, boardPostEdit, videoCommentNew, boardPostRestore, wallSchedulePostNew, marketCommentNew, groupChangePhoto, donutSubscriptionExpired);
     }
 
     @Override
@@ -655,6 +680,7 @@ public class LongPollEvents implements Validable {
                 Objects.equals(marketCommentRestore, longPollEvents.marketCommentRestore) &&
                 Objects.equals(donutMoneyWithdraw, longPollEvents.donutMoneyWithdraw) &&
                 Objects.equals(boardPostNew, longPollEvents.boardPostNew) &&
+                Objects.equals(wallSchedulePostDelete, longPollEvents.wallSchedulePostDelete) &&
                 Objects.equals(donutSubscriptionPriceChanged, longPollEvents.donutSubscriptionPriceChanged) &&
                 Objects.equals(boardPostRestore, longPollEvents.boardPostRestore) &&
                 Objects.equals(videoCommentDelete, longPollEvents.videoCommentDelete) &&
@@ -667,6 +693,7 @@ public class LongPollEvents implements Validable {
                 Objects.equals(pollVoteNew, longPollEvents.pollVoteNew) &&
                 Objects.equals(userUnblock, longPollEvents.userUnblock) &&
                 Objects.equals(wallRepost, longPollEvents.wallRepost) &&
+                Objects.equals(wallSchedulePostNew, longPollEvents.wallSchedulePostNew) &&
                 Objects.equals(groupChangePhoto, longPollEvents.groupChangePhoto) &&
                 Objects.equals(wallReplyDelete, longPollEvents.wallReplyDelete) &&
                 Objects.equals(wallReplyRestore, longPollEvents.wallReplyRestore) &&
@@ -716,6 +743,7 @@ public class LongPollEvents implements Validable {
         sb.append(", marketCommentRestore=").append(marketCommentRestore);
         sb.append(", donutMoneyWithdraw=").append(donutMoneyWithdraw);
         sb.append(", boardPostNew=").append(boardPostNew);
+        sb.append(", wallSchedulePostDelete=").append(wallSchedulePostDelete);
         sb.append(", donutSubscriptionPriceChanged=").append(donutSubscriptionPriceChanged);
         sb.append(", boardPostRestore=").append(boardPostRestore);
         sb.append(", videoCommentDelete=").append(videoCommentDelete);
@@ -728,6 +756,7 @@ public class LongPollEvents implements Validable {
         sb.append(", pollVoteNew=").append(pollVoteNew);
         sb.append(", userUnblock=").append(userUnblock);
         sb.append(", wallRepost=").append(wallRepost);
+        sb.append(", wallSchedulePostNew=").append(wallSchedulePostNew);
         sb.append(", groupChangePhoto=").append(groupChangePhoto);
         sb.append(", wallReplyDelete=").append(wallReplyDelete);
         sb.append(", wallReplyRestore=").append(wallReplyRestore);

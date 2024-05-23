@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * Status of information about timetable
  */
-public enum AddressWorkInfoStatus implements EnumParam {
+public enum AddressWorkInfoStatus implements EnumParam<String> {
     @SerializedName("no_information")
     NO_INFORMATION("no_information"),
 

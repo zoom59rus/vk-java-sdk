@@ -4,6 +4,7 @@ package com.vk.api.sdk.objects.users;
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
+
 import java.util.Objects;
 
 /**
@@ -27,12 +28,6 @@ public class Career implements Validable {
      */
     @SerializedName("company")
     private String company;
-
-    /**
-     * Country ID
-     */
-    @SerializedName("country_id")
-    private Integer countryId;
 
     /**
      * From year
@@ -92,15 +87,6 @@ public class Career implements Validable {
         return this;
     }
 
-    public Integer getCountryId() {
-        return countryId;
-    }
-
-    public Career setCountryId(Integer countryId) {
-        this.countryId = countryId;
-        return this;
-    }
-
     public Integer getFrom() {
         return from;
     }
@@ -148,7 +134,7 @@ public class Career implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(cityName, groupId, company, from, until, id, position, cityId, countryId);
+        return Objects.hash(cityName, groupId, company, from, until, id, position, cityId);
     }
 
     @Override
@@ -163,7 +149,6 @@ public class Career implements Validable {
                 Objects.equals(until, career.until) &&
                 Objects.equals(id, career.id) &&
                 Objects.equals(position, career.position) &&
-                Objects.equals(countryId, career.countryId) &&
                 Objects.equals(cityId, career.cityId);
     }
 
@@ -182,7 +167,6 @@ public class Career implements Validable {
         sb.append(", until=").append(until);
         sb.append(", id=").append(id);
         sb.append(", position='").append(position).append("'");
-        sb.append(", countryId=").append(countryId);
         sb.append(", cityId=").append(cityId);
         sb.append('}');
         return sb.toString();

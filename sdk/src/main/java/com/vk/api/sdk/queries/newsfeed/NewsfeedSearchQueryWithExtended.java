@@ -8,6 +8,7 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.base.UserGroupFields;
 import com.vk.api.sdk.objects.newsfeed.responses.SearchExtendedResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,18 +16,6 @@ import java.util.List;
  * Query for Newsfeed.search method
  */
 public class NewsfeedSearchQueryWithExtended extends AbstractQueryBuilder<NewsfeedSearchQueryWithExtended, SearchExtendedResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     */
-    public NewsfeedSearchQueryWithExtended(VkApiClient client, UserActor actor) {
-        super(client, "newsfeed.search", SearchExtendedResponse.class);
-        accessToken(actor.getAccessToken());
-        extended(true);
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -37,6 +26,18 @@ public class NewsfeedSearchQueryWithExtended extends AbstractQueryBuilder<Newsfe
         super(client, "newsfeed.search", SearchExtendedResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+        extended(true);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     */
+    public NewsfeedSearchQueryWithExtended(VkApiClient client, UserActor actor) {
+        super(client, "newsfeed.search", SearchExtendedResponse.class);
+        accessToken(actor.getAccessToken());
         extended(true);
     }
 

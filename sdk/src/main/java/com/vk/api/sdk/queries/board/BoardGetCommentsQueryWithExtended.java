@@ -8,6 +8,7 @@ import com.vk.api.sdk.client.actors.UserActor;
 import com.vk.api.sdk.objects.annotations.ApiParam;
 import com.vk.api.sdk.objects.board.GetCommentsSort;
 import com.vk.api.sdk.objects.board.responses.GetCommentsExtendedResponse;
+
 import java.util.Arrays;
 import java.util.List;
 
@@ -15,24 +16,6 @@ import java.util.List;
  * Query for Board.getComments method
  */
 public class BoardGetCommentsQueryWithExtended extends AbstractQueryBuilder<BoardGetCommentsQueryWithExtended, GetCommentsExtendedResponse> {
-    /**
-     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
-     *
-     * @param client VK API client
-     * @param actor actor with access token
-     * @param groupId value of "group id" parameter. Minimum is 1. Entity - owner
-     *
-     * @param topicId value of "topic id" parameter. Minimum is 0.
-     */
-    public BoardGetCommentsQueryWithExtended(VkApiClient client, UserActor actor, Long groupId,
-            Integer topicId) {
-        super(client, "board.getComments", GetCommentsExtendedResponse.class);
-        accessToken(actor.getAccessToken());
-        groupId(groupId);
-        topicId(topicId);
-        extended(true);
-    }
-
     /**
      * Creates a AbstractQueryBuilder instance that can be used to build service api request with various parameters
      *
@@ -47,6 +30,24 @@ public class BoardGetCommentsQueryWithExtended extends AbstractQueryBuilder<Boar
         super(client, "board.getComments", GetCommentsExtendedResponse.class);
         accessToken(actor.getAccessToken());
         clientSecret(actor.getClientSecret());
+        groupId(groupId);
+        topicId(topicId);
+        extended(true);
+    }
+
+    /**
+     * Creates a AbstractQueryBuilder instance that can be used to build user api request with various parameters
+     *
+     * @param client VK API client
+     * @param actor actor with access token
+     * @param groupId value of "group id" parameter. Minimum is 1. Entity - owner
+     *
+     * @param topicId value of "topic id" parameter. Minimum is 0.
+     */
+    public BoardGetCommentsQueryWithExtended(VkApiClient client, UserActor actor, Long groupId,
+            Integer topicId) {
+        super(client, "board.getComments", GetCommentsExtendedResponse.class);
+        accessToken(actor.getAccessToken());
         groupId(groupId);
         topicId(topicId);
         extended(true);

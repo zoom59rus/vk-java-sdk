@@ -7,7 +7,7 @@ import com.vk.api.sdk.queries.EnumParam;
 /**
  * platform. Possible values: *'ios' - iOS,, *'android' - Android,, *'winphone' - Windows Phone,, *'web' - приложения на vk.com. By default: 'web'.
  */
-public enum GetPlatform implements EnumParam {
+public enum GetPlatform implements EnumParam<String> {
     @SerializedName("android")
     ANDROID("android"),
 

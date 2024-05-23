@@ -3,17 +3,22 @@ package com.vk.api.sdk.objects.callback;
 
 import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
+import com.vk.api.sdk.events.CallbackEvent;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
  * GroupOfficersEdit object
  */
-public class GroupOfficersEdit implements Validable {
+public class GroupOfficersEdit implements Validable, CallbackEvent {
+    /**
+     * Entity: owner
+     */
     @SerializedName("admin_id")
     @Required
-    private Integer adminId;
+    private Long adminId;
 
     @SerializedName("level_new")
     @Required
@@ -30,11 +35,11 @@ public class GroupOfficersEdit implements Validable {
     @Required
     private Long userId;
 
-    public Integer getAdminId() {
+    public Long getAdminId() {
         return adminId;
     }
 
-    public GroupOfficersEdit setAdminId(Integer adminId) {
+    public GroupOfficersEdit setAdminId(Long adminId) {
         this.adminId = adminId;
         return this;
     }

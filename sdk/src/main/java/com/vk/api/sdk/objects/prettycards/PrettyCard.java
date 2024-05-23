@@ -6,13 +6,14 @@ import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.base.Image;
+
 import java.util.List;
 import java.util.Objects;
 
 /**
  * PrettyCard object
  */
-public class PrettyCard implements Validable {
+public class PrettyCard implements PrettyCardOrError, Validable {
     /**
      * Button key
      */
@@ -34,6 +35,10 @@ public class PrettyCard implements Validable {
 
     @SerializedName("images")
     private List<Image> images;
+
+    @SerializedName("inner_type")
+    @Required
+    private PrettyCardInnerType innerType;
 
     /**
      * Link URL
@@ -104,6 +109,15 @@ public class PrettyCard implements Validable {
         return this;
     }
 
+    public PrettyCardInnerType getInnerType() {
+        return innerType;
+    }
+
+    public PrettyCard setInnerType(PrettyCardInnerType innerType) {
+        this.innerType = innerType;
+        return this;
+    }
+
     public String getLinkUrl() {
         return linkUrl;
     }
@@ -151,7 +165,7 @@ public class PrettyCard implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(button, buttonText, images, price, priceOld, cardId, linkUrl, photo, title);
+        return Objects.hash(button, buttonText, images, price, priceOld, cardId, innerType, linkUrl, photo, title);
     }
 
     @Override
@@ -162,6 +176,7 @@ public class PrettyCard implements Validable {
         return Objects.equals(button, prettyCard.button) &&
                 Objects.equals(priceOld, prettyCard.priceOld) &&
                 Objects.equals(images, prettyCard.images) &&
+                Objects.equals(innerType, prettyCard.innerType) &&
                 Objects.equals(price, prettyCard.price) &&
                 Objects.equals(linkUrl, prettyCard.linkUrl) &&
                 Objects.equals(photo, prettyCard.photo) &&
@@ -181,6 +196,7 @@ public class PrettyCard implements Validable {
         sb.append("button=").append(button);
         sb.append(", priceOld='").append(priceOld).append("'");
         sb.append(", images=").append(images);
+        sb.append(", innerType='").append(innerType).append("'");
         sb.append(", price='").append(price).append("'");
         sb.append(", linkUrl='").append(linkUrl).append("'");
         sb.append(", photo='").append(photo).append("'");

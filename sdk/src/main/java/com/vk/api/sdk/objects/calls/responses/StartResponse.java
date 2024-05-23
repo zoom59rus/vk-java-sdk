@@ -5,6 +5,7 @@ import com.google.gson.Gson;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
+
 import java.util.Objects;
 
 /**
@@ -35,6 +36,13 @@ public class StartResponse implements Validable {
     @SerializedName("join_link")
     @Required
     private String joinLink;
+
+    /**
+     * OK join link
+     */
+    @SerializedName("ok_join_link")
+    @Required
+    private String okJoinLink;
 
     public String getBroadcastOvId() {
         return broadcastOvId;
@@ -72,9 +80,18 @@ public class StartResponse implements Validable {
         return this;
     }
 
+    public String getOkJoinLink() {
+        return okJoinLink;
+    }
+
+    public StartResponse setOkJoinLink(String okJoinLink) {
+        this.okJoinLink = okJoinLink;
+        return this;
+    }
+
     @Override
     public int hashCode() {
-        return Objects.hash(broadcastOvId, callId, broadcastVideoId, joinLink);
+        return Objects.hash(broadcastOvId, callId, broadcastVideoId, joinLink, okJoinLink);
     }
 
     @Override
@@ -85,6 +102,7 @@ public class StartResponse implements Validable {
         return Objects.equals(broadcastOvId, startResponse.broadcastOvId) &&
                 Objects.equals(joinLink, startResponse.joinLink) &&
                 Objects.equals(broadcastVideoId, startResponse.broadcastVideoId) &&
+                Objects.equals(okJoinLink, startResponse.okJoinLink) &&
                 Objects.equals(callId, startResponse.callId);
     }
 
@@ -99,6 +117,7 @@ public class StartResponse implements Validable {
         sb.append("broadcastOvId='").append(broadcastOvId).append("'");
         sb.append(", joinLink='").append(joinLink).append("'");
         sb.append(", broadcastVideoId='").append(broadcastVideoId).append("'");
+        sb.append(", okJoinLink='").append(okJoinLink).append("'");
         sb.append(", callId='").append(callId).append("'");
         sb.append('}');
         return sb.toString();

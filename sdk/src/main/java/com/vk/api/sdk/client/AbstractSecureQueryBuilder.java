@@ -1,8 +1,5 @@
 package com.vk.api.sdk.client;
 
-import com.vk.api.sdk.client.AbstractQueryBuilder;
-import com.vk.api.sdk.client.VkApiClient;
-
 import java.lang.reflect.Type;
 
 /**

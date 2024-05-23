@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.base;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum LinkProductType implements EnumParam {
+public enum LinkProductType implements EnumParam<String> {
     @SerializedName("product")
     PRODUCT("product");
 

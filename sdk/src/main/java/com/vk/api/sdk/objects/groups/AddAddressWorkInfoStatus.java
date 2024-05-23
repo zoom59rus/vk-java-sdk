@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.groups;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum AddAddressWorkInfoStatus implements EnumParam {
+public enum AddAddressWorkInfoStatus implements EnumParam<String> {
     @SerializedName("always_opened")
     ALWAYS_OPENED("always_opened"),
 

@@ -6,6 +6,7 @@ import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.objects.Validable;
 import com.vk.api.sdk.objects.annotations.Required;
 import com.vk.api.sdk.objects.wall.WallpostAttachment;
+
 import java.util.Objects;
 
 /**
@@ -23,6 +24,10 @@ public class ItemDigestFullItem extends ItemBase implements Validable {
      */
     @SerializedName("badge_text")
     private String badgeText;
+
+    @SerializedName("inner_type")
+    @Required
+    private ItemDigestFullItemInnerType innerType;
 
     @SerializedName("post")
     @Required
@@ -64,6 +69,15 @@ public class ItemDigestFullItem extends ItemBase implements Validable {
         return this;
     }
 
+    public ItemDigestFullItemInnerType getInnerType() {
+        return innerType;
+    }
+
+    public ItemDigestFullItem setInnerType(ItemDigestFullItemInnerType innerType) {
+        this.innerType = innerType;
+        return this;
+    }
+
     public ItemWallpost getPost() {
         return post;
     }
@@ -102,7 +116,7 @@ public class ItemDigestFullItem extends ItemBase implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(attachment, post, attachmentIndex, style, text, sourceName, badgeText);
+        return Objects.hash(attachment, post, attachmentIndex, innerType, style, text, sourceName, badgeText);
     }
 
     @Override
@@ -113,6 +127,7 @@ public class ItemDigestFullItem extends ItemBase implements Validable {
         return Objects.equals(attachment, itemDigestFullItem.attachment) &&
                 Objects.equals(attachmentIndex, itemDigestFullItem.attachmentIndex) &&
                 Objects.equals(badgeText, itemDigestFullItem.badgeText) &&
+                Objects.equals(innerType, itemDigestFullItem.innerType) &&
                 Objects.equals(post, itemDigestFullItem.post) &&
                 Objects.equals(style, itemDigestFullItem.style) &&
                 Objects.equals(text, itemDigestFullItem.text) &&
@@ -130,6 +145,7 @@ public class ItemDigestFullItem extends ItemBase implements Validable {
         sb.append("attachment=").append(attachment);
         sb.append(", attachmentIndex=").append(attachmentIndex);
         sb.append(", badgeText='").append(badgeText).append("'");
+        sb.append(", innerType='").append(innerType).append("'");
         sb.append(", post=").append(post);
         sb.append(", style='").append(style).append("'");
         sb.append(", text='").append(text).append("'");

@@ -4,7 +4,7 @@ package com.vk.api.sdk.objects.ads;
 import com.google.gson.annotations.SerializedName;
 import com.vk.api.sdk.queries.EnumParam;
 
-public enum GetStatisticsStatsFields implements EnumParam {
+public enum GetStatisticsStatsFields implements EnumParam<String> {
     @SerializedName("views_times")
     VIEWS_TIMES("views_times");
 
