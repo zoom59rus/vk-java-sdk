@@ -16,6 +16,7 @@ import com.vk.api.sdk.objects.photos.Photo;
 import com.vk.api.sdk.objects.polls.Poll;
 import com.vk.api.sdk.objects.stories.Story;
 import com.vk.api.sdk.objects.wall.WallComment;
+import com.vk.api.sdk.objects.wall.Wallpost;
 
 import java.util.Objects;
 
@@ -65,6 +66,9 @@ public class MessageAttachment implements Validable {
 
     @SerializedName("wall_reply")
     private WallComment wallReply;
+
+    @SerializedName("wall")
+    private Wallpost wallPost;
 
     public Audio getAudio() {
         return audio;
@@ -192,9 +196,17 @@ public class MessageAttachment implements Validable {
         return this;
     }
 
+    public Wallpost getWallPost() {
+        return wallPost;
+    }
+
+    public void setWallPost(Wallpost wallPost) {
+        this.wallPost = wallPost;
+    }
+
     @Override
     public int hashCode() {
-        return Objects.hash(gift, wallReply, marketMarketAlbum, sticker, photo, poll, audioMessage, type, call, market, doc, graffiti, audio, story);
+        return Objects.hash(gift, wallPost, wallReply, marketMarketAlbum, sticker, photo, poll, audioMessage, type, call, market, doc, graffiti, audio, story);
     }
 
     @Override
@@ -211,6 +223,7 @@ public class MessageAttachment implements Validable {
                 Objects.equals(type, messageAttachment.type) &&
                 Objects.equals(call, messageAttachment.call) &&
                 Objects.equals(market, messageAttachment.market) &&
+                Objects.equals(wallPost, messageAttachment.wallPost) &&
                 Objects.equals(wallReply, messageAttachment.wallReply) &&
                 Objects.equals(doc, messageAttachment.doc) &&
                 Objects.equals(graffiti, messageAttachment.graffiti) &&
@@ -235,6 +248,7 @@ public class MessageAttachment implements Validable {
         sb.append(", type=").append(type);
         sb.append(", call=").append(call);
         sb.append(", market=").append(market);
+        sb.append(", wallPost=").append(wallPost);
         sb.append(", wallReply=").append(wallReply);
         sb.append(", doc=").append(doc);
         sb.append(", graffiti=").append(graffiti);

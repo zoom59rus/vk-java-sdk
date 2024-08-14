@@ -41,6 +41,19 @@ public class WallGetQuery extends AbstractQueryBuilder<WallGetQuery, GetResponse
     }
 
     /**
+     * ID of the user or community that owns the wall. By default, current user ID. Use a negative value to designate a community ID.
+     *
+     * @param value value of "owner id" parameter. Entity - owner
+     *
+     * @return a reference to this {@code AbstractQueryBuilder} object to fulfill the "Builder" pattern.
+     */
+
+    @ApiParam("owner_id")
+    public WallGetQuery ownerId(Long value) {
+        return unsafeParam("owner_id", value);
+    }
+
+    /**
      * User or community short address.
      *
      * @param value value of "domain" parameter. Entity - owner
