@@ -15,6 +15,7 @@ import com.vk.api.sdk.objects.market.MarketItem;
 import com.vk.api.sdk.objects.photos.Photo;
 import com.vk.api.sdk.objects.polls.Poll;
 import com.vk.api.sdk.objects.stories.Story;
+import com.vk.api.sdk.objects.video.Video;
 import com.vk.api.sdk.objects.wall.WallComment;
 import com.vk.api.sdk.objects.wall.Wallpost;
 
@@ -63,6 +64,9 @@ public class MessageAttachment implements Validable {
     @SerializedName("type")
     @Required
     private MessageAttachmentType type;
+
+    @SerializedName("video")
+    private Video video;
 
     @SerializedName("wall_reply")
     private WallComment wallReply;
@@ -206,7 +210,7 @@ public class MessageAttachment implements Validable {
 
     @Override
     public int hashCode() {
-        return Objects.hash(gift, wallPost, wallReply, marketMarketAlbum, sticker, photo, poll, audioMessage, type, call, market, doc, graffiti, audio, story);
+        return Objects.hash(gift, wallPost, wallReply, marketMarketAlbum, sticker, photo, video, poll, audioMessage, type, call, market, doc, graffiti, audio, story);
     }
 
     @Override
@@ -218,6 +222,7 @@ public class MessageAttachment implements Validable {
                 Objects.equals(marketMarketAlbum, messageAttachment.marketMarketAlbum) &&
                 Objects.equals(sticker, messageAttachment.sticker) &&
                 Objects.equals(photo, messageAttachment.photo) &&
+                Objects.equals(video, messageAttachment.video) &&
                 Objects.equals(poll, messageAttachment.poll) &&
                 Objects.equals(audioMessage, messageAttachment.audioMessage) &&
                 Objects.equals(type, messageAttachment.type) &&
@@ -243,6 +248,7 @@ public class MessageAttachment implements Validable {
         sb.append(", marketMarketAlbum=").append(marketMarketAlbum);
         sb.append(", sticker=").append(sticker);
         sb.append(", photo=").append(photo);
+        sb.append(", video=").append(video);
         sb.append(", poll=").append(poll);
         sb.append(", audioMessage=").append(audioMessage);
         sb.append(", type=").append(type);
