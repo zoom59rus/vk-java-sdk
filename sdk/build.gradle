@@ -1,10 +1,10 @@
 apply plugin: 'maven-publish'
-apply plugin: 'signing'
 
 tasks.withType(Javadoc).configureEach {
     // disable the crazy super-strict doclint tool in Java 8
     //noinspection SpellCheckingInspection
     options.addStringOption('Xdoclint:none', '-quiet')
+    options.encoding = 'UTF-8'
 }
 
 tasks.register('wrapper', Wrapper) {
@@ -44,70 +44,25 @@ artifacts {
     archives javadocJar, sourcesJar
 }
 
-signing {
-    required { releaseBuild && gradle.taskGraph.hasTask("publishing") }
-    useGpgCmd()
-    sign publishing.publications
-}
-
 java {
     withJavadocJar()
     withSourcesJar()
 }
 
 publishing {
-    repositories {
-        maven {
-            def releasesUrl = uri("https://oss.sonatype.org/service/local/staging/deploy/maven2/")
-            def snapshotsUrl = uri("https://oss.sonatype.org/content/repositories/snapshots/")
-            url = !releaseBuild ? snapshotsUrl : releasesUrl
-            credentials {
-                username = project.properties["ossrhUsername"].toString()
-                password = project.properties["ossrhPassword"].toString()
-            }
-        }
-    }
     publications {
         mavenJava(MavenPublication) {
             from components.java
-            artifactId = 'sdk'
-            pom {
-                name = 'Java SDK for VK API'
-                packaging = 'jar'
-                description = 'Java library for VK API interaction, includes OAuth 2.0 authorization and API methods.'
-                url = 'https://github.com/VKCOM/vk-java-sdk'
+        }
+    }
+    repositories {
+        maven {
+            name = "GitHubPackages"
+            url = uri("https://maven.pkg.github.com/zoom59rus/vk-java-sdk")
 
-                scm {
-                    url = 'scm:git@github.com:VKCOM/vk-java-sdk.git'
-                    connection = 'scm:git@github.com:VKCOM/vk-java-sdk.git'
-                    developerConnection = 'scm:git@github.com:VKCOM/vk-java-sdk.git'
-                }
-
-                licenses {
-                    license {
-                        name = 'The MIT License (MIT)'
-                        url = 'http://opensource.org/licenses/MIT'
-                        distribution = 'repo'
-                    }
-                }
-
-                developers {
-                    developer {
-                        id = 'tsivarev'
-                        name = 'Anton Tsivarev'
-                        email = 'a.tsivarev@corp.vk.com'
-                    }
-                    developer {
-                        id = 'aashurok'
-                        name = 'Aleksei Ashurok'
-                        email = 'a.ashurok@corp.vk.com'
-                    }
-                    developer {
-                        id = 'ppv-vldmr'
-                        name = 'Vladimir Popov'
-                        email = 'vv.popov@vk.team'
-                    }
-                }
+            credentials {
+                username = project.findProperty("gpr.user") ?: System.getenv("GITHUB_USER")
+                password = project.findProperty("gpr.token") ?: System.getenv("GITHUB_TOKEN")
             }
         }
     }

@@ -2,10 +2,10 @@ subprojects {
     apply plugin: 'java'
 
     group 'com.vk.api'
-    version '1.0.16'
+    version '1.0.16.2'
 
-    sourceCompatibility = 1.8
-    targetCompatibility = 1.8
+    sourceCompatibility = JavaVersion.VERSION_17
+    targetCompatibility = JavaVersion.VERSION_17
 
     tasks.withType(Javadoc) {
         options.addStringOption('Xdoclint:none', '-quiet')
