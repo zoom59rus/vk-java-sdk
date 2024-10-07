@@ -208,6 +208,14 @@ public class MessageAttachment implements Validable {
         this.wallPost = wallPost;
     }
 
+    public Video getVideo() {
+        return video;
+    }
+
+    public void setVideo(Video video) {
+        this.video = video;
+    }
+
     @Override
     public int hashCode() {
         return Objects.hash(gift, wallPost, wallReply, marketMarketAlbum, sticker, photo, video, poll, audioMessage, type, call, market, doc, graffiti, audio, story);
