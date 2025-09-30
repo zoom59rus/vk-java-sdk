@@ -9,9 +9,9 @@ import org.apache.commons.lang3.StringUtils;
 public class VkApiClient {
     private static final String API_VERSION = "5.199";
 
-    private static final String API_ADDRESS = "https://api.vk.com/method/";
+    private static final String API_ADDRESS = "https://api.vk.ru/method/";
 
-    private static final String OAUTH_ENDPOINT = "https://oauth.vk.com/";
+    private static final String OAUTH_ENDPOINT = "https://oauth.vk.ru/";
 
     private static final Integer DEFAULT_RETRY_ATTEMPTS_INTERNAL_SERVER_ERROR_COUNT = 3;
 
