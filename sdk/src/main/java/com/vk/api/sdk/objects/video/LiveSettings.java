@@ -36,6 +36,18 @@ public class LiveSettings implements Validable {
     @SerializedName("max_duration")
     private Integer maxDuration;
 
+    /**
+     * Max possible rewind duration (in seconds)
+     */
+    @SerializedName("max_rewind_duration")
+    private Integer maxRewindDuration;
+
+    /**
+     * Playback duration (in seconds) of the live broadcast
+     */
+    @SerializedName("playback_duration")
+    private Integer playbackDuration;
+
     public boolean canRewind() {
         return canRewind == BoolInt.YES;
     }
@@ -69,9 +81,27 @@ public class LiveSettings implements Validable {
         return this;
     }
 
+    public Integer getMaxRewindDuration() {
+        return maxRewindDuration;
+    }
+
+    public LiveSettings setMaxRewindDuration(Integer maxRewindDuration) {
+        this.maxRewindDuration = maxRewindDuration;
+        return this;
+    }
+
+    public Integer getPlaybackDuration() {
+        return playbackDuration;
+    }
+
+    public LiveSettings setPlaybackDuration(Integer playbackDuration) {
+        this.playbackDuration = playbackDuration;
+        return this;
+    }
+
     @Override
     public int hashCode() {
-        return Objects.hash(canRewind, isEndless, isClipsLive, maxDuration);
+        return Objects.hash(canRewind, isEndless, isClipsLive, maxDuration, maxRewindDuration, playbackDuration);
     }
 
     @Override
@@ -82,7 +112,9 @@ public class LiveSettings implements Validable {
         return Objects.equals(isClipsLive, liveSettings.isClipsLive) &&
                 Objects.equals(isEndless, liveSettings.isEndless) &&
                 Objects.equals(maxDuration, liveSettings.maxDuration) &&
-                Objects.equals(canRewind, liveSettings.canRewind);
+                Objects.equals(canRewind, liveSettings.canRewind) &&
+                Objects.equals(maxRewindDuration, liveSettings.maxRewindDuration) &&
+                Objects.equals(playbackDuration, liveSettings.playbackDuration);
     }
 
     @Override
@@ -97,6 +129,8 @@ public class LiveSettings implements Validable {
         sb.append(", isEndless=").append(isEndless);
         sb.append(", maxDuration=").append(maxDuration);
         sb.append(", canRewind=").append(canRewind);
+        sb.append(", maxRewindDuration=").append(maxRewindDuration);
+        sb.append(", playbackDuration=").append(playbackDuration);
         sb.append('}');
         return sb.toString();
     }

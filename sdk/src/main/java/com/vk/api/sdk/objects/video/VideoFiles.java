@@ -72,6 +72,24 @@ public class VideoFiles implements Validable {
     @SerializedName("mp4_720")
     private URI mp4720;
 
+    /**
+     * URL of the on-demand MPEG-DASH manifest
+     */
+    @SerializedName("dash_ondemand")
+    private URI dashOndemand;
+
+    /**
+     * URL of the on-demand HLS playlist
+     */
+    @SerializedName("hls_ondemand")
+    private URI hlsOndemand;
+
+    /**
+     * Failover host for the video files
+     */
+    @SerializedName("failover_host")
+    private String failoverHost;
+
     public URI getExternal() {
         return external;
     }
@@ -162,9 +180,36 @@ public class VideoFiles implements Validable {
         return this;
     }
 
+    public URI getDashOndemand() {
+        return dashOndemand;
+    }
+
+    public VideoFiles setDashOndemand(URI dashOndemand) {
+        this.dashOndemand = dashOndemand;
+        return this;
+    }
+
+    public URI getHlsOndemand() {
+        return hlsOndemand;
+    }
+
+    public VideoFiles setHlsOndemand(URI hlsOndemand) {
+        this.hlsOndemand = hlsOndemand;
+        return this;
+    }
+
+    public String getFailoverHost() {
+        return failoverHost;
+    }
+
+    public VideoFiles setFailoverHost(String failoverHost) {
+        this.failoverHost = failoverHost;
+        return this;
+    }
+
     @Override
     public int hashCode() {
-        return Objects.hash(mp42160, mp41080, external, mp4144, mp4720, flv320, mp4480, mp41440, mp4360, mp4240);
+        return Objects.hash(mp42160, mp41080, external, mp4144, mp4720, flv320, mp4480, mp41440, mp4360, mp4240, dashOndemand, hlsOndemand, failoverHost);
     }
 
     @Override
@@ -181,7 +226,10 @@ public class VideoFiles implements Validable {
                 Objects.equals(mp41440, videoFiles.mp41440) &&
                 Objects.equals(mp4144, videoFiles.mp4144) &&
                 Objects.equals(mp4240, videoFiles.mp4240) &&
-                Objects.equals(mp42160, videoFiles.mp42160);
+                Objects.equals(mp42160, videoFiles.mp42160) &&
+                Objects.equals(dashOndemand, videoFiles.dashOndemand) &&
+                Objects.equals(hlsOndemand, videoFiles.hlsOndemand) &&
+                Objects.equals(failoverHost, videoFiles.failoverHost);
     }
 
     @Override
@@ -202,6 +250,9 @@ public class VideoFiles implements Validable {
         sb.append(", mp4144=").append(mp4144);
         sb.append(", mp4240=").append(mp4240);
         sb.append(", mp42160=").append(mp42160);
+        sb.append(", dashOndemand=").append(dashOndemand);
+        sb.append(", hlsOndemand=").append(hlsOndemand);
+        sb.append(", failoverHost='").append(failoverHost).append("'");
         sb.append('}');
         return sb.toString();
     }

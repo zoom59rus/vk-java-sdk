@@ -72,6 +72,12 @@ public class Video implements Validable {
     private BoolInt canDelete;
 
     /**
+     * Information whether current user can download the video
+     */
+    @SerializedName("can_download")
+    private BoolInt canDownload;
+
+    /**
      * Information whether current user can edit the video
      */
     @SerializedName("can_edit")
@@ -88,6 +94,18 @@ public class Video implements Validable {
      */
     @SerializedName("can_like")
     private BoolInt canLike;
+
+    /**
+     * Information whether current user can dislike the video
+     */
+    @SerializedName("can_dislike")
+    private BoolInt canDislike;
+
+    /**
+     * Information whether the video can be played in background
+     */
+    @SerializedName("can_play_in_background")
+    private BoolInt canPlayInBackground;
 
     /**
      * Information whether current user can repost the video
@@ -138,6 +156,12 @@ public class Video implements Validable {
     private String description;
 
     /**
+     * Direct URL to the video
+     */
+    @SerializedName("direct_url")
+    private URI directUrl;
+
+    /**
      * Video duration in seconds
      */
     @SerializedName("duration")
@@ -160,6 +184,12 @@ public class Video implements Validable {
 
     @SerializedName("image")
     private List<VideoImage> image;
+
+    /**
+     * Information whether the current user is the author of the video
+     */
+    @SerializedName("is_author")
+    private Boolean isAuthor;
 
     /**
      * Whether video is added to bookmarks
@@ -201,10 +231,28 @@ public class Video implements Validable {
     private Integer liveStartTime;
 
     /**
+     * Status of the live broadcast (e.g. waiting, started, finished, failed, upcoming)
+     */
+    @SerializedName("live_status")
+    private String liveStatus;
+
+    /**
      * If video is external, number of views on vk
      */
     @SerializedName("local_views")
     private Integer localViews;
+
+    /**
+     * Original video id (external provider)
+     */
+    @SerializedName("ov_id")
+    private String ovId;
+
+    /**
+     * Original video provider id (external provider)
+     */
+    @SerializedName("ov_provider_id")
+    private Integer ovProviderId;
 
     /**
      * Video owner ID
@@ -244,10 +292,22 @@ public class Video implements Validable {
     private VideoResponseType responseType;
 
     /**
+     * Server id that stores the video
+     */
+    @SerializedName("server")
+    private Integer server;
+
+    /**
      * Number of spectators of the stream
      */
     @SerializedName("spectators")
     private Integer spectators;
+
+    /**
+     * Public share URL of the video
+     */
+    @SerializedName("share_url")
+    private URI shareUrl;
 
     /**
      * Video title
@@ -275,6 +335,12 @@ public class Video implements Validable {
     private Long userId;
 
     /**
+     * Duration (in seconds) already viewed by the current user
+     */
+    @SerializedName("viewed_duration")
+    private Integer viewedDuration;
+
+    /**
      * Number of views
      */
     @SerializedName("views")
@@ -285,6 +351,12 @@ public class Video implements Validable {
      */
     @SerializedName("width")
     private Integer width;
+
+    /**
+     * Id of the wall post the video is attached to
+     */
+    @SerializedName("wall_post_id")
+    private Integer wallPostId;
 
     public String getAccessKey() {
         return accessKey;
@@ -684,9 +756,106 @@ public class Video implements Validable {
         return this;
     }
 
+    public BoolInt getCanDownload() {
+        return canDownload;
+    }
+
+    public void setCanDownload(BoolInt canDownload) {
+        this.canDownload = canDownload;
+    }
+
+    public BoolInt getCanDislike() {
+        return canDislike;
+    }
+
+    public void setCanDislike(BoolInt canDislike) {
+        this.canDislike = canDislike;
+    }
+
+    public BoolInt getCanPlayInBackground() {
+        return canPlayInBackground;
+    }
+
+    public void setCanPlayInBackground(BoolInt canPlayInBackground) {
+        this.canPlayInBackground = canPlayInBackground;
+    }
+
+    public URI getDirectUrl() {
+        return directUrl;
+    }
+
+    public void setDirectUrl(URI directUrl) {
+        this.directUrl = directUrl;
+    }
+
+    public Boolean getIsAuthor() {
+        return isAuthor;
+    }
+
+    public void setIsAuthor(Boolean isAuthor) {
+        this.isAuthor = isAuthor;
+    }
+
+    public String getLiveStatus() {
+        return liveStatus;
+    }
+
+    public void setLiveStatus(String liveStatus) {
+        this.liveStatus = liveStatus;
+    }
+
+    public String getOvId() {
+        return ovId;
+    }
+
+    public void setOvId(String ovId) {
+        this.ovId = ovId;
+    }
+
+    public Integer getOvProviderId() {
+        return ovProviderId;
+    }
+
+    public void setOvProviderId(Integer ovProviderId) {
+        this.ovProviderId = ovProviderId;
+    }
+
+    public Integer getServer() {
+        return server;
+    }
+
+    public void setServer(Integer server) {
+        this.server = server;
+    }
+
+    public URI getShareUrl() {
+        return shareUrl;
+    }
+
+    public void setShareUrl(URI shareUrl) {
+        this.shareUrl = shareUrl;
+    }
+
+    public Integer getViewedDuration() {
+        return viewedDuration;
+    }
+
+    public void setViewedDuration(Integer viewedDuration) {
+        this.viewedDuration = viewedDuration;
+    }
+
+    public Integer getWallPostId() {
+        return wallPostId;
+    }
+
+    public void setWallPostId(Integer wallPostId) {
+        this.wallPostId = wallPostId;
+    }
+
     @Override
     public int hashCode() {
-        return Objects.hash(date, added, converting, canLike, canEdit, canAdd, canAddToFaves, description, canEditPrivacy, isPrivate, ownerId, liveNotify, title, type, liveStartTime, platform, duration, canSubscribe, responseType, isSubscribed, balance, firstFrame, repeat, canDelete, canComment, id, addingDate, live, views, height, likes, player, trackCode, image, comments, contentRestrictedMessage, canRepost, contentRestricted, spectators, userId, localViews, canAttachLink, accessKey, width, processing, reposts, upcoming, isFavorite);
+        return Objects.hash(date, added, converting, canLike, canEdit, canAdd, canAddToFaves, description, canEditPrivacy, isPrivate, ownerId, liveNotify, title, type, liveStartTime, platform, duration, canSubscribe, responseType, isSubscribed, balance, firstFrame, repeat, canDelete, canComment, id, addingDate, live, views, height, likes, player, trackCode, image, comments, contentRestrictedMessage, canRepost, contentRestricted, spectators, userId, localViews, canAttachLink, accessKey, width, processing, reposts, upcoming, isFavorite, canDownload, canDislike, canPlayInBackground, isAuthor,
+                liveStatus, ovId, ovProviderId, server, wallPostId, directUrl, shareUrl, viewedDuration);
     }
 
     @Override
@@ -741,7 +910,19 @@ public class Video implements Validable {
                 Objects.equals(canAdd, video.canAdd) &&
                 Objects.equals(reposts, video.reposts) &&
                 Objects.equals(upcoming, video.upcoming) &&
-                Objects.equals(firstFrame, video.firstFrame);
+                Objects.equals(firstFrame, video.firstFrame) &&
+                Objects.equals(canDownload, video.canDownload) &&
+                Objects.equals(canDislike, video.canDislike) &&
+                Objects.equals(canPlayInBackground, video.canPlayInBackground) &&
+                Objects.equals(isAuthor, video.isAuthor) &&
+                Objects.equals(liveStatus, video.liveStatus) &&
+                Objects.equals(ovId, video.ovId) &&
+                Objects.equals(ovProviderId, video.ovProviderId) &&
+                Objects.equals(server, video.server) &&
+                Objects.equals(wallPostId, video.wallPostId) &&
+                Objects.equals(directUrl, video.directUrl) &&
+                Objects.equals(shareUrl, video.shareUrl) &&
+                Objects.equals(viewedDuration, video.viewedDuration);
     }
 
     @Override
@@ -800,6 +981,18 @@ public class Video implements Validable {
         sb.append(", reposts=").append(reposts);
         sb.append(", upcoming=").append(upcoming);
         sb.append(", firstFrame=").append(firstFrame);
+        sb.append(", canDownload=").append(canDownload);
+        sb.append(", canDislike=").append(canDislike);
+        sb.append(", canPlayInBackground=").append(canPlayInBackground);
+        sb.append(", isAuthor=").append(isAuthor);
+        sb.append(", liveStatus='").append(liveStatus).append("'");
+        sb.append(", ovId='").append(ovId).append("'");
+        sb.append(", ovProviderId=").append(ovProviderId);
+        sb.append(", server=").append(server);
+        sb.append(", wallPostId=").append(wallPostId);
+        sb.append(", directUrl=").append(directUrl);
+        sb.append(", shareUrl=").append(shareUrl);
+        sb.append(", viewedDuration=").append(viewedDuration);
         sb.append('}');
         return sb.toString();
     }

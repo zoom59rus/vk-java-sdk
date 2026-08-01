@@ -30,6 +30,30 @@ public class VideoFull extends Video implements Validable {
     @SerializedName("trailer")
     private VideoFiles trailer;
 
+    /**
+     * Download availability settings of the video
+     */
+    @SerializedName("download")
+    private Download download;
+
+    /**
+     * Privacy settings for commenting the video
+     */
+    @SerializedName("privacy_comment")
+    private VideoPrivacy privacyComment;
+
+    /**
+     * Privacy settings for viewing the video
+     */
+    @SerializedName("privacy_view")
+    private VideoPrivacy privacyView;
+
+    /**
+     * Timeline preview thumbnails of the video
+     */
+    @SerializedName("timeline_thumbs")
+    private TimelineThumbs timelineThumbs;
+
     public List<Episode> getEpisodes() {
         return episodes;
     }
@@ -66,9 +90,45 @@ public class VideoFull extends Video implements Validable {
         return this;
     }
 
+    public Download getDownload() {
+        return this.download;
+    }
+
+    public VideoFull setDownload(Download download) {
+        this.download = download;
+        return this;
+    }
+
+    public VideoPrivacy getPrivacyComment() {
+        return this.privacyComment;
+    }
+
+    public VideoFull setPrivacyComment(VideoPrivacy privacyComment) {
+        this.privacyComment = privacyComment;
+        return this;
+    }
+
+    public VideoPrivacy getPrivacyView() {
+        return this.privacyView;
+    }
+
+    public VideoFull setPrivacyView(VideoPrivacy privacyView) {
+        this.privacyView = privacyView;
+        return this;
+    }
+
+    public TimelineThumbs getTimelineThumbs() {
+        return this.timelineThumbs;
+    }
+
+    public VideoFull setTimelineThumbs(TimelineThumbs timelineThumbs) {
+        this.timelineThumbs = timelineThumbs;
+        return this;
+    }
+
     @Override
     public int hashCode() {
-        return Objects.hash(trailer, files, liveSettings, episodes);
+        return Objects.hash(trailer, files, liveSettings, episodes, download, privacyComment, privacyView, timelineThumbs);
     }
 
     @Override
@@ -79,7 +139,11 @@ public class VideoFull extends Video implements Validable {
         return Objects.equals(trailer, videoFull.trailer) &&
                 Objects.equals(files, videoFull.files) &&
                 Objects.equals(liveSettings, videoFull.liveSettings) &&
-                Objects.equals(episodes, videoFull.episodes);
+                Objects.equals(episodes, videoFull.episodes) &&
+                Objects.equals(this.download, videoFull.download) &&
+                Objects.equals(this.privacyComment, videoFull.privacyComment) &&
+                Objects.equals(this.privacyView, videoFull.privacyView) &&
+                Objects.equals(this.timelineThumbs, videoFull.timelineThumbs);
     }
 
     @Override
@@ -94,6 +158,10 @@ public class VideoFull extends Video implements Validable {
         sb.append(", files=").append(files);
         sb.append(", liveSettings=").append(liveSettings);
         sb.append(", episodes=").append(episodes);
+        sb.append(", download=").append(this.download);
+        sb.append(", privacyComment=").append(this.privacyComment);
+        sb.append(", privacyView=").append(this.privacyView);
+        sb.append(", timelineThumbs=").append(this.timelineThumbs);
         sb.append('}');
         return sb.toString();
     }
